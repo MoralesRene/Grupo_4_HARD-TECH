@@ -34,3 +34,6 @@ Se eligio esta pagina por su diseño en el formulario de registro y por su dise�
 https://www.libreopcion.com
 Se eligio esta pagina por su seccion de ofertas relampago, y por el filtrado de marcas que posee en el home.
 (Solo la funcionalidad, no el diseño).
+
+TABLERO DE TRABAJO:
+https://trello.com/invite/b/9y8pkA5W/ATTIad64a9f727da5579b919ecb3ea0ed17e9B6F8BEB/proyecto-integrador
