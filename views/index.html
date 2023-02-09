@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!--Mis estilos-->
+    <link rel="stylesheet" href="/css/home_style.css">
+    <link rel="stylesheet" href="/css/home_responsive.css">
+
+    <title>Hard-Tech</title>
+</head>
+
+<body>
+    <!--Header reutilizable-->
+    <header>
+        <!--Primer bloque -->
+        <div class="bloque_sup">
+            <div id="logo"><a href="/"><img src="/img/logo-1.jpg" alt="Logo"></a></div>
+            <div class="buscador hidden_top">
+                <div class="interno"><input type="text" placeholder="Buscar producto,Marca"><i class="fa-solid fa-magnifying-glass"></i></div>
+            </div>
+            <div class="botonera">
+                <div>
+                    <a href="/login"><i class="fa-regular fa-user"></i><p class="hidden_p">Mi cuenta</p></a>
+                    <a href="/product-cart"><i class="fa-solid fa-bag-shopping"></i><p class="hidden_p">Mi carrito</p></a>
+                </div>
+            </div>
+        </div>
+        <div class="bloque_bot">
+            <div id="menu">
+                <input type="checkbox" id="check">
+                <label for="check" id="checkbtn"><i class="fa-solid fa-bars"></i></label>
+                    <ul id="menu_desplegado">
+                        <li class="categoria_gral"><a href="#">Categorias</a></li>
+                            <li><a href="#">MotherBoards</a></li>
+                            <li><a href="#">Procesadores</a></li>
+                            <li><a href="#">Memorias RAM</a></li>
+                            <li><a href="#">Fuentes y Gabinetes</a></li>
+                            <li><a href="#">HDD y SSD</a></li>
+                            <li><a href="#">Placas de video</a></li>
+                        <li class="categoria_gral"><a href="#">Perifericos</a></li>
+                            <li>Monitores</li>
+                            <li>Teclados y Mouses</li>
+                            <li>UPS</li>
+                            <li>Sillas Gamer</li>
+                        <li class="categoria_gral"><a href="#">PCs Armadas</a></li>
+                            <li>PC Basica</li>
+                            <li>PC Gama Media</li>
+                            <li>PC Gama Alta</li>
+                        <li class="categoria_gral"><a href="#">Ofertas</a></li>
+                        <li class="categoria_gral"><a href="#">Ayuda</a></li>
+                            <li>Servicio Tecnico</li>
+                            <li>Quiero Comunicarme</li>
+                    </ul>
+            </div>
+            <div class="buscador">
+                <div class="interno"><input type="text" placeholder="Buscar producto,Marca"><i class="fa-solid fa-magnifying-glass"></i></div>
+            </div>
+        </div>
+        
+    </header>
+    <div class="container_nav">
+        <nav class="hidden">
+            <ul >
+                <li>
+                    <input type="checkbox" id="check_v2"><label for="check_v2">Categorias</label>
+                    <ul class="subcategory">
+                        <li><a href="#">MotherBoards</a></li>
+                        <li><a href="#">Procesadores</a></li>
+                        <li><a href="#">Memorias RAM</a></li>
+                        <li><a href="#">Fuentes y Gabinetes</a></li>
+                        <li><a href="#">HDD y SSD</a></li>
+                        <li><a href="#">Placas de video</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="checkbox" id="check_v3"><label for="check_v3">Perifericos</label>
+                    <ul class="subcategory">
+                        <li><a href="#">Monitores</a></li>
+                        <li><a href="#">Teclados y Mouses</a></li>
+                        <li><a href="#">UPS</a></li>
+                        <li><a href="#">Fuentes y Gabinetes</a></li>
+                        <li><a href="#">HDD y SSD</a></li>
+                        <li><a href="#">Sillas Gamer</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="checkbox" id="check_v4"><label for="check_v4">PCs Armadas</label>
+                    <ul class="subcategory">
+                        <li><a href="#">PC Basica</a></li>
+                        <li><a href="#">PC Gama Media</a></li>
+                        <li><a href="#">PC Gama alta</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="checkbox" id="check_v5"><label for="check_v5">Ofertas</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="check_v6"><label for="check_v6">Ayuda</label>
+                    <ul class="subcategory">
+                        <li><a href="#">Servicio Tecnico</a></li>
+                        <li><a href="#">Quiero Comunicarme</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+ <div class="carrusel">
+    <ul>
+        <li><a href="#"><img src="/img/Carrusel-1.jpg" alt=""></a></li>
+        <li><a href="#"><img src="/img/carrusel-2.jpg" alt=""></a></li>
+        <li><a href="#"><img src="/img/carrusel-3.jpg" alt=""></a></li>
+        <li><a href="#"><img src="/img/carrusel-4.jpg" alt=""></a></li>
+        <li><a href="#"><img src="/img/carrusel-5.jpg" alt=""></a></li>
+    </ul>
+</div>
+    <main>
+        <h2 class="subtitulos">Formas de Pago</h2>
+        <section class="formas-pago">
+            <div><i class="fa-sharp fa-solid fa-building-columns"></i><b>Trasnferencia o Deposito</b></div>
+            <div><i class="fa-solid fa-credit-card"></i><b>Tarjeta de Debito</b></div>
+            <div><i class="fa-regular fa-credit-card"></i><b>Cuotas sin interes</b></div>
+    </section>
+        <!--Contenido Destacados-->
+        <h2 class="subtitulos">Destacados!</h2>
+        <section class="destacados">
+            <div class="contenedor-dest">
+                <button class="controller"><i class="fa-solid fa-circle-chevron-left"></i></button>
+            <article>
+                <img src="/img/article-1.jpeg" alt="Procesador">
+                <div class="info-prod">
+                    <h4>Procesador Intel Core i7 13700K</h4>
+                    <p class="precio">Precio</p>
+                    <button><a href="/product-detail">Ver mas</a></button>
+                </div>
+            </article>
+            <article class="destac-hidden">
+                <img src="/img/article-3.jpeg" alt="Procesador">
+                <div class="info-prod">
+                    <h4>Procesador Intel Core i9 12900</h4>
+                    <p class="precio">Precio</p>
+                    <button><a href="#">Ver mas</a></button>
+                </div>
+            </article>
+            <article class="v-Desktop">
+                <img src="/img/article-3.jpeg" alt="Procesador">
+                <div class="info-prod">
+                    <h4>Procesador Intel Core i9 12900</h4>
+                    <p class="precio">Precio</p>
+                    <button><a href="#">Ver mas</a></button>
+                </div>
+            </article>
+            <article class="v-Desktop">
+                <img src="/img/article-3.jpeg" alt="Procesador">
+                <div class="info-prod">
+                    <h4>Procesador Intel Core i9 12900</h4>
+                    <p class="precio">Precio</p>
+                    <button><a href="#">Ver mas</a></button>
+                </div>
+            </article>
+            <button class="controller"><i class="fa-solid fa-circle-chevron-right"></i></button>
+        </div>
+        </section>
+        <!--Contenido marcas-->
+        <h2 class="subtitulos">Nuestras Marcas</h2>
+        <section class="marcas">
+            <div class="lineas">
+                <img src="/img/marca-1.jpg" alt="Asus">
+            </div>
+            <div class="lineas marca-hidden">
+                <img src="/img/marca-2.png" alt="Asus">
+            </div>
+            <div class="lineas marca-hidden">
+                <img src="/img/marca-1.jpg" alt="Asus">
+            </div>
+            <div class="lineas v-Desktop">
+                <img src="/img/marca-1.jpg" alt="Asus">
+            </div>
+            <div class="lineas v-Desktop">
+                <img src="/img/marca-1.jpg" alt="Asus">
+            </div>
+        </section>
+        <!--Contenido ofertas-->
+        <h2 class="subtitulos">Ofertas</h2>
+        <section class="ofertas">
+            <div class="contenedor-dest">
+                <button class="controller"><i class="fa-solid fa-circle-chevron-left"></i></button>
+            <article>
+                <img src="/img/article-2.jpeg" alt="monitor">
+                <div class="info-prod">
+                    <h4>Monitor Gamer 35 LG Full HD Ultrawide</h4>
+                    <p class="precio">Precio</p>
+                    <button><a href="#">Ver mas</a></button>
+                </div>
+            </article>
+            <article class="ofer-hidden">
+                <img src="/img/article-2.jpeg" alt="monitor">
+                <div class="info-prod">
+                    <h4>Monitor Gamer 35 LG Full HD Ultrawide</h4>
+                    <p class="precio">Precio</p>
+                    <button><a href="#">Ver mas</a></button>
+                </div>
+            </article>
+            <article class="v-Desktop">
+                <img src="/img/article-2.jpeg" alt="monitor">
+                <div class="info-prod">
+                    <h4>Monitor Gamer 35 LG Full HD Ultrawide</h4>
+                    <p class="precio">Precio</p>
+                    <button><a href="#">Ver mas</a></button>
+                </div>
+            </article>
+            <article class="v-Desktop">
+                <img src="/img/article-2.jpeg" alt="monitor">
+                <div class="info-prod">
+                    <h4>Monitor Gamer 35 LG Full HD Ultrawide</h4>
+                    <p class="precio">Precio</p>
+                    <button><a href="#">Ver mas</a></button>
+                </div>
+            </article>
+            <button class="controller"><i class="fa-solid fa-circle-chevron-right"></i></button>
+        </div>
+        </section>
+    
+    </main>
+    <footer>
+        <div class="info__local">
+        <h2 class="sub_h2">Contactanos!</h2>
+        <p>Direccion: Calle falsa 123,CABA</p>
+        <p>Horario de atención: Lunes a viernes de 9hs a 18hs</p>
+        <p>Telefono: 1234-5678</p>
+    </div>
+    <div class="suscription">
+        <h2 class="sub_h2">Nosotros</h2>
+        <p>En Hard-Tech buscamos destacar por nuestro conocimiento e intentamos establecernos como la opción ideal para sus compras de tecnología.</p>
+    </div>
+    <div id="social_red">
+        <h2 class="sub_h2">Seguinos en nuestras Redes</h2>
+        <ul>
+            <li><a href="#" class="Redes"><i class="fa-brands fa-square-facebook"></i>Facebook</a></li>
+            <li><a href="#" class="Redes"><i class="fa-brands fa-instagram"></i>Instagram</a></li>
+            <li><a href="#" class="Redes"><i class="fa-brands fa-whatsapp"></i>Whatsapp</a></li>
+        </ul>
+    </div>
+    </footer>
+    <footer class="desktop">
+        <div class="footer_list cat">
+            <h2>Categorias</h2>
+            <nav>
+                <ul>
+                    <li><a href="#">Categoria 1</a></li>
+                    <li><a href="#">Categoria 2</a></li>
+                    <li><a href="#">Categoria 3</a></li>
+                    <li><a href="#">Categoria 4</a></li>
+                    <li><a href="#">Categoria 5</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer_list mark">
+            <h2>Marcas</h2>
+            <nav>
+                <ul>
+                    <li><a href="#">Marca 1</a></li>
+                    <li><a href="#">Marca 2</a></li>
+                    <li><a href="#">Marca 3</a></li>
+                    <li><a href="#">Marca 4</a></li>
+                    <li><a href="#">Marca 5</a></li>
+                    <li><a href="#">Marca 6</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer_list us">
+            <h2 class="sub_h2">Nosotros</h2>
+            <p>En Hard-Tech buscamos destacar por nuestro conocimiento e intentamos establecernos como la opción ideal para sus compras de tecnología.</p>
+            <div class="info__local">
+                <h2 class="sub_h2">Contactanos!</h2>
+                <p>Direccion: Calle falsa 123,CABA</p>
+                <p>Horario de atención: Lunes a viernes de 9hs a 18hs</p>
+                <p>Telefono: 1234-5678</p>
+            </div>
+        </div >
+        <div class="info__local footer_hidden">
+            <div class="suscrip">
+            <h2>Suscribite</h2>
+            <input type="text" placeholder="Email">
+            <button id="fot_boton">Enviar</button>
+            </div>
+            <h2 class="sub_h2">Contactanos!</h2>
+            <p>Direccion: Calle falsa 123,CABA</p>
+            <p>Horario de atención: Lunes a viernes de 9hs a 18hs</p>
+            <p>Telefono: 1234-5678</p>
+        </div>
+        <div class="footer_list Red">
+            <h2 class="sub_h2">Seguinos en nuestras Redes</h2>
+        <nav>
+            <ul>
+                <li><a href="#" class="Redes"><i class="fa-brands fa-square-facebook"></i>Facebook</a></li>
+                <li><a href="#" class="Redes"><i class="fa-brands fa-instagram"></i>Instagram</a></li>
+                <li><a href="#" class="Redes"><i class="fa-brands fa-whatsapp"></i>Whatsapp</a></li>
+            </ul>
+        </nav>
+        </div>
+    </footer>
+    <a href="#" id="whats"><img src="/img/whatsapp.png" alt="whatsapp"></a>
+    <p>texto</p>
+</body>
+</html>
