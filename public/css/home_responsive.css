@@ -499,7 +499,7 @@
     article:hover{
         box-shadow: 5px 5px 30px rgb(43, 235, 9);
         position: relative;
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
     .lineas img:hover{
         opacity: 1;  
