@@ -26,7 +26,7 @@
             <div class="botonera">
                 <div>
                     <a href="/login"><i class="fa-regular fa-user"></i><p class="hidden_p">Mi cuenta</p></a>
-                    <a href="/product-cart"><i class="fa-solid fa-bag-shopping"></i><p class="hidden_p">Mi carrito</p></a>
+                    <a href="/product/cart"><i class="fa-solid fa-bag-shopping"></i><p class="hidden_p">Mi carrito</p></a>
                 </div>
             </div>
         </div>
@@ -109,38 +109,21 @@
             </ul>
         </nav>
     </div>
- <main id="cart_ship">
-    <div class="cart_category_list">
-        <div class="cc_list_contain">
-                <h3><i class="fa-solid fa-cart-shopping"></i>Mi carrito</h3>
-                <div class="cc_list prod"><i class="fa-solid fa-rectangle-list"></i><p>Mis Productos</p></div>
-                <div class="cc_list"><i class="fa-solid fa-truck-fast"></i><p>Mi entrega</p></div>
-                <div class="cc_list" style="background-color: rgb(43, 235, 9);"><i class="fa-solid fa-money-bill"></i><p>Metodo de pago</p></div>
-                <div class="cc_list"><i class="fa-regular fa-square-check"></i><p>Resumen</p></div>
-        </div>
+<main id="ventana-login">
+    <div id="ventana">
+        <h3>Iniciar Sesión</h3>
+        <form action="#">
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Contraseña" required>
+        </form>
+        <p><a href="#">Me olvide la contraseña</a></p>
+        <button><a href="/">Ingresar</a></button>
+        <div class="go-to-regis"><b>¿Aun no tienes cuenta?</b><a href="/register">Registrate</a></div>
+        <div class="ingreso-con-red face"><i class="fa-brands fa-facebook-f"></i>Ingresar con Facebook</div>
+        <div class="ingreso-con-red google"><i class="fa-brands fa-google"></i>Ingresar con Google</div>
     </div>
-    <div class="cart_contain">
-        <p><a href="/">Seguir Comprando</a></p>
-        <div class="cart_contain_title prod"><i class="fa-solid fa-truck-fast"></i><h3>Metodo de pago</h3></div>
-        <div class="cart_contain_pay">
-                <form action="#" class="cart_contain_ops_pay">
-                    <div class="cc_pay_op_1">
-                        <div class="cc_pay_mark_1"><input type="radio" name="pago"><label for="pago">Pago en sucursal</label></div>
-                        <p>Abona tu compra al retirar por nuestro local</p>
-                    </div>
-                    <div class="cc_pay_op_2">
-                        <div class="cc_pay_mark_2"><input type="radio" name="pago"><label for="pago">Tarjeta de credito o Debito</label></div>
-                        <p>Abona online en un Pago, o tambien en cuotas con su correspondiente recargo</p>
-                    </div>
-                </form>
-        </div>
-    <div class="ant-next">
-        <button id="ant"><a href="/cart-ship">Anterior</a></button>
-        <button id="next"><a href="/cart-resume">Siguiente</a></button>
-    </div>
-    </div>
- </main>
- <footer>
+</main>
+<footer>
     <div class="info__local">
     <h2 class="sub_h2">Contactanos!</h2>
     <p>Direccion: Calle falsa 123,CABA</p>

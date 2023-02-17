@@ -1,12 +1,12 @@
 const express = require("express");
 const path = require("path")
-const home = require('./routes/home')
-const login = require('./routes/login')
-const register = require('./routes/register')
-const product = require('./routes/products')
-const cart = require('./routes/cart')
+const home = require('../src/routes/home')
+const login = require('../src/routes/login')
+const register = require('../src/routes/register')
+const product = require('../src/routes/products')
+const cart = require('../src/routes/cart')
 const app = express();
-const publicPath= path.join(__dirname,"public");
+const publicPath= path.join(__dirname,"../public");
 
 //Utilización de rutas
 app.use(express.static(publicPath))
@@ -21,3 +21,4 @@ const port= 3030;
 app.listen(port, ()=>{
     console.log("Server Started on http://localhost:" + port)
 })
+
