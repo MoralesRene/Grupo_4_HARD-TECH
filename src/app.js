@@ -6,7 +6,7 @@ const register = require('../src/routes/register')
 const product = require('../src/routes/products')
 const cart = require('../src/routes/cart')
 const app = express();
-const publicPath= path.join(__dirname,"../public");
+const publicPath= path.join(__dirname,"./public");
 
 //Utilización de rutas
 app.use(express.static(publicPath))

@@ -15,5 +15,4 @@ let productsController = {
         }
     }
 }
-
-module.exports = productsController
+module.exports = productsController;
