@@ -26,7 +26,7 @@
             <div class="botonera">
                 <div>
                     <a href="/login"><i class="fa-regular fa-user"></i><p class="hidden_p">Mi cuenta</p></a>
-                    <a href="/product-cart"><i class="fa-solid fa-bag-shopping"></i><p class="hidden_p">Mi carrito</p></a>
+                    <a href="/product/cart"><i class="fa-solid fa-bag-shopping"></i><p class="hidden_p">Mi carrito</p></a>
                 </div>
             </div>
         </div>
@@ -109,89 +109,116 @@
             </ul>
         </nav>
     </div>
-    <main>
-
-    </main>
-
-    <footer>
-        <div class="info__local">
-        <h2 class="sub_h2">Contactanos!</h2>
-        <p>Direccion: Calle falsa 123,CABA</p>
-        <p>Horario de atención: Lunes a viernes de 9hs a 18hs</p>
-        <p>Telefono: 1234-5678</p>
+ <main id="cart_ship">
+    <div class="cart_category_list">
+        <div class="cc_list_contain">
+                <h3><i class="fa-solid fa-cart-shopping"></i>Mi carrito</h3>
+                <div class="cc_list prod"><i class="fa-solid fa-rectangle-list"></i><p>Mis Productos</p></div>
+                <div class="cc_list"><i class="fa-solid fa-truck-fast"></i><p>Mi entrega</p></div>
+                <div class="cc_list" style="background-color: rgb(43, 235, 9);"><i class="fa-solid fa-money-bill"></i><p>Metodo de pago</p></div>
+                <div class="cc_list"><i class="fa-regular fa-square-check"></i><p>Resumen</p></div>
+        </div>
     </div>
-    <div class="suscription">
+    <div class="cart_contain">
+        <p><a href="/">Seguir Comprando</a></p>
+        <div class="cart_contain_title prod"><i class="fa-solid fa-truck-fast"></i><h3>Metodo de pago</h3></div>
+        <div class="cart_contain_pay">
+                <form action="#" class="cart_contain_ops_pay">
+                    <div class="cc_pay_op_1">
+                        <div class="cc_pay_mark_1"><input type="radio" name="pago"><label for="pago">Pago en sucursal</label></div>
+                        <p>Abona tu compra al retirar por nuestro local</p>
+                    </div>
+                    <div class="cc_pay_op_2">
+                        <div class="cc_pay_mark_2"><input type="radio" name="pago"><label for="pago">Tarjeta de credito o Debito</label></div>
+                        <p>Abona online en un Pago, o tambien en cuotas con su correspondiente recargo</p>
+                    </div>
+                </form>
+        </div>
+    <div class="ant-next">
+        <button id="ant"><a href="/cart/ship">Anterior</a></button>
+        <button id="next"><a href="/cart/resume">Siguiente</a></button>
+    </div>
+    </div>
+ </main>
+ <footer>
+    <div class="info__local">
+    <h2 class="sub_h2">Contactanos!</h2>
+    <p>Direccion: Calle falsa 123,CABA</p>
+    <p>Horario de atención: Lunes a viernes de 9hs a 18hs</p>
+    <p>Telefono: 1234-5678</p>
+</div>
+<div class="suscription">
+    <h2 class="sub_h2">Nosotros</h2>
+    <p>En Hard-Tech buscamos destacar por nuestro conocimiento e intentamos establecernos como la opción ideal para sus compras de tecnología.</p>
+</div>
+<div id="social_red">
+    <h2 class="sub_h2">Seguinos en nuestras Redes</h2>
+    <ul>
+        <li><a href="#" class="Redes"><i class="fa-brands fa-square-facebook"></i>Facebook</a></li>
+        <li><a href="#" class="Redes"><i class="fa-brands fa-instagram"></i>Instagram</a></li>
+        <li><a href="#" class="Redes"><i class="fa-brands fa-whatsapp"></i>Whatsapp</a></li>
+    </ul>
+</div>
+</footer>
+<footer class="desktop">
+    <div class="footer_list cat">
+        <h2>Categorias</h2>
+        <nav>
+            <ul>
+                <li><a href="#">Categoria 1</a></li>
+                <li><a href="#">Categoria 2</a></li>
+                <li><a href="#">Categoria 3</a></li>
+                <li><a href="#">Categoria 4</a></li>
+                <li><a href="#">Categoria 5</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="footer_list mark">
+        <h2>Marcas</h2>
+        <nav>
+            <ul>
+                <li><a href="#">Marca 1</a></li>
+                <li><a href="#">Marca 2</a></li>
+                <li><a href="#">Marca 3</a></li>
+                <li><a href="#">Marca 4</a></li>
+                <li><a href="#">Marca 5</a></li>
+                <li><a href="#">Marca 6</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="footer_list us">
         <h2 class="sub_h2">Nosotros</h2>
         <p>En Hard-Tech buscamos destacar por nuestro conocimiento e intentamos establecernos como la opción ideal para sus compras de tecnología.</p>
-    </div>
-    <div id="social_red">
-        <h2 class="sub_h2">Seguinos en nuestras Redes</h2>
-        <ul>
-            <li><a href="#" class="Redes"><i class="fa-brands fa-square-facebook"></i>Facebook</a></li>
-            <li><a href="#" class="Redes"><i class="fa-brands fa-instagram"></i>Instagram</a></li>
-            <li><a href="#" class="Redes"><i class="fa-brands fa-whatsapp"></i>Whatsapp</a></li>
-        </ul>
-    </div>
-    </footer>
-    <footer class="desktop">
-        <div class="footer_list cat">
-            <h2>Categorias</h2>
-            <nav>
-                <ul>
-                    <li><a href="#">Categoria 1</a></li>
-                    <li><a href="#">Categoria 2</a></li>
-                    <li><a href="#">Categoria 3</a></li>
-                    <li><a href="#">Categoria 4</a></li>
-                    <li><a href="#">Categoria 5</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="footer_list mark">
-            <h2>Marcas</h2>
-            <nav>
-                <ul>
-                    <li><a href="#">Marca 1</a></li>
-                    <li><a href="#">Marca 2</a></li>
-                    <li><a href="#">Marca 3</a></li>
-                    <li><a href="#">Marca 4</a></li>
-                    <li><a href="#">Marca 5</a></li>
-                    <li><a href="#">Marca 6</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="footer_list us">
-            <h2 class="sub_h2">Nosotros</h2>
-            <p>En Hard-Tech buscamos destacar por nuestro conocimiento e intentamos establecernos como la opción ideal para sus compras de tecnología.</p>
-            <div class="info__local">
-                <h2 class="sub_h2">Contactanos!</h2>
-                <p>Direccion: Calle falsa 123,CABA</p>
-                <p>Horario de atención: Lunes a viernes de 9hs a 18hs</p>
-                <p>Telefono: 1234-5678</p>
-            </div>
-        </div >
-        <div class="info__local footer_hidden">
-            <div class="suscrip">
-            <h2>Suscribite</h2>
-            <input type="text" placeholder="Email">
-            <button id="fot_boton">Enviar</button>
-            </div>
+        <div class="info__local">
             <h2 class="sub_h2">Contactanos!</h2>
             <p>Direccion: Calle falsa 123,CABA</p>
             <p>Horario de atención: Lunes a viernes de 9hs a 18hs</p>
             <p>Telefono: 1234-5678</p>
         </div>
-        <div class="footer_list Red">
-            <h2 class="sub_h2">Seguinos en nuestras Redes</h2>
-        <nav>
-            <ul>
-                <li><a href="#" class="Redes"><i class="fa-brands fa-square-facebook"></i>Facebook</a></li>
-                <li><a href="#" class="Redes"><i class="fa-brands fa-instagram"></i>Instagram</a></li>
-                <li><a href="#" class="Redes"><i class="fa-brands fa-whatsapp"></i>Whatsapp</a></li>
-            </ul>
-        </nav>
+    </div >
+    <div class="info__local footer_hidden">
+        <div class="suscrip">
+        <h2>Suscribite</h2>
+        <input type="text" placeholder="Email">
+        <button id="fot_boton">Enviar</button>
         </div>
-    </footer>
-    <a href="#" id="whats"><img src="/img/whatsapp.png" alt="whatsapp"></a>
-    <p>texto</p>
+        <h2 class="sub_h2">Contactanos!</h2>
+        <p>Direccion: Calle falsa 123,CABA</p>
+        <p>Horario de atención: Lunes a viernes de 9hs a 18hs</p>
+        <p>Telefono: 1234-5678</p>
+    </div>
+    <div class="footer_list Red">
+        <h2 class="sub_h2">Seguinos en nuestras Redes</h2>
+    <nav>
+        <ul>
+            <li><a href="#" class="Redes"><i class="fa-brands fa-square-facebook"></i>Facebook</a></li>
+            <li><a href="#" class="Redes"><i class="fa-brands fa-instagram"></i>Instagram</a></li>
+            <li><a href="#" class="Redes"><i class="fa-brands fa-whatsapp"></i>Whatsapp</a></li>
+        </ul>
+    </nav>
+    </div>
+</footer>
+<a href="#" id="whats"><img src="/img/whatsapp.png" alt="whatsapp"></a>
+<p>texto</p>
 </body>
 </html>

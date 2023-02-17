@@ -26,7 +26,7 @@
             <div class="botonera">
                 <div>
                     <a href="/login"><i class="fa-regular fa-user"></i><p class="hidden_p">Mi cuenta</p></a>
-                    <a href="/product-cart"><i class="fa-solid fa-bag-shopping"></i><p class="hidden_p">Mi carrito</p></a>
+                    <a href="/product/cart"><i class="fa-solid fa-bag-shopping"></i><p class="hidden_p">Mi carrito</p></a>
                 </div>
             </div>
         </div>
@@ -109,21 +109,61 @@
             </ul>
         </nav>
     </div>
-<main id="ventana-login">
-    <div id="ventana">
-        <h3>Iniciar Sesión</h3>
-        <form action="#">
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Contraseña" required>
-        </form>
-        <p><a href="#">Me olvide la contraseña</a></p>
-        <button><a href="/">Ingresar</a></button>
-        <div class="go-to-regis"><b>¿Aun no tienes cuenta?</b><a href="/register">Registrate</a></div>
-        <div class="ingreso-con-red face"><i class="fa-brands fa-facebook-f"></i>Ingresar con Facebook</div>
-        <div class="ingreso-con-red google"><i class="fa-brands fa-google"></i>Ingresar con Google</div>
+ <main id="cart">
+    <div class="cart_category_list">
+        <div class="cc_list_contain">
+                <h3><i class="fa-solid fa-cart-shopping"></i>Mi carrito</h3>
+                <div class="cc_list prod" ><i class="fa-solid fa-rectangle-list"></i><p>Mis Productos</p></div>
+                <div class="cc_list"><i class="fa-solid fa-truck-fast"></i><p>Mi entrega</p></div>
+                <div class="cc_list"><i class="fa-solid fa-money-bill"></i><p>Forma de pago</p></div>
+                <div class="cc_list" style="background-color: rgb(43, 235, 9);"><i class="fa-regular fa-square-check"></i><p>Resumen</p></div>
+        </div>
     </div>
-</main>
-<footer>
+    <div class="cart_contain">
+        <p><a href="/">Seguir Comprando</a></p>
+        <div class="cart_contain_title prod"><i class="fa-solid fa-rectangle-list"></i><h3>Resumen</h3></div>
+        <div class="cart_contain_resume">
+            <div class="cart_contain_prod_img"><img src="/img/article-1.jpeg" alt=""></div>
+            <div class="cart_contain_prod"><h6>Producto</h6><p>Procesador Intel i7 13900</p></div>
+            <div class="cart_contain_count"><h6>Cantidad</h6><input type="number"></div>
+            <div class="cart_contain_total"><h6>Total</h6><p>$55555</p></div>
+            <div class="cart_contain_cancel"><button class="none"><i class="fa-solid fa-square-xmark"></i></button></div>
+        </div>
+        <div class="cart_contain_option_ship">
+            <div class="cart_contain_prod_img"><i class="fa-solid fa-truck-fast"></i></div>
+            <div class="cart_contain_prod"><h6>Producto</h6><p>Envio a domicilio</p></div>
+            <div class="cart_contain_count"><h6>Cantidad</h6><p>1</p></div>
+            <div class="cart_contain_total"><h6>Total</h6><p>$600</p></div>
+            <div class="cart_contain_cancel"><button class="none"><i class="fa-solid fa-square-xmark"></i></button></div>
+        </div>
+        <p>Total $:56155</p>
+        <div class="adress_confirm">
+            <h2>Direccion de envio</h2>
+            <form action="#" id="adress">
+            <div class="adress_top">
+                <label for="calle">Calle:</label>
+                <input type="text" name="calle" placeholder="Av. Falsa">
+                <label for="altura">Altura</label>
+                <input type="number" name="altura" placeholder="3555">
+            </div>
+            <div class="adress_bot">
+                <label for="cod-pos">Codigo Postal</label>
+                <input type="text" name="cod-pos" placeholder="Ej:1407"id="cod">
+                <label for="piso">Piso,Depto:</label>
+                <input type="text" name="piso" placeholder="Ej: Piso 2-B">
+                <label for="horario">Franja Horaria</label>
+                <input type="text" name="horario" placeholder="Ej: De 9 a 12hs">
+            </div>
+            </form>
+        
+        </div>
+    <div class="ant-next">
+        <button id="ant"><a href="/cart/pay">Anterior</a></button>
+        <button id="next"><a href="/">Finalizar</a></button>
+    </div>
+    </div>
+ </main>
+ <footer>
     <div class="info__local">
     <h2 class="sub_h2">Contactanos!</h2>
     <p>Direccion: Calle falsa 123,CABA</p>
