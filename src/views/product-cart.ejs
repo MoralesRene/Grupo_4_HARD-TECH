@@ -1,60 +1,9 @@
 <%- include("partials/head") %>
 
     <body>
+        <%- include("partials/header") %>
         <!--Header reutilizable-->
-        <header>
-            <!--Primer bloque -->
-            <div class="bloque_sup">
-                <div id="logo"><a href="/"><img src="/img/logo-1.jpg" alt="Logo"></a></div>
-                <div class="buscador hidden_top">
-                    <div class="interno"><input type="text" placeholder="Buscar producto,Marca"><i
-                            class="fa-solid fa-magnifying-glass"></i></div>
-                </div>
-                <div class="botonera">
-                    <div>
-                        <a href="/login"><i class="fa-regular fa-user"></i>
-                            <p class="hidden_p">Mi cuenta</p>
-                        </a>
-                        <a href="/product/cart"><i class="fa-solid fa-bag-shopping"></i>
-                            <p class="hidden_p">Mi carrito</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="bloque_bot">
-                <div id="menu">
-                    <input type="checkbox" id="check">
-                    <label for="check" id="checkbtn"><i class="fa-solid fa-bars"></i></label>
-                    <ul id="menu_desplegado">
-                        <li class="categoria_gral"><a href="#">Categorias</a></li>
-                        <li><a href="#">MotherBoards</a></li>
-                        <li><a href="#">Procesadores</a></li>
-                        <li><a href="#">Memorias RAM</a></li>
-                        <li><a href="#">Fuentes y Gabinetes</a></li>
-                        <li><a href="#">HDD y SSD</a></li>
-                        <li><a href="#">Placas de video</a></li>
-                        <li class="categoria_gral"><a href="#">Perifericos</a></li>
-                        <li>Monitores</li>
-                        <li>Teclados y Mouses</li>
-                        <li>UPS</li>
-                        <li>Sillas Gamer</li>
-                        <li class="categoria_gral"><a href="#">PCs Armadas</a></li>
-                        <li>PC Basica</li>
-                        <li>PC Gama Media</li>
-                        <li>PC Gama Alta</li>
-                        <li class="categoria_gral"><a href="#">Ofertas</a></li>
-                        <li class="categoria_gral"><a href="#">Ayuda</a></li>
-                        <li>Servicio Tecnico</li>
-                        <li>Quiero Comunicarme</li>
-                    </ul>
-                </div>
-                <div class="buscador">
-                    <div class="interno"><input type="text" placeholder="Buscar producto,Marca"><i
-                            class="fa-solid fa-magnifying-glass"></i></div>
-                </div>
-            </div>
-
-        </header>
+        
         <div class="container_nav">
             <nav class="hidden">
                 <ul>
