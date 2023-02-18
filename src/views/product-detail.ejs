@@ -2,227 +2,144 @@
 
     <body>
         <%- include("partials/header") %>
-        <!--Header reutilizable-->
-        
-        <div class="container_nav">
-            <nav class="hidden">
-                <ul>
-                    <li>
-                        <input type="checkbox" id="check_v2"><label for="check_v2">Categorias</label>
-                        <ul class="subcategory">
-                            <li><a href="#">MotherBoards</a></li>
-                            <li><a href="#">Procesadores</a></li>
-                            <li><a href="#">Memorias RAM</a></li>
-                            <li><a href="#">Fuentes y Gabinetes</a></li>
-                            <li><a href="#">HDD y SSD</a></li>
-                            <li><a href="#">Placas de video</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="check_v3"><label for="check_v3">Perifericos</label>
-                        <ul class="subcategory">
-                            <li><a href="#">Monitores</a></li>
-                            <li><a href="#">Teclados y Mouses</a></li>
-                            <li><a href="#">UPS</a></li>
-                            <li><a href="#">Fuentes y Gabinetes</a></li>
-                            <li><a href="#">HDD y SSD</a></li>
-                            <li><a href="#">Sillas Gamer</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="check_v4"><label for="check_v4">PCs Armadas</label>
-                        <ul class="subcategory">
-                            <li><a href="#">PC Basica</a></li>
-                            <li><a href="#">PC Gama Media</a></li>
-                            <li><a href="#">PC Gama alta</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="check_v5"><label for="check_v5">Ofertas</label>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="check_v6"><label for="check_v6">Ayuda</label>
-                        <ul class="subcategory">
-                            <li><a href="#">Servicio Tecnico</a></li>
-                            <li><a href="#">Quiero Comunicarme</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <div class="camino"><a href="/">HOME</a><b><i class="fa-solid fa-chevron-right"></i></b><a
-                href="#">CATEGORIA</a><i class="fa-solid fa-chevron-right"></i><a href="#">Subcategoria</a></div>
-        <main id="product_detail">
-            <section class="detalle_prod">
-                <h4 id="title">Procesador Intel Core I7 13900 S1700</h4>
-                <div id="vista-tablet">
-                    <div id="img-principal"><img src="/img/article-1.jpeg" alt=""></div>
+            <!--Header reutilizable-->
 
-                    <div id="more-img"><img src="/img/foto-1.jpeg" alt=""><img src="/img/foto-2.jpeg" alt=""><img
-                            src="/img/foto-1.jpeg" alt=""></div>
-                    <p id="filtro-marca">INTEL</p>
-                    <div id="info-pago">
-                        <h4 id="precio-efectivo">$53535</h4>
-                        <p id="precio-cuotas">Precio en cuotas: $55555<i class="fa-regular fa-credit-card"></i></p>
-                        <div id="counter"><input type="number" name="cantidad" id="count"><button><i
-                                    class="fa-regular fa-square-plus"></i></button><button><i
-                                    class="fa-regular fa-square-minus"></i></button></div>
-                        <p id="garantia"><i class="fa-solid fa-shield-halved"></i>Garantia: 36 meses</p>
-                        <div class="boton-compra">
-                            <button id="compra"><a href="/product-cart">Comprar Ahora</a></button>
-                            <button class="carrito">Agregar al carrito</button>
-                        </div>
-                    </div>
-                </div>
-                <p id="filtro-marca-v2">INTEL</p>
-                <div id="info-contenido">
-                    <h4>Descripción</h4>
-                    <p id="descrip">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis maiores
-                        obcaecati, unde facilis eius minima libero nihil nam quae impedit molestiae vero odit dolor in
-                        fuga suscipit totam eaque possimus.</p>
-                    <h4>Especificaciones Tecnicas</h4>
-                    <div id="specs">
-                        <div id="info-cat">
-                            <p>Marca:</p>
-                            <p>Modelo:</p>
-                            <p>Familia:</p>
-                            <p>Socket:</p>
-                            <p>Incluye Cooler:</p>
-                            <p>Gpu integrado:</p>
-                        </div>
-                        <div>
-                            <p>Intel</p>
-                            <p>Intel i7 13900</p>
-                            <p>Intel</p>
-                            <p>1700</p>
-                            <p>No</p>
-                            <p>Si</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="interes">
-                <h4>Tambien te puede interesar</h4>
-                <div>
-                    <div class="contenedor-interes">
-                        <article>
-                            <img src="/img/article-2.jpeg" alt="monitor">
-                            <div class="info-prod">
-                                <h5>Monitor Gamer 35 LG Full HD Ultrawide</h5>
-                                <p class="precio">Precio</p>
-                                <button><a href="#">Ver mas</a></button>
-                            </div>
-                        </article>
-                        <article class="ofer-hidden">
-                            <img src="/img/article-2.jpeg" alt="monitor">
-                            <div class="info-prod">
-                                <h5>Monitor Gamer 35 LG Full HD Ultrawide</h5>
-                                <p class="precio">Precio</p>
-                                <button><a href="#">Ver mas</a></button>
-                            </div>
-                        </article>
-                        <article class="v-Desktop">
-                            <img src="/img/article-2.jpeg" alt="monitor">
-                            <div class="info-prod">
-                                <h5>Monitor Gamer 35 LG Full HD Ultrawide</h5>
-                                <p class="precio">Precio</p>
-                                <button><a href="#">Ver mas</a></button>
-                            </div>
-                        </article>
-                        <article class="v-Desktop">
-                            <img src="/img/article-2.jpeg" alt="monitor">
-                            <div class="info-prod">
-                                <h5>Monitor Gamer 35 LG Full HD Ultrawide</h5>
-                                <p class="precio">Precio</p>
-                                <button><a href="#">Ver mas</a></button>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <footer>
-            <div class="info__local">
-                <h2 class="sub_h2">Contactanos!</h2>
-                <p>Direccion: Calle falsa 123,CABA</p>
-                <p>Horario de atención: Lunes a viernes de 9hs a 18hs</p>
-                <p>Telefono: 1234-5678</p>
-            </div>
-            <div class="suscription">
-                <h2 class="sub_h2">Nosotros</h2>
-                <p>En Hard-Tech buscamos destacar por nuestro conocimiento e intentamos establecernos como la opción
-                    ideal para sus compras de tecnología.</p>
-            </div>
-            <div id="social_red">
-                <h2 class="sub_h2">Seguinos en nuestras Redes</h2>
-                <ul>
-                    <li><a href="#" class="Redes"><i class="fa-brands fa-square-facebook"></i>Facebook</a></li>
-                    <li><a href="#" class="Redes"><i class="fa-brands fa-instagram"></i>Instagram</a></li>
-                    <li><a href="#" class="Redes"><i class="fa-brands fa-whatsapp"></i>Whatsapp</a></li>
-                </ul>
-            </div>
-        </footer>
-        <footer class="desktop">
-            <div class="footer_list cat">
-                <h2>Categorias</h2>
-                <nav>
+            <div class="container_nav">
+                <nav class="hidden">
                     <ul>
-                        <li><a href="#">Categoria 1</a></li>
-                        <li><a href="#">Categoria 2</a></li>
-                        <li><a href="#">Categoria 3</a></li>
-                        <li><a href="#">Categoria 4</a></li>
-                        <li><a href="#">Categoria 5</a></li>
+                        <li>
+                            <input type="checkbox" id="check_v2"><label for="check_v2">Categorias</label>
+                            <ul class="subcategory">
+                                <li><a href="#">MotherBoards</a></li>
+                                <li><a href="#">Procesadores</a></li>
+                                <li><a href="#">Memorias RAM</a></li>
+                                <li><a href="#">Fuentes y Gabinetes</a></li>
+                                <li><a href="#">HDD y SSD</a></li>
+                                <li><a href="#">Placas de video</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="check_v3"><label for="check_v3">Perifericos</label>
+                            <ul class="subcategory">
+                                <li><a href="#">Monitores</a></li>
+                                <li><a href="#">Teclados y Mouses</a></li>
+                                <li><a href="#">UPS</a></li>
+                                <li><a href="#">Fuentes y Gabinetes</a></li>
+                                <li><a href="#">HDD y SSD</a></li>
+                                <li><a href="#">Sillas Gamer</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="check_v4"><label for="check_v4">PCs Armadas</label>
+                            <ul class="subcategory">
+                                <li><a href="#">PC Basica</a></li>
+                                <li><a href="#">PC Gama Media</a></li>
+                                <li><a href="#">PC Gama alta</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="check_v5"><label for="check_v5">Ofertas</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="check_v6"><label for="check_v6">Ayuda</label>
+                            <ul class="subcategory">
+                                <li><a href="#">Servicio Tecnico</a></li>
+                                <li><a href="#">Quiero Comunicarme</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
             </div>
-            <div class="footer_list mark">
-                <h2>Marcas</h2>
-                <nav>
-                    <ul>
-                        <li><a href="#">Marca 1</a></li>
-                        <li><a href="#">Marca 2</a></li>
-                        <li><a href="#">Marca 3</a></li>
-                        <li><a href="#">Marca 4</a></li>
-                        <li><a href="#">Marca 5</a></li>
-                        <li><a href="#">Marca 6</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="footer_list us">
-                <h2 class="sub_h2">Nosotros</h2>
-                <p>En Hard-Tech buscamos destacar por nuestro conocimiento e intentamos establecernos como la opción
-                    ideal para sus compras de tecnología.</p>
-                <div class="info__local">
-                    <h2 class="sub_h2">Contactanos!</h2>
-                    <p>Direccion: Calle falsa 123,CABA</p>
-                    <p>Horario de atención: Lunes a viernes de 9hs a 18hs</p>
-                    <p>Telefono: 1234-5678</p>
-                </div>
-            </div>
-            <div class="info__local footer_hidden">
-                <div class="suscrip">
-                    <h2>Suscribite</h2>
-                    <input type="text" placeholder="Email">
-                    <button id="fot_boton">Enviar</button>
-                </div>
-                <h2 class="sub_h2">Contactanos!</h2>
-                <p>Direccion: Calle falsa 123,CABA</p>
-                <p>Horario de atención: Lunes a viernes de 9hs a 18hs</p>
-                <p>Telefono: 1234-5678</p>
-            </div>
-            <div class="footer_list Red">
-                <h2 class="sub_h2">Seguinos en nuestras Redes</h2>
-                <nav>
-                    <ul>
-                        <li><a href="#" class="Redes"><i class="fa-brands fa-square-facebook"></i>Facebook</a></li>
-                        <li><a href="#" class="Redes"><i class="fa-brands fa-instagram"></i>Instagram</a></li>
-                        <li><a href="#" class="Redes"><i class="fa-brands fa-whatsapp"></i>Whatsapp</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </footer>
-        <a href="#" id="whats"><img src="/img/whatsapp.png" alt="whatsapp"></a>
-        <p>texto</p>
-    </body>
+            <div class="camino"><a href="/">HOME</a><b><i class="fa-solid fa-chevron-right"></i></b><a
+                    href="#">CATEGORIA</a><i class="fa-solid fa-chevron-right"></i><a href="#">Subcategoria</a></div>
+            <main id="product_detail">
+                <section class="detalle_prod">
+                    <h4 id="title">Procesador Intel Core I7 13900 S1700</h4>
+                    <div id="vista-tablet">
+                        <div id="img-principal"><img src="/img/article-1.jpeg" alt=""></div>
 
-    </html>
+                        <div id="more-img"><img src="/img/foto-1.jpeg" alt=""><img src="/img/foto-2.jpeg" alt=""><img
+                                src="/img/foto-1.jpeg" alt=""></div>
+                        <p id="filtro-marca">INTEL</p>
+                        <div id="info-pago">
+                            <h4 id="precio-efectivo">$53535</h4>
+                            <p id="precio-cuotas">Precio en cuotas: $55555<i class="fa-regular fa-credit-card"></i></p>
+                            <div id="counter"><input type="number" name="cantidad" id="count"><button><i
+                                        class="fa-regular fa-square-plus"></i></button><button><i
+                                        class="fa-regular fa-square-minus"></i></button></div>
+                            <p id="garantia"><i class="fa-solid fa-shield-halved"></i>Garantia: 36 meses</p>
+                            <div class="boton-compra">
+                                <button id="compra"><a href="/product-cart">Comprar Ahora</a></button>
+                                <button class="carrito">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                    <p id="filtro-marca-v2">INTEL</p>
+                    <div id="info-contenido">
+                        <h4>Descripción</h4>
+                        <p id="descrip">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis maiores
+                            obcaecati, unde facilis eius minima libero nihil nam quae impedit molestiae vero odit dolor
+                            in
+                            fuga suscipit totam eaque possimus.</p>
+                        <h4>Especificaciones Tecnicas</h4>
+                        <div id="specs">
+                            <div id="info-cat">
+                                <p>Marca:</p>
+                                <p>Modelo:</p>
+                                <p>Familia:</p>
+                                <p>Socket:</p>
+                                <p>Incluye Cooler:</p>
+                                <p>Gpu integrado:</p>
+                            </div>
+                            <div>
+                                <p>Intel</p>
+                                <p>Intel i7 13900</p>
+                                <p>Intel</p>
+                                <p>1700</p>
+                                <p>No</p>
+                                <p>Si</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="interes">
+                    <h4>Tambien te puede interesar</h4>
+                    <div>
+                        <div class="contenedor-interes">
+                            <article>
+                                <img src="/img/article-2.jpeg" alt="monitor">
+                                <div class="info-prod">
+                                    <h5>Monitor Gamer 35 LG Full HD Ultrawide</h5>
+                                    <p class="precio">Precio</p>
+                                    <button><a href="#">Ver mas</a></button>
+                                </div>
+                            </article>
+                            <article class="ofer-hidden">
+                                <img src="/img/article-2.jpeg" alt="monitor">
+                                <div class="info-prod">
+                                    <h5>Monitor Gamer 35 LG Full HD Ultrawide</h5>
+                                    <p class="precio">Precio</p>
+                                    <button><a href="#">Ver mas</a></button>
+                                </div>
+                            </article>
+                            <article class="v-Desktop">
+                                <img src="/img/article-2.jpeg" alt="monitor">
+                                <div class="info-prod">
+                                    <h5>Monitor Gamer 35 LG Full HD Ultrawide</h5>
+                                    <p class="precio">Precio</p>
+                                    <button><a href="#">Ver mas</a></button>
+                                </div>
+                            </article>
+                            <article class="v-Desktop">
+                                <img src="/img/article-2.jpeg" alt="monitor">
+                                <div class="info-prod">
+                                    <h5>Monitor Gamer 35 LG Full HD Ultrawide</h5>
+                                    <p class="precio">Precio</p>
+                                    <button><a href="#">Ver mas</a></button>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <%- include("partials/footer") %>
