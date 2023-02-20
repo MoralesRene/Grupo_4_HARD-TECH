@@ -4,52 +4,8 @@
         <%- include("partials/header") %>
             <!--Header reutilizable-->
 
-            <div class="container_nav">
-                <nav class="hidden">
-                    <ul>
-                        <li>
-                            <input type="checkbox" id="check_v2"><label for="check_v2">Categorias</label>
-                            <ul class="subcategory">
-                                <li><a href="#">MotherBoards</a></li>
-                                <li><a href="#">Procesadores</a></li>
-                                <li><a href="#">Memorias RAM</a></li>
-                                <li><a href="#">Fuentes y Gabinetes</a></li>
-                                <li><a href="#">HDD y SSD</a></li>
-                                <li><a href="#">Placas de video</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <input type="checkbox" id="check_v3"><label for="check_v3">Perifericos</label>
-                            <ul class="subcategory">
-                                <li><a href="#">Monitores</a></li>
-                                <li><a href="#">Teclados y Mouses</a></li>
-                                <li><a href="#">UPS</a></li>
-                                <li><a href="#">Fuentes y Gabinetes</a></li>
-                                <li><a href="#">HDD y SSD</a></li>
-                                <li><a href="#">Sillas Gamer</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <input type="checkbox" id="check_v4"><label for="check_v4">PCs Armadas</label>
-                            <ul class="subcategory">
-                                <li><a href="#">PC Basica</a></li>
-                                <li><a href="#">PC Gama Media</a></li>
-                                <li><a href="#">PC Gama alta</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <input type="checkbox" id="check_v5"><label for="check_v5">Ofertas</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" id="check_v6"><label for="check_v6">Ayuda</label>
-                            <ul class="subcategory">
-                                <li><a href="#">Servicio Tecnico</a></li>
-                                <li><a href="#">Quiero Comunicarme</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+            <%- include("partials/navbar") %>
+            <!-- Codigo reutilizable NAV_BAR.EJS-->
             <main id="register">
                 <section>
                     <div class="ventana-register">

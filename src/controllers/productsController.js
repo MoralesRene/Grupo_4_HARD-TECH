@@ -4,13 +4,13 @@ let productsController = {
     index: function (req, res) {
         switch (req.params.element) {
             case 'detail':
-                res.sendFile(path.join(__dirname,"../views/product-detail.html"))
+                res.render("product-detail")
                 break;
             case 'list':
-                res.sendFile(path.join(__dirname,"../views/product-list.html"))
+                res.render("product-list")
                 break;
             case 'cart':
-                res.sendFile(path.join(__dirname,"../views/product-cart.html"))
+                res.render("product-cart")
                 break;
         }
     }

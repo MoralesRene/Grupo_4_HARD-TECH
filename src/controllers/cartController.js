@@ -4,11 +4,11 @@ let cartController = {
     index: function (req, res) {
         switch (req.params.element) {
             case 'ship':
-                res.sendFile(path.join(__dirname,"../views/cart-ship.html"))
+                res.render("cart-ship")
             case 'pay':
-                res.sendFile(path.join(__dirname,"../views/cart-pay.html"))
+                res.render("cart-pay")
             case 'resume':
-                res.sendFile(path.join(__dirname,"../views/cart-resume.html"))
+                res.render("cart-resume")
         }
     }
 }
