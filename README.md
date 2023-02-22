@@ -13,6 +13,9 @@ para poder dedicarme y especializarme en el area del Back-end.
 * Maldonado, Gisel:
 Soy Contadora Pública, recibida de la UNLP, y tengo mucha curiosidad e interés en dedicarme a la creación de páginas web por ello me inscribí en el curso de DigitalHouse, Full Stack Developer.
 
+* Matias Huber:
+Soy alumno de DH, actualmente cursando el curso de desarrollador web y a su vez cursando mi ultimo año de secundaria.
+
 TEMATICA DEL SITIO:
 Un E-commerce de venta de componentes de PC (Hardware, perifericos y PCs Armadas).
 Nuestro publico objetivo son aquellas personas con interes en el area del gaming PC,
