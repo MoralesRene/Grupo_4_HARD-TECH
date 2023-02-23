@@ -1,0 +1,83 @@
+[
+    {
+        "id": 1,
+        "nombre": "Motherboard",
+        "categoria": "Motherboard",
+        "descripcion": "Motherboard de ultima generacion",
+        "precio": 50000,
+        "image":"/img/mother-1.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Motherboard",
+        "categoria": "Motherboard",
+        "descripcion": "Motherboard de ultima generacion",
+        "precio": 55000,
+        "image":"/img/mother-2.jpeg"
+
+    },
+    {
+        "id": 3,
+        "nombre": "Motherboard",
+        "categoria": "Motherboard",
+        "descripcion": "Motherboard de ultima generacion",
+        "precio": 62000,
+        "image":"/img/mother-3.jpeg"
+
+    },
+    {
+        "id": 4,
+        "nombre": "Motherboard",
+        "categoria": "Motherboard",
+        "descripcion": "Motherboard de ultima generacion",
+        "precio": 50000,
+        "image":"/img/mother-1.jpg"
+
+    },
+    {
+        "id": 5,
+        "nombre": "Motherboard",
+        "categoria": "Motherboard",
+        "descripcion": "Motherboard de ultima generacion",
+        "precio": 44000,
+        "image":"/img/mother-2.jpeg"
+
+    },
+    {
+        "id": 6,
+        "nombre": "Motherboard",
+        "categoria": "Motherboard",
+        "descripcion": "Motherboard de ultima generacion",
+        "precio": 32000,
+        "image":"/img/mother-3.jpeg"
+
+    },
+    {
+        "id": 7,
+        "nombre": "procesadores",
+        "categoria": "procesadores",
+        "descripcion": "Motherboard de ultima generacion",
+        "precio": 39000,
+        "image":"/img/mother-1.jpg"
+
+    },
+    {
+        "id": 8,
+        "nombre": "procesadores",
+        "categoria": "procesadores",
+        "descripcion": "Motherboard de ultima generacion",
+        "precio": 41000,
+        "image":"/img/mother-2.jpeg"
+
+    },
+    {
+        "id": 9,
+        "nombre": "procesadores",
+        "categoria": "procesadores",
+        "descripcion": "Motherboard de ultima generacion",
+        "precio": 50000,
+        "image":"/img/mother-3.jpeg"
+
+    }
+
+]
