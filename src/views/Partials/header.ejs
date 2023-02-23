@@ -3,8 +3,10 @@
     <div class="bloque_sup">
         <div id="logo"><a href="/"><img src="/img/logo-1.jpg" alt="Logo"></a></div>
         <div class="buscador hidden_top">
-            <div class="interno"><input type="text" placeholder="Buscar producto,Marca"><i
-                    class="fa-solid fa-magnifying-glass"></i></div>
+            <form action="/search" method="GET" class="interno">
+                <input type="text" placeholder="Buscar producto,Marca" name="search"><button><i
+                    class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
         </div>
         <div class="botonera">
             <div>
@@ -45,8 +47,10 @@
             </ul>
         </div>
         <div class="buscador">
-            <div class="interno"><input type="text" placeholder="Buscar producto,Marca"><i
-                    class="fa-solid fa-magnifying-glass"></i></div>
+            <form action="/search" method="GET" class="interno">
+                <input type="text" placeholder="Buscar producto,Marca" name="search"><button><i
+                    class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
         </div>
     </div>
 
