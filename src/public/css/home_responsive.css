@@ -373,6 +373,25 @@
 .adress_top,.adress_bot{
     width: 45%;
 }
+/*---------------------------------------------------------------------------------------------*/
+                                /*product-list*/
+.list__category{
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70%;
+    margin: auto;
+}
+
+.list__container_product{
+    flex-direction: row;
+}
+.list__container_product>.producto{
+    width: 40%;
+    box-shadow: 5px 5px 30px rgb(100, 100, 100);
+}
+.list__container_product>.producto>img{
+    height: 175px;
+}
 }
 @media(min-width:769px){
     /*Header*/
@@ -711,6 +730,44 @@ main#cart_ship{
 .cart_contain_ops_pay{
     row-gap: 50px;
 }
+/*---------------------------------------------------------------------------------------------*/
+                                /*product-list*/
+main#list>h2{
+    display: none;
+}
+main#list{
+    flex-flow: row wrap;
+    width: 95%;
+    max-width: 1200px;
+}
+main#list .list__category{
+    width: 20%;
+    margin-top: 30px;
+    height: 400px;
+}
+.list__category{
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: start;
+}
+main#list .list__container_product{
+    width: 80%;
+    gap: 15px;
+    justify-content: center;
+
+}
+.list__container_product>.producto{
+    width: 30%;
+    margin: 0px;
+    box-shadow: none;
+}
+.list__container_product>.producto>.info-prod{
+    width: 60%;
+}
+.list__container_product>article:hover{
+    transform: none;
+    box-shadow: 5px 5px 30px rgb(100, 100, 100);
+}
 }
 /*------------------------*/
 @media(min-width:1025px){
@@ -827,6 +884,7 @@ main#cart_ship{
     .cart_contain_resume{
         height: 200px;
     }
+<<<<<<< HEAD
     
     /*----------------------------------------------------------------------------------*/
                                         /* edicion producto */
@@ -835,3 +893,14 @@ main#cart_ship{
         margin: auto;
     }
 }
+=======
+    /*-------------------------------------------------------------------------------------*/
+                                        /*Product_list*/
+    main#list .list__container_product{
+        gap: 30px;
+    }
+    .list__container_product>.producto{
+        width: 25%;
+}
+}
+>>>>>>> 224321bab7b4f1fa5433ae0783d51d675f87af45

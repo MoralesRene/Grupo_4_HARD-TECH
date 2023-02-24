@@ -3,8 +3,10 @@
     <div class="bloque_sup">
         <div id="logo"><a href="/"><img src="/img/logo-1.jpg" alt="Logo"></a></div>
         <div class="buscador hidden_top">
-            <div class="interno"><input type="text" placeholder="Buscar producto,Marca"><i
-                    class="fa-solid fa-magnifying-glass"></i></div>
+            <form action="/search" method="GET" class="interno">
+                <input type="text" placeholder="Buscar producto,Marca" name="search"><button><i
+                    class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
         </div>
         <div class="botonera">
             <div>
@@ -23,12 +25,12 @@
             <label for="check" id="checkbtn"><i class="fa-solid fa-bars"></i></label>
             <ul id="menu_desplegado">
                 <li class="categoria_gral"><a href="#">Categorias</a></li>
-                <li><a href="#">MotherBoards</a></li>
-                <li><a href="#">Procesadores</a></li>
-                <li><a href="#">Memorias RAM</a></li>
-                <li><a href="#">Fuentes y Gabinetes</a></li>
-                <li><a href="#">HDD y SSD</a></li>
-                <li><a href="#">Placas de video</a></li>
+                <li><a href="/product/list">MotherBoards</a></li>
+                <li><a href="/product/list">Procesadores</a></li>
+                <li><a href="/product/list">Memorias RAM</a></li>
+                <li><a href="/product/list">Fuentes y Gabinetes</a></li>
+                <li><a href="/product/list">HDD y SSD</a></li>
+                <li><a href="/product/list">Placas de video</a></li>
                 <li class="categoria_gral"><a href="#">Perifericos</a></li>
                 <li>Monitores</li>
                 <li>Teclados y Mouses</li>
@@ -45,8 +47,10 @@
             </ul>
         </div>
         <div class="buscador">
-            <div class="interno"><input type="text" placeholder="Buscar producto,Marca"><i
-                    class="fa-solid fa-magnifying-glass"></i></div>
+            <form action="/search" method="GET" class="interno">
+                <input type="text" placeholder="Buscar producto,Marca" name="search"><button><i
+                    class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
         </div>
     </div>
 

@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "nombre": "Motherboard",
+        "categoria": "Motherboard",
+        "descripcion": "Motherboard de ultima generacion",
+        "precio": 50000,
+        "image":"/img/mother-1.jpg",
+        "estado": "oferta"
+    },
+    {
+        "id": 2,
+        "nombre": "Motherboard",
+        "categoria": "Fuentes",
+        "descripcion": "Motherboard de ultima generacion",
+        "precio": 55000,
+        "image":"/img/mother-2.jpeg",
+        "estado": "oferta"
+
+    },
+    {
+        "id": 3,
+        "nombre": "Motherboard",
+        "categoria": "Monitores",
+        "descripcion": "Motherboard de ultima generacion",
+        "precio": 62000,
+        "image":"/img/mother-3.jpeg",
+        "estado": "oferta"
+
+    },
+    {
+        "id": 4,
+        "nombre": "Procesador",
+        "categoria": "Teclados",
+        "descripcion": "Motherboard de ultima generacion",
+        "precio": 50000,
+        "image":"/img/mother-1.jpg",
+        "estado": "oferta"
+
+    },
+    {
+        "id": 5,
+        "nombre": "Mouse",
+        "categoria": "Mouses",
+        "descripcion": "Motherboard de ultima generacion",
+        "precio": 44000,
+        "image":"/img/mother-2.jpeg",
+        "estado": "destacado"
+
+    },
+    {
+        "id": 6,
+        "nombre": "PCs",
+        "categoria": "PCsAlta",
+        "descripcion": "Motherboard de ultima generacion",
+        "precio": 32000,
+        "image":"/img/mother-3.jpeg",
+        "estado": "destacado"
+
+    },
+    {
+        "id": 7,
+        "nombre": "Placa de video",
+        "categoria": "GPUs",
+        "descripcion": "Motherboard de ultima generacion",
+        "precio": 39000,
+        "image":"/img/mother-1.jpg",
+        "estado": "destacado"
+
+    },
+    {
+        "id": 8,
+        "nombre": "procesadores",
+        "categoria": "Procesadores",
+        "descripcion": "Motherboard de ultima generacion",
+        "precio": 41000,
+        "image":"/img/mother-2.jpeg",
+        "estado": "destacado"
+
+    },
+    {
+        "id": 9,
+        "nombre": "procesadores",
+        "categoria": "Almacenamiento",
+        "descripcion": "Motherboard de ultima generacion",
+        "precio": 50000,
+        "image":"/img/mother-3.jpeg",
+        "estado": "destacado"
+
+    }
+
+]

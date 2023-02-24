@@ -121,10 +121,14 @@ body{
     border-bottom-left-radius: 5px;
     padding-left: 5px;
 }
+.interno button{
+    width: 10%;
+    background-color: black;
+}
 .interno i{
     color: white;
     background-color: black;
-    width: 10%;
+    width: 100%;
     line-height: 22px;
     font-size: 14px;
     text-align: center;
@@ -1023,6 +1027,7 @@ main#register{
 .adress_bot input:focus, .adress_top input:focus{
     outline-color: rgb(43, 235, 9);
 }
+<<<<<<< HEAD
 
 /* Edicion producto */
 
@@ -1085,4 +1090,96 @@ main#register{
 
 .button-borrar a{
     color: black;
+=======
+/*-------------------------------------------------------------------------------------------------*/
+                                        /*product-list*/
+main#list{
+    width: 90%;
+    display: flex;
+    flex-flow: column wrap;
+    row-gap: 20px;
+    margin-top: 10px;
+}
+main#list>h2{
+    text-align: center;
+    font-weight: 500;
+}
+.list__category{
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    flex-flow: column wrap;
+    row-gap: 20px;
+}
+.list__category_filtros{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.list__category_filtros>p{
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 22px;
+    text-indent: 10px;
+}
+
+.list__category_filtros label{
+    padding-left: 10px;
+}
+.list__category_filtros input{
+    margin-right: 10px;
+}
+.list__category_filtros_bot{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.list__category_filtros_bot input{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.list__category_filtros_bot p{
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 22px;
+    text-indent: 10px;
+}
+.list__container_product{
+    display: flex;
+    flex-flow: column wrap;
+    row-gap: 20px;
+}
+.list__container_product>.producto{
+    width: 90%;
+    margin: auto;
+}
+.list__container_product>.producto>.info-prod{
+    width: 50%;
+    row-gap: 5px;
+}
+.list__container_product>.producto>.info-prod>h4{
+    font-size: 22px;
+}
+.list__container_product>.producto>.info-prod>.precio{
+    font-size: 20px;
+}
+.list__container_product>.producto>.info-prod>button{
+    background-color: black;
+    width: 100px;
+}
+.list__container_product>.producto>.info-prod>button>a{
+    color: rgb(43, 235, 9);
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+}
+.list__container_product>.producto>.info-prod>.ver-mas{
+    background-color: rgb(43, 235, 9);
+}
+.list__container_product>.producto>.info-prod>.ver-mas>a{
+    color: white;
+>>>>>>> 224321bab7b4f1fa5433ae0783d51d675f87af45
 }
