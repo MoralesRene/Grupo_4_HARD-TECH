@@ -16,10 +16,9 @@ let productsController = {
             case 'cart':
                 res.render("product-cart",{productos:listProducts})
                 break;
-<<<<<<< HEAD
+// <<<<<<< HEAD
             case 'edit':
                 res.render("edicion-producto")
-=======
         };
     },
     mostrarPorCat: (req,res)=>{
@@ -27,7 +26,6 @@ let productsController = {
             res.render("product-list",{productos:listProducts.filter(producto=>{
                 return producto.categoria==req.params.category;
             })})
->>>>>>> 224321bab7b4f1fa5433ae0783d51d675f87af45
         }
     }
 

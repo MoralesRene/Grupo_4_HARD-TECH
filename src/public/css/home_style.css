@@ -1027,7 +1027,7 @@ main#register{
 .adress_bot input:focus, .adress_top input:focus{
     outline-color: rgb(43, 235, 9);
 }
-<<<<<<< HEAD
+/* <<<<<<< HEAD  */
 
 /* Edicion producto */
 
@@ -1090,7 +1090,7 @@ main#register{
 
 .button-borrar a{
     color: black;
-=======
+}
 /*-------------------------------------------------------------------------------------------------*/
                                         /*product-list*/
 main#list{
@@ -1181,5 +1181,4 @@ main#list>h2{
 }
 .list__container_product>.producto>.info-prod>.ver-mas>a{
     color: white;
->>>>>>> 224321bab7b4f1fa5433ae0783d51d675f87af45
 }

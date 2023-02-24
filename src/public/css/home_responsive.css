@@ -884,7 +884,7 @@ main#list .list__container_product{
     .cart_contain_resume{
         height: 200px;
     }
-<<<<<<< HEAD
+/* <<<<<<< HEAD */
     
     /*----------------------------------------------------------------------------------*/
                                         /* edicion producto */
@@ -893,7 +893,7 @@ main#list .list__container_product{
         margin: auto;
     }
 }
-=======
+
     /*-------------------------------------------------------------------------------------*/
                                         /*Product_list*/
     main#list .list__container_product{
@@ -902,5 +902,4 @@ main#list .list__container_product{
     .list__container_product>.producto{
         width: 25%;
 }
-}
->>>>>>> 224321bab7b4f1fa5433ae0783d51d675f87af45
+
