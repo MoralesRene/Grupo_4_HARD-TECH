@@ -827,4 +827,11 @@ main#cart_ship{
     .cart_contain_resume{
         height: 200px;
     }
+    
+    /*----------------------------------------------------------------------------------*/
+                                        /* edicion producto */
+    .container-edicion-producto {
+        max-width: 1200px;
+        margin: auto;
+    }
 }

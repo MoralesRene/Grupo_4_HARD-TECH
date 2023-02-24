@@ -12,7 +12,10 @@ let productsController = {
             case 'cart':
                 res.render("product-cart")
                 break;
+            case 'edit':
+                res.render("edicion-producto")
         }
     }
+
 }
 module.exports = productsController;

@@ -1023,3 +1023,66 @@ main#register{
 .adress_bot input:focus, .adress_top input:focus{
     outline-color: rgb(43, 235, 9);
 }
+
+/* Edicion producto */
+
+.container-edicion-producto {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container-edicion-producto input {
+    margin: 10px;
+    padding: 5px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+
+.container-edicion-producto textarea {
+    margin: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.container-edicion-producto select {
+    margin: 10px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+.container-edicion-producto button {
+    margin: 10px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(43, 235, 9);
+    width: 100%;
+}
+
+.botones {
+    display: flex;
+    width: 100%;
+}
+
+.button-borrar {
+    display: flex;
+    width: 50%;
+}
+
+.button-confirmar {
+    display: flex;
+    width: 50%;
+}
+
+.button-confirmar a {
+    color: black;
+}
+
+.button-borrar a{
+    color: black;
+}
