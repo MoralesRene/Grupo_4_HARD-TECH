@@ -892,7 +892,7 @@ main#list .list__container_product{
         max-width: 1200px;
         margin: auto;
     }
-}
+
 
     /*-------------------------------------------------------------------------------------*/
                                         /*Product_list*/
@@ -901,5 +901,6 @@ main#list .list__container_product{
     }
     .list__container_product>.producto{
         width: 25%;
+}
 }
 
