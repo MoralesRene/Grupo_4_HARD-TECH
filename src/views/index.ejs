@@ -29,39 +29,18 @@
                 <h2 class="subtitulos">Destacados!</h2>
                 <section class="destacados">
                     <div class="contenedor-dest">
-                        <article>
-                            <img src="/img/article-1.jpeg" alt="Procesador">
-                            <div class="info-prod">
-                                <h4>Procesador Intel Core i7 13700K</h4>
-                                <p class="precio">Precio</p>
-                                <button><a href="/product/detail">Ver mas</a></button>
-                            </div>
-                        </article>
-                        <article class="destac-hidden">
-                            <img src="/img/article-3.jpeg" alt="Procesador">
-                            <div class="info-prod">
-                                <h4>Procesador Intel Core i9 12900</h4>
-                                <p class="precio">Precio</p>
-                                <button><a href="#">Ver mas</a></button>
-                            </div>
-                        </article>
-                        <article class="v-Desktop">
-                            <img src="/img/article-3.jpeg" alt="Procesador">
-                            <div class="info-prod">
-                                <h4>Procesador Intel Core i9 12900</h4>
-                                <p class="precio">Precio</p>
-                                <button><a href="#">Ver mas</a></button>
-                            </div>
-                        </article>
-                        <article class="v-Desktop">
-                            <img src="/img/article-3.jpeg" alt="Procesador">
-                            <div class="info-prod">
-                                <h4>Procesador Intel Core i9 12900</h4>
-                                <p class="precio">Precio</p>
-                                <button><a href="#">Ver mas</a></button>
-                            </div>
-                        </article>
-                        <button class="controller"><i class="fa-solid fa-circle-chevron-right"></i></button>
+                        <% featuredProd.forEach(product => { %>
+                            <article>
+                                    <a href="/product/detail/<%= product.id %>">
+                                    <img src="<%= product.image[0] %>" alt="">
+                                    <div class="info-prod">
+                                        <h4><%= product.shortName %></h4>
+                                        <p class="precio">$ <%= product.price %></p>
+                                        <button><a href="/product/detail/<%= product.id %>">Ver mas</a></button>
+                                    </div>
+                                </a>
+                                </article>
+                        <% }); %>
                     </div>
                 </section>
                 <!--Contenido marcas-->
@@ -86,40 +65,19 @@
                 <!--Contenido ofertas-->
                 <h2 class="subtitulos">Ofertas</h2>
                 <section class="ofertas">
-                    <div class="contenedor-dest">
-                        <button class="controller"><i class="fa-solid fa-circle-chevron-left"></i></button>
-                        <article>
-                            <img src="/img/article-2.jpeg" alt="monitor">
-                            <div class="info-prod">
-                                <h4>Monitor Gamer 35 LG Full HD Ultrawide</h4>
-                                <p class="precio">Precio</p>
-                                <button><a href="#">Ver mas</a></button>
-                            </div>
-                        </article>
-                        <article class="ofer-hidden">
-                            <img src="/img/article-2.jpeg" alt="monitor">
-                            <div class="info-prod">
-                                <h4>Monitor Gamer 35 LG Full HD Ultrawide</h4>
-                                <p class="precio">Precio</p>
-                                <button><a href="#">Ver mas</a></button>
-                            </div>
-                        </article>
-                        <article class="v-Desktop">
-                            <img src="/img/article-2.jpeg" alt="monitor">
-                            <div class="info-prod">
-                                <h4>Monitor Gamer 35 LG Full HD Ultrawide</h4>
-                                <p class="precio">Precio</p>
-                                <button><a href="#">Ver mas</a></button>
-                            </div>
-                        </article>
-                        <article class="v-Desktop">
-                            <img src="/img/article-2.jpeg" alt="monitor">
-                            <div class="info-prod">
-                                <h4>Monitor Gamer 35 LG Full HD Ultrawide</h4>
-                                <p class="precio">Precio</p>
-                                <button><a href="#">Ver mas</a></button>
-                            </div>
-                        </article>
+                    <div class="contenedor-ofer">
+                        <% offerProd.forEach(product => { %>
+                            <article>
+                                    <a href="/product/detail/<%= product.id %>">
+                                    <img src="<%= product.image[0] %>" alt="">
+                                    <div class="info-prod">
+                                        <h4><%= product.shortName %></h4>
+                                        <p class="precio">$ <%= product.price %></p>
+                                        <button><a href="/product/detail/<%= product.id %>">Ver mas</a></button>
+                                    </div>
+                                </a>
+                                </article>
+                        <% }); %>
                     </div>
                 </section>
 
