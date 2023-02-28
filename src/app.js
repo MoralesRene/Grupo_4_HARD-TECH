@@ -16,6 +16,10 @@ app.use('/register', register)
 app.use('/product', product)
 app.use('/cart', cart)
 
+app.use((req,res,next) => {
+res.status(404).render("not-found")
+})
+
 //Motor de plantilla
 app.set("view engine", "ejs")
 app.set("views", path.join(__dirname, "views"));
