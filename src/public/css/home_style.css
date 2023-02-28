@@ -6,15 +6,15 @@
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
 }
-a:visited, a:link{
-    color: white;
-}
 header{
     background: black;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
+}
+li a:visited{
+    color: white;
 }
 body{
     background: #dbdbdb;
@@ -212,9 +212,6 @@ body{
     color: black;
 }
 /*Section Destacados*/
-.destac-hidden{
-    display: none;
-}
 main{
     width: 80%;
     margin: 5px auto 10px;
@@ -228,15 +225,17 @@ main{
     font-weight: 500;
     color: gray;
 }
-.contenedor-dest{
+.contenedor-dest,.contenedor-ofer{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
-    justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
     background-color: #dbdbdb;
-    row-gap: 5px;
+    row-gap: 15px;
+}
+article a:visited{
+    color: black;
 }
 .controller i{
     border-radius: 50%;
@@ -252,13 +251,10 @@ main{
     height: 20px;
     cursor: pointer;
 }
-.destacados{
+.destacados,.ofertas{
     background-color: white;
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    height: 550px;
+    overflow: hidden;
 }
  article{
     display: flex;
@@ -269,26 +265,34 @@ main{
     background-color: white;
     cursor: pointer;
     border-radius: 5px;
+    height: 260px;
+    justify-content: space-around;
+    padding: 10px;
+}
+article .info-prod>a:visited,article .info-prod>a:link{
+    color: black;
 }
 article img{
-    width: 175px;
+    width: 150px;
     padding: 15px;
+    height: auto;
 }
 .info-prod{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 15px 0px;
     flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
 }
 .info-prod h4{
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 700;
     line-height: 24px;
 }
 .precio{
     font-size: 14px;
-    line-height: 24px;
+    line-height: 22px;
 }
 .info-prod button{
     background-color: rgb(43, 235, 9);
@@ -410,6 +414,9 @@ footer{
         display: flex;
         column-gap: 3px;
     }
+    .camino a:link,.camino a:visited{
+        color: black;
+    }
     main#product_detail{
         row-gap: 30px;
     }
@@ -444,6 +451,10 @@ footer{
 }
 #img-principal{
     width: 90%;
+    margin: auto;
+}
+#img-principal>img{
+    width: 100%;
 }
 #more-img{
     display: flex;
@@ -461,6 +472,9 @@ p#filtro-marca{
     align-self: flex-start;
     font-size: 12px;
     text-decoration: underline;
+}
+#filtro-marca a:visited, #filtro-marca a:link{
+    color: black;
 }
 #info-pago{
     display: flex;
@@ -559,12 +573,33 @@ p#filtro-marca-v2{
     flex-direction: column;
     row-gap: 25px;
     align-items: center;
+    width: 100%;
+}
+.section__container{
+    width: 100%;
+    overflow: scroll;
+
 }
 .contenedor-interes{
     display: flex;
-    align-content: center;
-    justify-content: center;
+    height: 300px;
+    background-color: transparent;
+    column-gap: 20px;
 }
+.contenedor-interes>article{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80%;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 290px;
+    justify-content: space-between;
+    padding: 10px;
+}
+
 .contenedor-interes h5{
     font-size: 16px;
     font-weight: 500;
@@ -580,6 +615,7 @@ main#ventana-login{
     background-image: url(../img/fondo-login.jpg);
     background-size: cover;
     margin: 0px 0px;
+    max-width: 100%;
     width: 100%;
     background-position: center;
 }
@@ -681,6 +717,7 @@ main#register{
     background-image: url(../img/fondo-login.jpg);
     background-size: cover;
     margin: 0px 0px;
+    max-width: 100%;
     width: 100%;
     background-position: center;
 }
@@ -1153,18 +1190,24 @@ main#list>h2{
     row-gap: 20px;
 }
 .list__container_product>.producto{
-    width: 90%;
+    width: 70%;
     margin: auto;
+    height: 330px;
+}
+.list__container_product>.producto>img{
+    height: 150px
 }
 .list__container_product>.producto>.info-prod{
-    width: 50%;
+    width: 100%;
     row-gap: 5px;
+    height: 160px;
+    justify-content: end;
 }
 .list__container_product>.producto>.info-prod>h4{
-    font-size: 22px;
+    font-size: 20px;
 }
 .list__container_product>.producto>.info-prod>.precio{
-    font-size: 20px;
+    font-size: 18px;
 }
 .list__container_product>.producto>.info-prod>button{
     background-color: black;

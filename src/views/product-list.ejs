@@ -25,13 +25,13 @@
                 <div class="list__container_product">
                 <% productos.forEach(product => {%>
                 <article class="producto">
-                    <img src="<%= product.image %>" alt="">
+                    <img src="<%= product.image[0] %>" alt="">
                     <div class="info-prod">
-                        <h4><%= product.name %></h4>
+                        <h4><%= product.shortName %></h4>
                         <p class="precio">$ <%= product.price %></p>
-                        <button class="ver-mas"><a href="/product/detail">Ver mas</a></button>
+                        <button class="ver-mas"><a href="/product/detail/<%= product.id %>">Ver mas</a></button>
                         <button><a href="/product/cart">Comprar</a></button>
-
+                    </a>
                     </div>
                 </article>
                 <% });  %>

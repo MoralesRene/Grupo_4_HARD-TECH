@@ -4,5 +4,7 @@ const productsController = require('../controllers/productsController')
 
 router.get('/:element/', productsController.index)
 router.get("/list/:category/",productsController.mostrarPorCat)
+router.get("/detail/:id",productsController.detalleID)
+
 
 module.exports = router
