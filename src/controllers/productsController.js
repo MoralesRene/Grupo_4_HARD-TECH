@@ -7,16 +7,12 @@ let listProducts = JSON.parse(ListJSON)
 let productsController = {
     index: function (req, res) {
         switch (req.params.element) {
-            case 'detail':
-                res.render("product-detail",{productos:listProducts})
-                break;
             case 'list':
                 res.render("product-list",{productos:listProducts})
                 break;
             case 'cart':
                 res.render("product-cart",{productos:listProducts})
                 break;
-// <<<<<<< HEAD
             case 'edit':
                 res.render("edicion-producto")
         };
@@ -24,9 +20,18 @@ let productsController = {
     mostrarPorCat: (req,res)=>{
         if (req.params.category) {
             res.render("product-list",{productos:listProducts.filter(producto=>{
-                return producto.categoria==req.params.category;
+                return producto.category==req.params.category;
             })})
         }
+    },
+    detalleID:(req,res)=>{
+       let idProd=listProducts.find(product=>{
+            return product.id==req.params.id;
+        })
+        let otherProd= listProducts.filter(product=>{
+            return product.category==idProd.category && product.id !==idProd.id;
+        })
+            res.render("product-detail",{idProd,otherProd}) 
     }
 
 }

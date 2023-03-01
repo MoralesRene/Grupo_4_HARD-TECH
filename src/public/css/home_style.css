@@ -6,6 +6,7 @@
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
 }
+<<<<<<< HEAD
 
 a:visited,
 a:link {
@@ -13,14 +14,24 @@ a:link {
 }
 
 header {
+=======
+header{
+>>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     background: black;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
 }
+<<<<<<< HEAD
 
 body {
+=======
+li a:visited{
+    color: white;
+}
+body{
+>>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     background: #dbdbdb;
     position: relative;
 }
@@ -276,11 +287,15 @@ body {
 }
 
 /*Section Destacados*/
+<<<<<<< HEAD
 .destac-hidden {
     display: none;
 }
 
 main {
+=======
+main{
+>>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     width: 80%;
     margin: 5px auto 10px;
     display: flex;
@@ -294,16 +309,22 @@ main {
     font-weight: 500;
     color: gray;
 }
+<<<<<<< HEAD
 
 .contenedor-dest {
+=======
+.contenedor-dest,.contenedor-ofer{
+>>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
-    justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
     background-color: #dbdbdb;
-    row-gap: 5px;
+    row-gap: 15px;
+}
+article a:visited{
+    color: black;
 }
 
 .controller i {
@@ -321,14 +342,15 @@ main {
     height: 20px;
     cursor: pointer;
 }
+<<<<<<< HEAD
 
 .destacados {
+=======
+.destacados,.ofertas{
+>>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     background-color: white;
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    height: 550px;
+    overflow: hidden;
 }
 
 article {
@@ -340,30 +362,49 @@ article {
     background-color: white;
     cursor: pointer;
     border-radius: 5px;
+    height: 260px;
+    justify-content: space-around;
+    padding: 10px;
 }
+article .info-prod>a:visited,article .info-prod>a:link{
+    color: black;
+}
+<<<<<<< HEAD
 
 article img {
     width: 175px;
+=======
+article img{
+    width: 150px;
+>>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     padding: 15px;
+    height: auto;
 }
 
 .info-prod {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 15px 0px;
     flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
 }
+<<<<<<< HEAD
 
 .info-prod h4 {
     font-size: 12px;
     font-weight: 500;
+=======
+.info-prod h4{
+    font-size: 16px;
+    font-weight: 700;
+>>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     line-height: 24px;
 }
 
 .precio {
     font-size: 14px;
-    line-height: 24px;
+    line-height: 22px;
 }
 
 .info-prod button {
@@ -499,6 +540,7 @@ footer {
 }
 
 /*----------------------------------------------------------------------------------*/
+<<<<<<< HEAD
 /*Product-detail.html*/
 .camino {
     font-size: 12px;
@@ -513,6 +555,23 @@ main#product_detail {
 }
 
 .detalle_prod {
+=======
+                            /*Product-detail.html*/
+    .camino{
+        font-size: 12px;
+        text-decoration: none;
+        margin: 10px;
+        display: flex;
+        column-gap: 3px;
+    }
+    .camino a:link,.camino a:visited{
+        color: black;
+    }
+    main#product_detail{
+        row-gap: 30px;
+    }
+    .detalle_prod{
+>>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     background-color: white;
     border: 1px solid black;
     display: flex;
@@ -549,6 +608,10 @@ main#product_detail {
 
 #img-principal {
     width: 90%;
+    margin: auto;
+}
+#img-principal>img{
+    width: 100%;
 }
 
 #more-img {
@@ -570,8 +633,15 @@ p#filtro-marca {
     font-size: 12px;
     text-decoration: underline;
 }
+<<<<<<< HEAD
 
 #info-pago {
+=======
+#filtro-marca a:visited, #filtro-marca a:link{
+    color: black;
+}
+#info-pago{
+>>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     display: flex;
     flex-direction: column;
     justify-self: center;
@@ -683,15 +753,40 @@ p#filtro-marca-v2 {
     flex-direction: column;
     row-gap: 25px;
     align-items: center;
+    width: 100%;
+}
+.section__container{
+    width: 100%;
+    overflow: scroll;
+
 }
 
 .contenedor-interes {
     display: flex;
-    align-content: center;
-    justify-content: center;
+    height: 300px;
+    background-color: transparent;
+    column-gap: 20px;
 }
+<<<<<<< HEAD
 
 .contenedor-interes h5 {
+=======
+.contenedor-interes>article{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80%;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 290px;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.contenedor-interes h5{
+>>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     font-size: 16px;
     font-weight: 500;
     text-align: center;
@@ -708,6 +803,7 @@ main#ventana-login {
     background-image: url(../img/fondo-login.jpg);
     background-size: cover;
     margin: 0px 0px;
+    max-width: 100%;
     width: 100%;
     background-position: center;
 }
@@ -824,6 +920,7 @@ main#register {
     background-image: url(../img/fondo-login.jpg);
     background-size: cover;
     margin: 0px 0px;
+    max-width: 100%;
     width: 100%;
     background-position: center;
 }
@@ -1373,16 +1470,33 @@ main#list>h2 {
     flex-flow: column wrap;
     row-gap: 20px;
 }
+<<<<<<< HEAD
 
 .list__container_product>.producto {
     width: 90%;
+=======
+.list__container_product>.producto{
+    width: 70%;
+>>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     margin: auto;
+    height: 330px;
 }
+.list__container_product>.producto>img{
+    height: 150px
+}
+<<<<<<< HEAD
 
 .list__container_product>.producto>.info-prod {
     width: 50%;
+=======
+.list__container_product>.producto>.info-prod{
+    width: 100%;
+>>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     row-gap: 5px;
+    height: 160px;
+    justify-content: end;
 }
+<<<<<<< HEAD
 
 .list__container_product>.producto>.info-prod>h4 {
     font-size: 22px;
@@ -1390,6 +1504,13 @@ main#list>h2 {
 
 .list__container_product>.producto>.info-prod>.precio {
     font-size: 20px;
+=======
+.list__container_product>.producto>.info-prod>h4{
+    font-size: 20px;
+}
+.list__container_product>.producto>.info-prod>.precio{
+    font-size: 18px;
+>>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
 }
 
 .list__container_product>.producto>.info-prod>button {
@@ -1415,7 +1536,7 @@ main#list>h2 {
 /*------------------------------ERROR 404 ---------------------------------------*/
 
 
-.Error-404 {
+/*.Error-404 {
     background-color: rgb(43, 235, 9);
 }
 
@@ -1433,4 +1554,4 @@ main#list>h2 {
     color: rgb(255, 255, 255);
     background-color: rgb(43, 235, 9);
     padding: 10px;
-}
+}*/
