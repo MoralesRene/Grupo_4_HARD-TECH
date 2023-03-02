@@ -1,0 +1,55 @@
+[
+    {
+        "id": 1,
+        "firstName": "Joaquín",
+        "secondName": "Suarez",
+        "email": "joaco@gmail.com",
+        "dni/cuit": 42678940,
+        "fechaNacimiento": 17092006,
+        "contraseña": "xxxxxx",
+        "confirmaContraseña": "xxxxxx"
+    },
+    {
+        "id": 2,
+        "firstName": "Emilia",
+        "secondName": "Nuñez",
+        "email": "eminuñez@gmail.com",
+        "dni/cuit": 46944283,
+        "fechaNacimiento": 14102006,
+        "contraseña": "xxxxxx",
+        "confirmaContraseña": "xxxxxx"
+    },
+    
+    {
+        "id": 3,
+        "firstName": "María Emilia",
+        "secondName":"Lezama",
+        "email": "mariaemilia@yahoo.com",
+        "dni/cuit": 38932123,
+        "fechaNacimiento": "02021990",
+        "contraseña": "xxxxxx",
+        "confirmaContraseña": "xxxxxx"
+    
+    },
+
+    {
+        "id": 4,
+        "firstName": "Juan Manuel",
+        "secondName": "Rodriguez",
+        "email": "juanmaro@yahoo.com",
+        "dni/cuit": 50444676,
+        "fechaNacimiento": 10022010,
+        "contraseña": "xxxxxx",
+        "confirmaContraseña": "xxxxxx"
+    },
+    {
+        "id": 5,
+        "firstName": "Rocío",
+        "secondName": "Diaz",
+        "email": "rochidiaz@gmail.com",
+        "dni/cuit": 29840932,
+        "fechaNacimiento": 18081982,
+        "contraseña": "xxxxxx",
+        "confirmaContraseña": "xxxxxx"
+    }
+]
