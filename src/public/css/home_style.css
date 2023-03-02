@@ -1536,7 +1536,7 @@ main#list>h2 {
 /*------------------------------ERROR 404 ---------------------------------------*/
 
 
-/*.Error-404 {
+.Error-404 {
     background-color: rgb(43, 235, 9);
 }
 
@@ -1554,4 +1554,4 @@ main#list>h2 {
     color: rgb(255, 255, 255);
     background-color: rgb(43, 235, 9);
     padding: 10px;
-}*/
+}
