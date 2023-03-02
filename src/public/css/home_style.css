@@ -6,32 +6,17 @@
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
 }
-<<<<<<< HEAD
-
-a:visited,
-a:link {
-    color: white;
-}
-
-header {
-=======
 header{
->>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     background: black;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
 }
-<<<<<<< HEAD
-
-body {
-=======
 li a:visited{
     color: white;
 }
 body{
->>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     background: #dbdbdb;
     position: relative;
 }
@@ -287,15 +272,7 @@ body{
 }
 
 /*Section Destacados*/
-<<<<<<< HEAD
-.destac-hidden {
-    display: none;
-}
-
-main {
-=======
 main{
->>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     width: 80%;
     margin: 5px auto 10px;
     display: flex;
@@ -309,12 +286,7 @@ main{
     font-weight: 500;
     color: gray;
 }
-<<<<<<< HEAD
-
-.contenedor-dest {
-=======
 .contenedor-dest,.contenedor-ofer{
->>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -342,12 +314,7 @@ article a:visited{
     height: 20px;
     cursor: pointer;
 }
-<<<<<<< HEAD
-
-.destacados {
-=======
 .destacados,.ofertas{
->>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     background-color: white;
     height: 550px;
     overflow: hidden;
@@ -369,14 +336,8 @@ article {
 article .info-prod>a:visited,article .info-prod>a:link{
     color: black;
 }
-<<<<<<< HEAD
-
-article img {
-    width: 175px;
-=======
 article img{
     width: 150px;
->>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     padding: 15px;
     height: auto;
 }
@@ -389,16 +350,9 @@ article img{
     text-align: center;
     width: 100%;
 }
-<<<<<<< HEAD
-
-.info-prod h4 {
-    font-size: 12px;
-    font-weight: 500;
-=======
 .info-prod h4{
     font-size: 16px;
     font-weight: 700;
->>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     line-height: 24px;
 }
 
@@ -540,22 +494,6 @@ footer {
 }
 
 /*----------------------------------------------------------------------------------*/
-<<<<<<< HEAD
-/*Product-detail.html*/
-.camino {
-    font-size: 12px;
-    text-decoration: none;
-    margin: 10px;
-    display: flex;
-    column-gap: 3px;
-}
-
-main#product_detail {
-    row-gap: 30px;
-}
-
-.detalle_prod {
-=======
                             /*Product-detail.html*/
     .camino{
         font-size: 12px;
@@ -571,7 +509,6 @@ main#product_detail {
         row-gap: 30px;
     }
     .detalle_prod{
->>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     background-color: white;
     border: 1px solid black;
     display: flex;
@@ -633,15 +570,10 @@ p#filtro-marca {
     font-size: 12px;
     text-decoration: underline;
 }
-<<<<<<< HEAD
-
-#info-pago {
-=======
 #filtro-marca a:visited, #filtro-marca a:link{
     color: black;
 }
 #info-pago{
->>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     display: flex;
     flex-direction: column;
     justify-self: center;
@@ -767,10 +699,6 @@ p#filtro-marca-v2 {
     background-color: transparent;
     column-gap: 20px;
 }
-<<<<<<< HEAD
-
-.contenedor-interes h5 {
-=======
 .contenedor-interes>article{
     display: flex;
     flex-direction: column;
@@ -786,7 +714,6 @@ p#filtro-marca-v2 {
 }
 
 .contenedor-interes h5{
->>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     font-size: 16px;
     font-weight: 500;
     text-align: center;
@@ -1470,33 +1397,25 @@ main#list>h2 {
     flex-flow: column wrap;
     row-gap: 20px;
 }
-<<<<<<< HEAD
-
-.list__container_product>.producto {
-    width: 90%;
-=======
 .list__container_product>.producto{
     width: 70%;
->>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     margin: auto;
     height: 330px;
 }
 .list__container_product>.producto>img{
     height: 150px
 }
-<<<<<<< HEAD
 
 .list__container_product>.producto>.info-prod {
     width: 50%;
-=======
+}
+
 .list__container_product>.producto>.info-prod{
     width: 100%;
->>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
     row-gap: 5px;
     height: 160px;
     justify-content: end;
 }
-<<<<<<< HEAD
 
 .list__container_product>.producto>.info-prod>h4 {
     font-size: 22px;
@@ -1504,13 +1423,6 @@ main#list>h2 {
 
 .list__container_product>.producto>.info-prod>.precio {
     font-size: 20px;
-=======
-.list__container_product>.producto>.info-prod>h4{
-    font-size: 20px;
-}
-.list__container_product>.producto>.info-prod>.precio{
-    font-size: 18px;
->>>>>>> a3f216b6a588f5b869273147cf05cbe53dbf47c9
 }
 
 .list__container_product>.producto>.info-prod>button {
