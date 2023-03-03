@@ -13,6 +13,9 @@ para poder dedicarme y especializarme en el area del Back-end.
 * Maldonado, Gisel:
 Soy Contadora Pública, recibida de la UNLP, y tengo mucha curiosidad e interés en dedicarme a la creación de páginas web por ello me inscribí en el curso de DigitalHouse, Full Stack Developer.
 
+* Giovannacci, Federico:
+Soy Ingeniero Industrial, trabajo en una compañía de IT y tome la decisión de anotarme en el curso para poder adquirir más conocimientos y por interés personal.
+
 TEMATICA DEL SITIO:
 Un E-commerce de venta de componentes de PC (Hardware, perifericos y PCs Armadas).
 Nuestro publico objetivo son aquellas personas con interes en el area del gaming PC,
