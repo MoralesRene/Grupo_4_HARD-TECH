@@ -19,7 +19,11 @@ let productsController = {
                 res.render("product-cart", { productos: products })
                 break;
             case 'edit':
-                res.render("edicion-producto")
+                res.render("edicion-producto");
+                break;
+            case 'create':
+                res.render("crear-producto");
+                break;
         };
     },
     mostrarPorCat: (req, res) => {
