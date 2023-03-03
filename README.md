@@ -16,6 +16,9 @@ Soy Contadora Pública, recibida de la UNLP, y tengo mucha curiosidad e interés
 * Giovannacci, Federico:
 Soy Ingeniero Industrial, trabajo en una compañía de IT y tome la decisión de anotarme en el curso para poder adquirir más conocimientos y por interés personal.
 
+* Matias Huber:
+Soy estudiante secundario cursando mi último año, tengo muchas ansias de meterme en la programación y trabajar en un futuro de eso
+
 TEMATICA DEL SITIO:
 Un E-commerce de venta de componentes de PC (Hardware, perifericos y PCs Armadas).
 Nuestro publico objetivo son aquellas personas con interes en el area del gaming PC,
