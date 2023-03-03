@@ -8,7 +8,7 @@
         "image":["/img/motherboard-asus-0.jpg","/img/motherboard-asus-1.jpg","/img/motherboard-asus-2.jpeg","/img/motherboard-asus-3.jpeg"],
         "status": "Featured",
         "description": "Tarjeta madre Intel® Z690 (LGA 1700) ATX con PCIe® 5.0, tres puertos M.2, 14 + 1 DrMOS, DDR4, HDMI®, DisplayPort™, Intel® WiFi 6, Ethernet de 2.5 Gb, USB 3.2 Gen 2x2 Type-C® , USB 3.2 Gen 1 Type-C® frontal, compatibilidad con Thunderbolt™ 4 e iluminación Aura Sync RGB",
-        "trademark": "ASUS",
+        "trademark": "Intel",
         "family": "Intel",
         "model": "PRIME Z690-P WIFI D4",
         "warranty": "36 meses"

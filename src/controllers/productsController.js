@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require("fs");
 
 const productsFilePath = path.join(__dirname, "../data/listProducts.json")
+
 function getProducts() {
     let ListJSON = fs.readFileSync(productsFilePath, "utf-8");
     let listProducts = JSON.parse(ListJSON);
@@ -18,8 +19,6 @@ let productsController = {
             case 'cart':
                 res.render("product-cart", { productos: products })
                 break;
-            case 'edit':
-                res.render("edicion-producto")
         };
     },
     mostrarPorCat: (req, res) => {
@@ -34,7 +33,40 @@ let productsController = {
         let idProd = products.find(product => product.id == req.params.id)
         let otherProd = products.filter(product => product.category == idProd.category && product.id !== idProd.id)
         res.render("product-detail", { idProd, otherProd })
+    },
+    editarProductoForm: (req, res) => {
+        const products = getProducts();
+        const product = products.find(element => element.id == req.params.id)
+        res.render('edicion-producto', { product })
+    },
+    editarProducto: (req, res) => {
+        const products = getProducts();
+        const productIndex = products.findIndex(element => element.id == req.params.id)
+        products[productIndex] = {
+            ...products[productIndex],
+            name: req.body.name,
+            description: req.body.description,
+            category: req.body.categoria,
+            trademark: req.body.marca,
+            price: req.body.price,
+            model: req.body.model
+        }
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
+        res.redirect('/')
+    },
+    eliminarProducto: (req, res) => {
+        const products = getProducts();
+        const productIndex = products.findIndex(element => element.id == req.params.id)
+        products[productIndex] = {
+            ...products[productIndex],
+            name: req.body.name,
+            description: req.body.description,
+            category: req.body.categoria,
+            trademark: req.body.marca,
+            price: req.body.price,
+            model: req.body.model
+        }
+        res.redirect('/')
     }
-
 }
 module.exports = productsController;

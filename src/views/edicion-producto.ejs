@@ -1,44 +1,55 @@
 <%- include("partials/head") %>-
 
-<%- include("partials/header") %>
+    <%- include("partials/header") %>
 
-<%- include("partials/navbar") %>
-<body>
-<main>
-    <form action="edit-product">
-        <div class="container-edicion-producto">
-            <input type="text" placeholder="Nombre del producto">
-            <textarea name="descripcion" placeholder="Descripción" id="descripcion" cols="30" rows="10"></textarea>
-            <input type="file" accept=".jpg, .jpeg, .png">
-            <select name="categoria" id="categoria">
-                <option value="general">Seleccione uno</option>
-                <option value="Motherwards">Motherwards</option>
-                <option value="Procesadores">Procesadores</option>
-                <option value="Memorias">Memorias</option>
-                <option value="Fuentes">Fuentes</option>
-                <option value="Gabinetes">Gabinetes</option>
-                <option value="Almacenamiento">Almacenamiento</option>
-                <option value="Placa de video">Placa de video</option>
-                <option value="Periferico">Periferico</option>
-            </select>
-            <select name="marca" id="marca">
-                <option value="general">Seleccione uno</option>
-                <option value="amd">AMD</option>
-                <option value="Republic of gamers">REPUBLIC OF GAMERS</option>
-            </select>
-            <input type="text" placeholder="Modelo">
-            <input type="number" placeholder="Precio">
-            <div class="botones">
-                <div class="button-confirmar">
-                    <button><a href="/">Confirmar</a></button>
-                </div>
-                <div class="button-borrar">
-                    <button type="reset">Limpiar</button>
-                </div>
-            </div>
-        </div>
-    </form>
-</main>
+        <%- include("partials/navbar") %>
+
+            <body>
+                <main>
+                    <form action="<%= product.id %>?_method=PUT" method="POST" >
+                        <div class="container-edicion-producto">
+                            <input type="text" name="name" id="name" value="<%= product.name %>">
+                            <textarea name="descripcion" id="descripcion" cols="30"
+                                rows="10"><%= product.description %></textarea>
+                            <input type="file" accept=".jpg, .jpeg, .png">
+                            <select name="categoria" id="categoria">
+                                <option value="general">Seleccione uno</option>
+                                <option value="Motherboards" <%=product.category=="Motherboard" && 'selected' %>
+                                    >Motherboards</option>
+                                <option value="Procesadores" <%=product.category=="Procesadores" && 'selected' %>
+                                    >Procesadores</option>
+                                <option value="Memorias" <%=product.category=="Memorias" && 'selected' %>>Memorias
+                                </option>
+                                <option value="Fuentes" <%=product.category=="Fuentes" && 'selected' %>>Fuentes</option>
+                                <option value="Gabinetes" <%=product.category=="Gabinetes" && 'selected' %>>Gabinetes
+                                </option>
+                                <option value="Almacenamiento" <%=product.category=="Almacenamiento" && 'selected' %>
+                                    >Almacenamiento</option>
+                                <option value="Placa de video" <%=product.category=="Placa de video" && 'selected' %>
+                                    >Placa de video</option>
+                                <option value="Periferico">
+                                    <%= product.category=="Periferico" && 'selected' %>Periferico
+                                </option>
+                            </select>
+                            <select name="marca" id="marca">
+                                <option value="general">Seleccione uno</option>
+                                <option value="amd" <%=product.trademark=="AMD" && 'selected' %>>AMD</option>
+                                <option value="Republic of gamers" <%=product.trademark=="Republic of gamers"
+                                    && 'selected' %>>REPUBLIC OF GAMERS</option>
+                            </select>
+                            <input type="text" name="model" id="model" value="<%= product.model %>">
+                            <input type="number" name="price" id="price" value="<%= product.price %>">
+                            <div class="botones">
+                                <div class="button-confirmar">
+                                    <button type="submit">Confirmar</button>
+                                </div>
+                                <div class="button-borrar">
+                                    <button type="reset">Limpiar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </main>
 
 
-<%- include("partials/footer") %>
+                <%- include("partials/footer") %>
