@@ -5,36 +5,39 @@
             <!--Header reutilizable-->
 
             <%- include("partials/navbar") %>
-            <!-- Codigo reutilizable NAV_BAR.EJS-->
-            <main id="register">
-                <section>
-                    <div class="ventana-register">
-                        <h5>Registrate</h5>
-                        <form action="#">
-                            <label for="nombre">Nombre y Apellido:</label>
-                            <input type="text" name="nombre" placeholder="Nombre y Apellido" required>
-                            <label for="email">Email:</label>
-                            <input type="email" name="email" placeholder="Email" required>
-                            <label for="telefono">Telefono:</label>
-                            <input type="number" name="telefono" placeholder="Telefono" required>
-                            <div id="form-date">
-                                <div>
-                                    <label for="documento">D.N.I / C.U.I.T.:</label>
-                                    <input type="text" name="documento" placeholder="D.N.I / C.U.I.T." required>
+                <!-- Codigo reutilizable NAV_BAR.EJS-->
+                <main id="register">
+                    <section>
+                        <div class="ventana-register">
+                            <h5>Registrate</h5>
+                            <form action="#">
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" name="nombre" placeholder="Nombre" required>
+                                <label for="nombre">Apellido:</label>
+                                <input type="text" name="nombre" placeholder="Apellido" required>
+                                <label for="email">Email:</label>
+                                <input type="email" name="email" placeholder="Email" required>
+                                <label for="telefono">Telefono:</label>
+                                <input type="number" name="telefono" placeholder="Telefono" required>
+                                <div id="form-date">
+                                    <div>
+                                        <label for="documento">D.N.I / C.U.I.T.:</label>
+                                        <input type="text" name="documento" placeholder="D.N.I / C.U.I.T." required>
+                                    </div>
+                                    <div>
+                                        <label for="nacimiento">Fecha de Nacimiento:</label>
+                                        <input type="date">
+                                    </div>
                                 </div>
-                                <div>
-                                    <label for="nacimiento">Nacimiento:</label>
-                                    <input type="date">
-                                </div>
-                            </div>
-                            <label for="contraseña">Contraseña:</label>
-                            <input type="password" name="contraseña" placeholder="Contraseña" required>
-                            <label for="contraseña">Confirmar contraseña:</label>
-                            <input type="password" name="contraseña" placeholder="Contraseña" required>
-                        </form>
-                        <button><a href="/">Registrarme</a></button>
-                    </div>
-                </section>
-            </main>
+                                <label for="contraseña">Contraseña:</label>
+                                <input type="password" name="contraseña" placeholder="Contraseña" required>
+                                <label for="contraseña">Confirmar contraseña:</label>
+                                <input type="password" name="password" placeholder="Contraseña" required>
+                                <input type="file" name="image">
+                            </form>
+                            <button><a href="/">Registrarme</a></button>
+                        </div>
+                    </section>
+                </main>
 
-            <%- include("partials/footer") %>
+                <%- include("partials/footer") %>

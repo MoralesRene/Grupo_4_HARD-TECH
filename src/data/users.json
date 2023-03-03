@@ -7,7 +7,9 @@
         "dni/cuit": 42678940,
         "fechaNacimiento": 17092006,
         "contraseña": "xxxxxx",
-        "confirmaContraseña": "xxxxxx"
+        "confirmaContraseña": "xxxxxx",
+        "image":""
+
     },
     {
         "id": 2,
@@ -17,7 +19,9 @@
         "dni/cuit": 46944283,
         "fechaNacimiento": 14102006,
         "contraseña": "xxxxxx",
-        "confirmaContraseña": "xxxxxx"
+        "confirmaContraseña": "xxxxxx",
+        "image":""
+
     },
     
     {
@@ -26,9 +30,10 @@
         "secondName":"Lezama",
         "email": "mariaemilia@yahoo.com",
         "dni/cuit": 38932123,
-        "fechaNacimiento": "02021990",
+        "fechaNacimiento": 11012002,
         "contraseña": "xxxxxx",
-        "confirmaContraseña": "xxxxxx"
+        "confirmaContraseña": "xxxxxx",
+        "image": ""
     
     },
 
@@ -40,7 +45,9 @@
         "dni/cuit": 50444676,
         "fechaNacimiento": 10022010,
         "contraseña": "xxxxxx",
-        "confirmaContraseña": "xxxxxx"
+        "confirmaContraseña": "xxxxxx",
+        "image": ""
+
     },
     {
         "id": 5,
@@ -50,6 +57,8 @@
         "dni/cuit": 29840932,
         "fechaNacimiento": 18081982,
         "contraseña": "xxxxxx",
-        "confirmaContraseña": "xxxxxx"
+        "confirmaContraseña": "xxxxxx",
+        "image": ""
+
     }
 ]

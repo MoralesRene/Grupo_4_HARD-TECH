@@ -5,7 +5,7 @@
 <%- include("partials/navbar") %>
 <body>
 <main>
-    <form action="edit-product">
+    <form action="/product/create" method="POST">
         <div class="container-edicion-producto">
             <input type="text" placeholder="Nombre del producto">
             <textarea name="descripcion" placeholder="Descripción" id="descripcion" cols="30" rows="10"></textarea>
@@ -30,7 +30,7 @@
             <input type="number" placeholder="Precio">
             <div class="botones">
                 <div class="button-confirmar">
-                    <button><a href="/">Confirmar</a></button>
+                    <button type="submit"> Confirmar</button>
                 </div>
                 <div class="button-borrar">
                     <button type="reset">Limpiar</button>
