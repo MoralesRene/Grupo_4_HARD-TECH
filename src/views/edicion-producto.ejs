@@ -6,12 +6,12 @@
 
             <body>
                 <main>
-                    <form action="<%= product.id %>?_method=PUT" method="POST" >
+                    <form action="/product/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                         <div class="container-edicion-producto">
                             <input type="text" name="name" id="name" value="<%= product.name %>">
                             <textarea name="descripcion" id="descripcion" cols="30"
                                 rows="10"><%= product.description %></textarea>
-                            <input type="file" accept=".jpg, .jpeg, .png">
+                            <input type="file" name='imagen-producto' accept=".jpg, .jpeg, .png" multiple="multiple">
                             <select name="categoria" id="categoria">
                                 <option value="general">Seleccione uno</option>
                                 <option value="Motherboards" <%=product.category=="Motherboard" && 'selected' %>

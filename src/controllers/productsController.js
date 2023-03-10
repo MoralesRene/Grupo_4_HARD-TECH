@@ -42,6 +42,7 @@ let productsController = {
     editarProducto: (req, res) => {
         const products = getProducts();
         const productIndex = products.findIndex(element => element.id == req.params.id)
+        let imagenes = req.files ? req.files.map((element) => element.filename) : products[productIndex].image
         products[productIndex] = {
             ...products[productIndex],
             name: req.body.name,
@@ -49,7 +50,8 @@ let productsController = {
             category: req.body.categoria,
             trademark: req.body.marca,
             price: req.body.price,
-            model: req.body.model
+            model: req.body.model,
+            image: imagenes
         }
         fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
         res.redirect('/')
