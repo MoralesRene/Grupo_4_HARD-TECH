@@ -58,16 +58,8 @@ let productsController = {
     },
     eliminarProducto: (req, res) => {
         const products = getProducts();
-        const productIndex = products.findIndex(element => element.id == req.params.id)
-        products[productIndex] = {
-            ...products[productIndex],
-            name: req.body.name,
-            description: req.body.description,
-            category: req.body.categoria,
-            trademark: req.body.marca,
-            price: req.body.price,
-            model: req.body.model
-        }
+        const productsFiltered = products.filter(element => element.id != req.params.id)
+        fs.writeFileSync(productsFilePath, JSON.stringify(productsFiltered, null, 2))
         res.redirect('/')
     }
 }

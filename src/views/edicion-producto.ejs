@@ -43,12 +43,14 @@
                                 <div class="button-confirmar">
                                     <button type="submit">Confirmar</button>
                                 </div>
-                                <div class="button-borrar">
-                                    <button type="reset">Limpiar</button>
-                                </div>
                             </div>
                         </div>
                     </form>
+                    <div class="button-confirmar">
+                        <form action="/product/<%= product.id %>?_method=DELETE" method="POST">
+                            <button type="submit">Borrar producto</button>
+                        </form>
+                    </div>
                 </main>
 
 
