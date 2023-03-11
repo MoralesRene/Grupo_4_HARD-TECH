@@ -17,3 +17,19 @@ Hacer Menos:
 
 Dejar de hacer:
 -
+
+RETROSPECTIVA SPRINT 4:
+Comenzar hacer:
+sugerencias para le mejora del proyecto integrador, 
+
+Hacer mas: 
+reuniones sucesivas, 
+
+Continuar Haciendo:
+las reuniones semanales, division de tareas en trello, compromiso en el proyecto,
+
+Hacer Menos:
+-
+
+Dejar de hacer:
+-
