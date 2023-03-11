@@ -886,20 +886,20 @@ main#register {
     font-size: 12px;
 }
 
-.ventana-register>h5 {
+.ventana-register h5 {
     font-size: 20px;
     font-weight: 500;
     text-transform: uppercase;
 }
 
-.ventana-register>button {
+.ventana-register button {
     background-color: rgb(43, 235, 9);
     margin: 10px 0px;
     border-color: transparent;
     border-radius: 5px;
 }
 
-.ventana-register button>a {
+.ventana-register button a {
     font-size: 12px;
     padding: 5px;
     text-transform: uppercase;
@@ -1447,7 +1447,6 @@ main#list>h2 {
 
 /*------------------------------ERROR 404 ---------------------------------------*/
 
-
 .Error-404 {
     background-color: rgb(43, 235, 9);
 }
@@ -1466,4 +1465,12 @@ main#list>h2 {
     color: rgb(255, 255, 255);
     background-color: rgb(43, 235, 9);
     padding: 10px;
+}
+
+/*------------------------------ERROR REGISTRO ---------------------------------------*/
+
+.error {
+    font-size: 12px;
+    color: red;
+    margin-bottom: -7.5px;
 }
