@@ -17,3 +17,17 @@ Hacer Menos:
 
 Dejar de hacer:
 -
+RETROSPECTIVA SRINT 4:
+Comenzar hacer: 
+reuniones mas seguidas.
+
+Hacer mas:
+sugerencias para la mejora del proyecto.
+
+Continuar Haciendo: 
+reuniones semanales, organizar las tareas en trello, comunicacion entre los compañeros del equipo.
+
+Hacer Menos:
+-
+Dejar de hacer:
+-
