@@ -6,17 +6,20 @@
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
 }
-header{
+
+header {
     background: black;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
 }
-li a:visited{
+
+li a:visited {
     color: white;
 }
-body{
+
+body {
     background: #dbdbdb;
     position: relative;
 }
@@ -272,7 +275,7 @@ body{
 }
 
 /*Section Destacados*/
-main{
+main {
     width: 80%;
     margin: 5px auto 10px;
     display: flex;
@@ -286,7 +289,9 @@ main{
     font-weight: 500;
     color: gray;
 }
-.contenedor-dest,.contenedor-ofer{
+
+.contenedor-dest,
+.contenedor-ofer {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -295,7 +300,8 @@ main{
     background-color: #dbdbdb;
     row-gap: 15px;
 }
-article a:visited{
+
+article a:visited {
     color: black;
 }
 
@@ -314,7 +320,9 @@ article a:visited{
     height: 20px;
     cursor: pointer;
 }
-.destacados,.ofertas{
+
+.destacados,
+.ofertas {
     background-color: white;
     height: 550px;
     overflow: hidden;
@@ -333,10 +341,13 @@ article {
     justify-content: space-around;
     padding: 10px;
 }
-article .info-prod>a:visited,article .info-prod>a:link{
+
+article .info-prod>a:visited,
+article .info-prod>a:link {
     color: black;
 }
-article img{
+
+article img {
     width: 150px;
     padding: 15px;
     height: auto;
@@ -350,7 +361,8 @@ article img{
     text-align: center;
     width: 100%;
 }
-.info-prod h4{
+
+.info-prod h4 {
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
@@ -494,21 +506,25 @@ footer {
 }
 
 /*----------------------------------------------------------------------------------*/
-                            /*Product-detail.html*/
-    .camino{
-        font-size: 12px;
-        text-decoration: none;
-        margin: 10px;
-        display: flex;
-        column-gap: 3px;
-    }
-    .camino a:link,.camino a:visited{
-        color: black;
-    }
-    main#product_detail{
-        row-gap: 30px;
-    }
-    .detalle_prod{
+/*Product-detail.html*/
+.camino {
+    font-size: 12px;
+    text-decoration: none;
+    margin: 10px;
+    display: flex;
+    column-gap: 3px;
+}
+
+.camino a:link,
+.camino a:visited {
+    color: black;
+}
+
+main#product_detail {
+    row-gap: 30px;
+}
+
+.detalle_prod {
     background-color: white;
     border: 1px solid black;
     display: flex;
@@ -547,7 +563,8 @@ footer {
     width: 90%;
     margin: auto;
 }
-#img-principal>img{
+
+#img-principal>img {
     width: 100%;
 }
 
@@ -570,10 +587,13 @@ p#filtro-marca {
     font-size: 12px;
     text-decoration: underline;
 }
-#filtro-marca a:visited, #filtro-marca a:link{
+
+#filtro-marca a:visited,
+#filtro-marca a:link {
     color: black;
 }
-#info-pago{
+
+#info-pago {
     display: flex;
     flex-direction: column;
     justify-self: center;
@@ -687,7 +707,8 @@ p#filtro-marca-v2 {
     align-items: center;
     width: 100%;
 }
-.section__container{
+
+.section__container {
     width: 100%;
     overflow: scroll;
 
@@ -699,7 +720,8 @@ p#filtro-marca-v2 {
     background-color: transparent;
     column-gap: 20px;
 }
-.contenedor-interes>article{
+
+.contenedor-interes>article {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -713,7 +735,7 @@ p#filtro-marca-v2 {
     padding: 10px;
 }
 
-.contenedor-interes h5{
+.contenedor-interes h5 {
     font-size: 16px;
     font-weight: 500;
     text-align: center;
@@ -917,6 +939,19 @@ main#register {
     display: flex;
     flex-direction: column;
 }
+
+.register-img {
+    margin: 10px 0px;
+}
+
+.register-img1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    margin: 10px 0px;
+}
+    
 
 /*----------------------------------------------------------------------------------*/
 /*product-cart-html*/
@@ -1397,12 +1432,14 @@ main#list>h2 {
     flex-flow: column wrap;
     row-gap: 20px;
 }
-.list__container_product>.producto{
+
+.list__container_product>.producto {
     width: 70%;
     margin: auto;
     height: 330px;
 }
-.list__container_product>.producto>img{
+
+.list__container_product>.producto>img {
     height: 150px
 }
 
@@ -1410,7 +1447,7 @@ main#list>h2 {
     width: 50%;
 }
 
-.list__container_product>.producto>.info-prod{
+.list__container_product>.producto>.info-prod {
     width: 100%;
     row-gap: 5px;
     height: 160px;
@@ -1456,8 +1493,8 @@ main#list>h2 {
     padding: 20px;
 }
 
-.error-404{
-    padding:15px;
+.error-404 {
+    padding: 15px;
 }
 
 .button-error {
