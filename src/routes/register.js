@@ -2,6 +2,8 @@ const express = require("express");
 const { body } = require("express-validator");
 const router = express.Router();
 const registerController = require("../controllers/registerController.js");
+const multer = require("multer");
+const uploadFile = require("../middlewares/multerMiddleware.js");
 
 const validations = [
   body("nombre")
@@ -24,6 +26,6 @@ const validations = [
 ];
 
 router.get("/", registerController.index);
-router.post("/", validations, registerController.envio);
+router.post("/",uploadFile.single("avatar"),validations, registerController.envio);
 
 module.exports = router;
