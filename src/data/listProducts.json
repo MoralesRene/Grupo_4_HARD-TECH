@@ -1,227 +1,227 @@
 [
-  {
-    "id": 1,
-    "name": "Motherboard 1700 12°Gen - Asus Prime Z690-P WIFI DDR4",
-    "shortName": "Asus Prime Z690-P WIFI DDR4",
-    "category": "Motherboards",
-    "price": "55000",
-    "image": [
-      "motherboard-asus-1.jpg",
-      "motherboard-asus-0.jpg",
-      "motherboard-asus-2.jpeg",
-      "motherboard-asus-3.jpeg"
-    ],
-    "status": "Featured",
-    "trademark": "general",
-    "family": "Intel",
-    "model": "PRIME Z690-P WIFI D4",
-    "warranty": "36 meses"
-  },
-  {
-    "id": 2,
-    "name": "Motherboard AM4 - Msi B550 TOMAHAWK",
-    "shortName": "Msi B550 TOMAHAWK AM4",
-    "category": "Motherboard",
-    "price": 49000,
-    "image": [
-      "39186_1.jpg",
-      "39186_1.jpeg",
-      "39186_2.jpeg",
-      "39186_3.jpeg"
-    ],
-    "status": "Featured",
-    "description": "La serie MAG nació a través de rigurosas pruebas de calidad y está diseñada para ser un símbolo de robustez y durabilidad. Centrada en proporcionar la mejor experiencia de usuario, la serie MAG tiene un proceso de instalación simple junto con una interfaz de usuario amigable que la convierte en la mejor opción para los jugadores de nivel básico.",
-    "trademark": "MSI",
-    "family": "AMD",
-    "model": "B550 TOMAHAWK",
-    "warranty": "36 meses"
-  },
-  {
-    "id": 3,
-    "name": "MOTHERBOARD GIGABYTE GA-H310M-H S1151",
-    "shortName": "GIGABYTE GA-H310M-H",
-    "category": "Motherboard",
-    "price": 23000,
-    "image": [
-      "15853_1.png",
-      "15853_2.png",
-      "15853_3.png",
-      "15853_4.png"
-    ],
-    "status": "Featured",
-    "description": "Soporte de hasta 8 º Intel Generación ® procesador Core ™ i7 / Intel ® Core i5 ™ / Intel ® Core i3 ™ / Intel ® Pentium ® procesadores / Intel ® Celeron ® procesadores en el paquete LGA1151,2 zócalos DIMM DDR4 que admiten hasta 32 GB de memoria del sistema",
-    "trademark": "GIGABYTE",
-    "family": "Intel",
-    "model": "GA-H310M-H S1151",
-    "warranty": "24 meses"
-  },
-  {
-    "id": 4,
-    "name": "Motherboard AM4 - Gigabyte GA-B550 AORUS ELITE V2",
-    "shortName": "Gigabyte GAB550 AORUS ELITE",
-    "category": "Motherboard",
-    "price": 72000,
-    "image": [
-      "39394_1.jpeg",
-      "39394_1.jpeg",
-      "39394_2.jpeg",
-      "39394_3.jpeg"
-    ],
-    "status": "-",
-    "description": "Placa base AMD B550 AORUS con diseño de energía gemela digital de 12+2 fases, disipadores térmicos de superficie ampliada, PCIe 4.0/3.0 x4 M.2 dual con protectores térmicos duales, Intel ® WiFi 6 802.11ax, LAN de 2,5 GbE, USB  Type-C™ frontal, RGB FUSIÓN 2.0, Q-Flash Plus",
-    "trademark": "GIGABYTE",
-    "family": "AMD",
-    "model": "B550 AORUS ELITE V2",
-    "warranty": "36 meses"
-  },
-  {
-    "id": 5,
-    "name": "Motherboard 1200 10°Gen - Msi H410M-B",
-    "shortName": "Msi H410M-B 10°Gen",
-    "category": "Motherboard",
-    "price": 30000,
-    "image": [
-      "43389_1.jpeg",
-      "43389_1.jpeg",
-      "43389_2.jpeg",
-      "43389_4.jpeg"
-    ],
-    "status": "-",
-    "description": "Soporta la 10va Gen de Procesadores Intel® Core™, Pentium® Gold and Celeron® para Sockets LGA 1200.Soporta Memorias DDR4, hasta 2933(Max) MHz. Core Boost: Con una disposición de primera calidad y un diseño de energía digital para soportar más núcleos y proporcionar un mejor rendimiento",
-    "trademark": "MSI",
-    "family": "Intel",
-    "model": "PRO H410M-B",
-    "warranty": "30 meses"
-  },
-  {
-    "id": 6,
-    "name": "Procesador Amd Ryzen 3 3200G 3.8 Ghz + Vega8 - AM4",
-    "shortName": " Amd Ryzen 3 3200G",
-    "category": "Procesadores",
-    "price": 37000,
-    "image": [
-      "36216_0.png",
-      "36216_1.jpeg",
-      "36216_2.jpeg",
-      "36216_3.jpeg"
-    ],
-    "status": "Featured",
-    "description": "Es ideal para jugadores y creadores de contenido que requieran un instrumento de gran ejecución.Memoria caché de 4 MB, rápida y volátil.Procesador gráfico Radeon Vega 8 Graphics.Soporta memoria RAM DDR4.Su potencia es de 65 W.Cuenta con 4 hilos que favorecen la ejecución de múltiples programas a la vez.",
-    "trademark": "AMD",
-    "family": "AMD",
-    "model": "Ryzen 3 3200G",
-    "warranty": "36 meses"
-  },
-  {
-    "id": 7,
-    "name": "Procesador Amd Ryzen 5 4600G 4.2 Ghz - AM4",
-    "shortName": "Amd Ryzen 5 4600G",
-    "category": "Procesadores",
-    "price": 41000,
-    "image": [
-      "43031_1.jpeg",
-      "43031_1.jpeg",
-      "43031_2.jpeg",
-      "43031_3.jpg"
-    ],
-    "status": "Featured",
-    "description": "Es ideal para jugadores y creadores de contenido que requieran un instrumento de gran ejecución.Memoria caché de 8 MB, rápida y volátil.Procesador gráfico Radeon Graphics. Soporta memoria RAM DDR4. Su potencia es de 65 W. Cuenta con 12 hilos que favorecen la ejecución de múltiples programas a la vez.",
-    "trademark": "AMD",
-    "family": "AMD",
-    "model": "Ryzen 5 4600G",
-    "warranty": "36 meses"
-  },
-  {
-    "id": 8,
-    "name": "Procesador Intel Pentium G7400 3.8 Ghz Alder Lake 12va 1700",
-    "shortName": "Intel Pentium G7400",
-    "category": "Procesadores",
-    "price": 25000,
-    "image": [
-      "42230_1.jpeg",
-      "42230_1.jpeg",
-      "42230_2.jpeg",
-      "42230_3.jpeg"
-    ],
-    "status": "-",
-    "description": "Es útil para uso doméstico y trabajo de oficina liviano, como así también, para utilizar algunos programas avanzados. Memoria caché de 6 MB, rápida y volátil. Procesador gráfico Intel UHD Graphics 710. Soporta memoria RAM DDR4, DDR5. Su potencia es de 46 W.",
-    "trademark": "Intel",
-    "family": "Intel",
-    "model": "Intel Pentium G7400",
-    "warranty": "36 meses"
-  },
-  {
-    "id": 9,
-    "name": "Procesador Intel Core i7 13700K 5.4 Ghz Raptor Lake 1700 Sin Cooler",
-    "shortName": "Intel Core i7 13700K",
-    "category": "Procesadores",
-    "price": 75000,
-    "image": [
-      "44381_1.jpeg",
-      "44381_1.jpeg",
-      "44381_2.jpeg",
-      "44381_1.jpeg"
-    ],
-    "status": "-",
-    "description": "Producto de alto rendimiento y línea exclusiva para profesionales que ejecutan muchos programas a la vez. Memoria caché de 30 MB, rápida y volátil. Procesador gráfico Intel UHD Graphics 770. Soporta memoria RAM DDR4, DDR5. Su potencia es de 128 W.",
-    "trademark": "Intel",
-    "family": "Intel",
-    "model": "Core i7 13700K",
-    "warranty": "36 meses"
-  },
-  {
-    "id": 10,
-    "name": "Disco Rigido 1Tb Seagate Barracuda",
-    "shortName": "HDD 1TB Seagate",
-    "category": "Almacenamiento",
-    "price": 9000,
-    "image": [
-      "35259_1.jpeg",
-      "35259_1.jpeg",
-      "35259_2.jpeg",
-      "35259_3.jpeg"
-    ],
-    "status": "-",
-    "description": "El Barracuda ST1000DM010 se caracteriza por su eficiencia y buen funcionamiento, que sumado a su reducido consumo energético lo vuelven un disco indispensable para funciones estándar.",
-    "trademark": "Seagate",
-    "family": "-",
-    "model": " ST1000DM010 1TB",
-    "warranty": "12 meses"
-  },
-  {
-    "id": 11,
-    "name": "Disco Rigido 1Tb WD Blue",
-    "shortName": "Disco Rigido 1Tb WD Blue",
-    "category": "Almacenamiento",
-    "price": 11500,
-    "image": [
-      "30082_1.jpeg",
-      "30082_1.jpeg",
-      "30082_2.jpeg",
-      "30082_3.jpg"
-    ],
-    "status": "-",
-    "description": "El WD Blue WD10EZEX se caracteriza por su eficiencia y buen funcionamiento, que sumado a su reducido consumo energético lo vuelven un disco indispensable para funciones estándar.",
-    "family": "-",
-    "model": " WD10EZEX 1TB",
-    "warranty": "12 meses"
-  },
-  {
-    "id": 12,
-    "name": "Disco Solido Ssd M2 Pci-E 250Gb Wd SN570 Blue",
-    "shortName": " Ssd M2 Pci-E 250Gb Wd SN570",
-    "category": "Almacenamiento",
-    "price": 11500,
-    "image": [
-      "ssd-wd-250gb-m2_42080_1.jpeg",
-      "ssd-wd-250gb-m2_42080_1.jpeg",
-      "ssd-wd-250gb-m2_42080_2.jpeg",
-      "ssd-wd-250gb-m2_42080_3.jpeg"
-    ],
-    "status": "-",
-    "description": "El WD Blue SN570 WDS250G3B0C está adaptado para que puedas acceder de forma rápida a tus documentos digitales gracias a su tecnología en estado sólido..",
-    "family": "-",
-    "model": " WD10EZEX 1TB",
-    "warranty": "12 meses"
-  }
+ {
+  "id": 1,
+  "name": "Motherboard 1700 12°Gen - Asus Prime Z690-P WIFI DDR4",
+  "shortName": "Asus Prime Z690-P WIFI DDR4",
+  "category": "Motherboards",
+  "price": "55000",
+  "image": [
+   "motherboard-asus-1.jpg",
+   "motherboard-asus-0.jpg",
+   "motherboard-asus-2.jpeg",
+   "motherboard-asus-3.jpeg"
+  ],
+  "status": "Featured",
+  "trademark": "general",
+  "family": "Intel",
+  "model": "PRIME Z690-P WIFI D4",
+  "warranty": "36 meses"
+ },
+ {
+  "id": 2,
+  "name": "Motherboard AM4 - Msi B550 TOMAHAWK",
+  "shortName": "Msi B550 TOMAHAWK AM4",
+  "category": "Motherboard",
+  "price": 49000,
+  "image": [
+   "39186_1.jpg",
+   "39186_1.jpeg",
+   "39186_2.jpeg",
+   "39186_3.jpeg"
+  ],
+  "status": "Featured",
+  "description": "La serie MAG nació a través de rigurosas pruebas de calidad y está diseñada para ser un símbolo de robustez y durabilidad. Centrada en proporcionar la mejor experiencia de usuario, la serie MAG tiene un proceso de instalación simple junto con una interfaz de usuario amigable que la convierte en la mejor opción para los jugadores de nivel básico.",
+  "trademark": "MSI",
+  "family": "AMD",
+  "model": "B550 TOMAHAWK",
+  "warranty": "36 meses"
+ },
+ {
+  "id": 3,
+  "name": "MOTHERBOARD GIGABYTE GA-H310M-H S1151",
+  "shortName": "GIGABYTE GA-H310M-H",
+  "category": "Motherboard",
+  "price": 23000,
+  "image": [
+   "15853_1.png",
+   "15853_2.png",
+   "15853_3.png",
+   "15853_4.png"
+  ],
+  "status": "Featured",
+  "description": "Soporte de hasta 8 º Intel Generación ® procesador Core ™ i7 / Intel ® Core i5 ™ / Intel ® Core i3 ™ / Intel ® Pentium ® procesadores / Intel ® Celeron ® procesadores en el paquete LGA1151,2 zócalos DIMM DDR4 que admiten hasta 32 GB de memoria del sistema",
+  "trademark": "GIGABYTE",
+  "family": "Intel",
+  "model": "GA-H310M-H S1151",
+  "warranty": "24 meses"
+ },
+ {
+  "id": 4,
+  "name": "Motherboard AM4 - Gigabyte GA-B550 AORUS ELITE V2",
+  "shortName": "Gigabyte GAB550 AORUS ELITE",
+  "category": "Motherboard",
+  "price": 72000,
+  "image": [
+   "39394_1.jpeg",
+   "39394_1.jpeg",
+   "39394_2.jpeg",
+   "39394_3.jpeg"
+  ],
+  "status": "-",
+  "description": "Placa base AMD B550 AORUS con diseño de energía gemela digital de 12+2 fases, disipadores térmicos de superficie ampliada, PCIe 4.0/3.0 x4 M.2 dual con protectores térmicos duales, Intel ® WiFi 6 802.11ax, LAN de 2,5 GbE, USB  Type-C™ frontal, RGB FUSIÓN 2.0, Q-Flash Plus",
+  "trademark": "GIGABYTE",
+  "family": "AMD",
+  "model": "B550 AORUS ELITE V2",
+  "warranty": "36 meses"
+ },
+ {
+  "id": 5,
+  "name": "Motherboard 1200 10°Gen - Msi H410M-B",
+  "shortName": "Msi H410M-B 10°Gen",
+  "category": "Motherboard",
+  "price": 30000,
+  "image": [
+   "43389_1.jpeg",
+   "43389_1.jpeg",
+   "43389_2.jpeg",
+   "43389_4.jpeg"
+  ],
+  "status": "-",
+  "description": "Soporta la 10va Gen de Procesadores Intel® Core™, Pentium® Gold and Celeron® para Sockets LGA 1200.Soporta Memorias DDR4, hasta 2933(Max) MHz. Core Boost: Con una disposición de primera calidad y un diseño de energía digital para soportar más núcleos y proporcionar un mejor rendimiento",
+  "trademark": "MSI",
+  "family": "Intel",
+  "model": "PRO H410M-B",
+  "warranty": "30 meses"
+ },
+ {
+  "id": 6,
+  "name": "Procesador Amd Ryzen 3 3200G 3.8 Ghz + Vega8 - AM4",
+  "shortName": " Amd Ryzen 3 3200G",
+  "category": "Procesadores",
+  "price": 37000,
+  "image": [
+   "36216_0.png",
+   "36216_1.jpeg",
+   "36216_2.jpeg",
+   "36216_3.jpeg"
+  ],
+  "status": "Featured",
+  "description": "Es ideal para jugadores y creadores de contenido que requieran un instrumento de gran ejecución.Memoria caché de 4 MB, rápida y volátil.Procesador gráfico Radeon Vega 8 Graphics.Soporta memoria RAM DDR4.Su potencia es de 65 W.Cuenta con 4 hilos que favorecen la ejecución de múltiples programas a la vez.",
+  "trademark": "AMD",
+  "family": "AMD",
+  "model": "Ryzen 3 3200G",
+  "warranty": "36 meses"
+ },
+ {
+  "id": 7,
+  "name": "Procesador Amd Ryzen 5 4600G 4.2 Ghz - AM4",
+  "shortName": "Amd Ryzen 5 4600G",
+  "category": "Procesadores",
+  "price": 41000,
+  "image": [
+   "43031_1.jpeg",
+   "43031_1.jpeg",
+   "43031_2.jpeg",
+   "43031_3.jpg"
+  ],
+  "status": "Featured",
+  "description": "Es ideal para jugadores y creadores de contenido que requieran un instrumento de gran ejecución.Memoria caché de 8 MB, rápida y volátil.Procesador gráfico Radeon Graphics. Soporta memoria RAM DDR4. Su potencia es de 65 W. Cuenta con 12 hilos que favorecen la ejecución de múltiples programas a la vez.",
+  "trademark": "AMD",
+  "family": "AMD",
+  "model": "Ryzen 5 4600G",
+  "warranty": "36 meses"
+ },
+ {
+  "id": 8,
+  "name": "Procesador Intel Pentium G7400 3.8 Ghz Alder Lake 12va 1700",
+  "shortName": "Intel Pentium G7400",
+  "category": "Procesadores",
+  "price": 25000,
+  "image": [
+   "42230_1.jpeg",
+   "42230_1.jpeg",
+   "42230_2.jpeg",
+   "42230_3.jpeg"
+  ],
+  "status": "-",
+  "description": "Es útil para uso doméstico y trabajo de oficina liviano, como así también, para utilizar algunos programas avanzados. Memoria caché de 6 MB, rápida y volátil. Procesador gráfico Intel UHD Graphics 710. Soporta memoria RAM DDR4, DDR5. Su potencia es de 46 W.",
+  "trademark": "Intel",
+  "family": "Intel",
+  "model": "Intel Pentium G7400",
+  "warranty": "36 meses"
+ },
+ {
+  "id": 9,
+  "name": "Procesador Intel Core i7 13700K 5.4 Ghz Raptor Lake 1700 Sin Cooler",
+  "shortName": "Intel Core i7 13700K",
+  "category": "Procesadores",
+  "price": 75000,
+  "image": [
+   "44381_1.jpeg",
+   "44381_1.jpeg",
+   "44381_2.jpeg",
+   "44381_1.jpeg"
+  ],
+  "status": "-",
+  "description": "Producto de alto rendimiento y línea exclusiva para profesionales que ejecutan muchos programas a la vez. Memoria caché de 30 MB, rápida y volátil. Procesador gráfico Intel UHD Graphics 770. Soporta memoria RAM DDR4, DDR5. Su potencia es de 128 W.",
+  "trademark": "Intel",
+  "family": "Intel",
+  "model": "Core i7 13700K",
+  "warranty": "36 meses"
+ },
+ {
+  "id": 10,
+  "name": "Disco Rigido 1Tb Seagate Barracuda",
+  "shortName": "HDD 1TB Seagate",
+  "category": "Almacenamiento",
+  "price": 9000,
+  "image": [
+   "35259_1.jpeg",
+   "35259_1.jpeg",
+   "35259_2.jpeg",
+   "35259_3.jpeg"
+  ],
+  "status": "-",
+  "description": "El Barracuda ST1000DM010 se caracteriza por su eficiencia y buen funcionamiento, que sumado a su reducido consumo energético lo vuelven un disco indispensable para funciones estándar.",
+  "trademark": "Seagate",
+  "family": "-",
+  "model": " ST1000DM010 1TB",
+  "warranty": "12 meses"
+ },
+ {
+  "id": 11,
+  "name": "Disco Rigido 1Tb WD Blue",
+  "shortName": "Disco Rigido 1Tb WD Blue",
+  "category": "Almacenamiento",
+  "price": 11500,
+  "image": [
+   "30082_1.jpeg",
+   "30082_1.jpeg",
+   "30082_2.jpeg",
+   "30082_3.jpg"
+  ],
+  "status": "-",
+  "description": "El WD Blue WD10EZEX se caracteriza por su eficiencia y buen funcionamiento, que sumado a su reducido consumo energético lo vuelven un disco indispensable para funciones estándar.",
+  "family": "-",
+  "model": " WD10EZEX 1TB",
+  "warranty": "12 meses"
+ },
+ {
+  "id": 12,
+  "name": "Disco Solido Ssd M2 Pci-E 250Gb Wd SN570 Blue",
+  "shortName": " Ssd M2 Pci-E 250Gb Wd SN570",
+  "category": "Almacenamiento",
+  "price": 11500,
+  "image": [
+   "ssd-wd-250gb-m2_42080_1.jpeg",
+   "ssd-wd-250gb-m2_42080_1.jpeg",
+   "ssd-wd-250gb-m2_42080_2.jpeg",
+   "ssd-wd-250gb-m2_42080_3.jpeg"
+  ],
+  "status": "-",
+  "description": "El WD Blue SN570 WDS250G3B0C está adaptado para que puedas acceder de forma rápida a tus documentos digitales gracias a su tecnología en estado sólido..",
+  "family": "-",
+  "model": " WD10EZEX 1TB",
+  "warranty": "12 meses"
+ }
 ]

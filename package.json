@@ -5,7 +5,7 @@
   "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/app.js"
+    "dev": "nodemon -e js src/app.js"
   },
   "repository": {
     "type": "git",
@@ -28,4 +28,5 @@
   "devDependencies": {
     "nodemon": "^2.0.20"
   }
+
 }

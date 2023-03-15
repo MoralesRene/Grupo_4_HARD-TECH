@@ -28,18 +28,18 @@ let productsController = {
         const images = req.files?.map(element => element.filename)
         const image = [];
         images.forEach(img => { image.push(img) });
-
+        
         const products = getProducts();
         const newProduct = {
             id: products[products.length - 1].id + 1,
-            name: req.body.name,
+            name: req.body.nombre,
             shortName: req.body.shortname,
-            description: req.body.description,
-            category: req.body.category,
-            trademark: req.body.trademark,
-            model: req.body.model,
+            description: req.body.descripcion,
+            category: req.body.categoria,
+            trademark: req.body.marca,
+            model: req.body.modelo,
             warranty: req.body.warranty,
-            price: parseInt(req.body.price),
+            price: parseInt(req.body.precio),
             image: image
 
         };

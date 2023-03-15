@@ -5,14 +5,14 @@
 <%- include("partials/navbar") %>
 <body>
 <main>
-    <form action="edit-product" enctype="multipart/form-data">
+    <form action="/product/list" method="POST" enctype="multipart/form-data">
         <div class="container-edicion-producto">
-            <input type="text" placeholder="Nombre del producto">
+            <input type="text" placeholder="Nombre del producto" name="nombre">
             <textarea name="descripcion" placeholder="Descripción" id="descripcion" cols="30" rows="10"></textarea>
-            <input type="file" accept=".jpg, .jpeg, .png">
+            <input type="file" accept=".jpg, .jpeg, .png" name="imagen-producto">
             <select name="categoria" id="categoria">
-                <option value="general">Seleccione uno</option>
-                <option value="Motherwards">Motherwards</option>
+                <option value="">Seleccione uno</option>
+                <option value="Motherboard">Motherboard</option>
                 <option value="Procesadores">Procesadores</option>
                 <option value="Memorias">Memorias</option>
                 <option value="Fuentes">Fuentes</option>
@@ -25,12 +25,18 @@
                 <option value="general">Seleccione uno</option>
                 <option value="amd">AMD</option>
                 <option value="Republic of gamers">REPUBLIC OF GAMERS</option>
+                <option value="Asus">Asus</option>
+                <option value="Gigabyte">Gigabyte</option>
+                <option value="MSI">MSI</option>
+                <option value="Sentey">Sentey</option>
+                <option value="HyperX">HyperX</option>
+                <option value="Corsair">Corsair</option>
             </select>
-            <input type="text" placeholder="Modelo">
-            <input type="number" placeholder="Precio">
+            <input type="text" placeholder="Modelo" name="modelo">
+            <input type="number" placeholder="Precio" name="precio">
             <div class="botones">
                 <div class="button-confirmar">
-                    <button><a href="/">Confirmar</a></button>
+                    <button type="submit">Confirmar</button>
                 </div>
                 <div class="button-borrar">
                     <button type="reset">Limpiar</button>
