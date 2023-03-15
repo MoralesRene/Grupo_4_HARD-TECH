@@ -21,6 +21,29 @@ let productsController = {
                 break;
         };
     },
+    createProduct: (req, res) => {
+        const images = req.files?.map(element => element.filename)
+        const image = [];
+        images.forEach(img => { image.push(img) });
+
+        const products = getProducts();
+        const newProduct = {
+            id: products[products.length - 1].id + 1,
+            name: req.body.name,
+            shortName: req.body.shortname,
+            description: req.body.description,
+            category: req.body.category,
+            trademark: req.body.trademark,
+            model: req.body.model,
+            warranty: req.body.warranty,
+            price: parseInt(req.body.price),
+            image: image
+
+        };
+        products.push(newProduct);
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "))
+        res.redirect("/product/list");
+    },
     mostrarPorCat: (req, res) => {
         const products = getProducts();
         const productByCategory = products.filter(producto => producto.category == req.params.category)
