@@ -19,6 +19,9 @@ let productsController = {
             case 'cart':
                 res.render("product-cart", { productos: products })
                 break;
+                case 'create':
+                res.render("crear-producto")
+                break;
         };
     },
     mostrarPorCat: (req, res) => {
@@ -42,11 +45,11 @@ let productsController = {
     editarProducto: (req, res) => {
         const products = getProducts();
         const productIndex = products.findIndex(element => element.id == req.params.id)
-        let imagenes = req.files ? req.files.map((element) => element.filename) : products[productIndex].image
+        let imagenes = req.files.length !=0 ? req.files.map((element) => element.filename) : products[productIndex].image
         products[productIndex] = {
             ...products[productIndex],
             name: req.body.name,
-            description: req.body.description,
+            description: req.body.descripcion,
             category: req.body.categoria,
             trademark: req.body.marca,
             price: req.body.price,

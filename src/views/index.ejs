@@ -32,7 +32,7 @@
                         <% featuredProd.forEach(product => { %>
                             <article>
                                     <a href="/product/detail/<%= product.id %>">
-                                    <img src="<%= product.image[0] %>" alt="">
+                                    <img src="/img/<%= product.image[0] %>" alt="">
                                     <div class="info-prod">
                                         <h4><%= product.shortName %></h4>
                                         <p class="precio">$ <%= product.price %></p>
@@ -69,7 +69,7 @@
                         <% offerProd.forEach(product => { %>
                             <article>
                                     <a href="/product/detail/<%= product.id %>">
-                                    <img src="<%= product.image[0] %>" alt="">
+                                    <img src="/img/<%= product.image[0] %>" alt="">
                                     <div class="info-prod">
                                         <h4><%= product.shortName %></h4>
                                         <p class="precio">$ <%= product.price %></p>

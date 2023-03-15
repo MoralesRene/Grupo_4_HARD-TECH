@@ -25,7 +25,7 @@
                 <div class="list__container_product">
                 <% productos.forEach(product => {%>
                 <article class="producto">
-                    <img src="<%= product.image[0] %>" alt="">
+                    <img src="/img/<%= product.image[0] %>" alt="">
                     <div class="info-prod">
                         <h4><%= product.shortName %></h4>
                         <p class="precio">$ <%= product.price %></p>
