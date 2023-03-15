@@ -3,7 +3,7 @@ const { body } = require("express-validator");
 const router = express.Router();
 const registerController = require("../controllers/registerController.js");
 const multer = require("multer");
-const uploadFile = require("../middlewares/multerMiddleware.js");
+const uploadFile = require("../middlewares/multerMiddlewareUser.js");
 
 const validations = [
   body("nombre")

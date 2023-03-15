@@ -13,10 +13,10 @@
                 <section class="detalle_prod">
                     <h4 id="title"><%=idProd.name%></h4>
                     <div id="vista-tablet">
-                        <div id="img-principal"><img src="<%=idProd.image[0]%>" alt=""></div>
+                        <div id="img-principal"><img src="/img/<%=idProd.image[0]%>" alt=""></div>
 
-                        <div id="more-img"><img src="<%=idProd.image[1]%>" alt=""><img src="<%=idProd.image[2]%>" alt=""><img
-                                src="<%=idProd.image[3]%>" alt="none"></div>
+                        <div id="more-img"><img src="/img/<%=idProd.image[1]%>" alt=""><img src="/img/<%=idProd.image[2]%>" alt=""><img
+                                src="/img/<%=idProd.image[3]%>" alt="none"></div>
                         <p id="filtro-marca"><a href="#"><%=idProd.trademark%></a></p>
                         <div id="info-pago">
                             <h4 id="precio-efectivo">$<%=idProd.price%></h4>
@@ -59,7 +59,7 @@
                             <% otherProd.forEach(product => { %>
                                 <article>
                                         <a href="/product/detail/<%= product.id %>">
-                                        <img src="<%= product.image[0] %>" alt="">
+                                        <img src="/img/<%= product.image[0] %>" alt="">
                                         <div class="info-prod">
                                             <h4><%= product.shortName %></h4>
                                             <p class="precio">$ <%= product.price %></p>
