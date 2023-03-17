@@ -951,7 +951,7 @@ main#register {
     justify-content: center;
     margin: 10px 0px;
 }
-    
+
 
 /*----------------------------------------------------------------------------------*/
 /*product-cart-html*/
@@ -1352,6 +1352,29 @@ main#register {
 .button-confirmar {
     display: flex;
     width: 50%;
+}
+
+.button-borrar button {
+    display: flex;
+    width: fit-content;
+    background-color: #e74c3c;
+    border: none;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.button-borrar button:hover {
+    background-color: #c0392b;
+    cursor: pointer;
+}
+
+.button-borrar button:active {
+    transform: translateY(2px);
+    box-shadow: none;
+    background-color: #d35400;
+    color: white;
 }
 
 .button-confirmar a {
