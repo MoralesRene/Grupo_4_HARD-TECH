@@ -59,8 +59,13 @@
     }
 
     .container_nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
         background: black;
-        margin: 15px auto 0px;
+        margin: 140px auto 0px;
     }
 
     nav.hidden {
@@ -112,9 +117,9 @@
         top: 50px;
         background-color: black;
         width: 100%;
-        opacity: 0;
         transition: .3s ease-in-out;
         z-index: -1;
+        display: none;
     }
 
     .subcategory li {
@@ -180,6 +185,7 @@
 
     /*Carrusel*/
     .carrusel img {
+        margin-top: 70px;
         height: 175px;
     }
 
@@ -1026,9 +1032,9 @@
 
     .hidden>ul>li:hover .subcategory {
         top: 30px;
-        visibility: visible;
         opacity: 1;
         z-index: 10;
+        display: block;
     }
 
     .subcategory>li:hover {
@@ -1197,6 +1203,24 @@
     }
 
     .list__container_product>.producto {
+        margin-top: 100px;
         width: 25%;
+    }
+
+}
+
+/* celular */
+
+@media(max-width:460px) {
+
+    .carrusel {
+        margin-top: 40px;
+    }
+}
+
+@media(max-width:320px) {
+
+    .carrusel {
+        margin-top: 32px;
     }
 }
