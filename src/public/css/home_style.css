@@ -113,7 +113,8 @@ body {
     top: 48px;
     left: -100%;
     background-color: black;
-    height: auto;
+    height:600px;
+    overflow-y: scroll;
     z-index: 3;
     transition: .7s;
 }
@@ -177,6 +178,8 @@ body {
 
 /*carrusel*/
 .carrusel {
+    position: relative;
+    margin-top: 40px;
     width: 100vw;
     height: auto;
     overflow: hidden;
@@ -355,7 +358,7 @@ article .info-prod>a:link {
 }
 
 article img {
-    width: 150px;
+    width: 145px;
     padding: 15px;
     height: auto;
 }
