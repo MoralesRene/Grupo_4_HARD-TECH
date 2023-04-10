@@ -293,6 +293,9 @@
 
     /*----------------------------------------------------------------------------------*/
     /*Product-detail.html*/
+    main#product_detail{
+        margin-top: 60px;
+    }
     .detalle_prod {
         row-gap: 30px;
     }
@@ -491,6 +494,24 @@
         width: 35%;
         box-shadow: 5px 5px 30px rgb(100, 100, 100);
     }
+    /***************************************************/
+                        /*Profile*/
+    .contain__profile{
+        width: 90%;
+        margin-top: 85px;
+    }
+    .contain_profile_data>form{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 5px;
+        grid-template-rows: 300px 100px;
+        grid-row-gap: 5px;
+    }
+    .contain_profile_data>form>.other{
+        width: 100%;
+    }
+    .contain_profile_data>form>button{
+        grid-column: 1 / 4;
+    }
 }
 
 @media(min-width:769px) {
@@ -543,27 +564,6 @@
         padding-top: 0px;
         font-size: 12px;
     }
-
-    #check_v2:checked~.subcategory {
-        top: 40px;
-    }
-
-    #check_v3:checked~.subcategory {
-        top: 40px;
-    }
-
-    #check_v4:checked~.subcategory {
-        top: 40px;
-    }
-
-    #check_v5:checked~.subcategory {
-        top: 40px;
-    }
-
-    #check_v6:checked~.subcategory {
-        top: 40px;
-    }
-
     .hidden>ul>li {
         font-size: 16px;
         transition: 500ms;
@@ -716,6 +716,7 @@
     /*Product-detail.html*/
     main#product_detail {
         width: 80%;
+        margin-top: 80px;
     }
 
     .detalle_prod {
@@ -792,7 +793,7 @@
     /*Login.html*/
     #ventana {
         width: 40%;
-        margin: 60px auto;
+        margin: 100px auto 60px;
         transition: .5s;
     }
 
@@ -819,6 +820,7 @@
     .ventana-register {
         width: 35%;
         transition: .5s;
+        margin-top: 100px;
     }
 
     .ventana-register:hover {
@@ -933,6 +935,7 @@
         flex-flow: row wrap;
         width: 95%;
         max-width: 1200px;
+        margin-top: 80px;
     }
 
     main#list .list__category {
@@ -951,6 +954,7 @@
         width: 80%;
         gap: 15px;
         justify-content: center;
+        margin-top: 35px;
 
     }
 
@@ -967,6 +971,13 @@
     .list__container_product>article:hover {
         transform: none;
         box-shadow: 5px 5px 30px rgb(100, 100, 100);
+    }
+    .contain__profile{
+        width: 70%;
+        margin-top: 95px;
+    }
+    .contain_profile_data>form>button{
+        grid-column: 2 / 3;
     }
 }
 
@@ -1085,7 +1096,7 @@
     /*Login.html*/
     #ventana {
         width: 25%;
-        margin: 70px auto;
+        margin: 100px auto;
     }
 
     .go-to-regis {
@@ -1191,8 +1202,18 @@
     }
 
     .list__container_product>.producto {
-        margin-top: 100px;
         width: 25%;
     }
+    /*----------------------------------------------------------------------------------*/
+                                        /*Profile*/
+    .contain__profile{
+        max-width: 700px;
+        margin-top: 95px;
+        transition: .3s ease;
+    }
+    .contain__profile:hover{
+        box-shadow: 5px 5px 50px white;
+    }
+    
 
 }

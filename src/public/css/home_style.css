@@ -1544,3 +1544,58 @@ main#list>h2 {
     color: red;
     margin-bottom: -7.5px;
 }
+/*------------------------------------------------------------------*/
+                        /*Profile*/
+main#profile_main{
+    background-image: url(../img/fondo-login.jpg);
+    background-size: cover;
+    margin: 0px 0px;
+    max-width: 100%;
+    width: 100%;
+    background-position: center;
+}
+.contain__profile{
+    background-color: white;
+    width: 80%;
+    height: auto;
+    margin: 60px auto 40px;
+    padding: 10px;
+    display: flex;
+    flex-flow: column wrap;
+    row-gap: 10px;
+    border-radius: 5px;
+
+}
+.contain__profile>h3{
+    text-align: start;
+    font-size: 22px;   
+}
+.contain_profile_data h4{
+    font-size: 20px;
+    margin-top: 5px ;
+    margin-bottom: 5px;
+}
+.contain_profile_data>form{
+    display: grid;
+    grid-template-rows: 260px 300px 200px 100px;
+    justify-content: center;
+}
+.contain_profile_data>form>.info_personal,.info_domicilio,.other{
+    display: flex;
+    flex-flow: column wrap;
+    row-gap: 10px;
+}
+.contain_profile_data>form>.info_personal>input,.info_domicilio>input,.other>input{
+    outline-color: rgb(43, 235, 9);
+    font-size: 16px;
+    line-height: 24px;
+    text-indent: 5px;
+    width: 100%;
+}
+.contain_profile_data>form>button{
+    background-color: rgb(43, 235, 9);
+    color: white;
+    height: 30px;
+    margin: auto;
+    width: 100%;
+}

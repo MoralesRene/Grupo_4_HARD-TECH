@@ -6,6 +6,7 @@ const login = require("../src/routes/login");
 const register = require("../src/routes/register");
 const product = require("../src/routes/products");
 const cart = require("../src/routes/cart");
+const user=require("./routes/users")
 const exp = require("constants");
 const multer = require("multer");
 const app = express();
@@ -21,6 +22,7 @@ app.use(express.json());
 app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: false }));
 app.use("/", home);
+app.use("/", user)
 app.use("/login", login);
 app.use("/register", register);
 app.use("/product", product);

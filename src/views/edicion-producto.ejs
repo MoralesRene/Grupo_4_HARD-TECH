@@ -13,8 +13,8 @@
                                 rows="10"><%= product.description %></textarea>
                             <input type="file" name='imagen-producto' accept=".jpg, .jpeg, .png" multiple="multiple">
                             <select name="categoria" id="categoria">
-                                <option value="general">Seleccione uno</option>
-                                <option value="Motherboards" <%=product.category=="Motherboard" && 'selected' %>
+                                <option value="">Seleccione uno</option>
+                                <option value="Motherboard" <%=product.category=="Motherboard" && 'selected' %>
                                     >Motherboards</option>
                                 <option value="Procesadores" <%=product.category=="Procesadores" && 'selected' %>
                                     >Procesadores</option>
