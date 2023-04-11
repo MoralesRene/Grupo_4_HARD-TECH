@@ -1,4 +1,5 @@
 const express = require("express");
+const session = require("express-session")
 const path = require("path");
 const methodOverride = require("method-override");
 const home = require("../src/routes/home");
@@ -6,7 +7,7 @@ const login = require("../src/routes/login");
 const register = require("../src/routes/register");
 const product = require("../src/routes/products");
 const cart = require("../src/routes/cart");
-const user=require("./routes/users")
+const user = require("./routes/users")
 const exp = require("constants");
 const multer = require("multer");
 const app = express();
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 //Utilización de rutas
+app.use(session({ secret: 'Grupo-4', resave: false, saveUninitialized: false }))
 app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: false }));
 app.use("/", home);
