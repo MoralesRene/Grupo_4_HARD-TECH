@@ -3,6 +3,7 @@ const path = require("path");
 const methodOverride = require("method-override");
 const home = require("../src/routes/home");
 const login = require("../src/routes/login");
+const logout = require("../src/routes/logout")
 const register = require("../src/routes/register");
 const product = require("../src/routes/products");
 const cart = require("../src/routes/cart");
@@ -24,6 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/", home);
 app.use("/", user)
 app.use("/login", login);
+app.use("/logout", logout);
 app.use("/register", register);
 app.use("/product", product);
 app.use("/cart", cart);

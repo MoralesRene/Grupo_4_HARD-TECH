@@ -7,6 +7,7 @@ let registerController = {
   },
   envio: (req, res) => {
     const validaciones = validationResult(req);
+    console.log(validaciones.mapped());
     if (validaciones.errors.length > 0) {
       return res.render("register", {
         errors: validaciones.mapped(),
