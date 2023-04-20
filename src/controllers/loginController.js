@@ -13,7 +13,7 @@ let loginController = {
         let userToLogin = User.findByField('email', req.body.email);
 
         if (userToLogin) {
-            let correctPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+            let correctPassword = bcryptjs.compareSync(req.body.password, userToLogin.contrasenia);
             if (correctPassword) {
                 res.send('hola')
             }
@@ -26,8 +26,8 @@ let loginController = {
                 }
             }
         })
-
-    }
+        
+    } 
 
 }
 

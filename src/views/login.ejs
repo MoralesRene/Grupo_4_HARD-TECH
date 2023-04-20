@@ -10,8 +10,11 @@
                     <div id="ventana">
                         <h3>Iniciar Sesión</h3>
                         <form action="/login" method="POST">
-                            <input type="email" placeholder="Email" required>
-                            <input type="password" placeholder="Contraseña" required>
+                            <% if (locals.errors) { %>
+                                <label for="email"><%= errors.email.msg %></label>
+                            <% } %> 
+                            <input type="email" name='email' placeholder="Email" required>
+                            <input type="password" name='password' placeholder="Contraseña" required>
                             <button>Ingresar</button>
                         </form>
                         <p><a href="#">Me olvide la contraseña</a></p>
