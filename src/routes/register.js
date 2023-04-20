@@ -20,12 +20,10 @@ const validations = [
   body("contrasenia")
     .notEmpty()
     .withMessage("La contraseña no puede ir vacía")
-    .bail()
-    .isStrongPassword()
-    .withMessage("La contraseña debe contener XXX"),
+    .bail(),
 ];
 
 router.get("/", registerController.index);
-router.post("/",uploadFile.single("avatar"),validations, registerController.envio);
+router.post("/", uploadFile.single("avatar"), validations, registerController.envio);
 
 module.exports = router;
