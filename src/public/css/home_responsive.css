@@ -136,7 +136,7 @@
         height: auto;
     }
     .hidden>ul>li:hover .subcategory{
-        top: 30px;
+        top: 40px;
         visibility: visible;
         opacity: 1;
         z-index: 10;
@@ -181,14 +181,14 @@
 
     .ofertas {
         width: 100%;
-        height: 290px;
+        height: 320px;
         overflow: hidden;
         background-color: transparent;
     }
 
     .destacados {
         width: 100%;
-        height: 290px;
+        height: 320px;
         overflow: scroll;
         background-color: transparent;
     }
@@ -196,7 +196,7 @@
     .destacados article,
     .ofertas article {
         width: 250px;
-        height: 280px;
+        height: 310px;
         border-radius: 7px;
     }
 
@@ -207,7 +207,7 @@
     }
 
     .info-prod h4 {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     /*Marcas*/
@@ -502,15 +502,19 @@
     }
     .contain_profile_data>form{
         grid-template-columns: 1fr 1fr 1fr;
-        grid-column-gap: 5px;
-        grid-template-rows: 300px 100px;
+        grid-column-gap: 30px;
+        grid-template-rows: 350px 100px;
         grid-row-gap: 5px;
     }
     .contain_profile_data>form>.other{
         width: 100%;
     }
     .contain_profile_data>form>button{
-        grid-column: 1 / 4;
+        grid-column: 3 / 4;
+    }
+    .contain_profile_data>form>.log-out{
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
     }
 }
 
@@ -574,7 +578,6 @@
 
     .hidden>ul>li:hover {
         background-color: rgb(43, 235, 9);
-        transform: scale(1.1);
     }
 
     .interno i:hover {
@@ -633,7 +636,7 @@
     .contenedor-dest>article,
     .contenedor-ofer>article {
         width: 250px;
-        height: 290px;
+        height: 320px;
     }
 
     .contenedor-dest>article img,
@@ -978,6 +981,17 @@
     }
     .contain_profile_data>form>button{
         grid-column: 2 / 3;
+        background-color: black;
+        color:rgb(43, 235, 9);
+        width: 150px;
+
+    }
+    .contain_profile_data>form>.log-out{
+        grid-column: 1 / 0;
+        background-color: black;
+        color:rgb(43, 235, 9);
+        width: 150px;
+
     }
 }
 
@@ -1013,8 +1027,6 @@
 
     article:hover {
         box-shadow: 5px 5px 30px rgb(43, 235, 9);
-        position: relative;
-        transform: scale(1.1);
     }
 
     .destacados,
@@ -1030,7 +1042,7 @@
     }
 
     .hidden>ul>li:hover .subcategory {
-        top: 30px;
+        top: 40px;
         opacity: 1;
         z-index: 10;
         display: block;
@@ -1207,13 +1219,20 @@
     /*----------------------------------------------------------------------------------*/
                                         /*Profile*/
     .contain__profile{
-        max-width: 700px;
+        max-width: 860px;
         margin-top: 95px;
         transition: .3s ease;
     }
     .contain__profile:hover{
         box-shadow: 5px 5px 50px white;
     }
-    
-
+    .contain_profile_data>form>button{
+        grid-column: 3 / 4;
+        width: 150px;
+    }
+    .contain_profile_data>form>button:hover,.contain_profile_data>form>.log-out:hover{
+        background-color: rgb(43, 235, 9);
+        color: black;
+        font-weight: 700;
+    }
 }
