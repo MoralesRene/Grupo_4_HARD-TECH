@@ -5,20 +5,24 @@
             <!--Header reutilizable-->
 
             <%- include("partials/navbar") %>
-            <!-- Codigo reutilizable NAV_BAR.EJS-->
-            <main id="ventana-login">
-                <div id="ventana">
-                    <h3>Iniciar Sesión</h3>
-                    <form action="#" method="POST">
-                        <input type="email" placeholder="Email" required>
-                        <input type="password" placeholder="Contraseña" required>
-                    </form>
-                    <p><a href="#">Me olvide la contraseña</a></p>
-                    <button><a href="/">Ingresar</a></button>
-                    <div class="go-to-regis"><b>¿Aun no tienes cuenta?</b><a href="/register">Registrate</a></div>
-                    <div class="ingreso-con-red face"><i class="fa-brands fa-facebook-f"></i>Ingresar con Facebook</div>
-                    <div class="ingreso-con-red google"><i class="fa-brands fa-google"></i>Ingresar con Google</div>
-                </div>
-            </main>
+                <!-- Codigo reutilizable NAV_BAR.EJS-->
+                <main id="ventana-login">
+                    <div id="ventana">
+                        <h3>Iniciar Sesión</h3>
+                        <form action="/login" method="POST">
+                            <% if (locals.errors) { %>
+                                <label for="email"><%= errors.email.msg %></label>
+                            <% } %> 
+                            <input type="email" name='email' placeholder="Email" required>
+                            <input type="password" name='password' placeholder="Contraseña" required>
+                            <button>Ingresar</button>
+                        </form>
+                        <p><a href="#">Me olvide la contraseña</a></p>
+                        <div class="go-to-regis"><b>¿Aun no tienes cuenta?</b><a href="/register">Registrate</a></div>
+                        <div class="ingreso-con-red face"><i class="fa-brands fa-facebook-f"></i>Ingresar con Facebook
+                        </div>
+                        <div class="ingreso-con-red google"><i class="fa-brands fa-google"></i>Ingresar con Google</div>
+                    </div>
+                </main>
 
-            <%- include("partials/footer") %>
+                <%- include("partials/footer") %>

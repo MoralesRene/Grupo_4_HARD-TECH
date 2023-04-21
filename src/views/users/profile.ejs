@@ -13,31 +13,35 @@
                             <form action="" method="post">
                                 <div class="info_personal">
                                     <h4>Datos Personales</h4>
-                                <label for="name">Nombre y apellido</label>
-                                <input type="text" name="name" value="">
-                                <label for="documento">DNI</label>
-                                <input type="text" name="documento" value="">
-                                <label for="telefono">Telefono</label>
-                                <input type="number" name="telefono" value="">
+                                    <label for="name">Nombre y apellido</label>
+
+                                    <input type="text" name="name" value="<%= session && session.nombre %>">
+                                    <label for="documento">DNI</label>
+                                    <input type="text" name="documento" value="<%= session && session.documento %>">
+                                    <label for="telefono">Telefono</label>
+                                    <input type="number" name="telefono" value="<%= session && session.telefono %>">
                                 </div>
                                 <div class="info_domicilio">
                                     <h4>Mi Domicilio</h4>
-                                <label for="adress">Domicilio</label>
-                                <input type="text" name="adress" value="">
-                                <label for="altura">Altura</label>
-                                <input type="number" name="altura" value="">
-                                <label for="piso">Piso/Depto</label>
-                                <input type="text" name="piso" value="">
-                                <label for="localidad">Localidad</label>
-                                <input type="text" name="localidad" value="">
+                                    <label for="adress">Domicilio</label>
+                                    <input type="text" name="adress" value="">
+                                    <label for="altura">Altura</label>
+                                    <input type="number" name="altura" value="">
+                                    <label for="piso">Piso/Depto</label>
+                                    <input type="text" name="piso" value="">
+                                    <label for="localidad">Localidad</label>
+                                    <input type="text" name="localidad" value="">
                                 </div>
 
                                 <div class="other">
                                     <h4>Otros Datos</h4>
-                                <label for="email">Email</label>
-                                <input type="email" name="email" value="">
-                                <h4>Imagen perfil</h4>
-                                <input type="file" name="" id="">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" value="<%= session && session.email %>">
+                                    <h4>Imagen perfil</h4>
+                                    <div class="avatars">
+                                        <img src="/img/avatars/<%= session.avatar %>" alt="">
+                                        <input type="file" name="avatars" id="">
+                                    </div>
                                 </div>
 
                                 <button type="submit">Actualizar Datos</button>
