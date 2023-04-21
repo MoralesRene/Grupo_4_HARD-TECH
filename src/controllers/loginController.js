@@ -1,6 +1,8 @@
 const path = require("path")
 const User = require('../models/User');
 const bcryptjs = require('bcryptjs');
+const session = require('express-session');
+const { log } = require("console");
 
 
 
@@ -15,7 +17,9 @@ let loginController = {
         if (userToLogin) {
             let correctPassword = bcryptjs.compareSync(req.body.password, userToLogin.contrasenia);
             if (correctPassword) {
-                res.send('hola')
+                delete userToLogin.contrasenia;
+                req.session.userLogged = userToLogin;
+                return res.redirect('/profile')
             }
         };
 
@@ -26,8 +30,19 @@ let loginController = {
                 }
             }
         })
-        
-    } 
+
+    },
+
+    profile: (req, res) => {
+        return res.render('profile', {
+            user: req.session.userLogged
+        })
+    },
+
+    // logout: (req, res) => {
+    //     req.session.destroy();
+    //     return res.redirect('/')
+    // }
 
 }
 

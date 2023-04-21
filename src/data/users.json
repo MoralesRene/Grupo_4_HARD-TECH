@@ -7,5 +7,14 @@
   "documento": "44444",
   "contrasenia": "$2a$10$dZEQ6ajZyomLaDMjXgL2.emCEXA.jIwNb38o8rkmafUSScuzJkhsa",
   "avatar": "avatar-1681885107755.jpg"
+ },
+ {
+  "id": 2,
+  "nombre": "Jeronimo Diaz",
+  "email": "jerodiaz@hotmail.com",
+  "telefono": "1139039728",
+  "documento": "44444",
+  "contrasenia": "$2a$10$YQC/Ry9YXrWz6afb.jGj.eGRQGvQxh/SzaZNmykyk4ZvD8kE3wsiC",
+  "avatar": "avatar-1681967427634.jpg"
  }
 ]

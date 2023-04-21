@@ -4,6 +4,8 @@ const router = express.Router();
 const registerController = require("../controllers/registerController.js");
 const multer = require("multer");
 const uploadFile = require("../middlewares/multerMiddlewareUser.js");
+const guestMiddleware = require('../middlewares/guestMiddleware')
+
 
 const validations = [
   body("nombre")
@@ -23,7 +25,7 @@ const validations = [
     .bail(),
 ];
 
-router.get("/", registerController.index);
+router.get("/", guestMiddleware, registerController.index);
 router.post("/", uploadFile.single("avatar"), validations, registerController.envio);
 
 module.exports = router;

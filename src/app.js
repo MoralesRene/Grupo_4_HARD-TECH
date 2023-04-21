@@ -6,10 +6,12 @@ const login = require("../src/routes/login");
 const register = require("../src/routes/register");
 const product = require("../src/routes/products");
 const cart = require("../src/routes/cart");
-const user=require("./routes/users")
+const user = require("./routes/users")
 const exp = require("constants");
 const multer = require("multer");
 const app = express();
+const session = require('express-session')
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
 const publicPath = path.join(__dirname, "/public");
 
@@ -17,6 +19,13 @@ const publicPath = path.join(__dirname, "/public");
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(session({
+  secret: "session",
+  resave: false,
+  saveUninitialized: false,
+}
+));
+app.use(userLoggedMiddleware)
 
 //Utilización de rutas
 app.use(express.static(publicPath));
