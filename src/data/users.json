@@ -1,55 +1,29 @@
 [
-    {
-        "id": 1,
-        "firstName": "Joaquín",
-        "secondName": "Suarez",
-        "email": "joaco@gmail.com",
-        "dni/cuit": 42678940,
-        "fechaNacimiento": 17092006,
-        "contraseña": "xxxxxx",
-        "confirmaContraseña": "xxxxxx"
-    },
-    {
-        "id": 2,
-        "firstName": "Emilia",
-        "secondName": "Nuñez",
-        "email": "eminuñez@gmail.com",
-        "dni/cuit": 46944283,
-        "fechaNacimiento": 14102006,
-        "contraseña": "xxxxxx",
-        "confirmaContraseña": "xxxxxx"
-    },
-    
-    {
-        "id": 3,
-        "firstName": "María Emilia",
-        "secondName":"Lezama",
-        "email": "mariaemilia@yahoo.com",
-        "dni/cuit": 38932123,
-        "fechaNacimiento": "02021990",
-        "contraseña": "xxxxxx",
-        "confirmaContraseña": "xxxxxx"
-    
-    },
-
-    {
-        "id": 4,
-        "firstName": "Juan Manuel",
-        "secondName": "Rodriguez",
-        "email": "juanmaro@yahoo.com",
-        "dni/cuit": 50444676,
-        "fechaNacimiento": 10022010,
-        "contraseña": "xxxxxx",
-        "confirmaContraseña": "xxxxxx"
-    },
-    {
-        "id": 5,
-        "firstName": "Rocío",
-        "secondName": "Diaz",
-        "email": "rochidiaz@gmail.com",
-        "dni/cuit": 29840932,
-        "fechaNacimiento": 18081982,
-        "contraseña": "xxxxxx",
-        "confirmaContraseña": "xxxxxx"
-    }
+ {
+  "id": 1,
+  "nombre": "Tiziano Luca",
+  "email": "tiziluca@hotmail.com",
+  "telefono": "1139039728",
+  "documento": "44444",
+  "contrasenia": "$2a$10$dZEQ6ajZyomLaDMjXgL2.emCEXA.jIwNb38o8rkmafUSScuzJkhsa",
+  "avatar": "avatar-1681885107755.jpg"
+ },
+ {
+  "id": 2,
+  "nombre": "Jeronimo Diaz",
+  "email": "jerodiaz@hotmail.com",
+  "telefono": "1139039728",
+  "documento": "44444",
+  "contrasenia": "$2a$10$YQC/Ry9YXrWz6afb.jGj.eGRQGvQxh/SzaZNmykyk4ZvD8kE3wsiC",
+  "avatar": "avatar-1681967427634.jpg"
+ },
+ {
+  "id": 3,
+  "nombre": "Rene",
+  "email": "renemoralesquispe@gmail.com",
+  "telefono": "111111111",
+  "documento": "4444444",
+  "contrasenia": "$2a$10$YOGEykkccipY.td9HVQ9IebgXLvRjvMvUFB9bh2QGwKBuI2odRt12",
+  "avatar": "avatar-1682047916524.jpg"
+ }
 ]
