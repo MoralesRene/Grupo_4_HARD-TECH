@@ -33,3 +33,19 @@ Hacer Menos:
 
 Dejar de hacer:
 -
+
+RETROSPECTIVA SPRINT 5:
+Comenzar hacer:
+Buscarle detalles al proyecto para poder superar las espectativas.
+
+Hacer mas:
+reuniones semanales, comentar las tareas a completar.
+
+Continuar Haciendo:
+division de tareas y compromiso con el proyecto. Cada integrante se interioriza en generar su aporte.
+
+Hacer menos:
+-
+
+Dejar de hacer:
+-
