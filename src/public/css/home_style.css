@@ -1595,7 +1595,7 @@
 
                     .contain_profile_data>form {
                         display: grid;
-                        grid-template-rows: 260px 300px 200px 100px;
+                        grid-template-rows: 260px 300px 400px 100px;
                         justify-content: center;
                     }
 
@@ -1623,4 +1623,13 @@
                         height: 30px;
                         margin: auto;
                         width: 100%;
+                    }
+                    .contain_profile_data>form>.log-out>a{
+                        color:white;
+                    }
+                    .contain_profile_data>form>.log-out>a:visited{
+                        color: white;
+                    }
+                    input[type="file"]{
+                        width: 155px;
                     }

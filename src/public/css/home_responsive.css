@@ -516,6 +516,9 @@
         grid-column: 1 / 2;
         grid-row: 2 / 3;
     }
+    input[type="file"]{
+        width: 155px;
+    }
 }
 
 @media(min-width:769px) {
@@ -989,9 +992,10 @@
     .contain_profile_data>form>.log-out{
         grid-column: 1 / 0;
         background-color: black;
-        color:rgb(43, 235, 9);
         width: 150px;
-
+    }
+    .contain_profile_data>form>.log-out>a{
+        color:rgb(43, 235, 9);
     }
 }
 
@@ -1230,9 +1234,12 @@
         grid-column: 3 / 4;
         width: 150px;
     }
-    .contain_profile_data>form>button:hover,.contain_profile_data>form>.log-out:hover{
+    .contain_profile_data>form>button:hover,.contain_profile_data>form>.log-out:hover>a{
         background-color: rgb(43, 235, 9);
         color: black;
         font-weight: 700;
+    }
+    input[type="file"]{
+        width: 155px;
     }
 }
