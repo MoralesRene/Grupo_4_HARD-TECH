@@ -1,6 +1,6 @@
 const path = require("path");
 const { validationResult } = require("express-validator");
-const User = require('../middlewares/User');
+const User = require('../models/User');
 const bcryptjs = require('bcryptjs');
 
 let registerController = {
