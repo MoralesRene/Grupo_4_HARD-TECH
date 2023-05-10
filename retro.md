@@ -49,3 +49,18 @@ Hacer menos:
 
 Dejar de hacer:
 -
+RETROSPECTIVA SPRINT 6:
+Comenzar hacer:
+Reuniones consecutivas adecuando el proyecto a la entrega final.
+
+Hacer mas:
+reuniones más frecuentes.
+
+Continuar haciendo:
+aportes individuales y grupales, acompañamientos para que los compañeros terminen sus tareas.
+
+Hacer menos:
+-
+
+Dejar de hacer:
+-
