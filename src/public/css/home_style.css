@@ -1328,6 +1328,7 @@
                         display: flex;
                         justify-content: center;
                         flex-direction: column;
+                        margin-top: 50px;
                     }
 
                     .container-edicion-producto input {
@@ -1369,23 +1370,29 @@
 
                     .button-borrar {
                         display: flex;
-                        width: 50%;
+                        width: 100%;
                     }
 
                     .button-confirmar {
                         display: flex;
-                        width: 50%;
+                        width: 100%;
                     }
+                    .edit{
+                        justify-content: center;
+                    }
+                    .edit>form{
+                        width: 100%;
+                        margin: 10px;
 
-                    .button-borrar button {
-                        display: flex;
-                        width: fit-content;
-                        background-color: #e74c3c;
+                    }
+                    .edit>form>button{
+                        height: 30px;
                         border: none;
-                        color: black;
-                        padding: 10px;
-                        border-radius: 10px;
-                        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+                        border-radius: 5px;
+                        width: 100%;
+                    }
+                    .button-borrar button {
+                        background-color: #e74c3c;
                     }
 
                     .button-borrar button:hover {
@@ -1495,13 +1502,13 @@
 
                     .list__container_product>.producto>.info-prod {
                         width: 100%;
-                        row-gap: 5px;
+                        row-gap: 1px;
                         height: 160px;
                         justify-content: end;
                     }
 
                     .list__container_product>.producto>.info-prod>h4 {
-                        font-size: 22px;
+                        font-size: 15px;
                     }
 
                     .list__container_product>.producto>.info-prod>.precio {

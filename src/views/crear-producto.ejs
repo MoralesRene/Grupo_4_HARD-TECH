@@ -24,16 +24,34 @@
             <select name="marca" id="marca">
                 <option value="">Seleccione uno</option>
                 <option value="amd">AMD</option>
-                <option value="Republic of gamers">REPUBLIC OF GAMERS</option>
+                <option value="intel">INTEL</option>
+                <option value="sentey">Sentey</option>
+                <option value="gigabyte">Gigabyte</option>
+                <option value="asus">Asus</option>
+                <option value="msi">MSI</option>
+                <option value="corsair">Corsair</option>
+                <option value="hyperx">HyperX</option>
             </select>
             <input type="text" placeholder="Modelo">
-            <input type="number" placeholder="Precio">
+            <select name="status" id="status">
+                <option value="">Seleccione uno</option>
+                <option value="destacado">Destacados</option>
+                <option value="ofertas">Ofertas</option>
+            </select>
+            <select name="family" id="families">
+                <option value="">Seleccione Uno</option>
+                <option value="intel">Intel</option>
+                <option value="amd">AMD</option>
+            </select>
+            <input type="text" placeholder="Garantia" name="warranty">
+            <input type="text" placeholder="Modelo" name="model">
+            <input type="number" placeholder="Precio" name="price">
             <div class="botones">
                 <div class="button-confirmar">
                     <button><a href="/">Confirmar</a></button>
                 </div>
                 <div class="button-borrar">
-                    <button type="reset">Limpiar</button>
+                    <button type="reset" id="clean">Limpiar</button>
                 </div>
             </div>
         </div>

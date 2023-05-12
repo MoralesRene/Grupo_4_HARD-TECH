@@ -25,5 +25,14 @@
   "documento": "4444444",
   "contrasenia": "$2a$10$YOGEykkccipY.td9HVQ9IebgXLvRjvMvUFB9bh2QGwKBuI2odRt12",
   "avatar": "avatar-1682047916524.jpg"
+ },
+ {
+  "id": 4,
+  "nombre": "Rene",
+  "email": "a@b.com",
+  "telefono": "111111",
+  "documento": "4444444",
+  "contrasenia": "$2a$10$yvwRUpSoCDkHpUjLLcHm2OtkK.qbNYRPd34PHNgYgWBahNI2mfHcu",
+  "avatar": "avatar-1683682483080.jpg"
  }
 ]

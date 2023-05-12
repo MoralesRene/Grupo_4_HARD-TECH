@@ -519,6 +519,17 @@
     input[type="file"]{
         width: 155px;
     }
+    .edit>form{
+        max-width: 400px;
+        
+    }
+    .botones>.edit{
+        max-width: 400px;
+        margin: auto;
+    }
+    .botones>.edit>button{
+        margin: 0;
+    }
 }
 
 @media(min-width:769px) {
@@ -658,9 +669,9 @@
         text-align: center;
     }
 
-    /*.info-prod h4{
-        height: 48px;*/
-
+    .info-prod h4{
+        line-height: 20px;
+    }
     article {
         box-shadow: none;
         transition: 500ms;
@@ -997,6 +1008,18 @@
     .contain_profile_data>form>.log-out>a{
         color:rgb(43, 235, 9);
     }
+    .container-edicion-producto{
+        margin-top: 80px;
+    }
+    .botones{
+        justify-content: center;
+    }
+    .button-confirmar, .button-borrar{
+        max-width: 250px;
+    }
+    .edit{
+        margin: auto;
+    }
 }
 
 /*------------------------*/
@@ -1208,6 +1231,7 @@
     .container-edicion-producto {
         max-width: 1200px;
         margin: auto;
+        margin-top: 100px;
     }
 
 

@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Motherboard 1700 12°Gen - Asus Prime Z690-P WIFI DDR4",
     "shortName": "Asus Prime Z690-P WIFI DDR4",
-    "category": "Motherboards",
+    "category": "Motherboard",
     "price": "55000",
     "image": [
       "motherboard-asus-1.jpg",
@@ -15,7 +15,7 @@
     "trademark": "general",
     "family": "Intel",
     "model": "PRIME Z690-P WIFI D4",
-    "warranty": "36 meses"
+    "warranty": "36"
   },
   {
     "id": 2,
@@ -34,7 +34,7 @@
     "trademark": "MSI",
     "family": "AMD",
     "model": "B550 TOMAHAWK",
-    "warranty": "36 meses"
+    "warranty": "36"
   },
   {
     "id": 3,
@@ -53,7 +53,7 @@
     "trademark": "GIGABYTE",
     "family": "Intel",
     "model": "GA-H310M-H S1151",
-    "warranty": "24 meses"
+    "warranty": "24"
   },
   {
     "id": 4,
@@ -72,7 +72,7 @@
     "trademark": "GIGABYTE",
     "family": "AMD",
     "model": "B550 AORUS ELITE V2",
-    "warranty": "36 meses"
+    "warranty": "36"
   },
   {
     "id": 5,
@@ -91,7 +91,7 @@
     "trademark": "MSI",
     "family": "Intel",
     "model": "PRO H410M-B",
-    "warranty": "30 meses"
+    "warranty": "30"
   },
   {
     "id": 6,
@@ -110,7 +110,7 @@
     "trademark": "AMD",
     "family": "AMD",
     "model": "Ryzen 3 3200G",
-    "warranty": "36 meses"
+    "warranty": "36"
   },
   {
     "id": 7,
@@ -129,7 +129,7 @@
     "trademark": "AMD",
     "family": "AMD",
     "model": "Ryzen 5 4600G",
-    "warranty": "36 meses"
+    "warranty": "36"
   },
   {
     "id": 8,
@@ -148,7 +148,7 @@
     "trademark": "Intel",
     "family": "Intel",
     "model": "Intel Pentium G7400",
-    "warranty": "36 meses"
+    "warranty": "36"
   },
   {
     "id": 9,
@@ -167,7 +167,7 @@
     "trademark": "Intel",
     "family": "Intel",
     "model": "Core i7 13700K",
-    "warranty": "36 meses"
+    "warranty": "36"
   },
   {
     "id": 10,
@@ -186,7 +186,7 @@
     "trademark": "Seagate",
     "family": "-",
     "model": " ST1000DM010 1TB",
-    "warranty": "12 meses"
+    "warranty": "12"
   },
   {
     "id": 11,
@@ -204,7 +204,7 @@
     "description": "El WD Blue WD10EZEX se caracteriza por su eficiencia y buen funcionamiento, que sumado a su reducido consumo energético lo vuelven un disco indispensable para funciones estándar.",
     "family": "-",
     "model": " WD10EZEX 1TB",
-    "warranty": "12 meses"
+    "warranty": "12"
   },
   {
     "id": 12,
@@ -222,6 +222,6 @@
     "description": "El WD Blue SN570 WDS250G3B0C está adaptado para que puedas acceder de forma rápida a tus documentos digitales gracias a su tecnología en estado sólido..",
     "family": "-",
     "model": " WD10EZEX 1TB",
-    "warranty": "12 meses"
+    "warranty": "12"
   }
 ]
