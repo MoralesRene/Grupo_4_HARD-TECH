@@ -899,7 +899,7 @@
 
                     .ventana-register {
                         background-color: white;
-                        margin: 20px auto;
+                        margin: 50px auto;
                         border-radius: 5px;
                         display: flex;
                         flex-direction: column;
@@ -915,22 +915,9 @@
                         flex-direction: column;
                         width: 100%;
                     }
-
-                    .ventana-register>form>input {
-                        font-size: 12px;
-                        line-height: 20px;
-                        padding-left: 5px;
-                    }
-
-                    .ventana-register input:focus {
-                        outline: 1px solid rgb(43, 235, 9);
-                    }
-
                     .ventana-register label {
-                        margin: 10px 0px;
-                        font-size: 12px;
+                        margin: 5px 0px;
                     }
-
                     .ventana-register h5 {
                         font-size: 20px;
                         font-weight: 500;
@@ -974,8 +961,51 @@
                         justify-content: center;
                         margin: 10px 0px;
                     }
-
-
+                    .is-invalid{
+                        color:rgb(233, 36, 36);
+                        font-size: 14px;
+                        position: absolute;
+                        top: 23px;
+                        right: 1px;
+                    }
+                    .valid{
+                        color:rgb(139, 237, 104);
+                        font-size: 14px;
+                        position: absolute;
+                        top: 23px;
+                        right: 1px;
+                    }
+                    .label-container{
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 14px;
+                        row-gap: 3px;
+                        text-indent: 5px;
+                        position: relative;
+                    }
+                    .label-container>input {
+                        font-size: 14px;
+                        line-height: 20px;
+                        text-indent: 5px;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                        border-bottom: 3px solid black;
+                        outline: none;
+                    }
+                    .label-container>input:focus{
+                        border-bottom: 3px solid rgb(43, 235, 9);
+                    }
+                    .message{
+                        color: red;
+                        font-size: 12px;
+                    }
+                    .icon{
+                        display: none;
+                    }
+                    #sectionRegister{
+                        height: 90vh;
+                    }
                     /*----------------------------------------------------------------------------------*/
                     /*product-cart-html*/
                     .cart_contain {

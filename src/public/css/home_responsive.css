@@ -866,7 +866,7 @@
     }
 
     .ventana-register form {
-        row-gap: 10px;
+        row-gap: 3px;
     }
 
     /*----------------------------------------------------------------------------------*/
@@ -1019,6 +1019,9 @@
     }
     .edit{
         margin: auto;
+    }
+    #sectionRegister{
+        height: 100vh;
     }
 }
 
@@ -1265,5 +1268,9 @@
     }
     input[type="file"]{
         width: 155px;
+    }
+    /*Register*/
+    #sectionRegister{
+        height: 90vh;
     }
 }

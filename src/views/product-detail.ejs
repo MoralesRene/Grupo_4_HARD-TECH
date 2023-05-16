@@ -20,7 +20,7 @@
                         <p id="filtro-marca"><a href="#"><%=idProd.trademark%></a></p>
                         <div id="info-pago">
                             <h4 id="precio-efectivo">$<%=idProd.price%></h4>
-                            <p id="precio-cuotas">Precio en cuotas: $<%=(idProd.price + idProd.price/10)%><i class="fa-regular fa-credit-card"></i></p>
+                            <p id="precio-cuotas">Precio en cuotas: $<%=idProd.price%><i class="fa-regular fa-credit-card"></i></p>
                             <div id="counter"><input type="number" name="cantidad" id="count"><button><i
                                         class="fa-regular fa-square-plus"></i></button><button><i
                                         class="fa-regular fa-square-minus"></i></button></div>
@@ -73,3 +73,5 @@
                 </section>
             </main>
             <%- include("partials/footer") %>
+        </body>
+        </html>

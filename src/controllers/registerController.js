@@ -33,7 +33,7 @@ let registerController = {
     let userToCreate = {
       ...req.body,
       contrasenia: bcryptjs.hashSync(req.body.contrasenia[0], 10),
-      avatar: req.file.filename
+      avatar: req.file ? req.file.filename : "default.jpg"
     }
 
     User.create(userToCreate);
