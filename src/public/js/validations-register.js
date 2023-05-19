@@ -1,20 +1,24 @@
 window.onload = function () {
     const form = document.getElementById("formRegister")
     const divError = document.querySelectorAll(".message")
-    const btnRegister = document.getElementById("registerbtn")
     const inputForm = document.querySelectorAll(".formInput")
     const span = document.querySelectorAll("span")
 
+    const msgErrores = [
+        "El nombre debe contener al menos 3 digitos, y solo acepta letras y espacios",
+        "Ingrese un email con formato valido",
+        "Este campo debe tener un minimo de 8 numeros",
+        "Ingrese el DNI/CUIT sin puntos ni guiones",
+        "la contraseña debe tener al menos 8 caracteres",
+        "la contraseña debe tener al menos 8 caracteres"]
+    const msgPassword=[
+        "La contraseña debe tener al menos una Mayuscula",
+        "La contraseña debe tener al menos una Minuscula",
+        "La constraseña debe tener al menos un Numero",
+        "La contraseña debe tener al menos un caracter especial"
+    ]
     for (let i = 0; i < inputForm.length; i++) {
-        const msgErrores = [
-            "El nombre debe tener minimo 3 caracteres",
-            "Ingrese un email valido",
-            "El telefono debe tener 8 o mas numeros",
-            "El DNI/CUIT debe tener minimo 8 numeros",
-            "la contraseña debe tener al menos 8 caracteres",
-            "error"
-        ]
-        inputForm[i].addEventListener("change",()=>{
+        inputForm[i].addEventListener("blur",()=>{
             if (inputForm[i].value.length<3 ) {
                 inputForm[i].style.borderBottom = "3px solid red"
                 divError[i].innerHTML = msgErrores[i]
@@ -26,17 +30,15 @@ window.onload = function () {
             }else{
                 span[i].style.display ="block"
                 span[i].innerHTML ='<i class="fa-solid fa-check"></i>'
+                inputForm[i].style.borderBottom = "3px solid rgb(43, 235, 9)"
                 span[i].classList.toggle("is-invalid")
                 span[i].classList.add("valid")
                 divError[i].innerHTML =""
             }
-
-        inputForm[i].addEventListener("focus",()=>{
-            inputForm[i].style.borderBottom = "3px solid black"
-        })
+            
         })
     }
-
+    
     form.addEventListener("submit", (e) => {
         e.preventDefault()
         const errors = []
@@ -47,7 +49,7 @@ window.onload = function () {
         for (let i = 0; i < inputForm.length; i++) {
             
             if (!inputForm[i].value ) {
-                errors.push({ name: inputForm[i].name, msg: `Este campo no puede estar vacio` })
+                errors.push({ name: inputForm[i].name, msg: msgErrores[i] })
             }
         }
         if (form.contrasenia.value != form.contrasenia2.value){
@@ -63,4 +65,5 @@ window.onload = function () {
            form.submit()
         }
     })
+   
 }
