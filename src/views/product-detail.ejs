@@ -28,6 +28,9 @@
                             <div class="boton-compra">
                                 <button id="compra"><a href="/product-cart">Comprar Ahora</a></button>
                                 <button class="carrito">Agregar al carrito</button>
+                                <!-- Condicionar para que solo lo vea el admin-->
+                                <div id="editBtn"><a href="/product/edit/<%= idProd.id %>">Editar Producto</a></div>
+                                <!--Fin del contenedor-->
                             </div>
                         </div>
                     </div>
@@ -74,4 +77,5 @@
             </main>
             <%- include("partials/footer") %>
         </body>
+        <script src="/js/index.js"></script>
         </html>

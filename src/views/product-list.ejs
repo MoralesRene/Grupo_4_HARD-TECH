@@ -21,6 +21,9 @@
                         <label for="filtro_family"><input type="radio" name="filtro_family" id="Intel">Intel</label>
                         <label for="filtro_family"><input type="radio" name="filtro_family" id="AMD">AMD</label>
                     </div>
+                    <!-- Condicionar para que solo lo vea el admin-->
+                    <div class="btn_create"><a href="/product/create">Crear Nuevo</a></div>
+                    <!--Fin del contenedor-->
                 </div>
                 <div class="list__container_product">
                 <% productos.forEach(product => {%>
@@ -41,4 +44,5 @@
 
             <%- include("partials/footer") %>
     </body>
+    <script src="/js/index.js"></script>
     </html>
