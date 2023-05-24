@@ -92,6 +92,5 @@ module.exports = (sequelize, DataTypes) => {
     });
   };
 
-  return Products
+  return Products;
 };
-
