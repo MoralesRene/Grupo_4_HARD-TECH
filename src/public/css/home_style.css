@@ -42,6 +42,7 @@
 
                     #logo {
                         width: 70%;
+                        cursor: pointer;
                     }
 
                     #logo img {
@@ -415,29 +416,32 @@
 
                     .marcas {
                         width: 100%;
-                        display: flex;
-                        flex-wrap: wrap;
-
-                    }
-
-                    .marcas img {
-                        width: 50%;
-                        border: solid 1px gray;
-                        cursor: pointer;
+                        overflow-x: scroll;
+                        position: relative;
                         filter: grayscale(100%);
-                        transition: 300ms;
+                        height: 70px;
                     }
-                    .marcas img:hover{
+                    .marcas:hover{
                         filter: none;
                     }
-                    .lineas {
-                        text-align: center;
+                    ul.list__mark{
+                        display: flex;
+                        flex-flow: row wrap;
+                        justify-content: start;
+                        align-content: center;
+                        column-gap:40px;
+                        height: 70px;
+                        width:1080px;
+                        animation: slideMark 20s  alternate linear infinite;
+                    }   
+                    .list__mark>li, .list__mark>li>a{
+                        width: 100px;
+                        height: 60px;
                     }
-
-                    .marca-hidden {
-                        display: none;
+                    .list__mark>li img{
+                        width: 100px;
+                        height: 60px;
                     }
-
                     /*Ofertas*/
                     .ofertas {
                         background-color: white;
@@ -450,7 +454,56 @@
                     .ofer-hidden {
                         display: none;
                     }
-
+                    /*pc seccion*/
+                    .pc__container{
+                        width: 100%;
+                        display: flex;
+                        flex-flow: column wrap;
+                        row-gap: 10px;
+                        align-items: center;
+                    }
+                    .pc_image1,.pc_image2,.pc_image3{
+                        width: 300px;
+                        height: 180px;
+                        text-align: center;
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    .pc_image1::before{
+                        content: "PC Gama basica";
+                    }
+                    .pc_image2::before{
+                        content: "PC Gama Media";
+                    }
+                    .pc_image3::before{
+                        content: "PC Gama Alta";
+                    }
+                    .pc_image1::before,.pc_image2::before,.pc_image3::before{
+                        font-size: 22px;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: white;
+                        width: 300px;
+                        height: 180px;
+                        border-radius: 5px;
+                        transition: .5s ease;
+                        position: absolute;
+                        bottom: -180px;
+                        left: 0;
+                        background-color: rgba(0, 0, 0, 0.5);
+                    }
+                    .pc_image1 img,.pc_image2 img,.pc_image3 img{
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 5px;
+                    }
+                    .pc_image1:hover::before,.pc_image2:hover::before,.pc_image3:hover::before{
+                        bottom: 0px;
+                        height: 40px;
+                    }
                     /*footer*/
                     footer {
                         display: flex;
