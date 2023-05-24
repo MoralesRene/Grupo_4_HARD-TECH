@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    shortname: {
+    description: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
@@ -92,6 +92,5 @@ module.exports = (sequelize, DataTypes) => {
     });
   };
 
-  return Products
+  return Products;
 };
-
