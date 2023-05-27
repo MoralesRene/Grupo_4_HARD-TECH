@@ -1339,6 +1339,79 @@
                         border-radius: 5px;
                     }
 
+                    .form__label-create {
+                        margin: 10px;
+                        padding: 5px;
+                        color: black;
+                    }
+
+                    .form__group-error {
+                        display: flex;
+                        width: 100%;
+                    }
+
+                    .form__group-input {
+                        cursor: pointer;
+                        position: relative;
+                        font-size: 12px;
+                    }
+
+                    .form__group-input:focus {
+                        border: 3px solid chartreuse;
+                        outline: none;
+                        box-shadow: 3px 0px 30px chartreuse;
+                    }
+
+                    .form__input-error {
+                        margin: 10px;
+                        padding: 5px 0;
+                        color: red;
+                        font-size: 12px;
+                        padding-bottom: 20px;
+                        display: none;
+                    }
+
+                    .form__input-error-activo {
+                        display: block;
+                    }
+
+                    .form__validation-state {
+                        position: absolute;
+                        right: 10px;
+                        bottom: 15px;
+                        z-index: 100;
+                        font-size: 16px;
+                        opacity: 0;
+
+                    }
+
+                    .form__btn-error {
+                        margin: 10px;
+                        padding: 5px;
+                        color: red;
+                        display: none;
+                    }
+
+                    .form__btn-error-activo {
+                        display: block;
+                    }
+
+                    .fa-exclamation-triangle {
+                        padding-right: 10px;
+                    }
+
+                    .form__mensaje-exito {
+                        display: flex;
+                        justify-content: center;
+                        padding: 5px;
+                        color: rgb(43, 235, 9);
+                        margin: 10px;
+                        display: none;
+                    }
+
+                    .form__mensaje-exito-activo {
+                        display: block;
+                    }
 
                     .container-edicion-producto textarea {
                         margin: 10px;
@@ -1364,35 +1437,41 @@
                     }
 
                     .botones {
-                        display: flex;
                         width: 100%;
+                        padding: 10px;
                     }
 
                     .button-borrar {
                         display: flex;
                         width: 100%;
+                        padding: 10px;
                     }
 
                     .button-confirmar {
                         display: flex;
                         width: 100%;
+                        padding: 10px;
                     }
-                    .edit{
+
+                    .edit {
                         justify-content: center;
                     }
-                    .edit>form{
+
+                    .edit>form {
                         width: 100%;
                         margin: 10px;
 
                     }
-                    .edit>form>button{
+
+                    .edit>form>button {
                         height: 30px;
                         border: none;
                         border-radius: 5px;
                         width: 100%;
                     }
+
                     .button-borrar button {
-                        background-color: #e74c3c;
+                        background-color: red;
                     }
 
                     .button-borrar button:hover {
@@ -1414,6 +1493,22 @@
                     .button-borrar a {
                         color: black;
                     }
+                    /*Estilos para validaciones*/
+                    .form__group-correcto .form__label-create .form__group-error .form__validation-state {
+                        color: #1ed12d;
+                        opacity: 1;
+                    }
+                    .form__group-incorrecto .form__label-create {
+                        color: #bb2929;
+                    }
+                    .form__group-incorrecto .formulario__validation-state {
+                        color: #bb2929;
+                        opacity: 1;
+                    }
+                    .form__group-incorrecto .form__group-error {
+                        border: 3px solid #bb2929;
+                    }
+                    
 
                     /*-------------------------------------------------------------------------------------------------*/
                     /*product-list*/
@@ -1631,12 +1726,15 @@
                         margin: auto;
                         width: 100%;
                     }
-                    .contain_profile_data>form>.log-out>a{
-                        color:white;
-                    }
-                    .contain_profile_data>form>.log-out>a:visited{
+
+                    .contain_profile_data>form>.log-out>a {
                         color: white;
                     }
-                    input[type="file"]{
+
+                    .contain_profile_data>form>.log-out>a:visited {
+                        color: white;
+                    }
+
+                    input[type="file"] {
                         width: 155px;
                     }

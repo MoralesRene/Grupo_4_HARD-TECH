@@ -37,6 +37,9 @@ let productsController = {
         let otherProd = products.filter(product => product.category == idProd.category && product.id !== idProd.id)
         res.render("product-detail", { idProd, otherProd })
     },
+    createProduct: (req,res) => {
+
+    },
     editarProductoForm: (req, res) => {
         const products = getProducts();
         const product = products.find(element => element.id == req.params.id)

@@ -9,7 +9,10 @@
         <div class="container-edicion-producto">
             <input type="text" placeholder="Nombre del producto">
             <textarea name="descripcion" placeholder="Descripción" id="descripcion" cols="30" rows="10"></textarea>
-            <input type="file" accept=".jpg, .jpeg, .png">
+            <div>
+            </label class="form__label-create"><b>Adjuntar Foto</b></label>
+            <input type="file" accept=".jpg, .jpeg, .png, .gif">
+            </div>
             <select name="categoria" id="categoria">
                 <option value="">Seleccione uno</option>
                 <option value="Motherboard">Motherboard</option>
@@ -58,5 +61,6 @@
     </form>
 </main>
 
+<script src="js/product-create.js"></script>
 
 <%- include("partials/footer") %>
