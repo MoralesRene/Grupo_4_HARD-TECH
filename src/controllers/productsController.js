@@ -1,13 +1,14 @@
-const path = require('path');
+const path = require("path");
 const fs = require("fs");
+const db = require("../database/models");
 
-const productsFilePath = path.join(__dirname, "../data/listProducts.json")
+// const productsFilePath = path.join(__dirname, "../data/listProducts.json");
 
-function getProducts() {
-    let ListJSON = fs.readFileSync(productsFilePath, "utf-8");
-    let listProducts = JSON.parse(ListJSON);
-    return listProducts;
-}
+// function getProducts() {
+//     let ListJSON = fs.readFileSync(productsFilePath, "utf-8");
+//     let listProducts = JSON.parse(ListJSON);
+//     return listProducts;
+// }
 
 let productsController = {
     index: function (req, res) {
@@ -37,9 +38,6 @@ let productsController = {
         let otherProd = products.filter(product => product.category == idProd.category && product.id !== idProd.id)
         res.render("product-detail", { idProd, otherProd })
     },
-    createProduct: (req,res) => {
-
-    },
     editarProductoForm: (req, res) => {
         const products = getProducts();
         const product = products.find(element => element.id == req.params.id)
@@ -68,5 +66,6 @@ let productsController = {
         fs.writeFileSync(productsFilePath, JSON.stringify(productsFiltered, null, 2))
         res.redirect('/')
     }
-}
+  },
+};
 module.exports = productsController;
