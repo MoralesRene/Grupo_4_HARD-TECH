@@ -66,6 +66,6 @@ let productsController = {
         fs.writeFileSync(productsFilePath, JSON.stringify(productsFiltered, null, 2))
         res.redirect('/')
     }
-  },
+
 };
 module.exports = productsController;
