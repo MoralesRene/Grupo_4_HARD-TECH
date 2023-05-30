@@ -1056,6 +1056,9 @@
     #sectionRegister{
         height: 100vh;
     }
+    #titleFormCreate{
+        top: 60px;
+    }
 }
 
 /*------------------------*/
@@ -1305,5 +1308,9 @@
     /*Register*/
     #sectionRegister{
         height: 90vh;
+    }
+    #titleFormCreate{
+        top: 75px;
+        left:110px;
     }
 }

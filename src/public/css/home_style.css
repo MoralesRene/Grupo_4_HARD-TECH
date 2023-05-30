@@ -1437,7 +1437,7 @@
                         display: flex;
                         justify-content: center;
                         flex-direction: column;
-                        margin-top: 50px;
+                        margin-top: 60px;
                     }
 
                     .container-edicion-producto input {
@@ -1527,7 +1527,9 @@
                     .button-borrar a {
                         color: black;
                     }
-
+                    .labelCreateForm{
+                        text-indent: 12px;
+                    }
                     /*-------------------------------------------------------------------------------------------------*/
                     /*product-list*/
                     main#list {
@@ -1660,6 +1662,14 @@
                         line-height: 28px;
                         text-align: center;
                         padding: 11px;
+                    }
+                    #formCreate{
+                        position: relative;
+                    }
+                    #titleFormCreate{
+                        position: absolute;
+                        top: 30px;
+                        left: 15px;
                     }
                     /*------------------------------ERROR 404 ---------------------------------------*/
 

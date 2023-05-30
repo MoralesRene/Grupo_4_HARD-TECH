@@ -11,10 +11,9 @@
                 <div class="list__category">
                     <div class="list__category_filtros">
                         <p>Filtros</p>
-                            <label for="filtro"><input type="checkbox" name="filtro" id="Asus">Asus</label>
-                            <label for="filtro"><input type="checkbox" name="filtro" id="Gigabyte">Gigabyte</label>
-                            <label for="filtro"><input type="checkbox" name="filtro" id="MSI">MSI</label>
-                            <label for="filtro"><input type="checkbox" name="filtro" id="Asrock">Asrock</label>
+                        <% trademarks.forEach(mark =>{ %>
+                            <label for="filtro"><input type="checkbox" name="filtro" id="<%= mark.name %>"><%= mark.name %></label>
+                      <%  }) %>
                     </div>
                     <div class="list__category_filtros_bot">
                         <p>Familia</p>
@@ -26,18 +25,20 @@
                     <!--Fin del contenedor-->
                 </div>
                 <div class="list__container_product">
-                <% productos.forEach(product => {%>
+                <% for (let i = 0; i < productos.length; i++) { %>
                 <article class="producto">
-                    <img src="/img/<%= product.image[0] %>" alt="">
+                    <% if (productos[i].id== images[i].products_id) { %>
+                    <img src="/img/products/<%= images[i].url %>" alt="">
+                        <% } %>
                     <div class="info-prod">
-                        <h4><%= product.name %></h4>
-                        <p class="precio">$ <%= product.price %></p>
-                        <button class="ver-mas"><a href="/product/detail/<%= product.id %>">Ver mas</a></button>
+                        <h4><%= productos[i].name %></h4>
+                        <p class="precio">$ <%= productos[i].price %></p>
+                        <button class="ver-mas"><a href="/product/detail/<%= productos[i].id %>">Ver mas</a></button>
                         <button><a href="/product/cart">Comprar</a></button>
                     </a>
                     </div>
                 </article>
-                <% });  %>
+          <%  } %>
                 </div>
             </main>
 

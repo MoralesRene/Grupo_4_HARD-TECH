@@ -2,6 +2,7 @@ const path = require("path");
 const { validationResult } = require("express-validator");
 const db = require("../database/models")
 const bcryptjs = require('bcryptjs');
+const { Association } = require("sequelize");
 
 let registerController = {
   index: (req, res) => {
@@ -39,7 +40,8 @@ let registerController = {
           birthday:req.body.nacimiento,
           password: bcryptjs.hashSync(req.body.contrasenia[0], 10),
           confirmPassword: bcryptjs.hashSync(req.body.contrasenia2[0], 10),
-          avatar: req.file ? req.file.filename : "default.jpg"
+          avatar: req.file ? req.file.filename : "default.jpg",
+          roles_id: 2
         })
       }
     res.redirect('/login')
