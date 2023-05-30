@@ -5,50 +5,52 @@
 <%- include("partials/navbar") %>
 <body>
 <main>
-    <form action="edit-product" enctype="multipart/form-data">
+    <form action="/product/create" enctype="multipart/form-data" method="POST" id="formCreate">
+        <h3 id="titleFormCreate">Crear Nuevo Producto</h3>
         <div class="container-edicion-producto">
-            <input type="text" placeholder="Nombre del producto">
+            <label for="name" class="labelCreateForm">Nombre</label>
+            <input type="text" placeholder="Nombre del producto" name="name">
+            <label for="descripcion" class="labelCreateForm">Descripción</label>
             <textarea name="descripcion" placeholder="Descripción" id="descripcion" cols="30" rows="10"></textarea>
-            <input type="file" accept=".jpg, .jpeg, .png">
+            <label for="" class="labelCreateForm">Seleccione minimo 3 imagenes</label>
+            <input type="file" accept=".jpg, .jpeg, .png" name="imagen-producto" multiple>
+            <label for="categoria" class="labelCreateForm">Seleccione la categoria</label>
             <select name="categoria" id="categoria">
                 <option value="">Seleccione uno</option>
-                <option value="Motherboard">Motherboard</option>
-                <option value="Procesadores">Procesadores</option>
-                <option value="Memorias">Memorias</option>
-                <option value="Fuentes">Fuentes</option>
-                <option value="Gabinetes">Gabinetes</option>
-                <option value="Almacenamiento">Almacenamiento</option>
-                <option value="Placa de video">Placa de video</option>
-                <option value="Periferico">Periferico</option>
+                <% categories.forEach(category => { %>
+                    <option value="<%= category.name %>"><%= category.name %></option>
+                <%}); %>
             </select>
+            <label for="marca" class="labelCreateForm">Seleccione la marca</label>
             <select name="marca" id="marca">
                 <option value="">Seleccione uno</option>
-                <option value="amd">AMD</option>
-                <option value="intel">INTEL</option>
-                <option value="sentey">Sentey</option>
-                <option value="gigabyte">Gigabyte</option>
-                <option value="asus">Asus</option>
-                <option value="msi">MSI</option>
-                <option value="corsair">Corsair</option>
-                <option value="hyperx">HyperX</option>
+                <% trademarks.forEach(mark => { %>
+                    <option value="<%= mark.name %>"><%= mark.name %></option>
+                <%}); %>
             </select>
-            <input type="text" placeholder="Modelo">
+            <label for="status" class="labelCreateForm">Seleccione el estado del producto</label>
             <select name="status" id="status">
                 <option value="">Seleccione uno</option>
-                <option value="destacado">Destacados</option>
-                <option value="ofertas">Ofertas</option>
+                <option value="Destacados">Destacados</option>
+                <option value="Ofertas">Ofertas</option>
+                <option value="Ninguno">Ninguno</option>
             </select>
+            <label for="family" class="labelCreateForm">Seleccione la familia</label>
             <select name="family" id="families">
                 <option value="">Seleccione Uno</option>
-                <option value="intel">Intel</option>
-                <option value="amd">AMD</option>
+                <option value="Intel">Intel</option>
+                <option value="AMD">AMD</option>
+                <option value="Ambos">Ambos</option>
             </select>
-            <input type="text" placeholder="Garantia" name="warranty">
+            <label for="warranty" class="labelCreateForm">Indique tiempo de Garantia: ej: x Meses</label>
+            <input type="text" placeholder="ej: 6 meses" name="warranty">
+            <label for="model" class="labelCreateForm">Indique el modelo</label>
             <input type="text" placeholder="Modelo" name="model">
+            <label for="price" class="labelCreateForm">Indique el precio $</label>
             <input type="number" placeholder="Precio" name="price">
             <div class="botones">
                 <div class="button-confirmar">
-                    <button><a href="/">Confirmar</a></button>
+                    <button type="submit">Confirmar</button>
                 </div>
                 <div class="button-borrar">
                     <button type="reset" id="clean">Limpiar</button>
@@ -60,3 +62,6 @@
 
 
 <%- include("partials/footer") %>
+</body>
+<script src="/js/index.js"></script>
+</html>

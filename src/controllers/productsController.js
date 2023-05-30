@@ -1,6 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const db = require("../database/models");
+const { log } = require("console");
 
 // const productsFilePath = path.join(__dirname, "../data/listProducts.json");
 
@@ -14,15 +15,22 @@ let productsController = {
   index: async function (req, res) {
     try {
       const products = await db.Products.findAll();
+      const images = await db.Product_Images.findAll({
+        where:{
+          is_primary: true
+        }
+      })
+      const categories = await db.Product_Categories.findAll()
+      const trademarks = await db.Trademarks.findAll()
       switch (req.params.element) {
         case "list":
-          res.render("product-list", { productos: products });
+          res.render("product-list", { productos: products,  images,trademarks });
           break;
         case "cart":
           res.render("product-cart", { productos: products });
           break;
         case "create":
-          res.render("crear-producto");
+          res.render("crear-producto", { categories, trademarks });
           break;
       }
     } catch (error) {
@@ -31,15 +39,64 @@ let productsController = {
   },
   create: async (req, res) => {
     try {
+      const category = await db.Product_Categories.findOne({
+        where: {
+          name: req.body.categoria
+        }
+      })
+      const trademark = await db.Trademarks.findOne({
+        where: {
+          name: req.body.marca
+        }
+      })
+      const family = await db.Families.findOne({
+        where: {
+          name: req.body.family
+        }
+      })
+      const warranty = await db.Warranties.findOne({
+        where: {
+          name: req.body.warranty
+        }
+      })
+      //sin resolver
+      // const state = await db.Status.findAll()
+      // console.log(state);
       const productoCreado = await db.Products.create({
+        //Not null
         name: req.body.name,
-        description: req.body.description,
-        category: req.body.categoria,
-        trademark: req.body.marca,
-        price: req.body.price,
+        description: req.body.descripcion,
         model: req.body.model,
+        price: req.body.price,
+        //Null
+        product_categories_id: category.id,
+        trademarks_id: trademark.id,
+        families_id: family.id,
+        warranties_id: warranty.id
+        //sin resolver
+        // status_id:state.id,
       });
-      res.redirect("/product/detail/" + productoCreado.id);
+      //solucionar multer, aplicar bulkCreate, recibir info dentro un de un array, pasar array dentro del bulkCreate
+      const arrayImg= req.files;
+      //Refactor necesario
+      const imagenProduct = await db.Product_Images.bulkCreate([
+        {
+          url: arrayImg[0].filename,
+          products_id: productoCreado.id,
+          is_primary : true
+        },
+        {
+          url: arrayImg[1].filename,
+          products_id: productoCreado.id,
+          is_primary : false
+        },
+        {
+          url: arrayImg[2].filename,
+          products_id: productoCreado.id,
+          is_primary : false
+        }
+      ])
+      res.redirect("/product/list");
     } catch (error) {
       console.log(error);
     }

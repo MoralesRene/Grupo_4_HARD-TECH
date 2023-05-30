@@ -234,7 +234,18 @@
     .ofer-hidden {
         display: flex;
     }
-
+    .pc__container{
+        flex-direction: row;
+        column-gap: 5px;
+        row-gap: 0;
+    }
+    .pc_image1,.pc_image2,.pc_image3{
+        row-gap: 0;
+        width: 200px;
+    }
+    .pc_image1::before,.pc_image2::before,.pc_image3::before{
+        width: 200px;
+    }
     /*Footer*/
     footer {
         display: none;
@@ -685,6 +696,28 @@
     .precio {
         margin-bottom: 5px;
     }
+    .pc__container{
+        justify-content: center;
+        column-gap: 10px;
+        margin-top: 0;
+        background-image: url("/img/fondoPC.jpg");
+        background-position: top;
+        border-radius: 8px;
+        padding: 10px;
+        width: 90%;
+        margin: auto;
+    }
+    .pc_image1,.pc_image2,.pc_image3{
+        width: 260px;
+    }
+    .pc_image1:hover::before,.pc_image2:hover::before,.pc_image3:hover::before{
+        bottom:0px;
+        height: 50px;
+    }
+    .pc_image1::before,.pc_image2::before,.pc_image3::before{
+        width: 260px;
+        bottom: 0px;
+    }
 
     /*Footer*/
     .info__local {
@@ -866,7 +899,7 @@
     }
 
     .ventana-register form {
-        row-gap: 10px;
+        row-gap: 3px;
     }
 
     /*----------------------------------------------------------------------------------*/
@@ -1019,6 +1052,12 @@
     }
     .edit{
         margin: auto;
+    }
+    #sectionRegister{
+        height: 100vh;
+    }
+    #titleFormCreate{
+        top: 60px;
     }
 }
 
@@ -1265,5 +1304,13 @@
     }
     input[type="file"]{
         width: 155px;
+    }
+    /*Register*/
+    #sectionRegister{
+        height: 90vh;
+    }
+    #titleFormCreate{
+        top: 75px;
+        left:110px;
     }
 }

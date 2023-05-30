@@ -34,5 +34,27 @@
   "documento": "4444444",
   "contrasenia": "$2a$10$yvwRUpSoCDkHpUjLLcHm2OtkK.qbNYRPd34PHNgYgWBahNI2mfHcu",
   "avatar": "avatar-1683682483080.jpg"
+ },
+ {
+  "id": 5,
+  "nombre": "Rene Morales",
+  "email": "prueba@gmail.com",
+  "telefono": "1111111111",
+  "documento": "44444444",
+  "nacimiento": "2000-02-01",
+  "contrasenia": "$2a$10$j0NHUZ4EAikuNGQTpwOHOOGfkhJe9PEJgr/b2BY7zqFZg/WoxJiO.",
+  "rePassword": "hola123",
+  "avatar": "avatar-1684265199615.jpg"
+ },
+ {
+  "id": 6,
+  "nombre": "Rene Morales",
+  "email": "prueba5@gmail.com",
+  "telefono": "1111111111",
+  "documento": "111111111",
+  "nacimiento": "2021-03-01",
+  "contrasenia": "$2a$10$bqzpwEZ4ymy7Kc/vgtPVsezoCIVxMRxbygosyUPrVWnuyQBhZpvja",
+  "contrasenia2": "123",
+  "avatar": "default.jpg"
  }
 ]
