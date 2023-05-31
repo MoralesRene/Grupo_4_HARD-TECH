@@ -42,6 +42,7 @@
 
                     #logo {
                         width: 70%;
+                        cursor: pointer;
                     }
 
                     #logo img {
@@ -385,7 +386,7 @@
                         width: 100%;
                     }
 
-                    .info-prod h4 {
+                    .info-prod>h4 {
                         font-size: 16px;
                         font-weight: 700;
                         line-height: 24px;
@@ -415,27 +416,32 @@
 
                     .marcas {
                         width: 100%;
+                        overflow-x: scroll;
+                        position: relative;
+                        filter: grayscale(100%);
+                        height: 70px;
+                    }
+                    .marcas:hover{
+                        filter: none;
+                    }
+                    ul.list__mark{
                         display: flex;
-                        flex-wrap: wrap;
-
+                        flex-flow: row wrap;
+                        justify-content: start;
+                        align-content: center;
+                        column-gap:40px;
+                        height: 70px;
+                        width:1080px;
+                        animation: slideMark 20s  alternate linear infinite;
+                    }   
+                    .list__mark>li, .list__mark>li>a{
+                        width: 100px;
+                        height: 60px;
                     }
-
-                    .marcas img {
-                        width: 50%;
-                        border: solid 1px gray;
-                        cursor: pointer;
-                        opacity: .5;
-                        transition: 500ms;
+                    .list__mark>li img{
+                        width: 100px;
+                        height: 60px;
                     }
-
-                    .lineas {
-                        text-align: center;
-                    }
-
-                    .marca-hidden {
-                        display: none;
-                    }
-
                     /*Ofertas*/
                     .ofertas {
                         background-color: white;
@@ -448,7 +454,56 @@
                     .ofer-hidden {
                         display: none;
                     }
-
+                    /*pc seccion*/
+                    .pc__container{
+                        width: 100%;
+                        display: flex;
+                        flex-flow: column wrap;
+                        row-gap: 10px;
+                        align-items: center;
+                    }
+                    .pc_image1,.pc_image2,.pc_image3{
+                        width: 300px;
+                        height: 180px;
+                        text-align: center;
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    .pc_image1::before{
+                        content: "PC Gama basica";
+                    }
+                    .pc_image2::before{
+                        content: "PC Gama Media";
+                    }
+                    .pc_image3::before{
+                        content: "PC Gama Alta";
+                    }
+                    .pc_image1::before,.pc_image2::before,.pc_image3::before{
+                        font-size: 22px;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: white;
+                        width: 300px;
+                        height: 180px;
+                        border-radius: 5px;
+                        transition: .5s ease;
+                        position: absolute;
+                        bottom: -180px;
+                        left: 0;
+                        background-color: rgba(0, 0, 0, 0.5);
+                    }
+                    .pc_image1 img,.pc_image2 img,.pc_image3 img{
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 5px;
+                    }
+                    .pc_image1:hover::before,.pc_image2:hover::before,.pc_image3:hover::before{
+                        bottom: 0px;
+                        height: 40px;
+                    }
                     /*footer*/
                     footer {
                         display: flex;
@@ -557,6 +612,7 @@
                         align-items: center;
                         row-gap: 20px;
                         padding: 10px;
+                        margin-top: 50px;
                     }
 
                     #vista-tablet {
@@ -566,7 +622,7 @@
                     }
 
                     #descrip,
-                    #product_detail h4 {
+                    #product_detail h4#title {
                         font-size: 20px;
                         font-weight: 500;
                         text-align: center;
@@ -676,7 +732,19 @@
                         width: 100%;
                         row-gap: 10px;
                     }
-
+                    #editBtn{
+                        background-color: #3b5998;
+                        width: 100px;
+                        align-self: center;
+                        border-radius: 5px;
+                        padding: 5px 10px;
+                    }
+                    #editBtn a{
+                        color: white;
+                        font-size: 14px;
+                        font-weight: 500;
+                       
+                    }
                     button#compra a:link {
                         color: white;
                     }
@@ -899,7 +967,7 @@
 
                     .ventana-register {
                         background-color: white;
-                        margin: 20px auto;
+                        margin: 50px auto;
                         border-radius: 5px;
                         display: flex;
                         flex-direction: column;
@@ -916,19 +984,8 @@
                         width: 100%;
                     }
 
-                    .ventana-register>form>input {
-                        font-size: 12px;
-                        line-height: 20px;
-                        padding-left: 5px;
-                    }
-
-                    .ventana-register input:focus {
-                        outline: 1px solid rgb(43, 235, 9);
-                    }
-
                     .ventana-register label {
-                        margin: 10px 0px;
-                        font-size: 12px;
+                        margin: 5px 0px;
                     }
 
                     .ventana-register h5 {
@@ -975,6 +1032,58 @@
                         margin: 10px 0px;
                     }
 
+                    .is-invalid {
+                        color: rgb(233, 36, 36);
+                        font-size: 14px;
+                        position: absolute;
+                        top: 23px;
+                        right: 1px;
+                    }
+
+                    .valid {
+                        color: rgb(139, 237, 104);
+                        font-size: 14px;
+                        position: absolute;
+                        top: 23px;
+                        right: 1px;
+                    }
+
+                    .label-container {
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 14px;
+                        row-gap: 3px;
+                        text-indent: 5px;
+                        position: relative;
+                    }
+
+                    .label-container>input {
+                        font-size: 14px;
+                        line-height: 20px;
+                        text-indent: 5px;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                        border-bottom: 3px solid black;
+                        outline: none;
+                    }
+
+                    .label-container>input:focus {
+                        border-bottom: 3px solid rgb(43, 235, 9);
+                    }
+
+                    .message {
+                        color: red;
+                        font-size: 12px;
+                    }
+
+                    .icon {
+                        display: none;
+                    }
+
+                    #sectionRegister {
+                        height: 90vh;
+                    }
 
                     /*----------------------------------------------------------------------------------*/
                     /*product-cart-html*/
@@ -1328,7 +1437,7 @@
                         display: flex;
                         justify-content: center;
                         flex-direction: column;
-                        margin-top: 50px;
+                        margin-top: 60px;
                     }
 
                     .container-edicion-producto input {
@@ -1493,6 +1602,7 @@
                     .button-borrar a {
                         color: black;
                     }
+<<<<<<< HEAD
                     /*Estilos para validaciones*/
                     .form__group-correcto .form__label-create .form__group-error .form__validation-state {
                         color: #1ed12d;
@@ -1510,6 +1620,11 @@
                     }
                     
 
+=======
+                    .labelCreateForm{
+                        text-indent: 12px;
+                    }
+>>>>>>> 8b64f4de7f041989906081df00cf29b9b9b45f26
                     /*-------------------------------------------------------------------------------------------------*/
                     /*product-list*/
                     main#list {
@@ -1629,7 +1744,28 @@
                     .list__container_product>.producto>.info-prod>.ver-mas>a {
                         color: white;
                     }
-
+                    .btn_create{
+                        background-color: #3b5998;
+                        width: 100px;
+                        height: 30px;
+                        align-self: center;
+                        border-radius: 5px;
+                    }
+                    .btn_create a{
+                        color: white;
+                        font-size: 14px;
+                        line-height: 28px;
+                        text-align: center;
+                        padding: 11px;
+                    }
+                    #formCreate{
+                        position: relative;
+                    }
+                    #titleFormCreate{
+                        position: absolute;
+                        top: 30px;
+                        left: 15px;
+                    }
                     /*------------------------------ERROR 404 ---------------------------------------*/
 
                     .Error-404 {
@@ -1737,4 +1873,10 @@
 
                     input[type="file"] {
                         width: 155px;
+                    }
+
+                    #fullProd {
+                        background-color: royalblue; 
+                        font-weight:500;  
+                        letter-spacing:2px;            
                     }

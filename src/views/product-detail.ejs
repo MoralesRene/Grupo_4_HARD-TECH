@@ -15,12 +15,15 @@
                     <div id="vista-tablet">
                         <div id="img-principal"><img src="/img/<%=idProd.image[0]%>" alt=""></div>
 
-                        <div id="more-img"><img src="/img/<%=idProd.image[1]%>" alt=""><img src="/img/<%=idProd.image[2]%>" alt=""><img
-                                src="/img/<%=idProd.image[3]%>" alt="none"></div>
+                        <div id="more-img">
+                            <img src="/img/<%=idProd.image[1]%>" alt="">
+                            <img src="/img/<%=idProd.image[2]%>" alt="">
+                            <img src="/img/<%=idProd.image[3]%>" alt="">
+                        </div>
                         <p id="filtro-marca"><a href="#"><%=idProd.trademark%></a></p>
                         <div id="info-pago">
                             <h4 id="precio-efectivo">$<%=idProd.price%></h4>
-                            <p id="precio-cuotas">Precio en cuotas: $<%=(idProd.price + idProd.price/10)%><i class="fa-regular fa-credit-card"></i></p>
+                            <p id="precio-cuotas">Precio en cuotas: $<%=idProd.price%><i class="fa-regular fa-credit-card"></i></p>
                             <div id="counter"><input type="number" name="cantidad" id="count"><button><i
                                         class="fa-regular fa-square-plus"></i></button><button><i
                                         class="fa-regular fa-square-minus"></i></button></div>
@@ -28,6 +31,9 @@
                             <div class="boton-compra">
                                 <button id="compra"><a href="/product-cart">Comprar Ahora</a></button>
                                 <button class="carrito">Agregar al carrito</button>
+                                <!-- Condicionar para que solo lo vea el admin-->
+                                <div id="editBtn"><a href="/product/edit/<%= idProd.id %>">Editar Producto</a></div>
+                                <!--Fin del contenedor-->
                             </div>
                         </div>
                     </div>
@@ -73,3 +79,6 @@
                 </section>
             </main>
             <%- include("partials/footer") %>
+        </body>
+        <script src="/js/index.js"></script>
+        </html>

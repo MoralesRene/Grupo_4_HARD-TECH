@@ -46,7 +46,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 //Definicion de puertos y apertura de servidor
-const port = 3030;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log("Server Started on http://localhost:" + port);
 });
