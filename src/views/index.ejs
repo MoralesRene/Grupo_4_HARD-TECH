@@ -53,14 +53,9 @@
                 <h2 class="subtitulos">Nuestras Marcas</h2>
                 <section class="marcas">
                     <ul class="list__mark">
-                        <li><a href="#"><img src="/img/marca-1.png" alt=""></a></li>
-                        <li><a href="#"><img src="/img/marca-2.png" alt=""></a></li>
-                        <li><a href="#"><img src="/img/marca-3.png" alt=""></a></li>
-                        <li><a href="#"><img src="/img/marca-4.png" alt=""></a></li>
-                        <li><a href="#"><img src="/img/marca-5.png" alt=""></a></li>
-                        <li><a href="#"><img src="/img/marca-6.png" alt=""></a></li>
-                        <li><a href="#"><img src="/img/marca-7.png" alt=""></a></li>
-                        <li><a href="#"><img src="/img/marca-8.png" alt=""></a></li>
+                        <% trademark.forEach(mark=>{ %>
+                            <li><a href="#"><img src="/img/<%= mark %>" alt=""></a></li>
+                      <%  }) %>
                     </ul>
                 </section>
                 <!--Contenido ofertas-->

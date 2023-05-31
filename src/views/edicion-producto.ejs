@@ -14,46 +14,29 @@
                             <input type="file" name='imagen-producto' accept=".jpg, .jpeg, .png" multiple="multiple">
                             <select name="categoria" id="categoria">
                                 <option value="">Seleccione uno</option>
-                                <option value="Motherboard" <%=product.category=="Motherboard" && 'selected' %>
-                                    >Motherboards</option>
-                                <option value="Procesadores" <%=product.category=="Procesadores" && 'selected' %>
-                                    >Procesadores</option>
-                                <option value="Memorias" <%=product.category=="Memorias" && 'selected' %>>Memorias
-                                </option>
-                                <option value="Fuentes" <%=product.category=="Fuentes" && 'selected' %>>Fuentes</option>
-                                <option value="Gabinetes" <%=product.category=="Gabinetes" && 'selected' %>>Gabinetes
-                                </option>
-                                <option value="Almacenamiento" <%=product.category=="Almacenamiento" && 'selected' %>
-                                    >Almacenamiento</option>
-                                <option value="Placa de video" <%=product.category=="Placa de video" && 'selected' %>
-                                    >Placa de video</option>
-                                <option value="Periferico">
-                                    <%= product.category=="Periferico" && 'selected' %>Periferico
-                                </option>
+                                <% categories.forEach(category => { %>
+                                    <option value="<%=category.name%>" <%= category.id==product.categories_id && "selected"%>><%=category.name%></option>
+                               <% }); %>
+                               
                             </select>
                             <select name="marca" id="marca">
                                 <option value="general">Seleccione uno</option>
-                                <option value="amd" <%=product.trademark=="AMD" && 'selected' %>>AMD</option>
-                                <option value="intel" <%=product.trademark=="intel" && 'selected' %>>INTEL</option>
-                                <option value="sentey" <%=product.trademark=="sentey" && 'selected' %>>Sentey</option>
-                                <option value="gigabyte" <%=product.trademark=="gigabyte" && 'selected' %>>Gigabyte</option>
-                                <option value="asus" <%=product.trademark=="asus" && 'selected' %>>Asus</option>
-                                <option value="msi" <%=product.trademark=="msi" && 'selected' %>>MSI</option>
-                                <option value="corsair" <%=product.trademark=="corsair" && 'selected' %>>Corsair</option>
-                                <option value="hyperx" <%=product.trademark=="hyperx" && 'selected' %>>HyperX</option>
+                                <% trademarks.forEach(trademark => { %>
+                                    <option value="<%=trademark.name%>" <%= trademark.id==product.trademarks_id && "selected"%>><%=trademark.name%></option>
+                               <% }); %>
                             </select>
                             <input type="text" name="model" id="model" value="<%= product.model %>">
                             <select name="status" id="status">
                                 <option value="">Seleccione uno</option>
-                                <option value="destacado" <%=product.status=="destacado" && 'selected' ? 'selected' : "" %>>Destacados</option>
-                                <option value="ofertas" <%=product.status=="ofertas" && 'selected' ? 'selected' : "" %>>Ofertas</option>
+                               <!--Falta condicion del producto-->
                             </select>
                             <select name="families" id="families">
                                 <option value="">Seleccione Uno</option>
-                                <option value="intel" <%=product.status=="intel" && 'selected' ? 'selected' : "" %>>Intel</option>
-                                <option value="amd" <%=product.status=="amd" && 'selected' ? 'selected' : "" %>>AMD</option>
+                                <% families.forEach(family => { %>
+                                    <option value="<%=family.name%>" <%= family.id==product.families_id && "selected"%>><%=family.name%></option>
+                                <%}); %>
                             </select>
-                            <input type="text" placeholder="Garantia" name="warranty" value="<%=product.warranty ? product.warranty : "" %>">
+                            <input type="text" placeholder="Garantia" name="warranty" value="<%=warranty.name ? warranty.name : "" %>">
                             <input type="number" name="price" id="price" value="<%= product.price %>">
                             <div class="botones">
                                 <div class="button-confirmar edit">
