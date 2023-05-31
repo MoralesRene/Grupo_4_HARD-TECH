@@ -103,19 +103,25 @@ let productsController = {
   },
   mostrarPorCat: async (req, res) => {
     try {
-      const products = await db.Products.findAll({
+      const category = await db.Product_Categories.findOne({
         where: {
-          category: { name: req.params.category },
-        },
-        include: { model: db.category },
+          name: req.params.category
+        }
+      })
+      const images = await db.Product_Images.findAll({
+        where:{
+          is_primary: true
+        }
+      })
+      
+      const products = await db.Products.findAll({
+        where:{
+          product_categories_id: category.id
+        }
       });
-
-      //   const productByCategory = products.filter(
-      //     (producto) => producto.category == req.params.category
-      //   );
-      //   if (req.params.category) {
-      //     res.render("product-list", { productos: productByCategory });
-      //   }
+      const trademarks = await db.Trademarks.findAll()
+      // res.json({ productos: products, images })
+      res.render("product-list", { productos: products, images ,trademarks });
     } catch (error) {
       console.log(error);
     }
