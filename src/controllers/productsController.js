@@ -117,13 +117,16 @@ let productsController = {
   },
   detalleID: async (req, res) => {
     try {
-      const products = await db.Products.findAll();
-      let idProd = req.params.id;
-      let otherProd = products.filter(
-        (product) =>
-          product.category == idProd.category && product.id !== idProd.id
-      );
-      res.render("product-detail", { idProd, otherProd });
+      const product = await db.Products.findByPk(req.params.id);
+      const categories = await db.Product_Categories.findAll()
+      const trademarks = await db.Trademarks.findAll()
+      const families = await db.Families.findAll()
+      // let idProd = req.params.id;
+      // let otherProd = products.filter(
+      //   (product) =>
+      //     product.category == idProd.category && product.id !== idProd.id
+      // );
+      res.render("product-detail", { product,categories,trademarks,families });
     } catch (error) {
       console.log(error);
     }
@@ -131,7 +134,15 @@ let productsController = {
   editarProductoForm: async (req, res) => {
     try {
       const product = await db.Products.findByPk(req.params.id);
-      res.render("edicion-producto", { product });
+      const categories = await db.Product_Categories.findAll()
+      const trademarks = await db.Trademarks.findAll()
+      const families = await db.Families.findAll()
+      const warranty = await db.Warranties.findOne({
+        where:{
+          id:product.warranties_id
+        }
+      })
+      res.render("edicion-producto", { product,categories,trademarks,families,warranty });
     } catch (error) {
       console.log(error);
     }
