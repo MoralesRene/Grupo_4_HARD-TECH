@@ -1,15 +1,6 @@
 const path = require("path");
 const fs = require("fs");
 const db = require("../database/models");
-const { log } = require("console");
-
-// const productsFilePath = path.join(__dirname, "../data/listProducts.json");
-
-// function getProducts() {
-//     let ListJSON = fs.readFileSync(productsFilePath, "utf-8");
-//     let listProducts = JSON.parse(ListJSON);
-//     return listProducts;
-// }
 
 let productsController = {
   index: async function (req, res) {
@@ -76,7 +67,6 @@ let productsController = {
         //sin resolver
         // status_id:state.id,
       });
-      //solucionar multer, aplicar bulkCreate, recibir info dentro un de un array, pasar array dentro del bulkCreate
       const arrayImg= req.files;
       //Refactor necesario
       const imagenProduct = await db.Product_Images.bulkCreate([
@@ -120,7 +110,6 @@ let productsController = {
         }
       });
       const trademarks = await db.Trademarks.findAll()
-      // res.json({ productos: products, images })
       res.render("product-list", { productos: products, images ,trademarks });
     } catch (error) {
       console.log(error);
