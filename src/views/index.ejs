@@ -31,8 +31,7 @@
                     <div class="contenedor-dest">
                                                 <!--Arreglar articulos css-->
                         <% for (let i = 0; i < featuredProd.length; i++) { %>
-                            <article>
-                                <a href="/product/detail/<%= featuredProd[i].id %>">
+                            <article class="producto">
                             <% for (let j = 0; j < images.length; j++) { %>
                                 <% if (featuredProd[i].id== images[j].products_id) { %>
                                     <img src="/img/products/<%= images[j].url %>" alt="">
@@ -43,7 +42,6 @@
                                 <p class="precio">$ <%= featuredProd[i].price %></p>
                                 <button class="ver-mas"><a href="/product/detail/<%= featuredProd[i].id %>">Ver mas</a></button>
                                 <button><a href="/product/cart">Comprar</a></button>
-                            </a>
                             </div>
                         </article>
                   <%  } %>
@@ -90,7 +88,6 @@
 
             </main>
             <!--footer inicio!-->
-
             <%- include("partials/footer") %>
         </body>
         <script src="/js/index.js"></script>

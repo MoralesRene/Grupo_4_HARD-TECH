@@ -7,36 +7,47 @@
             <body>
                 <main>
                     <form action="/product/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                        <h3 id="titleFormCreate">Crear Nuevo Producto</h3>
                         <div class="container-edicion-producto">
+                            <label for="name" class="labelCreateForm">Nombre</label>
                             <input type="text" name="name" id="name" value="<%= product.name %>">
-                            <textarea name="descripcion" id="descripcion" cols="30"
+                            <label for="descripcion" class="labelCreateForm">Descripción</label>
+                            <textarea name="description" id="descripcion" cols="30"
                                 rows="10"><%= product.description %></textarea>
-                            <input type="file" name='imagen-producto' accept=".jpg, .jpeg, .png" multiple="multiple">
+                                <input type="file" name='imagen-producto' accept=".jpg, .jpeg, .png" multiple="multiple" id="images">
+                                <label for="imagen-producto" class="labelCreateForm" id="labelBtn">Subir Fotos (Max. 3)</label>   
+                            <label for="categoria" class="labelCreateForm">Seleccione la categoria</label>
                             <select name="categoria" id="categoria">
                                 <option value="">Seleccione uno</option>
-                                <% categories.forEach(category => { %>
-                                    <option value="<%=category.name%>" <%= category.id==product.categories_id && "selected"%>><%=category.name%></option>
-                               <% }); %>
-                               
-                            </select>
-                            <select name="marca" id="marca">
-                                <option value="general">Seleccione uno</option>
-                                <% trademarks.forEach(trademark => { %>
-                                    <option value="<%=trademark.name%>" <%= trademark.id==product.trademarks_id && "selected"%>><%=trademark.name%></option>
+                                <% categories.forEach(oneCategory => { %>
+                                    <option value="<%=oneCategory.name%>" <%= product.category.name==oneCategory.name && "selected" ? "selected" : ""%>><%=oneCategory.name%></option>
                                <% }); %>
                             </select>
-                            <input type="text" name="model" id="model" value="<%= product.model %>">
+                            <label for="marca" class="labelCreateForm">Seleccione la marca</label>
+                             <select name="marca" id="marca">
+                                <option value="">Seleccione uno</option>
+                                <% trademarks.forEach(oneMark => { %>
+                                    <option value="<%=oneMark.name%>" <%= product.trademark.name==oneMark.name && "selected" ? "selected" : ""%>><%=oneMark.name%></option>
+                               <% }); %>
+                            </select>
+                            <label for="status" class="labelCreateForm">Seleccione la condicion del producto</label>
+                            <!--cambiar de status a condition-->
                             <select name="status" id="status">
                                 <option value="">Seleccione uno</option>
                                <!--Falta condicion del producto-->
                             </select>
+                            <label for="model" class="labelCreateForm">Indique el modelo</label>
+                            <input type="text" name="model" id="model" value="<%= product.model %>">
+                            <label for="family" class="labelCreateForm">Seleccione la familia</label>
                             <select name="families" id="families">
                                 <option value="">Seleccione Uno</option>
-                                <% families.forEach(family => { %>
-                                    <option value="<%=family.name%>" <%= family.id==product.families_id && "selected"%>><%=family.name%></option>
+                                <% families.forEach(onefamily => { %>
+                                    <option value="<%=onefamily.name%>" <%= product.families.name==onefamily.name && "selected" ? "selected" : ""%>><%=onefamily.name%></option>
                                 <%}); %>
                             </select>
-                            <input type="text" placeholder="Garantia" name="warranty" value="<%=warranty.name ? warranty.name : "" %>">
+                            <label for="warranty" class="labelCreateForm">Indique tiempo de Garantia: ej: x Meses</label>
+                            <input type="text" placeholder="Garantia" name="warranty" value="<%=product.warranties.name%>">
+                            <label for="price" class="labelCreateForm">Indique el precio $</label>
                             <input type="number" name="price" id="price" value="<%= product.price %>">
                             <div class="botones">
                                 <div class="button-confirmar edit">
@@ -55,5 +66,5 @@
 
                 <%- include("partials/footer") %>
             </body>
-            <script src="js/index.js"></script>
+            <script src="/js/index.js"></script>
             </html>

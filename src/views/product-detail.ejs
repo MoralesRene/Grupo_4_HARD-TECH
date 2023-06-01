@@ -7,73 +7,84 @@
             <%- include("partials/navbar") %>
             <!-- Codigo reutilizable NAV_BAR.EJS-->
     
-            <div class="camino"><a href="/">HOME</a><b><i class="fa-solid fa-chevron-right"></i></b>
-                <a href="/product/list/<%=idProd.category %>"><%=idProd.category%></a><i class="fa-solid fa-chevron-right"></i><a href="/product/detail/<%= idProd.id %>"><%=idProd.shortName%></a></div>
+            <div class="camino"><a href="/">HOME</a><i class="fa-solid fa-chevron-right"></i><a href="/product/list/<%=product.category.name%>"><%= product.category.name %></a>
+                <i class="fa-solid fa-chevron-right"></i><a href="/product/detail/<%= product.id %>"><%=product.name%></a></div>
             <main id="product_detail">
                 <section class="detalle_prod">
-                    <h4 id="title"><%=idProd.name%></h4>
+                    <h4 id="title"><%=product.name%></h4>
                     <div id="vista-tablet">
-                        <div id="img-principal"><img src="/img/<%=idProd.image[0]%>" alt=""></div>
-
-                        <div id="more-img">
-                            <img src="/img/<%=idProd.image[1]%>" alt="">
-                            <img src="/img/<%=idProd.image[2]%>" alt="">
-                            <img src="/img/<%=idProd.image[3]%>" alt="">
+                        <% imagenes.forEach(image => { %>
+                          <%  if (image.is_primary==true) { %>
+                                <div id="img-principal"><img src="/img/products/<%=image.url%>" alt=""></div>
+                          <%  } %>
+                          <%  }); %>
+                            <div id="more-img">
+                                <% product.images.forEach(img => { %>
+                                   <% if (img.is_primary==false) { %>
+                                        <div class="images"><img src="/img/products/<%=img.url%>" alt=""></div>
+                              <%  }}); %>
                         </div>
-                        <p id="filtro-marca"><a href="#"><%=idProd.trademark%></a></p>
+                        <p id="filtro-marca"><a href="#"><%=product.trademark.name%></a></p>
                         <div id="info-pago">
-                            <h4 id="precio-efectivo">$<%=idProd.price%></h4>
-                            <p id="precio-cuotas">Precio en cuotas: $<%=idProd.price%><i class="fa-regular fa-credit-card"></i></p>
+                            <h4 id="precio-efectivo">$<%=product.price%></h4>
+                            <p id="precio-cuotas">Precio en cuotas: $<%=product.price%><i class="fa-regular fa-credit-card"></i></p>
                             <div id="counter"><input type="number" name="cantidad" id="count"><button><i
                                         class="fa-regular fa-square-plus"></i></button><button><i
                                         class="fa-regular fa-square-minus"></i></button></div>
-                            <p id="garantia"><i class="fa-solid fa-shield-halved"></i>Garantia: <%=idProd.warranty%></p>
+                            <p id="garantia"><i class="fa-solid fa-shield-halved"></i>Garantia: <%=product.warranties.name%></p>
                             <div class="boton-compra">
                                 <button id="compra"><a href="/product-cart">Comprar Ahora</a></button>
                                 <button class="carrito">Agregar al carrito</button>
                                 <!-- Condicionar para que solo lo vea el admin-->
-                                <div id="editBtn"><a href="/product/edit/<%= idProd.id %>">Editar Producto</a></div>
+                                <div id="editBtn"><a href="/product/edit/<%= product.id %>">Editar Producto</a></div>
                                 <!--Fin del contenedor-->
                             </div>
                         </div>
                     </div>
-                    <p id="filtro-marca-v2"><a href="#"><%=idProd.trademark%></a></p>
+                    <p id="filtro-marca-v2"><a href="#"><%=product.trademark.name%></a></p>
                     <div id="info-contenido">
                         <h4>Descripción</h4>
-                        <p id="descrip"><%=idProd.description%></p>
-                        <h4>Especificaciones Tecnicas</h4>
-                        <div id="specs">
-                            <div id="info-cat">
-                                <p>Marca:</p>
-                                <p>Modelo:</p>
-                                <p>Familia:</p>
-                                <p>Garantia:</p>
-                            </div>
-                            <div>
-                                <p><%=idProd.trademark%></p>
-                                <p><%=idProd.model%></p>
-                                <p><%=idProd.family%></p>
-                                <p><%=idProd.warranty%></p>
-                            </div>
-                        </div>
+                        <p id="descrip"><%=product.description%></p>
+                        <table border CELLPADDING=10 CELLSPACING=0>
+                            <th colspan="2" id="tableHeader">Especificaciones Tecnicas</th>
+                        <tr align="center">
+                            <th>Marca</th>
+                            <td><%=product.trademark.name%></td>
+                        </tr>
+                        <tr align="center">
+                            <th>Modelo</th>
+                            <td><%=product.model%></td>
+                        </tr>
+                        <tr align="center">
+                            <th>Familia</th>
+                            <td><%=product.families.name%></td>
+                        </tr>
+                        <tr align="center">
+                            <th>Garantia</th>
+                            <td><%=product.warranties.name%></td>
+                        </tr>
+                    </table>
                     </div>
                 </section>
                 <section class="interes">
                     <h4>Tambien te puede interesar</h4>
                     <div class="section__container">
                         <div class="contenedor-interes">
-                            <% otherProd.forEach(product => { %>
-                                <article>
-                                        <a href="/product/detail/<%= product.id %>">
-                                        <img src="/img/<%= product.image[0] %>" alt="">
-                                        <div class="info-prod">
-                                            <h4><%= product.name %></h4>
-                                            <p class="precio">$ <%= product.price %></p>
-                                            <button><a href="/product/detail/<%= product.id %>">Ver mas</a></button>
-                                        </div>
-                                    </a>
-                                    </article>
-                            <% }); %>
+                           <% for (let i = 0; i < similarProducts.length; i++) { %>
+                            <article class="producto">
+                            <% for (let j = 0; j < images.length; j++) { %>
+                                <% if (similarProducts[i].id== images[j].products_id) { %>
+                                    <img src="/img/products/<%= images[j].url %>" alt="">
+                            <% } %>
+                                <% } %>
+                            <div class="info-prod">
+                                <h4><%= similarProducts[i].name %></h4>
+                                <p class="precio">$ <%= similarProducts[i].price %></p>
+                                <button class="ver-mas"><a href="/product/detail/<%= similarProducts[i].id %>">Ver mas</a></button>
+                                <button><a href="/product/cart">Comprar</a></button>
+                            </div>
+                        </article>
+                  <%  } %>
                         </div>
                     </div>
                 </section>

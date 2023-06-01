@@ -6,11 +6,13 @@ const { Op } = require("sequelize")
 let homeController = {
     index: async (req, res) => {
         const productsFeatured = await db.Products.findAll({
+            limit:5,
             where: {
                 status_id: 1
             }
         })
         const productsOffers = await db.Products.findAll({
+            limit:5,
             where: {
                 status_id: 2
             }
