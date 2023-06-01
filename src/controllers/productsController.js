@@ -1,15 +1,6 @@
 const path = require("path");
 const fs = require("fs");
 const db = require("../database/models");
-const { log } = require("console");
-
-// const productsFilePath = path.join(__dirname, "../data/listProducts.json");
-
-// function getProducts() {
-//     let ListJSON = fs.readFileSync(productsFilePath, "utf-8");
-//     let listProducts = JSON.parse(ListJSON);
-//     return listProducts;
-// }
 
 let productsController = {
   index: async function (req, res) {
@@ -76,7 +67,6 @@ let productsController = {
         //sin resolver
         // status_id:state.id,
       });
-      //solucionar multer, aplicar bulkCreate, recibir info dentro un de un array, pasar array dentro del bulkCreate
       const arrayImg= req.files;
       //Refactor necesario
       const imagenProduct = await db.Product_Images.bulkCreate([
@@ -103,53 +93,102 @@ let productsController = {
   },
   mostrarPorCat: async (req, res) => {
     try {
-      const products = await db.Products.findAll({
+      const category = await db.Product_Categories.findOne({
         where: {
-          category: { name: req.params.category },
-        },
-        include: { model: db.category },
+          name: req.params.category
+        }
+      })
+      const images = await db.Product_Images.findAll({
+        where:{
+          is_primary: true
+        }
+      })
+      const products = await db.Products.findAll({
+        where:{
+          product_categories_id: category.id
+        }
       });
-
-      //   const productByCategory = products.filter(
-      //     (producto) => producto.category == req.params.category
-      //   );
-      //   if (req.params.category) {
-      //     res.render("product-list", { productos: productByCategory });
-      //   }
+      const trademarks = await db.Trademarks.findAll()
+      res.render("product-list", { productos: products, images ,trademarks });
     } catch (error) {
       console.log(error);
     }
   },
   detalleID: async (req, res) => {
     try {
-      const products = await db.Products.findAll();
-      let idProd = req.params.id;
-      let otherProd = products.filter(
-        (product) =>
-          product.category == idProd.category && product.id !== idProd.id
-      );
-      res.render("product-detail", { idProd, otherProd });
+      const { id } = req.params 
+      const product = await db.Products.findByPk(id,{
+        include:["category","warranties","families","trademark","images"]
+      });
+      const imagenes = await db.Product_Images.findAll({
+        where:{
+          products_id: product.id
+        }
+      })
+      const allProducts = await db.Products.findAll({
+        where:{
+          product_categories_id: product.product_categories_id
+        }
+        , include:["images"]
+      })
+      //saco el producto mostrado actualmente de similares
+      const similarProducts = allProducts.filter(producto => producto.id != req.params.id)
+      const images = await db.Product_Images.findAll({
+        where:{
+          is_primary:true
+        }
+      })
+      res.render("product-detail", { product,imagenes,similarProducts,images });
+
     } catch (error) {
       console.log(error);
     }
   },
   editarProductoForm: async (req, res) => {
     try {
-      const product = await db.Products.findByPk(req.params.id);
-      res.render("edicion-producto", { product });
+      const product = await db.Products.findByPk(req.params.id,{
+        include:["category","families","trademark","warranties","images"]
+      });
+      const categories = await db.Product_Categories.findAll()
+      const trademarks = await db.Trademarks.findAll()
+      const families = await db.Families.findAll()
+      //faltan agregar la vista previa y la edicion de imagenes
+      res.render("edicion-producto", { product,categories,trademarks,families });
     } catch (error) {
       console.log(error);
     }
   },
   editarProducto: async (req, res) => {
+    const category = await db.Product_Categories.findOne({
+      where: {
+        name: req.body.categoria
+      }
+    })
+    const trademark = await db.Trademarks.findOne({
+      where: {
+        name: req.body.marca
+      }
+    })
+    const family = await db.Families.findOne({
+      where: {
+        name: req.body.families
+      }
+    })
+    const warranty = await db.Warranties.findOne({
+      where: {
+        name: req.body.warranty
+      }
+    })
     await db.Products.update(
       {
         name: req.body.name,
         description: req.body.description,
-        category: req.body.categoria,
-        trademark: req.body.marca,
         price: req.body.price,
         model: req.body.model,
+        product_categories_id: category.id,
+        families_id: family.id,
+        trademarks_id:trademark.id,
+        warranties_id:warranty.id
       },
       {
         where: {
@@ -157,16 +196,6 @@ let productsController = {
         },
       }
     );
-    const productIndex = products.findIndex(
-      (element) => element.id == req.params.id
-    );
-    let imagenes =
-      req.files.length != 0
-        ? req.files.map((element) => element.filename)
-        : products[productIndex].image;
-    products[productIndex] = {
-      ...products[productIndex],
-    };
     res.redirect("/");
   },
   eliminarProducto: (req, res) => {

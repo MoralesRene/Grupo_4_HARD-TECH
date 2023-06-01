@@ -12,8 +12,11 @@
             <input type="text" placeholder="Nombre del producto" name="name">
             <label for="descripcion" class="labelCreateForm">Descripción</label>
             <textarea name="descripcion" placeholder="Descripción" id="descripcion" cols="30" rows="10"></textarea>
-            <label for="" class="labelCreateForm">Seleccione minimo 3 imagenes</label>
-            <input type="file" accept=".jpg, .jpeg, .png" name="imagen-producto" multiple>
+            <input type="file" name='imagen-producto' accept=".jpg, .jpeg, .png" multiple="multiple" id="images">
+                <label for="imagen-producto" class="labelCreateForm" id="labelBtn">Subir Fotos (Min. 3)</label>
+                <div class="images_container">
+                <ul id="preview"></ul>
+            </div>   
             <label for="categoria" class="labelCreateForm">Seleccione la categoria</label>
             <select name="categoria" id="categoria">
                 <option value="">Seleccione uno</option>
@@ -28,7 +31,8 @@
                     <option value="<%= mark.name %>"><%= mark.name %></option>
                 <%}); %>
             </select>
-            <label for="status" class="labelCreateForm">Seleccione el estado del producto</label>
+            <label for="status" class="labelCreateForm">Seleccione la condicion del producto</label>
+                <!--cambiar de status a condition-->
             <select name="status" id="status">
                 <option value="">Seleccione uno</option>
                 <option value="Destacados">Destacados</option>
@@ -64,4 +68,5 @@
 <%- include("partials/footer") %>
 </body>
 <script src="/js/index.js"></script>
+<script src="/js/createFormPreviewImage.js"></script>
 </html>
