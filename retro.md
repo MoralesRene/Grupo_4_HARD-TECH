@@ -64,3 +64,19 @@ Hacer menos:
 
 Dejar de hacer:
 -
+
+RETROSPECTIVA SPRINT 7:
+Comenzar hacer:
+Ir puliendo el proyecto para dejarlo listo para su presentación
+
+Hacer mas:
+reuniones más frecuentes
+
+Continuar haciendo:
+aportes individuales y aportes extras a los pedidos de los sprints
+
+Hacer menos:
+-
+
+Dejar de hacer:
+-

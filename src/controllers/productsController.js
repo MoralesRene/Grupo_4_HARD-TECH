@@ -13,7 +13,7 @@ const { log } = require("console");
 
 let productsController = {
     index: function (req, res) {
-        const products = getProducts();
+       const products = getProducts();
         switch (req.params.element) {
             case 'list':
                 res.render("product-list", { productos: products })

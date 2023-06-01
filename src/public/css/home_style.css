@@ -1602,7 +1602,6 @@
                     .button-borrar a {
                         color: black;
                     }
-<<<<<<< HEAD
                     /*Estilos para validaciones*/
                     .form__group-correcto .form__label-create .form__group-error .form__validation-state {
                         color: #1ed12d;
@@ -1620,11 +1619,6 @@
                     }
                     
 
-=======
-                    .labelCreateForm{
-                        text-indent: 12px;
-                    }
->>>>>>> 8b64f4de7f041989906081df00cf29b9b9b45f26
                     /*-------------------------------------------------------------------------------------------------*/
                     /*product-list*/
                     main#list {

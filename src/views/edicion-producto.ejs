@@ -15,9 +15,9 @@
                                 <label for="nombre" class=" form__label-create"><b>Nombre</b></label>
                                 <div>
                                     <input type="text" class="form form__group-error form__group-input" name="name" id="name" value="<%= product.name %>">
-                                    <i class="form__validation-state fas fa-times-circle"></i>
+                                    <i class="form__validation-state fas fa-times-circle" id="name-icon"></i>
                             
-                                    <p class="form__input-error">El nombre deberá tener al menos 5 caracteres</p>
+                                    <p class="form__input-error" id="p-error-name">El nombre deberá tener al menos 5 caracteres</p>
                                 </div>
 
 <!--Grupo Descripción-->
@@ -25,8 +25,8 @@
                                 <div>
                                     <textarea class="form__group-error form__group-input" name="descripcion" id="descripcion" cols="30"
                                         rows="10"><%= product.description %></textarea>
-                                    <i class="form__validation-state fas fa-times-circle"></i>
-                                    <p class="form__input-error">La descripción deberá tener al menos 20 caracteres</p>
+                                    <i class="form__validation-state fas fa-times-circle" id="descripcion-icon"></i>
+                                    <p class="form__input-error" id="p-error-descripcion">La descripción deberá tener al menos 20 caracteres</p>
                                 </div>
 
  <!--Grupo Imagen del Producto-->                               
@@ -141,14 +141,6 @@
 
                 </main>
 
-<<<<<<< HEAD
                 <script src="/js/product-edit.js"></script>
                 <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
                 <%- include("partials/footer") %>
-=======
-
-                <%- include("partials/footer") %>
-            </body>
-            <script src="js/index.js"></script>
-            </html>
->>>>>>> 8b64f4de7f041989906081df00cf29b9b9b45f26
