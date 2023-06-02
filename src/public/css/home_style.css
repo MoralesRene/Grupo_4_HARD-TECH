@@ -1606,12 +1606,17 @@
                     }
 
                     .list__category {
-                        background-color: white;
-                        border-radius: 15px;
-                        padding: 10px;
+                        /* background-color: white;
                         display: flex;
                         flex-flow: column wrap;
-                        row-gap: 20px;
+                        row-gap: 20px; */
+                        display: grid;
+                        padding: 10px;
+                        border-radius: 15px;
+                        grid-template-columns: repeat(2,150px);
+                        grid-template-rows: auto 50px;
+                        justify-content: center;
+                        background-color: white;
                     }
 
                     .list__category_filtros {
@@ -1637,14 +1642,16 @@
                     }
 
                     .list__category_filtros_bot {
-                        display: flex;
-                        flex-direction: column;
-                        row-gap: 10px;
+                        display: grid;
+                        grid-template-columns: 25px 1fr;
+                        grid-template-rows: 25px 25px 25px 25px;
+                        grid-row-gap: 5px;
                     }
 
                     .list__category_filtros_bot input {
-                        margin-right: 10px;
-                        margin-left: 10px;
+                        grid-column: 1 / 2;
+                        width: 13px;
+                        height: 13px;
                     }
 
                     .list__category_filtros_bot p {
@@ -1653,6 +1660,7 @@
                         text-transform: uppercase;
                         line-height: 22px;
                         text-indent: 10px;
+                        grid-column: 1 / 3;
                     }
 
                     .list__container_product {
@@ -1664,6 +1672,9 @@
                         background-color: #3b5998;
                         width: 100px;
                         height: 30px;
+                        grid-column-start: 1 ;
+                        grid-column-end: 3;
+                        grid-row: 2 / 3;
                         align-self: center;
                         border-radius: 5px;
                     }

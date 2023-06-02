@@ -11,13 +11,14 @@
                     <div class="list__category_filtros">
                         <p>Filtros</p>
                         <% trademarks.forEach(mark =>{ %>
-                            <label for="filtro"><input type="checkbox" name="filtro" id="<%= mark.name %>"><%= mark.name %></label>
+                            <label for="<%= mark.name %>" class="FilterBymark"><input type="checkbox" name="filtro" id="<%= mark.name %>" ><%= mark.name %></label>
                       <%  }) %>
                     </div>
                     <div class="list__category_filtros_bot">
                         <p>Familia</p>
-                        <label for="filtro_family"><input type="radio" name="filtro_family" id="Intel">Intel</label>
-                        <label for="filtro_family"><input type="radio" name="filtro_family" id="AMD">AMD</label>
+                        <input type="checkbox" name="filtro" id="INTEL"><label for="INTEL" class="FilterBymark">INTEL</label>
+                        <input type="checkbox" name="filtro" id="AMD"><label for="AMD" class="FilterBymark">AMD</label>
+                        <input type="checkbox" name="filtro" id="AMBOS"><label for="AMBOS" class="FilterBymark">AMBOS</label>
                     </div>
                     <!-- Condicionar para que solo lo vea el admin-->
                     <div class="btn_create"><a href="/product/create">Crear Nuevo</a></div>
@@ -52,4 +53,5 @@
             <%- include("partials/footer") %>
     </body>
     <script src="/js/index.js"></script>
+    <script src="/js/filters.js"></script>
     </html>
