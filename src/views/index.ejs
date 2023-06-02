@@ -29,32 +29,31 @@
                 <h2 class="subtitulos">Destacados!</h2>
                 <section class="destacados">
                     <div class="contenedor-dest">
-                        <% featuredProd.forEach(product => { %>
-                            <article>
-                                    <a href="/product/detail/<%= product.id %>">
-                                    <img src="/img/<%= product.image[0] %>" alt="">
-                                    <div class="info-prod">
-                                        <h4><%= product.name %></h4>
-                                        <p class="precio">$ <%= product.price %></p>
-                                        <button><a href="/product/detail/<%= product.id %>">Ver mas</a></button>
-                                    </div>
-                                </a>
-                                </article>
-                        <% }); %>
+                                                <!--Arreglar articulos css-->
+                        <% for (let i = 0; i < featuredProd.length; i++) { %>
+                            <article class="producto">
+                            <% for (let j = 0; j < images.length; j++) { %>
+                                <% if (featuredProd[i].id== images[j].products_id) { %>
+                                    <img src="/img/products/<%= images[j].url %>" alt="">
+                            <% } %>
+                                <% } %>
+                            <div class="info-prod">
+                                <h4><%= featuredProd[i].name %></h4>
+                                <p class="precio">$ <%= featuredProd[i].price %></p>
+                                <button class="ver-mas"><a href="/product/detail/<%= featuredProd[i].id %>">Ver mas</a></button>
+                                <button><a href="/product/cart">Comprar</a></button>
+                            </div>
+                        </article>
+                  <%  } %>
                     </div>
                 </section>
                 <!--Contenido marcas-->
                 <h2 class="subtitulos">Nuestras Marcas</h2>
                 <section class="marcas">
                     <ul class="list__mark">
-                        <li><a href="#"><img src="/img/marca-1.png" alt=""></a></li>
-                        <li><a href="#"><img src="/img/marca-2.png" alt=""></a></li>
-                        <li><a href="#"><img src="/img/marca-3.png" alt=""></a></li>
-                        <li><a href="#"><img src="/img/marca-4.png" alt=""></a></li>
-                        <li><a href="#"><img src="/img/marca-5.png" alt=""></a></li>
-                        <li><a href="#"><img src="/img/marca-6.png" alt=""></a></li>
-                        <li><a href="#"><img src="/img/marca-7.png" alt=""></a></li>
-                        <li><a href="#"><img src="/img/marca-8.png" alt=""></a></li>
+                        <% trademark.forEach(mark=>{ %>
+                            <li><a href="#"><img src="/img/<%= mark %>" alt=""></a></li>
+                      <%  }) %>
                     </ul>
                 </section>
                 <!--Contenido ofertas-->
@@ -67,24 +66,28 @@
                 <h2 class="subtitulos">Ofertas</h2>
                 <section class="ofertas">
                     <div class="contenedor-ofer">
-                        <% offerProd.forEach(product => { %>
-                            <article>
-                                    <a href="/product/detail/<%= product.id %>">
-                                    <img src="/img/<%= product.image[0] %>" alt="">
-                                    <div class="info-prod">
-                                        <h4><%= product.name %></h4>
-                                        <p class="precio">$ <%= product.price %></p>
-                                        <button><a href="/product/detail/<%= product.id %>">Ver mas</a></button>
-                                    </div>
-                                </a>
-                                </article>
-                        <% }); %>
+                        <!--Arreglar articulos css-->
+                        <% for (let i = 0; i < offerProd.length; i++) { %>
+                            <article class="producto">
+                            <% for (let j = 0; j < images.length; j++) { %>
+                                <% if (offerProd[i].id== images[j].products_id) { %>
+                                    <img src="/img/products/<%= images[j].url %>" alt="">
+                            <% } %>
+                                <% } %>
+                            <div class="info-prod">
+                                <h4><%= offerProd[i].name %></h4>
+                                <p class="precio">$ <%= offerProd[i].price %></p>
+                                <button class="ver-mas"><a href="/product/detail/<%= offerProd[i].id %>">Ver mas</a></button>
+                                <button><a href="/product/cart">Comprar</a></button>
+                            </a>
+                            </div>
+                        </article>
+                  <%  } %>
                     </div>
                 </section>
 
             </main>
             <!--footer inicio!-->
-
             <%- include("partials/footer") %>
         </body>
         <script src="/js/index.js"></script>

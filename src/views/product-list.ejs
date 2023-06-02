@@ -7,7 +7,6 @@
             <%- include("partials/navbar") %>
             <!-- Codigo reutilizable NAV_BAR.EJS-->
             <main id="list">
-                <h2>Motherboard</h2>
                 <div class="list__category">
                     <div class="list__category_filtros">
                         <p>Filtros</p>
@@ -24,11 +23,17 @@
                     <div class="btn_create"><a href="/product/create">Crear Nuevo</a></div>
                     <!--Fin del contenedor-->
                 </div>
+                <% if (productos.length===0) { %>
+                    <div class="list__container_product" style="justify-content: center;">
+                        <h6 class="notProducts">No se hallaron resultados que mostrar</h6>
+                <% }else{ %>
                 <div class="list__container_product">
                 <% for (let i = 0; i < productos.length; i++) { %>
-                <article class="producto">
-                    <% if (productos[i].id== images[i].products_id) { %>
-                    <img src="/img/products/<%= images[i].url %>" alt="">
+                    <article class="producto">
+                    <% for (let j = 0; j < images.length; j++) { %>
+                        <% if (productos[i].id== images[j].products_id) { %>
+                            <img src="/img/products/<%= images[j].url %>" alt="">
+                    <% } %>
                         <% } %>
                     <div class="info-prod">
                         <h4><%= productos[i].name %></h4>
@@ -40,6 +45,7 @@
                 </article>
           <%  } %>
                 </div>
+                <% }%>
             </main>
 
 
