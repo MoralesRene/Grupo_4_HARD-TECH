@@ -1,63 +1,32 @@
 const path = require("path");
-const fs = require("fs");
 const db = require("../database/models");
 
 let productsController = {
-    index: function (req, res) {
-       const products = getProducts();
-        switch (req.params.element) {
-            case 'list':
-                res.render("product-list", { productos: products })
-                break;
-            case 'cart':
-                res.render("product-cart", { productos: products })
-                break;
-                case 'create':
-                res.render("crear-producto")
-                break;
-        };
-    },
-    mostrarPorCat: (req, res) => {
-        const products = getProducts();
-        const productByCategory = products.filter(producto => producto.category == req.params.category)
-        if (req.params.category) {
-            res.render("product-list", { productos: productByCategory })
+  index: async function (req, res) {
+    try {
+      const products = await db.Products.findAll();
+      const images = await db.Product_Images.findAll({
+        where:{
+          is_primary: true
         }
-    },
-    detalleID: (req, res) => {
-        const products = getProducts();
-        let idProd = products.find(product => product.id == req.params.id)
-        let otherProd = products.filter(product => product.category == idProd.category && product.id !== idProd.id)
-        res.render("product-detail", { idProd, otherProd })
-    },
-    editarProductoForm: (req, res) => {
-        const products = getProducts();
-        const product = products.find(element => element.id == req.params.id)
-        res.render('edicion-producto', { product })
-    },
-    editarProducto: (req, res) => {
-        const products = getProducts();
-        const productIndex = products.findIndex(element => element.id == req.params.id)
-        let imagenes = req.files.length !=0 ? req.files.map((element) => element.filename) : products[productIndex].image
-        products[productIndex] = {
-            ...products[productIndex],
-            name: req.body.name,
-            description: req.body.descripcion,
-            category: req.body.categoria,
-            trademark: req.body.marca,
-            price: req.body.price,
-            model: req.body.model,
-            image: imagenes
-        }
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
-        res.redirect('/')
-    },
-    eliminarProducto: (req, res) => {
-        const products = getProducts();
-        const productsFiltered = products.filter(element => element.id != req.params.id)
-        fs.writeFileSync(productsFilePath, JSON.stringify(productsFiltered, null, 2))
-        res.redirect('/')
-    },
+      })
+      const categories = await db.Product_Categories.findAll()
+      const trademarks = await db.Trademarks.findAll()
+      switch (req.params.element) {
+        case "list":
+          res.render("product-list", { productos: products,  images,trademarks });
+          break;
+        case "cart":
+          res.render("product-cart", { productos: products });
+          break;
+        case "create":
+          res.render("crear-producto", { categories, trademarks });
+          break;
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  },
   create: async (req, res) => {
     try {
       const category = await db.Product_Categories.findOne({
@@ -80,9 +49,11 @@ let productsController = {
           name: req.body.warranty
         }
       })
-      //sin resolver
-      // const state = await db.Status.findAll()
-      // console.log(state);
+      const state = await db.Status.findOne({
+        where:{
+          name: req.body.status
+        }
+      })
       const productoCreado = await db.Products.create({
         //Not null
         name: req.body.name,
@@ -93,29 +64,19 @@ let productsController = {
         product_categories_id: category.id,
         trademarks_id: trademark.id,
         families_id: family.id,
-        warranties_id: warranty.id
-        //sin resolver
-        // status_id:state.id,
+        warranties_id: warranty.id,
+        status_id:state.id
       });
       const arrayImg= req.files;
-      //Refactor necesario
-      const imagenProduct = await db.Product_Images.bulkCreate([
-        {
-          url: arrayImg[0].filename,
-          products_id: productoCreado.id,
-          is_primary : true
-        },
-        {
-          url: arrayImg[1].filename,
-          products_id: productoCreado.id,
-          is_primary : false
-        },
-        {
-          url: arrayImg[2].filename,
-          products_id: productoCreado.id,
-          is_primary : false
-        }
-      ])
+      const imagenProduct = await db.Product_Images.bulkCreate(
+          arrayImg.map((image,index)=>{
+            return {
+              url: image.filename,
+              products_id: productoCreado.id,
+              is_primary : index==0
+            }
+          })
+        )
       res.redirect("/product/list");
     } catch (error) {
       console.log(error);
