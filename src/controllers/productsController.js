@@ -51,8 +51,11 @@ let productsController = {
         }
       })
       //sin resolver
-      // const state = await db.Status.findAll()
-      // console.log(state);
+      const state = await db.Status.findOne({
+        where:{
+          name: req.body.status
+        }
+      })
       const productoCreado = await db.Products.create({
         //Not null
         name: req.body.name,
@@ -63,29 +66,22 @@ let productsController = {
         product_categories_id: category.id,
         trademarks_id: trademark.id,
         families_id: family.id,
-        warranties_id: warranty.id
+        warranties_id: warranty.id,
+        status_id:state.id
         //sin resolver
-        // status_id:state.id,
       });
+      console.log(productoCreado.status_id);
+
       const arrayImg= req.files;
-      //Refactor necesario
-      const imagenProduct = await db.Product_Images.bulkCreate([
-        {
-          url: arrayImg[0].filename,
-          products_id: productoCreado.id,
-          is_primary : true
-        },
-        {
-          url: arrayImg[1].filename,
-          products_id: productoCreado.id,
-          is_primary : false
-        },
-        {
-          url: arrayImg[2].filename,
-          products_id: productoCreado.id,
-          is_primary : false
-        }
-      ])
+      const imagenProduct = await db.Product_Images.bulkCreate(
+          arrayImg.map((img, index) => {
+            return {
+              url: img.filename,
+              products_id: productoCreado.id,
+              is_primary : index==0
+            }
+          })
+        )
       res.redirect("/product/list");
     } catch (error) {
       console.log(error);
