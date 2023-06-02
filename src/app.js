@@ -37,7 +37,6 @@ app.use("/login", login);
 app.use("/register", register);
 app.use("/product", product);
 app.use("/cart", cart);
-
 app.use((req, res, next) => {
   res.status(404).render("not-found");
 });

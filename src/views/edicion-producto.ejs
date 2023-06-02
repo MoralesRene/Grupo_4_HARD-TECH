@@ -6,64 +6,142 @@
 
             <body>
                 <main>
-                    <form action="/product/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <form id="form" action="/product/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                         <h3 id="titleFormCreate">Crear Nuevo Producto</h3>
                         <div class="container-edicion-producto">
-                            <label for="name" class="labelCreateForm">Nombre</label>
-                            <input type="text" name="name" id="name" value="<%= product.name %>">
-                            <label for="descripcion" class="labelCreateForm">Descripción</label>
-                            <textarea name="description" id="descripcion" cols="30"
-                                rows="10"><%= product.description %></textarea>
-                                <input type="file" name='imagen-producto' accept=".jpg, .jpeg, .png" multiple="multiple" id="images">
-                                <label for="imagen-producto" class="labelCreateForm" id="labelBtn">Subir Fotos (Max. 3)</label>   
-                            <label for="categoria" class="labelCreateForm">Seleccione la categoria</label>
-                            <select name="categoria" id="categoria">
-                                <option value="">Seleccione uno</option>
-                                <% categories.forEach(oneCategory => { %>
-                                    <option value="<%=oneCategory.name%>" <%= product.category.name==oneCategory.name && "selected" ? "selected" : ""%>><%=oneCategory.name%></option>
-                               <% }); %>
-                            </select>
-                            <label for="marca" class="labelCreateForm">Seleccione la marca</label>
-                             <select name="marca" id="marca">
-                                <option value="">Seleccione uno</option>
-                                <% trademarks.forEach(oneMark => { %>
-                                    <option value="<%=oneMark.name%>" <%= product.trademark.name==oneMark.name && "selected" ? "selected" : ""%>><%=oneMark.name%></option>
-                               <% }); %>
-                            </select>
-                            <label for="status" class="labelCreateForm">Seleccione la condicion del producto</label>
-                            <!--cambiar de status a condition-->
-                            <select name="status" id="status">
-                                <option value="">Seleccione uno</option>
-                               <!--Falta condicion del producto-->
-                            </select>
-                            <label for="model" class="labelCreateForm">Indique el modelo</label>
-                            <input type="text" name="model" id="model" value="<%= product.model %>">
-                            <label for="family" class="labelCreateForm">Seleccione la familia</label>
-                            <select name="families" id="families">
-                                <option value="">Seleccione Uno</option>
-                                <% families.forEach(onefamily => { %>
-                                    <option value="<%=onefamily.name%>" <%= product.families.name==onefamily.name && "selected" ? "selected" : ""%>><%=onefamily.name%></option>
-                                <%}); %>
-                            </select>
-                            <label for="warranty" class="labelCreateForm">Indique tiempo de Garantia: ej: x Meses</label>
-                            <input type="text" placeholder="Garantia" name="warranty" value="<%=product.warranties.name%>">
-                            <label for="price" class="labelCreateForm">Indique el precio $</label>
-                            <input type="number" name="price" id="price" value="<%= product.price %>">
-                            <div class="botones">
-                                <div class="button-confirmar edit">
-                                    <button type="submit">Confirmar</button>
+<!--Grupo Nombre-->
+                            
+                                <label for="nombre" class=" form__label-create"><b>Nombre</b></label>
+                                <div>
+                                    <input type="text" class="form form__group-error form__group-input" name="name" id="name" value="<%= product.name %>">
+                                    <i class="form__validation-state fas fa-times-circle" id="name-icon"></i>
+                            
+                                    <p class="form__input-error" id="p-error-name">El nombre deberá tener al menos 5 caracteres</p>
                                 </div>
-                            </div>
-                        </div>
+
+<!--Grupo Descripción-->
+                                <label for="descripcion" class="form__label-create"><b>Descripción</b></label>
+                                <div>
+                                    <textarea class="form__group-error form__group-input" name="descripcion" id="descripcion" cols="30"
+                                        rows="10"><%= product.description %></textarea>
+                                    <i class="form__validation-state fas fa-times-circle" id="descripcion-icon"></i>
+                                    <p class="form__input-error" id="p-error-descripcion">La descripción deberá tener al menos 20 caracteres</p>
+                                </div>
+
+ <!--Grupo Imagen del Producto-->                               
+                                <label for="imagen" class="form__label-create"><b>Imagen del Producto</b></label>
+                                <div>
+                                    <input class="form__group-error form__group-input" type="file" name='imagen-producto'
+                                        accept=".jpg, .jpeg, .png, .gif" multiple="multiple">
+                                    <i class="form__validation-state fas fa-times-circle"></i>
+                                    <p class="form__input-error">Deberá ser un archivo válido (JPG,JPEG,PNG,GIF)</p>
+                                </div>
+<!--Grupo Categoría-->
+                                <label class="form__label-create"><b>Categoría</b></label>
+                                <select class="form__group-input" name="categoria" id="categoria">
+                                    <option value="">Seleccione uno</option>
+                                    <option value="Motherboard" <%=product.category=="Motherboard" && 'selected' %>
+                                        >Motherboards</option>
+                                    <option value="Procesadores" <%=product.category=="Procesadores" && 'selected' %>
+                                        >Procesadores</option>
+                                    <option value="Memorias" <%=product.category=="Memorias" && 'selected' %>>Memorias
+                                    </option>
+                                    <option value="Fuentes" <%=product.category=="Fuentes" && 'selected' %>>Fuentes
+                                    </option>
+                                    <option value="Gabinetes" <%=product.category=="Gabinetes" && 'selected' %>
+                                        >Gabinetes
+                                    </option>
+                                    <option value="Almacenamiento" <%=product.category=="Almacenamiento" && 'selected'
+                                        %>
+                                        >Almacenamiento</option>
+                                    <option value="Placa de video" <%=product.category=="Placa de video" && 'selected'
+                                        %>
+                                        >Placa de video</option>
+                                    <option value="Periferico">
+                                        <%= product.category=="Periferico" && 'selected' %>Periferico
+                                    </option>
+                                </select>
+                                <label class="form__label-create"><b>Marca</b></label>
+
+                                <select class="form__group-input" name="marca" id="marca">
+                                    <option value="general">Seleccione uno</option>
+                                    <option value="amd" <%=product.trademark=="AMD" && 'selected' %>>AMD</option>
+                                    <option value="intel" <%=product.trademark=="intel" && 'selected' %>>INTEL</option>
+                                    <option value="sentey" <%=product.trademark=="sentey" && 'selected' %>>Sentey
+                                    </option>
+                                    <option value="gigabyte" <%=product.trademark=="gigabyte" && 'selected' %>>Gigabyte
+                                    </option>
+                                    <option value="asus" <%=product.trademark=="asus" && 'selected' %>>Asus</option>
+                                    <option value="msi" <%=product.trademark=="msi" && 'selected' %>>MSI</option>
+                                    <option value="corsair" <%=product.trademark=="corsair" && 'selected' %>>Corsair
+                                    </option>
+                                    <option value="hyperx" <%=product.trademark=="hyperx" && 'selected' %>>HyperX
+                                    </option>
+                                </select>
+                                <label class="form__label-create"><b>Modelo</b></label>
+
+                                <input class="form__group-input" type="text" name="model" id="model"
+                                    value="<%= product.model %>">
+                                <label class="form__label-create"><b>Status</b></label>
+
+                                <select class="form__group-input" name="status" id="status">
+                                    <option value="">Seleccione uno</option>
+                                    <option value="destacado" <%=product.status=="destacado" && 'selected' ? 'selected'
+                                        : "" %>>Destacados</option>
+                                    <option value="ofertas" <%=product.status=="ofertas" && 'selected' ? 'selected' : ""
+                                        %>
+                                        >Ofertas</option>
+                                </select>
+                                <label class="form__label-create"><b>Familia</b></label>
+
+                                <select class="form__group-input" name="families" id="families">
+                                    <option value="">Seleccione Uno</option>
+                                    <option value="intel" <%=product.status=="intel" && 'selected' ? 'selected' : "" %>
+                                        >Intel</option>
+                                    <option value="amd" <%=product.status=="amd" && 'selected' ? 'selected' : "" %>>AMD
+                                    </option>
+                                </select>
+                                <label class="form__label-create"><b>Garantía</b></label>
+
+                                <input class="form__group-input" type="text" placeholder="Garantia" name="warranty"
+                                    value="<%=product.warranty ? product.warranty : "" %>">
+                                <label class="form__label-create"><b>Precio</b></label>
+
+                                <input class="form__group-input" type="number" name="price" id="price"
+                                    value="<%= product.price %>">
+                                <div class="form__mensaje" id="form__mensaje">
+                                    <p class="form__btn-error"><i class="fas fa-exclamation-triangle"></i><b>Error:</b>
+                                        Por favor completar el formulario correctamente</p>
+                                </div>
+
+                                <!--Botones-->
+                                <div class="botones">
+
+                                    <!--Boton confirmar edit-->
+
+                                    <div class="button-confirmar edit">
+                                        <button type="submit" class="form__group-input" >Confirmar</button>
+                                        </div>
+                                        <p class="form__mensaje-exito" id="form__mensaje-exito">Formulario enviado exitosamente!</p>
+                                    
+
+
+                                    <!--Boton borrar edit-->
+
+                                    <div class="button-borrar edit">
+                                        <form class="form__group-input"
+                                            action="/product/<%= product.id %>?_method=DELETE" method="POST">
+                                            <button class="form__group-input" type="submit">Borrar producto</button>
+                                    </div>
                     </form>
-                    <div class="button-borrar edit">
-                        <form action="/product/<%= product.id %>?_method=DELETE" method="POST">
-                            <button type="submit">Borrar producto</button>
-                        </form>
                     </div>
+
+                    </div>
+
                 </main>
 
-
+                <script src="/js/product-edit.js"></script>
+                <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
                 <%- include("partials/footer") %>
             </body>
             <script src="/js/index.js"></script>
