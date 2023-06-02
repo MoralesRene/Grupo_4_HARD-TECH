@@ -12,12 +12,10 @@
             <input type="text" placeholder="Nombre del producto" name="name">
             <label for="descripcion" class="labelCreateForm">Descripción</label>
             <textarea name="descripcion" placeholder="Descripción" id="descripcion" cols="30" rows="10"></textarea>
-            <input type="file" name='imagen-producto' accept=".jpg, .jpeg, .png" multiple="multiple" id="images">
-                <label for="imagen-producto" class="labelCreateForm" id="labelBtn">Subir Fotos (Min. 3)</label>
-                <div class="images_container">
-                <ul id="preview"></ul>
-            </div>   
+            <label for="" class="labelCreateForm">Seleccione minimo 3 imagenes</label>
+            <input type="file" accept=".jpg, .jpeg, .png" name="imagen-producto" multiple>
             <label for="categoria" class="labelCreateForm">Seleccione la categoria</label>
+>>>>>>> 8b64f4de7f041989906081df00cf29b9b9b45f26
             <select name="categoria" id="categoria">
                 <option value="">Seleccione uno</option>
                 <% categories.forEach(category => { %>
@@ -64,6 +62,7 @@
     </form>
 </main>
 
+<script src="js/product-create.js"></script>
 
 <%- include("partials/footer") %>
 </body>

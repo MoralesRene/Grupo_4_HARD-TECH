@@ -3,31 +3,61 @@ const fs = require("fs");
 const db = require("../database/models");
 
 let productsController = {
-  index: async function (req, res) {
-    try {
-      const products = await db.Products.findAll();
-      const images = await db.Product_Images.findAll({
-        where:{
-          is_primary: true
+    index: function (req, res) {
+       const products = getProducts();
+        switch (req.params.element) {
+            case 'list':
+                res.render("product-list", { productos: products })
+                break;
+            case 'cart':
+                res.render("product-cart", { productos: products })
+                break;
+                case 'create':
+                res.render("crear-producto")
+                break;
+        };
+    },
+    mostrarPorCat: (req, res) => {
+        const products = getProducts();
+        const productByCategory = products.filter(producto => producto.category == req.params.category)
+        if (req.params.category) {
+            res.render("product-list", { productos: productByCategory })
         }
-      })
-      const categories = await db.Product_Categories.findAll()
-      const trademarks = await db.Trademarks.findAll()
-      switch (req.params.element) {
-        case "list":
-          res.render("product-list", { productos: products,  images,trademarks });
-          break;
-        case "cart":
-          res.render("product-cart", { productos: products });
-          break;
-        case "create":
-          res.render("crear-producto", { categories, trademarks });
-          break;
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  },
+    },
+    detalleID: (req, res) => {
+        const products = getProducts();
+        let idProd = products.find(product => product.id == req.params.id)
+        let otherProd = products.filter(product => product.category == idProd.category && product.id !== idProd.id)
+        res.render("product-detail", { idProd, otherProd })
+    },
+    editarProductoForm: (req, res) => {
+        const products = getProducts();
+        const product = products.find(element => element.id == req.params.id)
+        res.render('edicion-producto', { product })
+    },
+    editarProducto: (req, res) => {
+        const products = getProducts();
+        const productIndex = products.findIndex(element => element.id == req.params.id)
+        let imagenes = req.files.length !=0 ? req.files.map((element) => element.filename) : products[productIndex].image
+        products[productIndex] = {
+            ...products[productIndex],
+            name: req.body.name,
+            description: req.body.descripcion,
+            category: req.body.categoria,
+            trademark: req.body.marca,
+            price: req.body.price,
+            model: req.body.model,
+            image: imagenes
+        }
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
+        res.redirect('/')
+    },
+    eliminarProducto: (req, res) => {
+        const products = getProducts();
+        const productsFiltered = products.filter(element => element.id != req.params.id)
+        fs.writeFileSync(productsFilePath, JSON.stringify(productsFiltered, null, 2))
+        res.redirect('/')
+    },
   create: async (req, res) => {
     try {
       const category = await db.Product_Categories.findOne({
@@ -209,6 +239,6 @@ let productsController = {
     } catch (error) {
       console.log(error);
     }
-  },
-};
+  }
+}
 module.exports = productsController;
