@@ -26,6 +26,6 @@ const validations = [
 ];
 
 router.get("/", guestMiddleware, registerController.index);
-router.post("/", uploadFile.single("avatar"), validations, registerController.envio);
+router.post("/", uploadFile.single("avatar"), validations, registerController.create);
 
 module.exports = router;

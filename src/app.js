@@ -37,7 +37,6 @@ app.use("/login", login);
 app.use("/register", register);
 app.use("/product", product);
 app.use("/cart", cart);
-
 app.use((req, res, next) => {
   res.status(404).render("not-found");
 });
@@ -47,7 +46,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 //Definicion de puertos y apertura de servidor
-const port = 3030;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log("Server Started on http://localhost:" + port);
 });

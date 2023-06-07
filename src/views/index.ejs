@@ -21,7 +21,7 @@
             <main>
                 <h2 class="subtitulos">Formas de Pago</h2>
                 <section class="formas-pago">
-                    <div><i class="fa-sharp fa-solid fa-building-columns"></i><b>Trasnferencia o Deposito</b></div>
+                    <div><i class="fa-sharp fa-solid fa-building-columns"></i><b>Transferencia o Deposito</b></div>
                     <div><i class="fa-solid fa-credit-card"></i><b>Tarjeta de Debito</b></div>
                     <div><i class="fa-regular fa-credit-card"></i><b>Cuotas sin interes</b></div>
                 </section>
@@ -29,59 +29,66 @@
                 <h2 class="subtitulos">Destacados!</h2>
                 <section class="destacados">
                     <div class="contenedor-dest">
-                        <% featuredProd.forEach(product => { %>
-                            <article>
-                                    <a href="/product/detail/<%= product.id %>">
-                                    <img src="/img/<%= product.image[0] %>" alt="">
-                                    <div class="info-prod">
-                                        <h4><%= product.name %></h4>
-                                        <p class="precio">$ <%= product.price %></p>
-                                        <button><a href="/product/detail/<%= product.id %>">Ver mas</a></button>
-                                    </div>
-                                </a>
-                                </article>
-                        <% }); %>
+                                                <!--Arreglar articulos css-->
+                        <% for (let i = 0; i < featuredProd.length; i++) { %>
+                            <article class="producto">
+                            <% for (let j = 0; j < images.length; j++) { %>
+                                <% if (featuredProd[i].id== images[j].products_id) { %>
+                                    <img src="/img/products/<%= images[j].url %>" alt="">
+                            <% } %>
+                                <% } %>
+                            <div class="info-prod">
+                                <h4><%= featuredProd[i].name %></h4>
+                                <p class="precio">$ <%= featuredProd[i].price %></p>
+                                <button class="ver-mas"><a href="/product/detail/<%= featuredProd[i].id %>">Ver mas</a></button>
+                                <button><a href="/product/cart">Comprar</a></button>
+                            </div>
+                        </article>
+                  <%  } %>
                     </div>
                 </section>
                 <!--Contenido marcas-->
                 <h2 class="subtitulos">Nuestras Marcas</h2>
                 <section class="marcas">
-                    <div class="lineas">
-                        <img src="/img/marca-1.jpg" alt="Asus">
-                    </div>
-                    <div class="lineas marca-hidden">
-                        <img src="/img/marca-2.png" alt="Asus">
-                    </div>
-                    <div class="lineas marca-hidden">
-                        <img src="/img/marca-1.jpg" alt="Asus">
-                    </div>
-                    <div class="lineas v-Desktop">
-                        <img src="/img/marca-1.jpg" alt="Asus">
-                    </div>
-                    <div class="lineas v-Desktop">
-                        <img src="/img/marca-1.jpg" alt="Asus">
-                    </div>
+                    <ul class="list__mark">
+                        <% trademark.forEach(mark=>{ %>
+                            <li><a href="#"><img src="/img/<%= mark %>" alt=""></a></li>
+                      <%  }) %>
+                    </ul>
                 </section>
                 <!--Contenido ofertas-->
+                <h2 class="subtitulos">PCs Armadas</h2>
+                <section class="pc__container">
+                    <div class="pc_image1"><a href="#"><img src="/img/pc1.png" alt=""></a></div>
+                    <div class="pc_image2"><a href="#"><img src="/img/pc2.jpg" alt=""></a></div>
+                    <div class="pc_image3"><a href="#"><img src="/img/pc3.jpg" alt=""></a></div>
+                </section>
                 <h2 class="subtitulos">Ofertas</h2>
                 <section class="ofertas">
                     <div class="contenedor-ofer">
-                        <% offerProd.forEach(product => { %>
-                            <article>
-                                    <a href="/product/detail/<%= product.id %>">
-                                    <img src="/img/<%= product.image[0] %>" alt="">
-                                    <div class="info-prod">
-                                        <h4><%= product.name %></h4>
-                                        <p class="precio">$ <%= product.price %></p>
-                                        <button><a href="/product/detail/<%= product.id %>">Ver mas</a></button>
-                                    </div>
-                                </a>
-                                </article>
-                        <% }); %>
+                        <!--Arreglar articulos css-->
+                        <% for (let i = 0; i < offerProd.length; i++) { %>
+                            <article class="producto">
+                            <% for (let j = 0; j < images.length; j++) { %>
+                                <% if (offerProd[i].id== images[j].products_id) { %>
+                                    <img src="/img/products/<%= images[j].url %>" alt="">
+                            <% } %>
+                                <% } %>
+                            <div class="info-prod">
+                                <h4><%= offerProd[i].name %></h4>
+                                <p class="precio">$ <%= offerProd[i].price %></p>
+                                <button class="ver-mas"><a href="/product/detail/<%= offerProd[i].id %>">Ver mas</a></button>
+                                <button><a href="/product/cart">Comprar</a></button>
+                            </a>
+                            </div>
+                        </article>
+                  <%  } %>
                     </div>
                 </section>
 
             </main>
             <!--footer inicio!-->
-
             <%- include("partials/footer") %>
+        </body>
+        <script src="/js/index.js"></script>
+        </html>
