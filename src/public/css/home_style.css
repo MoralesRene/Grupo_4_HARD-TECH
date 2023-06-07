@@ -1640,3 +1640,13 @@
                     input[type="file"]{
                         width: 155px;
                     }
+
+                /* Validacion Frontend login */
+                    
+                    .validationIncorrecto {
+                        border-color: red; 
+                    }
+
+                    .validationCorrecto {
+                        border-color: green; 
+                    }

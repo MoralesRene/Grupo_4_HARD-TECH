@@ -2,7 +2,6 @@ const path = require("path");
 const User = require("../models/User");
 const bcryptjs = require("bcryptjs");
 const session = require("express-session");
-const { log } = require("console");
 const db = require("../database/models");
 
 let loginController = {
@@ -16,22 +15,25 @@ let loginController = {
     if (userToLogin) {
       let correctPassword = bcryptjs.compareSync(
         req.body.password,
-        userToLogin.contrasenia
+        userToLogin.password
       );
       if (correctPassword) {
-        delete userToLogin.contrasenia;
+        userToLogin.password;
         req.session.userLogged = userToLogin;
         return res.redirect("/profile");
       }
-    }
-
-    res.render("login", {
-      errors: {
-        email: {
-          msg: "El mail o la contraseña son incorrectas",
+    } else {
+      res.render("login", {
+        errors: {
+          email: {
+            msg: "El email no esta registrado",
+          },
+          password: {
+            msg: "La contraseña no coincide",
+          },
         },
-      },
-    });
+      });
+    }
   },
 
   profile: (req, res) => {
