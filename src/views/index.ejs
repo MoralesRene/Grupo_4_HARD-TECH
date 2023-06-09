@@ -32,6 +32,7 @@
                                                 <!--Arreglar articulos css-->
                         <% for (let i = 0; i < featuredProd.length; i++) { %>
                             <article class="producto">
+                                <p class="marca-filter"><%= featuredProd[i].trademark.name %></p>
                             <% for (let j = 0; j < images.length; j++) { %>
                                 <% if (featuredProd[i].id== images[j].products_id) { %>
                                     <img src="/img/products/<%= images[j].url %>" alt="">
@@ -69,6 +70,7 @@
                         <!--Arreglar articulos css-->
                         <% for (let i = 0; i < offerProd.length; i++) { %>
                             <article class="producto">
+                                <p class="marca-filter"><%= offerProd[i].trademark.name %></p>
                             <% for (let j = 0; j < images.length; j++) { %>
                                 <% if (offerProd[i].id== images[j].products_id) { %>
                                     <img src="/img/products/<%= images[j].url %>" alt="">

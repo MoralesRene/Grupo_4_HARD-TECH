@@ -8,19 +8,29 @@
             <!-- Codigo reutilizable NAV_BAR.EJS-->
             <main id="list">
                 <div class="list__category">
+                    <div class="expand" ><img src="/img/no_expandido.svg" alt="" ></div>
                     <div class="list__category_filtros">
                         <p>Filtros</p>
                         <% trademarks.forEach(mark =>{ %>
-                            <label for="<%= mark.name %>" class="FilterBymark"><input type="checkbox" name="filtro" id="<%= mark.name %>" ><%= mark.name %></label>
+                            <button class="filter" id="<%= mark.name%>"><%= mark.name %><img id="checkImg" src="/img/checkbox-unchecked-svgrepo-com.svg" width="20" height="20"></button>
                       <%  }) %>
                     </div>
-                    <div class="list__category_filtros_bot">
-                        <p>Familia</p>
-                        <input type="checkbox" name="filtro" id="INTEL"><label for="INTEL" class="FilterBymark">INTEL</label>
-                        <input type="checkbox" name="filtro" id="AMD"><label for="AMD" class="FilterBymark">AMD</label>
-                        <input type="checkbox" name="filtro" id="AMBOS"><label for="AMBOS" class="FilterBymark">AMBOS</label>
-                    </div>
+                    <div class="list__category_filtros_right">
+                        <div class="filtro_order">
+                           <label for="order_1">Precio mas bajo</label><input type="radio" name="order" id="order_1" class="order">
+                           <label for="order_2">Precio mas alto</label><input type="radio" name="order" id="order_2" class="order">
+                           <label for="order_3">Mayor Stock</label><input type="radio" name="order" id="order_3" class="order">
+                           <label for="order_4">Menor Stock</label><input type="radio" name="order" id="order_4" class="order">
+                           <label for="order_5">Nombre: A-Z</label><input type="radio" name="order" id="order_5" class="order">
+                        </div>
+                        <div class="filterByPrice">
+                            <input type="number" name="Min" id="MinPrice" placeholder="Min">
+                            <input type="number" name="Max" id="MaxPrice" placeholder="Max">
+                            <button id="btnRange">Filtrar</button>
+                        </div>
+                     </div>
                     <!-- Condicionar para que solo lo vea el admin-->
+                    <div id="clear_contain"><button id="clearFilter">Limpiar Todo</button></div>
                     <div class="btn_create"><a href="/product/create">Crear Nuevo</a></div>
                     <!--Fin del contenedor-->
                 </div>
@@ -31,6 +41,7 @@
                 <div class="list__container_product">
                 <% for (let i = 0; i < productos.length; i++) { %>
                     <article class="producto">
+                        <p class="marca-filter"><%= productos[i].trademark.name %></p>
                     <% for (let j = 0; j < images.length; j++) { %>
                         <% if (productos[i].id== images[j].products_id) { %>
                             <img src="/img/products/<%= images[j].url %>" alt="">

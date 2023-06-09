@@ -72,6 +72,7 @@
                         <div class="contenedor-interes">
                            <% for (let i = 0; i < similarProducts.length; i++) { %>
                             <article class="producto">
+                                <p class="marca-filter"><%= similarProducts[i].trademark.name %></p>
                             <% for (let j = 0; j < images.length; j++) { %>
                                 <% if (similarProducts[i].id== images[j].products_id) { %>
                                     <img src="/img/products/<%= images[j].url %>" alt="">

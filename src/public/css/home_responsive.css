@@ -920,10 +920,19 @@
     }
 
     main#list .list__category {
-        grid-template-columns: repeat(2, 100px);
+        grid-template-columns: 200px;
+        grid-template-rows: 360px 200px 100px;
         width: 220px;
         margin: 30px 0 ;
-        height: 350px;
+        height: min-content;
+    }
+    .list__category_filtros_right{
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        height: 250px;
+    }
+    .btn_create{
+        grid-row: 3 / 4;
     }
 
     .list__category {
@@ -989,6 +998,9 @@
     }
     #titleFormCreate{
         top: 60px;
+    }
+    .list__category .filter{
+        width: 70%;
     }
 }
 
