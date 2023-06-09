@@ -1889,6 +1889,119 @@
                         letter-spacing: 2px;
                     }
 
+                    .images_container {
+                        width: 100%;
+                        height: 165px;
+                        overflow-x: scroll;
+                    }
+
+                    /*Ocultar productos*/
+                    .marca-filter {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        color: #3b5998;
+                        font-size: 16px;
+                    }
+
+                    .hide {
+                        display: none;
+                    }
+
+                    .active {
+                        background-color: rgb(43, 235, 9);
+                        color: white;
+                        transition: none;
+                    }
+
+                    #checkImg {
+                        background-color: white;
+                        position: absolute;
+                        right: -20px;
+                        top: 2px;
+                    }
+
+                    /*Fin ocultar productos*/
+                    #MinPrice,
+                    #MaxPrice {
+                        width: 70px;
+                        font-size: 14px;
+                        line-height: 20px;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                        border-bottom: 2px solid rgb(43, 235, 9);
+                        outline: none;
+                        text-align: center;
+                        position: relative;
+                    }
+
+                    .list__category_filtros_right {
+                        display: grid;
+                        grid-template-columns: 100%;
+                        grid-template-rows: 50% 50%;
+                    }
+
+                    .filterByPrice {
+                        display: flex;
+                        flex-flow: column wrap;
+                        row-gap: 5px;
+                        align-items: center;
+                        justify-content: center;
+                        grid-row: 2 / 3;
+                    }
+
+                    .filtro_order {
+                        grid-row: 1 / 2;
+                        grid-column: 1 / 2;
+                        display: grid;
+                        grid-template-columns: 1fr 15px;
+                        grid-template-rows: repeat(5,25px);
+                        align-items: center;
+                        grid-column-gap: 5px;
+                        justify-items: center;
+                        margin: auto 0;
+                    }
+                    .filterByPrice #btnRange {
+                        width: 80px;
+                        background-color: rgb(43, 235, 9);
+                        outline: none;
+                        color: white;
+                        border: none;
+                        border-radius: 5px;
+                        font-size: 16px;
+                        line-height: 28px;
+                        font-weight: 700;
+                        font-stretch: 2px;
+                    }
+
+                    #btnRange:hover {
+                        color: rgb(43, 235, 9);
+                        outline: 1px solid rgb(43, 235, 9);
+                        background-color: black;
+                    }
+                    #clear_contain{
+                        width: 100px;
+                        height: 30px;
+                        justify-self: center;
+                        align-self: center;
+                        grid-column-start: 1;
+                        grid-column-end: 3;
+                        grid-row: 2 / 3;
+                    }
+                    /*Boton Clear*/
+                    #clearFilter{
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgb(43, 235, 9);
+                        color: white;
+                        font-size: 16px;
+                        font-weight: 700;
+                        outline: none;
+                        border: none;
+                        border-radius: 5px;
+                        padding: 3px;
+                    }
                     input[type="file"]{
                         width: 155px;
                     }
