@@ -2,6 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const methodOverride = require("method-override");
+const productAPI = require("../src/routes/api/products")
+const userAPI = require("../src/routes/api/users")
 const home = require("../src/routes/home");
 const login = require("../src/routes/login");
 const register = require("../src/routes/register");
@@ -31,6 +33,8 @@ app.use(userLoggedMiddleware)
 //Utilización de rutas
 app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: false }));
+app.use("/api", userAPI)
+app.use("/api", productAPI)
 app.use("/", home);
 app.use("/", user)
 app.use("/login", login);
