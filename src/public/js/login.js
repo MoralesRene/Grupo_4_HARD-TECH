@@ -5,7 +5,9 @@ const expresiones = {
 
 window.addEventListener("load", function () {
   const formulario = document.querySelector("form.login");
-  
+  let errorId = document.getElementById("errorId");
+  console.log(errorId);
+
   formulario.addEventListener("submit", function (e) {
     e.preventDefault();
     
@@ -18,6 +20,8 @@ window.addEventListener("load", function () {
     
     let errorsEmail = [];
     let errorsPassword = [];
+    
+    
     
     let emailPrueba = false;
     let passwordPrueba = false;

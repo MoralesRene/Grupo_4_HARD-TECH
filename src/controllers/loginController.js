@@ -9,8 +9,8 @@ let loginController = {
     res.render("login");
   },
 
-  loginProcess: (req, res) => {
-    let userToLogin = User.findByField("email", req.body.email);
+  loginProcess: async (req, res) => {
+    let userToLogin = await db.Users.findOne({ where: { email: req.body.email } });
 
     if (userToLogin) {
       let correctPassword = bcryptjs.compareSync(
@@ -26,11 +26,8 @@ let loginController = {
       res.render("login", {
         errors: {
           email: {
-            msg: "El email no esta registrado",
-          },
-          password: {
-            msg: "La contraseña no coincide",
-          },
+            msg: "El email o la contraseña no coinciden",
+          }
         },
       });
     }
