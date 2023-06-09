@@ -5,8 +5,6 @@ const guestMiddleware = require('../middlewares/guestMiddleware')
 
 
 router.get('/', guestMiddleware, loginController.index)
-
 router.post('/', loginController.loginProcess)
-
 
 module.exports = router

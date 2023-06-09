@@ -5,7 +5,7 @@ const expresiones = {
 
 window.addEventListener("load", function () {
   const formulario = document.querySelector("form.login");
-  
+
   formulario.addEventListener("submit", function (e) {
     e.preventDefault();
     

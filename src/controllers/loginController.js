@@ -10,7 +10,7 @@ let loginController = {
   },
 
   loginProcess: (req, res) => {
-    let userToLogin = User.findByField("email", req.body.email);
+    let userToLogin = db.User.findOne("email", req.body.email);
 
     if (userToLogin) {
       let correctPassword = bcryptjs.compareSync(
