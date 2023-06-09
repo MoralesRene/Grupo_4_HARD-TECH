@@ -20,7 +20,7 @@ window.addEventListener("load", () => {
                 location.href = location.pathname + "?" + paramsSearch.toString()
             } else {
                 paramsSearch.append("filter", boton.textContent)
-                location.href = location.href + "?" + paramsSearch.toString()
+                location.href = location.pathname + "?" + paramsSearch.toString()
             }
         })
         //estilo boton filtrado
@@ -31,8 +31,6 @@ window.addEventListener("load", () => {
             boton.classList.add("active")
         }
     })
-
-
     btnRange.addEventListener("click", () => {
         const paramPrice = new URLSearchParams(location.search)
         if (paramPrice.has("min") && paramPrice.has("max")) {

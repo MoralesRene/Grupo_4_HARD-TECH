@@ -4,6 +4,7 @@ const productsController = require("../controllers/productsController");
 const upload = require("../middlewares/multerMiddlewareProduct");
 const Products = require("../database/models/Products");
 
+router.get("/list", productsController.list)
 router.get("/:element/", productsController.index);
 router.post("/create",upload.array("imagen-producto"), productsController.create);
 router.get("/list/:category/", productsController.mostrarPorCat);

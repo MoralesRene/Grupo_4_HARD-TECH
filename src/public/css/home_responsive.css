@@ -921,7 +921,7 @@
 
     main#list .list__category {
         grid-template-columns: 200px;
-        grid-template-rows: 360px 200px 100px;
+        grid-template-rows: 360px 200px 100px 100px;
         width: 220px;
         margin: 30px 0 ;
         height: min-content;
@@ -932,9 +932,11 @@
         height: 250px;
     }
     .btn_create{
+        grid-row: 4 / 5;
+    }
+    #clear_contain{
         grid-row: 3 / 4;
     }
-
     .list__category {
         flex-flow: column wrap;
         justify-content: center;
@@ -1224,7 +1226,8 @@
 
     }
     main#list .list__container_product {
-        gap: 30px;
+        gap: 15px;
+        height: min-content;
     }
 
     .list__container_product>.producto {
