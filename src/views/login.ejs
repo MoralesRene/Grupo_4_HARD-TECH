@@ -9,13 +9,25 @@
                 <main id="ventana-login">
                     <div id="ventana">
                         <h3>Iniciar Sesión</h3>
-                        <form action="/login" method="POST">
-                            <% if (locals.errors) { %>
-                                <label for="email"><%= errors.email.msg %></label>
-                            <% } %> 
-                            <input type="email" name='email' placeholder="Email" required>
-                            <input type="password" name='password' placeholder="Contraseña" required>
-                            <button>Ingresar</button>
+                        <form class="login" action="/login" method="POST">
+                            <% if (locals && locals.errors?.email) { %>
+                                <label for="email" id="errorId"><%= errors.email.msg %></label>
+                            <% } %>
+                            
+                            <!-- EMAIL -->
+                            <div class="error" id="valdiationEmail">
+                                <ul></ul>
+                            </div>
+                            <input class="email inputForm" type="email" name='email' id="email" placeholder="Email">
+
+                            
+                            <!-- PASSWORD -->
+                            <div class="error" id="valdiationPassword">
+                                <ul></ul>
+                            </div>
+                            <input class="password inputForm" type="password" name='password' id="password" placeholder="Contraseña">
+    
+                            <button type="submit">Ingresar</button>
                         </form>
                         <p><a href="#">Me olvide la contraseña</a></p>
                         <div class="go-to-regis"><b>¿Aun no tienes cuenta?</b><a href="/register">Registrate</a></div>
@@ -23,6 +35,7 @@
                         </div>
                         <div class="ingreso-con-red google"><i class="fa-brands fa-google"></i>Ingresar con Google</div>
                     </div>
+                    <script src="/js/login.js"></script>
                 </main>
 
                 <%- include("partials/footer") %>
