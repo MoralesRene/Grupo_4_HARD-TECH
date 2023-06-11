@@ -7,7 +7,9 @@ const login = require("../src/routes/login");
 const register = require("../src/routes/register");
 const product = require("../src/routes/products");
 const cart = require("../src/routes/cart");
-const user = require("./routes/users")
+const user = require("./routes/users");
+const servicioTecnico = require("./routes/ayuda");
+const quieroComunicarme = require("./routes/quieroComunicarme");
 const exp = require("constants");
 const multer = require("multer");
 const app = express();
@@ -32,11 +34,14 @@ app.use(userLoggedMiddleware)
 app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: false }));
 app.use("/", home);
-app.use("/", user)
+app.use("/", user);
 app.use("/login", login);
 app.use("/register", register);
 app.use("/product", product);
 app.use("/cart", cart);
+app.use("/servicioTecnico", servicioTecnico);
+app.use("/quieroComunicarme", quieroComunicarme);
+
 app.use((req, res, next) => {
   res.status(404).render("not-found");
 });
