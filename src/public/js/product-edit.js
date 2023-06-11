@@ -40,17 +40,17 @@ const validarFormulario = (e) => {
     switch (e.target.name) {
         case "name":
             if (expresiones.name.test(e.target.value)) {
-                e.target.classList.remove("formgrupo-incorrecto");
-                e.target.classList.add("formgrupo-correcto");
+                e.target.classList.remove("form__group-incorrecto");
+                e.target.classList.add("form__group-correcto");
                 document.getElementById("name-icon").classList.add("fa_check_circle");
                 document.getElementById("name-icon").classList.remove("fa_times_circle");
-                document.getElementById("p-error-name").classList.remove("formgroup-error-activo");
+                document.getElementById("p-error-name").classList.remove("form__group-error-activo");
             } else {
-                e.target.classList.add("formgroup-incorrecto");
-                e.target.classList.remove("formgroup-correcto");
+                e.target.classList.add("form__group-incorrecto");
+                e.target.classList.remove("form__group-correcto");
                 document.getElementById("name-icon").classList.add("fa_times_circle");
                 document.getElementById("name-icon").classList.remove("fa_check_circle");
-                document.getElementById("p-error-name").classList.add("formgroup-error-activo");
+                document.getElementById("p-error-name").classList.add("form__group-error-activo");
                 console.log("error")
             }
         case "descripcion":

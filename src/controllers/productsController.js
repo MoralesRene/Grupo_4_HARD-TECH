@@ -1,4 +1,5 @@
 const path = require("path");
+const {validationResult} = require ("express-validator");
 const db = require("../database/models");
 
 let productsController = {
@@ -136,6 +137,16 @@ let productsController = {
     }
   },
   editarProductoForm: async (req, res) => {
+   
+    const resultvalidation = validationResult(req);
+    if (resultvalidation.errors.lenght > 0){
+      return res.render("product-edit",{
+        errors: resultvalidation.mapped(),
+        oldData: req.body
+      });
+    } return res.send("OK!")
+  
+
     try {
       const product = await db.Products.findByPk(req.params.id,{
         include:["category","families","trademark","warranties","images"]
