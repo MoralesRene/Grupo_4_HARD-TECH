@@ -1704,10 +1704,10 @@
                     }
 
                     .button-error {
-                        margin: 20px;
+                        margin: 15px;
                         color: rgb(255, 255, 255);
                         background-color: rgb(43, 235, 9);
-                        padding: 10px;
+                        padding: 5px;
                     }
 
                     /*------------------------------ERROR REGISTRO ---------------------------------------*/
@@ -1829,4 +1829,16 @@
                         height: 165px;
                         overflow-x: scroll;
 
+                    }
+
+                    /*Menu Ayuda*/
+
+                    .ayuda{
+                        text-align: center;
+                        font-size: 16px;
+                    }
+                    .comentario{
+                        font-size: 12px;
+                        padding: 20px;
+                        margin: 10px;
                     }
