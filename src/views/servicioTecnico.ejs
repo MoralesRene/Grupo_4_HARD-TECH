@@ -1,0 +1,35 @@
+<%- include("partials/head") %>
+
+    <body>
+        <%- include("partials/header") %>
+            <!--Header reutilizable-->
+
+            <%- include("partials/navbar") %>
+                <!-- Codigo reutilizable NAV_BAR.EJS-->
+                <main id="ventana-login">
+                    <div id="ventana">
+                        <h3>Servicio Tecnico</h3>
+                        <h2 class="ayuda">Para solicitar nuestro servicio técnico envianos la descripcion de tu
+                            inconveniente y un teléfono de contacto, a la brevedad nos comunicaremos </h2>
+                        <form action="/servicioTecnico" method="POST">
+
+
+                            <!--Descripción -->
+                            <label for="comentario"></label>
+                            <textarea class="comentario" name="comentario"
+                                id="comentario">Dejanos tu comentario aquí....</textarea>
+
+
+
+                            <button class="button-error" type="submit"><a href="/">Enviar</a></button>
+                            <button class="button-error" type="submit"><a href="/"> Volver al Inicio</a> </button>
+                        </form>
+
+                </main>
+
+                <%- include("partials/footer") %>
+    </body>
+
+    <script src="/js/index.js"></script>
+
+    </html>
