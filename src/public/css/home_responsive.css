@@ -45,7 +45,12 @@
         width: 25%;
         transition: 500ms;
     }
-
+    div.quantity{
+        top: 10px;
+        right: 2px;
+        width: 18px;
+        height: 18px;
+    }
     .hidden_p {
         display: block;
         font-size: 16px;
@@ -189,30 +194,18 @@
     .info-prod h4 {
         font-size: 14px;
     }
-
+    .principales{
+        margin: 10px 0 10px 20px;
+    }
     /*Marcas*/
-    .marca-hidden {
-        display: block;
-    }
-
     .marcas {
-        width: 100%;
-        justify-content: space-around;
+        width: 620px;
+        height: 200px;
     }
-
-    .lineas {
-        width: 125px;
-        height: 125px;
-    }
-
-    .lineas img {
-        width: 125px;
-        height: 125px;
-    }
-
-    /*Ofertas*/
-    .ofer-hidden {
-        display: flex;
+    ul.list__mark{
+        height: 100%;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: 1fr 1fr;
     }
     .pc__container{
         flex-direction: row;
@@ -519,9 +512,15 @@
         width: 200px;
     }
 
-    .botonera div {
+    .botonera div#botones {
         justify-content: end;
         column-gap: 30px;
+    }
+    div.quantity{
+        top: 15px;
+        right: 5px;
+        width: 18px;
+        height: 18px;
     }
 
     .botonera a {
@@ -625,8 +624,21 @@
         transition: 400ms;
     }
     .marcas {
-        justify-content: center;
+        align-self: center;
         column-gap: 50px;
+        width: 630px;
+    }
+    .list__mark>li:hover{
+        filter:none;
+        background: linear-gradient(to right, #cbcbcb, white);
+        /* background: linear-gradient(45deg,  #cbcecb ,rgb(255,255,255)); */
+
+    }
+    .list__mark>li>a>#scaleImg{
+        transition: 400ms;
+    }
+    .list__mark>li:hover #scaleImg{
+        transform: scale(1.1);
     }
     .pc__container{
         justify-content: center;
@@ -909,10 +921,6 @@
     /*---------------------------------------------------------------------------------------------*/
     /*product-list*/
     main#list {
-        /* flex-flow: row wrap;
-        width: 95%;
-        max-width: 1200px;
-        margin-top: 80px; */
         display: grid;
         grid-template-columns: 250px 1fr;
         grid-template-rows: 100vh;
@@ -920,11 +928,14 @@
     }
 
     main#list .list__category {
-        grid-template-columns: 200px;
-        grid-template-rows: 360px 200px 100px 100px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 340px 200px 50px 50px;
         width: 220px;
         margin: 30px 0 ;
         height: min-content;
+    }
+    .list__category_filtros{
+        grid-row: 1 / 2;
     }
     .list__category_filtros_right{
         grid-column: 1 / 2;
@@ -932,10 +943,10 @@
         height: 250px;
     }
     .btn_create{
-        grid-row: 4 / 5;
+        grid-row: 5 / 6;
     }
     #clear_contain{
-        grid-row: 3 / 4;
+        grid-row: 4 / 5;
     }
     .list__category {
         flex-flow: column wrap;
@@ -1001,7 +1012,7 @@
     #titleFormCreate{
         top: 60px;
     }
-    .list__category .filter{
+    .list__category .filter,.filterCategory{
         width: 70%;
     }
 }
@@ -1031,6 +1042,25 @@
     main {
         max-width: 1400px;
     }
+    .principales{
+        margin: 10px 50px 10px 50px;
+        padding-bottom: 20px;
+    }
+    .verTodo{
+        padding: 7px;
+        font-size: 16px;
+        top: 0;
+        right: 0px;
+        transition: 300ms;
+        cursor: pointer;
+    }
+    .verTodo:hover{
+        background-color: black;
+        color: rgb(43, 235, 9);
+        box-shadow: 3px 3px 10px rgb(43, 235, 9);
+        border: 1px solid rgb(43, 235, 9);
+        font-weight: 700;
+    }
 
     .contenedor-dest,
     .contenedor-ofer,.contenedor-interes {
@@ -1051,12 +1081,19 @@
         overflow: visible;
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+
     }
 
     /**index.html*/
     nav.hidden {
         width: 90%;
         max-width: 1280px;
+        cursor: pointer;
+    }
+    nav.hidden label{
+        cursor: pointer;
+
     }
 
     .hidden>ul>li:hover .subcategory {

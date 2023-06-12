@@ -62,7 +62,7 @@ window.addEventListener("load", () => {
                 console.log("cambio en el indice"+index);
             }
     })
-    //ocultar filtros 
+    //limpiar filtros 
     const buttonClear = document.getElementById("clearFilter")
     buttonClear.addEventListener("click",()=>{
         location.href = location.pathname

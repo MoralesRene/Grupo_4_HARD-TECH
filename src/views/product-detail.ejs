@@ -33,8 +33,8 @@
                                         class="fa-regular fa-square-minus"></i></button></div>
                             <p id="garantia"><i class="fa-solid fa-shield-halved"></i>Garantia: <%=product.warranties.name%></p>
                             <div class="boton-compra">
-                                <button id="compra"><a href="/product-cart">Comprar Ahora</a></button>
-                                <button class="carrito">Agregar al carrito</button>
+                                <button  class="btnComprar"  id="compra" data-id="<%= product.id %>"><a href="#">Comprar Ahora</a></button>
+                                <button class="carrito btnComprar" data-id="<%= product.id %>">Agregar al carrito</button>
                                 <!-- Condicionar para que solo lo vea el admin-->
                                 <div id="editBtn"><a href="/product/edit/<%= product.id %>">Editar Producto</a></div>
                                 <!--Fin del contenedor-->
@@ -81,8 +81,7 @@
                             <div class="info-prod">
                                 <h4><%= similarProducts[i].name %></h4>
                                 <p class="precio">$ <%= similarProducts[i].price %></p>
-                                <button class="ver-mas"><a href="/product/detail/<%= similarProducts[i].id %>">Ver mas</a></button>
-                                <button><a href="/product/cart">Comprar</a></button>
+                                <button class="btnComprar ver-mas" data-id="<%= similarProducts[i].id %>"><a href="/product/detail/<%= similarProducts[i].id %>">Ver mas</a></button>
                             </div>
                         </article>
                   <%  } %>
@@ -92,5 +91,6 @@
             </main>
             <%- include("partials/footer") %>
         </body>
+        <script src="/js/addItems.js"></script>
         <script src="/js/index.js"></script>
         </html>

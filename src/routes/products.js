@@ -8,6 +8,7 @@ router.get("/list", productsController.list)
 router.get("/:element/", productsController.index);
 router.post("/create",upload.array("imagen-producto"), productsController.create);
 router.get("/list/:category/", productsController.mostrarPorCat);
+router.get("/list/tipo/:condition", productsController.listByCondition)
 router.get("/detail/:id", productsController.detalleID);
 router.get("/edit/:id", productsController.editarProductoForm);
 router.put("/:id",upload.array("imagen-producto"),productsController.editarProducto);

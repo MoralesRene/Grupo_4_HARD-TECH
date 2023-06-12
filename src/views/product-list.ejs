@@ -29,8 +29,8 @@
                             <button id="btnRange">Filtrar</button>
                         </div>
                      </div>
+                     <div id="clear_contain"><button id="clearFilter">Limpiar Todo</button></div>
                     <!-- Condicionar para que solo lo vea el admin-->
-                    <div id="clear_contain"><button id="clearFilter">Limpiar Todo</button></div>
                     <div class="btn_create"><a href="/product/create">Crear Nuevo</a></div>
                     <!--Fin del contenedor-->
                 </div>
@@ -50,8 +50,7 @@
                     <div class="info-prod">
                         <h4><%= productos[i].name %></h4>
                         <p class="precio">$ <%= productos[i].price %></p>
-                        <button class="ver-mas"><a href="/product/detail/<%= productos[i].id %>">Ver mas</a></button>
-                        <button><a href="/product/cart">Comprar</a></button>
+                        <button class="btnComprar ver-mas" data-id="<%=productos[i].id%>"><a href="/product/detail/<%= productos[i].id %>">Ver mas</a></button>
                     </a>
                     </div>
                 </article>
@@ -60,9 +59,9 @@
                 <% }%>
             </main>
 
-
             <%- include("partials/footer") %>
     </body>
     <script src="/js/index.js"></script>
     <script src="/js/filters.js"></script>
+    <script src="/js/addItems.js"></script>
     </html>

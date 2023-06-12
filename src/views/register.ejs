@@ -44,8 +44,8 @@
                       <% } %>
                       <span class="icon"></span>
                     </label>              
-                    <label for="documento" class="label-container">D.N.I / C.U.I.T.:
-                          <input type="text" name="documento" placeholder="ej: 12345678" class="formInput"
+                    <label for="documento" class="label-container">D.N.I:
+                          <input type="text" name="documento" placeholder="ej: 12345678" class="formInput" maxlength="8"
                           value="<%= locals.old && old.documento ? (old.documento) : null %>" />
                             
                           <div class="message" id="error-documento"></div>
