@@ -35,5 +35,26 @@ module.exports = (sequelize, DataTypes) => {
     });
   };
 
+  Product_Images.beforeUpdate((productImage, options) => {
+    if (productImage.is_primary) {
+      return Product_Images.findOne({
+        where: {
+          products_id: productImage.products_id,
+          is_primary: true,
+        },
+        attributes: ["id"],
+        raw: true,
+      })
+        .then((existingPrimaryImage) => {
+          if (existingPrimaryImage && existingPrimaryImage.id !== productImage.id) {
+            throw new Error("Solo una imagen puede ser primaria.");
+          }
+        })
+        .catch((error) => {
+          throw error;
+        });
+    }
+  });
+
   return Product_Images
 };

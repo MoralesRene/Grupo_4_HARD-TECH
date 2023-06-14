@@ -32,7 +32,7 @@ let homeController = {
             "marca-7.png",
             "marca-8.png"
         ]
-        res.render("index", { featuredProd: productsFeatured, offerProd: productsOffers, images,trademark })
+        res.render("index", { featuredProd: productsFeatured, offerProd: productsOffers, images,trademark})
     },
     search: async (req, res) => {
         const products = await db.Products.findAll({
@@ -49,7 +49,7 @@ let homeController = {
         })
         const trademarks = await db.Trademarks.findAll()
 
-        res.render("product-list", { productos: products, images, trademarks })
+        res.render("product-list", { productos: products, images, trademarks})
     }
 }
 

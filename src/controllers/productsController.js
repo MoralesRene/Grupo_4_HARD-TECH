@@ -14,13 +14,13 @@ let productsController = {
       const trademarks = await db.Trademarks.findAll()
       switch (req.params.element) {
         case "list":
-          res.render("product-list", { productos: products,  images,trademarks });
+          res.render("product-list", { productos: products,  images,trademarks, res });
           break;
         case "cart":
-          res.render("product-cart", { productos: products });
+          res.render("product-cart", { productos: products, res });
           break;
         case "create":
-          res.render("crear-producto", { categories, trademarks });
+          res.render("crear-producto", { categories, trademarks, res });
           break;
       }
     } catch (error) {
@@ -100,7 +100,7 @@ let productsController = {
         }
       });
       const trademarks = await db.Trademarks.findAll()
-      res.render("product-list", { productos: products, images ,trademarks });
+      res.render("product-list", { productos: products, images ,trademarks, res });
     } catch (error) {
       console.log(error);
     }
@@ -129,7 +129,7 @@ let productsController = {
           is_primary:true
         }
       })
-      res.render("product-detail", { product,imagenes,similarProducts,images });
+      res.render("product-detail", { product,imagenes,similarProducts,images, res });
 
     } catch (error) {
       console.log(error);
@@ -144,7 +144,7 @@ let productsController = {
       const trademarks = await db.Trademarks.findAll()
       const families = await db.Families.findAll()
       //faltan agregar la vista previa y la edicion de imagenes
-      res.render("edicion-producto", { product,categories,trademarks,families });
+      res.render("edicion-producto", { product,categories,trademarks,families});
     } catch (error) {
       console.log(error);
     }

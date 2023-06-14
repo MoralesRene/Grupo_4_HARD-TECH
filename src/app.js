@@ -15,6 +15,7 @@ const multer = require("multer");
 const app = express();
 const session = require('express-session')
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+const adminMiddleware = require("./middlewares/adminMiddleware");
 
 const publicPath = path.join(__dirname, "/public");
 
@@ -28,6 +29,7 @@ app.use(session({
   saveUninitialized: false,
 }
 ));
+app.use(adminMiddleware)
 app.use(userLoggedMiddleware)
 
 //Utilización de rutas

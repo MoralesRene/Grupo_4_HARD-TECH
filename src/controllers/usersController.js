@@ -7,7 +7,7 @@ let listUser = JSON.parse(userJSON)
 let userController = {
     index: (req, res) => {
         res.render("users/profile",
-            { session: req.session.userLogged })
+            { session: req.session.userLogged})
     }
 
 }

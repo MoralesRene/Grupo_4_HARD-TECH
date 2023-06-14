@@ -36,7 +36,9 @@
                                 <button id="compra"><a href="/product-cart">Comprar Ahora</a></button>
                                 <button class="carrito">Agregar al carrito</button>
                                 <!-- Condicionar para que solo lo vea el admin-->
-                                <div id="editBtn"><a href="/product/edit/<%= product.id %>">Editar Producto</a></div>
+                                <% if (locals && locals.role == "Administrador") { %>
+                                    <div id="editBtn"><a href="/product/edit/<%= product.id %>">Editar Producto</a></div>
+                                <% } %>
                                 <!--Fin del contenedor-->
                             </div>
                         </div>
