@@ -19,7 +19,7 @@
                 </ul>
             </div>
             <main id="mainIndex">
-                <h2 class="subtitulos">Formas de Pago</h2>
+                <h2 class="subtitulos secundarios">Formas de Pago</h2>
                 <section class="formas-pago">
                     <div><i class="fa-sharp fa-solid fa-building-columns"></i><b>Transferencia o Deposito</b></div>
                     <div><i class="fa-solid fa-credit-card"></i><b>Tarjeta de Debito</b></div>
@@ -28,11 +28,11 @@
                 <!--Contenido Destacados-->
                 <h2 class="subtitulos principales"><strong class="strong">Productos</strong> Destacados<a href="/product/list/tipo/Destacados" class="verTodo">Ver Todo</a></h2>
                 <section class="destacados">
-                    <div class="contenedor-dest">
+                    <div class="contenedor-dest wow animate__animated animated__bounceInLeft">
                                                 <!--Arreglar articulos css-->
                         <% for (let i = 0; i < featuredProd.length; i++) { %>
                             <article class="producto">
-                                <p class="marca-filter"><%= featuredProd[i].trademark.name %></p>
+                                <div class="addCarrito" data-id="<%= featuredProd[i].id %>"><i class="fa-solid fa-cart-shopping"></i></div>
                             <% for (let j = 0; j < images.length; j++) { %>
                                 <% if (featuredProd[i].id== images[j].products_id) { %>
                                     <img src="/img/products/<%= images[j].url %>" alt="">
@@ -41,14 +41,14 @@
                             <div class="info-prod">
                                 <h4><%= featuredProd[i].name %></h4>
                                 <p class="precio">$ <%= featuredProd[i].price %></p>
-                                <button  class="btnComprar ver-mas" data-id="<%= featuredProd[i].id %>"><a href="/product/detail/<%= featuredProd[i].id %>">Ver mas</a></button>
+                                <button  class="btnComprar ver-mas" ><a href="/product/detail/<%= featuredProd[i].id %>">Ver mas</a></button>
                             </div>
                         </article>
                   <%  } %>
                     </div>
                 </section>
                 <!--Contenido marcas-->
-                <h2 class="subtitulos ">Nuestras Marcas</h2>
+                <h2 class="subtitulos secundarios">Nuestras Marcas</h2>
                 <section class="marcas">
                     <ul class="list__mark">
                         <% trademark.forEach(mark=>{ %>
@@ -57,7 +57,7 @@
                     </ul>
                 </section>
                 <!--Contenido ofertas-->
-                <h2 class="subtitulos" >PCs Armadas</h2>
+                <h2 class="subtitulos secundarios" >PCs Armadas</h2>
                 <section class="pc__container">
                     <div class="pc_image1"><a href="#"><img src="/img/pc1.png" alt=""></a></div>
                     <div class="pc_image2"><a href="#"><img src="/img/pc2.jpg" alt=""></a></div>
@@ -69,7 +69,7 @@
                         <!--Arreglar articulos css-->
                         <% for (let i = 0; i < offerProd.length; i++) { %>
                             <article class="producto">
-                                <p class="marca-filter"><%= offerProd[i].trademark.name %></p>
+                                <div class="addCarrito" data-id="<%= offerProd[i].id %>"><i class="fa-solid fa-cart-shopping"></i></div>
                             <% for (let j = 0; j < images.length; j++) { %>
                                 <% if (offerProd[i].id== images[j].products_id) { %>
                                     <img src="/img/products/<%= images[j].url %>" alt="">
@@ -78,7 +78,7 @@
                             <div class="info-prod">
                                 <h4><%= offerProd[i].name %></h4>
                                 <p class="precio">$ <%= offerProd[i].price %></p>
-                                <button class="btnComprar ver-mas" data-id="<%= offerProd[i].id %>"><a href="/product/detail/<%= offerProd[i].id %>">Ver mas</a></button>
+                                <button class="btnComprar ver-mas" ><a href="/product/detail/<%= offerProd[i].id %>">Ver mas</a></button>
                             </a>
                             </div>
                         </article>

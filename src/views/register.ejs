@@ -61,8 +61,10 @@
                           </label>
                                 <div class="register-img">
                                   <label for="avatar">Imagen de Perfil:</label>
-                                  <input class="register-img1" type="file" name="avatar" accept=".jpg .jpeg .png" 
-                                  id="avatar">
+                                  <input type="file" name="avatar" hidden accept=".JPG .JPEG .PNG" 
+                                  id="avatar" >
+                                  <button id="addImg">Subir Foto<br><span id="opcional">(Opcional)</span></button>
+                                  <div id="previewAvatar"><img src="/img/avatars/default.jpg" alt="" id="previewImg"></div>
                                 </div>
                                 <label for="contrasenia" class="label-container">Contraseña:
                                 <input type="password" name="contrasenia"  class="formInput"/>

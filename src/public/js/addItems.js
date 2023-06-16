@@ -26,9 +26,11 @@ window.addEventListener("load",()=>{
         }, 5000);
     }
     const contador = document.querySelector("div.quantity")
-    const carritoLength = JSON.parse(localStorage.cart)
-           contador.innerText = carritoLength ? carritoLength.length : 0
-    const botones = document.querySelectorAll(".btnComprar")
+    function carritoLength() {
+        return localStorage.cart? JSON.parse(localStorage.cart).length : 0
+    }
+    contador.innerText = carritoLength()
+    const botones = document.querySelectorAll(".addCarrito")
    
     botones.forEach(boton=>{
         boton.addEventListener("click",(e)=>{
@@ -46,8 +48,7 @@ window.addEventListener("load",()=>{
            }else{
                 localStorage.setItem("cart",JSON.stringify([{id:boton.dataset.id,quantity:1}]))
            }
-           const carritoLength = JSON.parse(localStorage.cart)
-           contador.innerText = carritoLength ? carritoLength.length : 0
+           contador.innerText = carritoLength()
            msgNotificacion()
         })
     })

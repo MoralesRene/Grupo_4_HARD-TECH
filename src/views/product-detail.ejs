@@ -33,7 +33,7 @@
                                         class="fa-regular fa-square-minus"></i></button></div>
                             <p id="garantia"><i class="fa-solid fa-shield-halved"></i>Garantia: <%=product.warranties.name%></p>
                             <div class="boton-compra">
-                                <button  class="btnComprar"  id="compra" data-id="<%= product.id %>"><a href="#">Comprar Ahora</a></button>
+                                <button  class="btnComprar"  id="compra" data-id="<%= product.id %>"><a href="/product/cart">Comprar Ahora</a></button>
                                 <button class="carrito btnComprar" data-id="<%= product.id %>">Agregar al carrito</button>
                                 <!-- Condicionar para que solo lo vea el admin-->
                                 <div id="editBtn"><a href="/product/edit/<%= product.id %>">Editar Producto</a></div>
@@ -72,7 +72,7 @@
                         <div class="contenedor-interes">
                            <% for (let i = 0; i < similarProducts.length; i++) { %>
                             <article class="producto">
-                                <p class="marca-filter"><%= similarProducts[i].trademark.name %></p>
+                                <div class="addCarrito" data-id="<%= similarProducts[i].id %>"><i class="fa-solid fa-cart-shopping"></i></div>
                             <% for (let j = 0; j < images.length; j++) { %>
                                 <% if (similarProducts[i].id== images[j].products_id) { %>
                                     <img src="/img/products/<%= images[j].url %>" alt="">
@@ -81,7 +81,7 @@
                             <div class="info-prod">
                                 <h4><%= similarProducts[i].name %></h4>
                                 <p class="precio">$ <%= similarProducts[i].price %></p>
-                                <button class="btnComprar ver-mas" data-id="<%= similarProducts[i].id %>"><a href="/product/detail/<%= similarProducts[i].id %>">Ver mas</a></button>
+                                <button class="btnComprar ver-mas" ><a href="/product/detail/<%= similarProducts[i].id %>">Ver mas</a></button>
                             </div>
                         </article>
                   <%  } %>

@@ -5,43 +5,48 @@ const session = require("express-session");
 const db = require("../database/models");
 
 let loginController = {
-  index: async (req, res) => {
+  index: (req, res) => {
     res.render("login");
   },
 
   loginProcess: async (req, res) => {
-    let userToLogin = await db.Users.findOne({ where: { email: req.body.email } });
+    try {
+      let userToLogin = await db.Users.findOne({ where: { email: req.body.email } });
 
-    if (userToLogin) {
-      let correctPassword = bcryptjs.compareSync(
-        req.body.password,
-        userToLogin.password
-      );
-      if (correctPassword) {
-        userToLogin.password;
-        req.session.userLogged = userToLogin;
-        return res.redirect("/profile");
+      if (!userToLogin) {
+        res.render("login", {
+          errors: {
+            email: {
+              msg: "El email o la contraseña no coinciden",
+            }
+          },
+        });
+      } else {
+        let correctPassword = bcryptjs.compareSync(
+          req.body.password,
+          userToLogin.password
+        );
+        if (correctPassword !=true) {
+          res.render("login", {
+            errors: {
+              email: {
+                msg: "El email o la contraseña no coinciden",
+              }
+            },
+          });
+        }else{
+          userToLogin.password;
+          req.session.userLogged = userToLogin;
+          return res.redirect("/profile");
+        }
       }
-    } else {
-      res.render("login", {
-        errors: {
-          email: {
-            msg: "El email o la contraseña no coinciden",
-          }
-        },
-      });
+    } catch (error) {
+      console.log(error);
     }
   },
-
-  profile: (req, res) => {
-    return res.render("profile", {
-      user: req.session.userLogged,
-    });
-  },
-
   logout: (req, res) => {
     req.session.destroy();
-    return res.redirect("login");
+    res.redirect("/");
   },
 };
 

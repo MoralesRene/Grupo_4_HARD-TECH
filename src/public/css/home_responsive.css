@@ -470,20 +470,52 @@
         margin-top: 85px;
     }
     .contain_profile_data>form{
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-column-gap: 30px;
-        grid-template-rows: 350px 100px;
-        grid-row-gap: 5px;
+        grid-template-columns: 250px 1fr;
+        grid-template-rows: repeat(2,auto);
+    }
+    #formProfile{
+        position: relative;
+        grid-column-gap: 40px;
     }
     .contain_profile_data>form>.other{
         width: 100%;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
     }
-    .contain_profile_data>form>button{
-        grid-column: 3 / 4;
+    .contain_profile_data>form>.info_personal{
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+    .contain_profile_data>form>.info_domicilio{
+        grid-column: 2/3;
+        grid-row: 2/3;
+        align-content: center;
+    }
+    .contain_profile_data>form>#updateProfile{
+        position: absolute;
+        left: 48px;
+        bottom: 250px;
+        width: 150px;
+    }
+    .info_domicilio,.info_personal{
+        width: 70%;
+        margin: 0 auto;
+    }
+    .avatars img#imgAvatar{
+        width: 150px;
+        height: 150px;
+        justify-self: center;
+        border-radius: 0;
+    }
+    .contain_profile_data>form>.info_personal>input , .inputProfile{
+        font-size: 16px;
+        line-height: 30px;
     }
     .contain_profile_data>form>.log-out{
-        grid-column: 1 / 2;
-        grid-row: 2 / 3;
+        position: absolute;
+        left: 60px;
+        bottom: 175px;
+        width: 125px;
     }
     .edit>form{
         max-width: 400px;
@@ -495,6 +527,10 @@
     }
     .botones>.edit>button{
         margin: 0;
+    }
+    #imagesTable{
+        width: 50px;
+        height: 50px;
     }
 }
 
@@ -631,8 +667,6 @@
     .list__mark>li:hover{
         filter:none;
         background: linear-gradient(to right, #cbcbcb, white);
-        /* background: linear-gradient(45deg,  #cbcecb ,rgb(255,255,255)); */
-
     }
     .list__mark>li>a>#scaleImg{
         transition: 400ms;
@@ -688,10 +722,13 @@
     }
 
     footer nav {
-        font-weight: 700;
+        font-weight: 500;
         line-height: 25px;
     }
-
+    article.producto:hover .addCarrito{
+        transform: scale(1.1);
+        border-top-right-radius: 8px;
+    }
     /*----------------------------------------------------------------------------------*/
     /*Product-detail.html*/
     .camino{
@@ -848,25 +885,34 @@
     /*----------------------------------------------------------------------------------*/
     /*product-cart.html*/
     main#cart {
-        flex-direction: row;
-        column-gap: 5%;
-        justify-content: space-around;
+        margin-top: 90px;
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        column-gap: 20px;
+        grid-template-rows: auto 50px;
     }
-
+    #imagesTable{
+        width: 70px;
+        height: 70px;
+    }
     .cart_contain_descrip {
         width: 100%;
     }
-
+    .shipment{
+        grid-column: 2 / 3;
+        max-width: 800px;
+    }
     .cart_contain {
         row-gap: 15px;
+        grid-column: 2 / 3;
     }
 
     .cart_category_list {
         display: flex;
         flex-direction: column;
-        width: 30%;
+        position: fixed;
+        width: 250px;
         height: auto;
-        justify-content: center;
     }
 
     .cart_contain>p:first-child {
@@ -906,8 +952,15 @@
 
     .cart_contain {
         width: 100%;
+        position: relative;
     }
-
+    .ant-next{
+        grid-column: 2/3;
+    }
+    #vaciar{
+        bottom: 20px;
+        right: 0;
+    }
     /*----------------------------------------------------------------------------------*/
     /*cart-pay*/
     .cart_contain_pay {
@@ -979,21 +1032,6 @@
         width: 70%;
         margin-top: 95px;
     }
-    .contain_profile_data>form>button{
-        grid-column: 2 / 3;
-        background-color: black;
-        color:rgb(43, 235, 9);
-        width: 150px;
-
-    }
-    .contain_profile_data>form>.log-out{
-        grid-column: 1 / 0;
-        background-color: black;
-        width: 150px;
-    }
-    .contain_profile_data>form>.log-out>a{
-        color:rgb(43, 235, 9);
-    }
     .container-edicion-producto{
         margin-top: 80px;
     }
@@ -1007,7 +1045,7 @@
         margin: auto;
     }
     #sectionRegister{
-        height: 100vh;
+        height: auto;
     }
     #titleFormCreate{
         top: 60px;
@@ -1015,11 +1053,20 @@
     .list__category .filter,.filterCategory{
         width: 70%;
     }
+    #Perifericos{
+        color: white;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    }   
 }
 
 /*------------------------*/
 @media(min-width:1025px) {
-
+    .other{
+        padding: 8px;
+    }
     /*nav-bar*/
     .hidden>ul>li:hover .subcategory{
         top: 30px;
@@ -1075,7 +1122,6 @@
     article:hover {
         box-shadow: 5px 5px 30px rgb(43, 235, 9);
     }
-
     .destacados,
     .ofertas,.section__container {
         overflow: visible;
@@ -1216,7 +1262,10 @@
         border: 1px solid black;
         padding: 20px;
     }
-
+    #vaciar{
+        bottom: 25px;
+        right: 90px;
+    }
     /*----------------------------------------------------------------------------------*/
     /*cart-pay*/
     .cart_contain_ops_pay {
@@ -1277,13 +1326,6 @@
         margin-top: 95px;
         transition: .3s ease;
     }
-    .contain__profile:hover{
-        box-shadow: 5px 5px 50px white;
-    }
-    .contain_profile_data>form>button{
-        grid-column: 3 / 4;
-        width: 150px;
-    }
     .contain_profile_data>form>button:hover,.contain_profile_data>form>.log-out:hover>a{
         background-color: rgb(43, 235, 9);
         color: black;
@@ -1291,7 +1333,7 @@
     }
     /*Register*/
     #sectionRegister{
-        height: 90vh;
+        height: auto;
     }
     #titleFormCreate{
         top: 75px;

@@ -16,11 +16,8 @@ let productsController = {
       const categories = await db.Product_Categories.findAll()
       const trademarks = await db.Trademarks.findAll()
       switch (req.params.element) {
-        // case "list":
-        //   res.render("product-list", { productos: products,  images,trademarks });
-        //   break;
-        case "cart":
-          res.render("product-cart", { productos: products });
+        case "resumen":
+          res.render("cart-resume",{ session: req.session.userLogged });
           break;
         case "create":
           res.render("crear-producto", { categories, trademarks });
@@ -29,6 +26,9 @@ let productsController = {
     } catch (error) {
       console.log(error);
     }
+  },
+  cart: (req,res)=>{
+      res.render("product-cart");
   },
   list: async (req,res)=>{
     try {
@@ -364,6 +364,7 @@ let productsController = {
         }
       })
       const allProducts = await db.Products.findAll({
+        limit:5,
         where:{
           product_categories_id: product.product_categories_id
         }
@@ -447,6 +448,9 @@ let productsController = {
     } catch (error) {
       console.log(error);
     }
+  },
+  checkout: (req,res)=>{
+    
   }
 }
 module.exports = productsController;

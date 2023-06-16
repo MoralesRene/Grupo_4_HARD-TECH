@@ -41,7 +41,7 @@
                 <div class="list__container_product">
                 <% for (let i = 0; i < productos.length; i++) { %>
                     <article class="producto">
-                        <p class="marca-filter"><%= productos[i].trademark.name %></p>
+                        <div class="addCarrito" data-id="<%=productos[i].id%>"><i class="fa-solid fa-cart-shopping"></i></div>
                     <% for (let j = 0; j < images.length; j++) { %>
                         <% if (productos[i].id== images[j].products_id) { %>
                             <img src="/img/products/<%= images[j].url %>" alt="">
@@ -50,7 +50,7 @@
                     <div class="info-prod">
                         <h4><%= productos[i].name %></h4>
                         <p class="precio">$ <%= productos[i].price %></p>
-                        <button class="btnComprar ver-mas" data-id="<%=productos[i].id%>"><a href="/product/detail/<%= productos[i].id %>">Ver mas</a></button>
+                        <button class="btnComprar ver-mas" ><a href="/product/detail/<%= productos[i].id %>">Ver mas</a></button>
                     </a>
                     </div>
                 </article>

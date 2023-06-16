@@ -57,6 +57,12 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "roles_id",
     });
   };
+  Users.associate = (models) =>{
+    Users.hasMany(models.Order,{
+      as: "users",
+      foreignKey:"users_id"
+    })
+  }
 
   return Users;
 };
