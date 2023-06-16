@@ -12,18 +12,17 @@
                         <div class="container-edicion-producto">
                             <!--Grupo Nombre-->
 
-                            <label for="nombre" class=" form__label-create"><b>Nombre del Producto</b></label>
+                            <label for="name" class=" form__label-create"><b>Nombre del Producto</b></label>
                             <div>
                                 <input 
                                 type="text" 
-                                class="form form__group-error <%= locals.errors && errors.name ? "
-                                    form__group-incorrecto" : null %> form__group-input" 
+                                class="form form__group-error <%= locals.errors && errors.name ? "group__input-error" : null %> form__group-input" 
                                     name="name" 
-                                    id="name" >
-                                    value="<%= product.name %>"
+                                    id="name" value="<%= product.name %>">
+                             
                                     <% if (locals.errors && errors.name){%>
-                                    <div>
-                                        <%errors.name.msg%> 
+                                    <div class="error">
+                                        <%= errors.name.msg%> 
                                     </div>
                                    <% } %> 
                             </div>
@@ -35,26 +34,39 @@
 
                             <!--Grupo Descripción-->
                             <label for="descripcion" class="form__label-create"><b>Descripción</b></label>
-                            <div>
-                                <textarea class="form__group-error form__group-input <%= locals.errors && errors.descripcion? "form__group.incorrecto" : null %>" name="descripcion" value= "<%= locals.oldData? old.Data.descripcion : null %>"
-                                    id="descripcion" cols="30" rows="10"><%= product.description %></textarea>
+                            <div <%= locals.errors && errors.descripcion? "error" : null %> value= "<%= locals.oldData? oldData.descripcion : null %>">
+                                <textarea class="form__group-error form__group-input" name="descripcion" id="descripcion" cols="30" rows="10"><%= product.description %>>
+                                </textarea>
+                                    <% if(locals.errors && errors.descripcion) {%>
+                                        <div class="error">
+                                            <%= errors.descripcion.msg %>
+                                        </div> <% } %>
+
                                 <i class="form__validation-state fas fa-times-circle" id="descripcion-icon"></i>
                                 <p class="form__input-error" id="p-error-descripcion">La descripción deberá tener al
                                     menos 20 caracteres</p>
                             </div>
 
                             <!--Grupo Imagen del Producto-->
-                            <label for="imagen" class="form__label-create"><b>Imagen del Producto</b></label>
+                            <label for="imagen-producto" class="form__label-create"><b>Imagen del Producto</b></label>
                             <div>
-                                <input class="form__group-error form__group-input" type="file" name='imagen-producto'
-                                    accept=".jpg, .jpeg, .png, .gif" multiple="multiple">
+                                <input 
+                                type="file" 
+                                name= "imagen-producto" 
+                                id="imagen-producto" 
+                                multiple="multiple" 
+                                accept=".jpg, .jpeg, .png, .gif"
+                                class="form__group-error form__group-input ">
+                                   
                                 <i class="form__validation-state fas fa-times-circle"></i>
                                 <p class="form__input-error">Deberá ser un archivo válido (JPG,JPEG,PNG,GIF)</p>
                             </div>
                             <!--Grupo Categoría-->
                             <label class="form__label-create"><b>Categoría</b></label>
-                            <select class="form__group-input" name="categoria" id="categoria">
-                                <option value="">Seleccione uno</option>
+                            <select
+                            name="categoria" id="categoria"
+                            class="form__group-input">
+                            <option value="" <%= locals.errors && errors.categoria? "group__input-error" : null %>>Seleccione una categoría</option> 
                                 <option value="Motherboard" <%=product.category=="Motherboard" && 'selected' %>
                                     >Motherboards</option>
                                 <option value="Procesadores" <%=product.category=="Procesadores" && 'selected' %>
@@ -70,10 +82,14 @@
                                     >Almacenamiento</option>
                                 <option value="Placa de video" <%=product.category=="Placa de video" && 'selected' %>
                                     >Placa de video</option>
-                                <option value="Periferico">
-                                    <%= product.category=="Periferico" && 'selected' %>Periferico
+                                <option value="Periferico"<%= product.category=="Periferico" && 'selected' %>>Periferico
                                 </option>
                             </select>
+                            <% if (locals.errors && errors.categoria) {%>
+                                <div class="error">
+                                    <%= errors.categoria.msg%>
+                                </div> <% } %>   
+
                             <label class="form__label-create"><b>Marca</b></label>
 
                             <select class="form__group-input" name="marca" id="marca">
@@ -91,19 +107,29 @@
                                 <option value="hyperx" <%=product.trademark=="hyperx" && 'selected' %>>HyperX
                                 </option>
                             </select>
+                            <% if (locals.errors && errors.marca) {%>
+                                <div class="error">
+                                    <%= errors.marca.msg%>
+                                </div> <% } %>   
                             <label class="form__label-create"><b>Modelo</b></label>
 
                             <input class="form__group-input" type="text" name="model" id="model"
                                 value="<%= product.model %>">
+                                <% if (locals.errors && errors.model) {%>
+                                    <div class="error">
+                                        <%= errors.model.msg%>
+                                    </div> <% } %>   
                             <label class="form__label-create"><b>Status</b></label>
 
                             <select class="form__group-input" name="status" id="status">
                                 <option value="">Seleccione uno</option>
-                                <option value="destacado" <%=product.status=="destacado" && 'selected' ? 'selected' : ""
-                                    %>>Destacados</option>
-                                <option value="ofertas" <%=product.status=="ofertas" && 'selected' ? 'selected' : "" %>
-                                    >Ofertas</option>
+                                <option value="destacado" <%=product.status=="destacado" && 'selected' ? 'selected' : ""%>>Destacados</option>
+                                <option value="ofertas" <%=product.status=="ofertas" && 'selected' ? 'selected' : "" %>>Ofertas</option>
                             </select>
+                            <% if (locals.errors && errors.status) {%>
+                                <div class="error">
+                                    <%= errors.status.msg%>
+                                </div> <% } %>   
                             <label class="form__label-create"><b>Familia</b></label>
 
                             <select class="form__group-input" name="families" id="families">
@@ -113,14 +139,26 @@
                                 <option value="amd" <%=product.status=="amd" && 'selected' ? 'selected' : "" %>>AMD
                                 </option>
                             </select>
+                            <% if (locals.errors && errors.families) {%>
+                                <div class="error">
+                                    <%= errors.families.msg%>
+                                </div> <% } %>   
                             <label class="form__label-create"><b>Garantía</b></label>
 
                             <input class="form__group-input" type="text" placeholder="Garantia" name="warranty"
-                                value="<%=product.warranty ? product.warranty : "" %>">
+                                value="<%=product.warranty ? product.warranty : '' %>">
+                                <% if (locals.errors && errors.warranty) {%>
+                                    <div class="error">
+                                        <%= errors.warranty.msg%>
+                                    </div> <% } %>   
                             <label class="form__label-create"><b>Precio</b></label>
 
                             <input class="form__group-input" type="number" name="price" id="price"
                                 value="<%= product.price %>">
+                                <% if (locals.errors && errors.price) {%>
+                                    <div class="error">
+                                        <%= errors.price.msg%>
+                                    </div> <% } %>
                             <div class="form__mensaje" id="form__mensaje">
                                 <p class="form__btn-error"><i class="fas fa-exclamation-triangle"></i><b>Error:</b>
                                     Por favor completar el formulario correctamente</p>
@@ -136,24 +174,22 @@
                                 </div>
                                 <p class="form__mensaje-exito" id="form__mensaje-exito">Formulario enviado exitosamente!
                                 </p>
-
-
-
+                           </div>
+                           </div>
+                            </form>
+                            <div class="botones">
                                 <!--Boton borrar edit-->
 
                                 <div class="button-borrar edit">
                                     <form class="form__group-input" action="/product/<%= product.id %>?_method=DELETE"
                                         method="POST">
                                         <button class="form__group-input" type="submit">Borrar producto</button>
+                                    </form>
                                 </div>
-                    </form>
-                    </div>
-
-                    </div>
-
+                            </div>
                 </main>
 
-                <script src="/js/product-edit.js"></script>
+                <!-- <script src="/js/product-edit.js"></script>  -->
                 <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
                 <%- include("partials/footer") %>
             </body>

@@ -48,7 +48,7 @@ router.post("/create",upload.array("imagen-producto"), productsController.create
 router.get("/list/:category/", productsController.mostrarPorCat);
 router.get("/detail/:id", productsController.detalleID);
 router.get("/edit/:id", productsController.editarProductoForm);
-router.put("/edit/:id", validationsproducts, productsController.editarProductoForm);
+router.put("/edit/:id", validationsproducts, productsController.editarProducto);
 router.put("/:id",upload.array("imagen-producto"),productsController.editarProducto);
 router.delete("/:id", productsController.eliminarProducto);
 

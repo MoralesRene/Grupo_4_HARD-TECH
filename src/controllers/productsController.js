@@ -137,16 +137,6 @@ let productsController = {
     }
   },
   editarProductoForm: async (req, res) => {
-   
-    const resultvalidation = validationResult(req);
-    if (resultvalidation.errors.lenght > 0){
-      return res.render("product-edit",{
-        errors: resultvalidation.mapped(),
-        oldData: req.body
-      });
-    } return res.send("OK!")
-  
-
     try {
       const product = await db.Products.findByPk(req.params.id,{
         include:["category","families","trademark","warranties","images"]
@@ -161,6 +151,22 @@ let productsController = {
     }
   },
   editarProducto: async (req, res) => {
+    console.log(req.body)
+    const resultvalidation = validationResult(req);
+    console.log(resultvalidation)
+    if (resultvalidation.errors.length > 0){
+      const product = await db.Products.findByPk(req.params.id,{
+        include:["category","families","trademark","warranties","images"]
+      });
+      const categories = await db.Product_Categories.findAll()
+      const trademarks = await db.Trademarks.findAll()
+      const families = await db.Families.findAll()
+      return res.render("edicion-producto",{
+        errors: resultvalidation.mapped(),
+        oldData: req.body, product,categories,trademarks,families 
+      });
+    } 
+
     const category = await db.Product_Categories.findOne({
       where: {
         name: req.body.categoria
