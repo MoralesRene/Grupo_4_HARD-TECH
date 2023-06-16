@@ -1,6 +1,8 @@
 # Grupo_4_HARD-TECH
 Proyecto Integrador Equipo 4
 
+Dashboard: https://github.com/Tizi04/Dashboard-Grupo4
+
 INTEGRANTES:
 * Rene Morales:
 Hola a todos, soy estudiante de DH con gran entusiasmo de poder capacitarme como full Stack y

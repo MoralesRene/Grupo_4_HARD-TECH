@@ -18,6 +18,7 @@ const app = express();
 const session = require('express-session')
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 const cors = require("cors")
+
 const publicPath = path.join(__dirname, "/public");
 
 //Middlewares
@@ -32,6 +33,7 @@ app.use(session({
 }
 ));
 app.use(userLoggedMiddleware)
+app.use(cors())
 
 //Utilización de rutas
 app.use(express.static(publicPath));
