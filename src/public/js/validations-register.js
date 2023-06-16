@@ -83,4 +83,16 @@ window.onload = function () {
             previewAvatar.src= "/img/avatars/default.jpg"
         }
     })
+    const passwordInput = document.getElementById("inputContraseña")
+    passwordInput.addEventListener("focus",(e)=>{
+        const divErrorContraseña = document.getElementById("error-contrasenia")
+        const validacionesUl = document.createElement("ul")
+         for (let i = 0; i < msgPassword.length; i++) {
+            const li = document.createElement("li")
+            li.innerText=`${msgPassword[i]}`
+            validacionesUl.append(li)
+         }
+         divErrorContraseña.append(validacionesUl)
+         console.log("en foco");
+    })
 }
