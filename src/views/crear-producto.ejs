@@ -12,8 +12,8 @@
             <input type="text" placeholder="Nombre del producto" name="name">
             <label for="descripcion" class="labelCreateForm">Descripción</label>
             <textarea name="descripcion" placeholder="Descripción" id="descripcion" cols="30" rows="10"></textarea>
-            <input type="file" name='imagen-producto' accept=".jpg, .jpeg, .png" multiple="multiple" id="images">
-            <label for="imagen-producto" class="labelCreateForm" id="labelBtn">Subir Fotos (Max. 3)</label>
+            <input type="file" name='imagen-producto' accept=".jpg, .jpeg, .png" multiple="multiple" id="images" hidden>
+            <label for="imagen-producto" class="labelCreateForm" id="labelBtn">Subir Fotos (Min. 3)</label>
             <div id="preview"></div>
             <label for="categoria" class="labelCreateForm">Seleccione la categoria</label>
             <select name="categoria" id="categoria">

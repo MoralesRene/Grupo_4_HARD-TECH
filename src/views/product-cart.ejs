@@ -1,44 +1,55 @@
 <%- include("partials/head") %>
-     <!--Head reutilizable HEAD.EJS-->
+    <!--Head reutilizable HEAD.EJS-->
 
 
 
-    <body>
+    <body id="bodyCart">
         <%- include("partials/header") %>
             <!--Header reutlizable HEADER.EJS-->
 
             <%- include("partials/navbar") %>
-            <!-- Codigo reutilizable NAV_BAR.EJS-->
-            <main id="cart">
-                <%- include("partials/cart") %>
-                <div class="cart_contain">
-                    <p><a href="/">Seguir Comprando</a></p>
-                    <div class="cart_contain_title prod"><i class="fa-solid fa-rectangle-list"></i>
-                        <h3>Mis productos</h3>
-                    </div>
-                    <div class="cart_contain_descrip">
-                        <div class="cart_contain_prod_img"><img src="/img/article-1.jpeg" alt=""></div>
-                        <div class="cart_contain_prod">
-                            <h6>Producto</h6>
-                            <p>Procesador Intel i7 13900</p>
-                        </div>
-                        <div class="cart_contain_count">
-                            <h6>Cantidad</h6><input type="number">
-                        </div>
-                        <div class="cart_contain_total">
-                            <h6>Total</h6>
-                            <p>$55555</p>
-                        </div>
-                        <div class="cart_contain_cancel"><button><i class="fa-solid fa-square-xmark"></i></button></div>
-                    </div>
-                    <p>Total $:55555</p>
-                    <div class="ant-next">
-                        <button id="ant"><a href="/">Anterior</a></button>
-                        <button id="next"><a href="/cart/ship">Siguiente</a></button>
-                    </div>
-                </div>
-            </main>
+                <!-- Codigo reutilizable NAV_BAR.EJS-->
+                <main id="cart">
+                    <%- include("partials/cart") %>
+                        <div class="cart_contain">
+                            <p><a href="/">Seguir Comprando</a></p>
+                           <div class="listProduct">
+                            <div class="cart_contain_title prod"><i class="fa-solid fa-rectangle-list"></i>
+                                <h3>Mis productos</h3>
+                            </div>
+                           
+                            <table border CELLPADDING=10 CELLSPACING=0 id="productContent">
+                                <thead>
+                                    <tr id="thContain">
+                                        <th class="tableHeader">#</th>
+                                        <th class="tableHeader">Producto</th>
+                                        <th class="tableHeader">Unid.</th>
+                                        <th class="tableHeader">Precio</th>
+                                        <th class="tableHeader">SubTotal</th>
+                                    </tr>
+                                </thead>
+                                 <!--Contenido de productos en carrito-->
+                                <tbody id="content">
 
-            <%- include("partials/footer") %>
-        </body>
-        </html>
+                                </tbody>
+
+                            </table>
+                           </div>
+                           <p id="priceTotal"></p>
+                            </div>
+                            <div class="ant-next">
+                                <button id="ant"><a href="">Anterior</a></button>
+                                <button id="next"><a href="/product/resumen">Siguiente</a></button>
+                                <button onclick="vaciarCarrito();" id="vaciar">Vaciar Carrito</button>
+                            </div>
+                        </div>
+                </main>
+
+                <%- include("partials/footer") %>
+    </body>
+    <script src="/js/index.js"></script>
+    <script src="/js/tableImg.js"></script>
+    <script src="/js/addItems.js"></script>
+    <script src="/js/cart.js"></script>
+
+    </html>

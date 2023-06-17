@@ -5,51 +5,49 @@
             <!--Header reutilizable-->
 
             <%- include("partials/navbar") %>
-            <!-- Codigo reutilizable NAV_BAR.EJS-->
-            <main id="cart_ship">
-                <%- include("partials/cart") %>
-                <div class="cart_contain">
-                    <p><a href="/">Seguir Comprando</a></p>
-                    <div class="cart_contain_title prod"><i class="fa-solid fa-truck-fast"></i>
-                        <h3>Mi entrega</h3>
-                    </div>
-                    <div class="cart_contain_ship">
-                        <form action="#" class="cart_contain_ops">
-                            <div class="cc_ship_op_1">
-                                <div class="cc_ship_mark_1"><input type="radio" name="envio"><label for="envio">Punto de
-                                        retiro</label></div>
-                                <p>Direccion: Calle falsa 123,CABA. Horario de L a V: 9hs a 18hs</p>
-                                <b>Gratis</b>
+                <!-- Codigo reutilizable NAV_BAR.EJS-->
+                <main id="cart_ship">
+                    <%- include("partials/cart") %>
+                        <div class="cart_contain">
+                            <p><a href="/">Seguir Comprando</a></p>
+                            <div class="cart_contain_title prod"><i class="fa-solid fa-truck-fast"></i>
+                                <h3>Mi entrega</h3>
                             </div>
-                            <div class="cc_ship_op_2">
-                                <div class="cc_ship_mark_2"><input type="radio" name="envio"><label for="envio">Envio a
-                                        Domicilio</label></div>
-                                <div class="ship_barrios">
-                                    <p>Calcular Envio</p>
-                                    <div class="ship_barrios_select">
-                                        <form action="#">
-                                            <select name="barrio" id="barrio">
-                                                <option value="general">Seleccione uno</option>
-                                                <option value="Caballito">Caballito</option>
-                                                <option value="Flores">Flores</option>
-                                                <option value="Mataderos">Mataderos</option>
-                                                <option value="Palermo">Palermo</option>
-                                                <option value="Barracas">Barracas</option>
-                                            </select>
-                                            <button>Enviar</button>
-                                        </form>
+                            <div class="cart_contain_ship">
+                                <form action="#" class="cart_contain_ops">
+                                    <div class="cc_ship_op_1">
+                                        <div class="cc_ship_mark_1"><input type="radio" name="ship1" id="envio1"><label
+                                                for="envio1">Punto de
+                                                retiro</label></div>
+                                        <p>Direccion: Calle falsa 123,CABA. Horario de L a V: 9hs a 18hs</p>
+                                        <b>Gratis</b>
                                     </div>
-                                </div>
+                                    <div class="cc_ship_op_2">
+                                        <div class="cc_ship_mark_2"><input type="radio" name="ship2" id="ship2"><label
+                                                for="ship2">Envio Por Correo</label>
+                                        </div>
+                                        <span>Envio mediante Correo</span>
+                                    </div>
+                                    <div class="cc_ship_op_1">
+                                        <div class="cc_ship_mark_2"><input type="radio" name="ship3" id="ship3"><label
+                                                for="ship3">Envio por Moto</label>
+                                        </div>
+                                    </div>
+                                    <button>Enviar</button>
+                                </form>
                             </div>
+                        </div>
+                        </div>
                         </form>
-                    </div>
-                    <div class="ant-next">
-                        <button id="ant"><a href="/product/cart">Anterior</a></button>
-                        <button id="next"><a href="/cart/pay">Siguiente</a></button>
-                    </div>
-                </div>
-            </main>
+                        </div>
+                        <div class="ant-next">
+                            <button id="ant"><a href="/product/cart">Anterior</a></button>
+                            <button id="next"><a href="/cart/pay">Siguiente</a></button>
+                        </div>
+                        </div>
+                </main>
 
-            <%- include("partials/footer") %>
-        </body>
-        </html>
+                <%- include("partials/footer") %>
+    </body>
+
+    </html>

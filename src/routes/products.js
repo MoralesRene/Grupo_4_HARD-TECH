@@ -4,6 +4,7 @@ const router = express.Router();
 const productsController = require("../controllers/productsController");
 const upload = require("../middlewares/multerMiddlewareProduct");
 const Products = require("../database/models/Products");
+const authMiddleware = require("../middlewares/authMiddleware")
 const path = require("path")
 const validationsproducts = [
 body("name")
@@ -45,9 +46,13 @@ body("price")
 .notEmpty().withMessage("El campo no debe estar vacío")
 ];
 
+router.get("/list", productsController.list)
+router.get("/cart",authMiddleware, productsController.cart)
 router.get("/:element/", productsController.index);
+router.post("/checkout",productsController.checkout)
 router.post("/create",upload.array("imagen-producto"), productsController.create);
 router.get("/list/:category/", productsController.mostrarPorCat);
+router.get("/list/tipo/:condition", productsController.listByCondition)
 router.get("/detail/:id", productsController.detalleID);
 router.get("/edit/:id", productsController.editarProductoForm);
 router.put("/edit/:id",upload.array("imagen-producto"), validationsproducts, productsController.editarProducto);

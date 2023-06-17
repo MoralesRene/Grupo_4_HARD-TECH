@@ -45,7 +45,12 @@
         width: 25%;
         transition: 500ms;
     }
-
+    div.quantity{
+        top: 10px;
+        right: 2px;
+        width: 18px;
+        height: 18px;
+    }
     .hidden_p {
         display: block;
         font-size: 16px;
@@ -189,30 +194,18 @@
     .info-prod h4 {
         font-size: 14px;
     }
-
+    .principales{
+        margin: 10px 0 10px 20px;
+    }
     /*Marcas*/
-    .marca-hidden {
-        display: block;
-    }
-
     .marcas {
-        width: 100%;
-        justify-content: space-around;
+        width: 620px;
+        height: 200px;
     }
-
-    .lineas {
-        width: 125px;
-        height: 125px;
-    }
-
-    .lineas img {
-        width: 125px;
-        height: 125px;
-    }
-
-    /*Ofertas*/
-    .ofer-hidden {
-        display: flex;
+    ul.list__mark{
+        height: 100%;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: 1fr 1fr;
     }
     .pc__container{
         flex-direction: row;
@@ -457,9 +450,7 @@
         margin-top: 75px;
     }
     .list__category {
-        flex-direction: row;
-        justify-content: space-around;
-        width: 70%;
+        width: 360px;
         margin: auto;
     }
 
@@ -479,20 +470,52 @@
         margin-top: 85px;
     }
     .contain_profile_data>form{
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-column-gap: 30px;
-        grid-template-rows: 350px 100px;
-        grid-row-gap: 5px;
+        grid-template-columns: 250px 1fr;
+        grid-template-rows: repeat(2,auto);
+    }
+    #formProfile{
+        position: relative;
+        grid-column-gap: 40px;
     }
     .contain_profile_data>form>.other{
         width: 100%;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
     }
-    .contain_profile_data>form>button{
-        grid-column: 3 / 4;
+    .contain_profile_data>form>.info_personal{
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+    .contain_profile_data>form>.info_domicilio{
+        grid-column: 2/3;
+        grid-row: 2/3;
+        align-content: center;
+    }
+    .contain_profile_data>form>#updateProfile{
+        position: absolute;
+        left: 48px;
+        bottom: 250px;
+        width: 150px;
+    }
+    .info_domicilio,.info_personal{
+        width: 70%;
+        margin: 0 auto;
+    }
+    .avatars img#imgAvatar{
+        width: 150px;
+        height: 150px;
+        justify-self: center;
+        border-radius: 0;
+    }
+    .contain_profile_data>form>.info_personal>input , .inputProfile{
+        font-size: 16px;
+        line-height: 30px;
     }
     .contain_profile_data>form>.log-out{
-        grid-column: 1 / 2;
-        grid-row: 2 / 3;
+        position: absolute;
+        left: 60px;
+        bottom: 175px;
+        width: 125px;
     }
     .edit>form{
         max-width: 400px;
@@ -504,6 +527,10 @@
     }
     .botones>.edit>button{
         margin: 0;
+    }
+    #imagesTable{
+        width: 50px;
+        height: 50px;
     }
 }
 
@@ -521,9 +548,15 @@
         width: 200px;
     }
 
-    .botonera div {
+    .botonera div#botones {
         justify-content: end;
         column-gap: 30px;
+    }
+    div.quantity{
+        top: 15px;
+        right: 5px;
+        width: 18px;
+        height: 18px;
     }
 
     .botonera a {
@@ -627,8 +660,19 @@
         transition: 400ms;
     }
     .marcas {
-        justify-content: center;
+        align-self: center;
         column-gap: 50px;
+        width: 630px;
+    }
+    .list__mark>li:hover{
+        filter:none;
+        background: linear-gradient(to right, #cbcbcb, white);
+    }
+    .list__mark>li>a>#scaleImg{
+        transition: 400ms;
+    }
+    .list__mark>li:hover #scaleImg{
+        transform: scale(1.1);
     }
     .pc__container{
         justify-content: center;
@@ -678,10 +722,13 @@
     }
 
     footer nav {
-        font-weight: 700;
+        font-weight: 500;
         line-height: 25px;
     }
-
+    article.producto:hover .addCarrito{
+        transform: scale(1.1);
+        border-top-right-radius: 8px;
+    }
     /*----------------------------------------------------------------------------------*/
     /*Product-detail.html*/
     .camino{
@@ -838,25 +885,34 @@
     /*----------------------------------------------------------------------------------*/
     /*product-cart.html*/
     main#cart {
-        flex-direction: row;
-        column-gap: 5%;
-        justify-content: space-around;
+        margin-top: 90px;
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        column-gap: 20px;
+        grid-template-rows: auto 50px;
     }
-
+    #imagesTable{
+        width: 70px;
+        height: 70px;
+    }
     .cart_contain_descrip {
         width: 100%;
     }
-
+    .shipment{
+        grid-column: 2 / 3;
+        max-width: 800px;
+    }
     .cart_contain {
         row-gap: 15px;
+        grid-column: 2 / 3;
     }
 
     .cart_category_list {
         display: flex;
         flex-direction: column;
-        width: 30%;
+        position: fixed;
+        width: 250px;
         height: auto;
-        justify-content: center;
     }
 
     .cart_contain>p:first-child {
@@ -896,8 +952,15 @@
 
     .cart_contain {
         width: 100%;
+        position: relative;
     }
-
+    .ant-next{
+        grid-column: 2/3;
+    }
+    #vaciar{
+        bottom: 20px;
+        right: 0;
+    }
     /*----------------------------------------------------------------------------------*/
     /*cart-pay*/
     .cart_contain_pay {
@@ -911,18 +974,33 @@
     /*---------------------------------------------------------------------------------------------*/
     /*product-list*/
     main#list {
-        flex-flow: row wrap;
-        width: 95%;
-        max-width: 1200px;
-        margin-top: 80px;
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        grid-template-rows: 100vh;
+        overflow-y:scroll;
     }
 
     main#list .list__category {
-        width: 20%;
-        margin-top: 30px;
-        height: 480px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 340px 200px 50px 50px;
+        width: 220px;
+        margin: 30px 0 ;
+        height: min-content;
     }
-
+    .list__category_filtros{
+        grid-row: 1 / 2;
+    }
+    .list__category_filtros_right{
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        height: 250px;
+    }
+    .btn_create{
+        grid-row: 5 / 6;
+    }
+    #clear_contain{
+        grid-row: 4 / 5;
+    }
     .list__category {
         flex-flow: column wrap;
         justify-content: center;
@@ -930,7 +1008,6 @@
     }
 
     main#list .list__container_product {
-        width:80%;
         gap: 15px;
         justify-content: center;
         margin-top: 35px;
@@ -955,21 +1032,6 @@
         width: 70%;
         margin-top: 95px;
     }
-    .contain_profile_data>form>button{
-        grid-column: 2 / 3;
-        background-color: black;
-        color:rgb(43, 235, 9);
-        width: 150px;
-
-    }
-    .contain_profile_data>form>.log-out{
-        grid-column: 1 / 0;
-        background-color: black;
-        width: 150px;
-    }
-    .contain_profile_data>form>.log-out>a{
-        color:rgb(43, 235, 9);
-    }
     .container-edicion-producto{
         margin-top: 80px;
     }
@@ -983,16 +1045,28 @@
         margin: auto;
     }
     #sectionRegister{
-        height: 100vh;
+        height: auto;
     }
     #titleFormCreate{
         top: 60px;
     }
+    .list__category .filter,.filterCategory{
+        width: 70%;
+    }
+    #Perifericos{
+        color: white;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    }   
 }
 
 /*------------------------*/
 @media(min-width:1025px) {
-
+    .other{
+        padding: 8px;
+    }
     /*nav-bar*/
     .hidden>ul>li:hover .subcategory{
         top: 30px;
@@ -1015,6 +1089,25 @@
     main {
         max-width: 1400px;
     }
+    .principales{
+        margin: 10px 50px 10px 50px;
+        padding-bottom: 20px;
+    }
+    .verTodo{
+        padding: 7px;
+        font-size: 16px;
+        top: 0;
+        right: 0px;
+        transition: 300ms;
+        cursor: pointer;
+    }
+    .verTodo:hover{
+        background-color: black;
+        color: rgb(43, 235, 9);
+        box-shadow: 3px 3px 10px rgb(43, 235, 9);
+        border: 1px solid rgb(43, 235, 9);
+        font-weight: 700;
+    }
 
     .contenedor-dest,
     .contenedor-ofer,.contenedor-interes {
@@ -1029,18 +1122,24 @@
     article:hover {
         box-shadow: 5px 5px 30px rgb(43, 235, 9);
     }
-
     .destacados,
     .ofertas,.section__container {
         overflow: visible;
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+
     }
 
     /**index.html*/
     nav.hidden {
         width: 90%;
         max-width: 1280px;
+        cursor: pointer;
+    }
+    nav.hidden label{
+        cursor: pointer;
+
     }
 
     .hidden>ul>li:hover .subcategory {
@@ -1163,7 +1262,10 @@
         border: 1px solid black;
         padding: 20px;
     }
-
+    #vaciar{
+        bottom: 25px;
+        right: 90px;
+    }
     /*----------------------------------------------------------------------------------*/
     /*cart-pay*/
     .cart_contain_ops_pay {
@@ -1202,8 +1304,16 @@
 
     /*-------------------------------------------------------------------------------------*/
     /*Product_list*/
+    main#list {
+        overflow-y:visible;
+        grid-template-rows: 100%;
+        grid-template-columns: 250px 900px;
+        max-width: 1200px;
+
+    }
     main#list .list__container_product {
-        gap: 30px;
+        gap: 15px;
+        height: min-content;
     }
 
     .list__container_product>.producto {
@@ -1216,13 +1326,6 @@
         margin-top: 95px;
         transition: .3s ease;
     }
-    .contain__profile:hover{
-        box-shadow: 5px 5px 50px white;
-    }
-    .contain_profile_data>form>button{
-        grid-column: 3 / 4;
-        width: 150px;
-    }
     .contain_profile_data>form>button:hover,.contain_profile_data>form>.log-out:hover>a{
         background-color: rgb(43, 235, 9);
         color: black;
@@ -1230,7 +1333,7 @@
     }
     /*Register*/
     #sectionRegister{
-        height: 90vh;
+        height: auto;
     }
     #titleFormCreate{
         top: 75px;

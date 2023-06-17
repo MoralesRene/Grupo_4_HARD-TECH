@@ -5,75 +5,106 @@
             <!--Header reutilizable-->
 
             <%- include("partials/navbar") %>
-            <!-- Codigo reutilizable NAV_BAR.EJS-->
-            <main id="cart">
-                <%- include("partials/cart") %>
-                <div class="cart_contain">
-                    <p><a href="/">Seguir Comprando</a></p>
-                    <div class="cart_contain_title prod"><i class="fa-solid fa-rectangle-list"></i>
-                        <h3>Resumen</h3>
-                    </div>
-                    <div class="cart_contain_resume">
-                        <div class="cart_contain_prod_img"><img src="/img/article-1.jpeg" alt=""></div>
-                        <div class="cart_contain_prod">
-                            <h6>Producto</h6>
-                            <p>Procesador Intel i7 13900</p>
-                        </div>
-                        <div class="cart_contain_count">
-                            <h6>Cantidad</h6><input type="number">
-                        </div>
-                        <div class="cart_contain_total">
-                            <h6>Total</h6>
-                            <p>$55555</p>
-                        </div>
-                        <div class="cart_contain_cancel"><button class="none"><i
-                                    class="fa-solid fa-square-xmark"></i></button></div>
-                    </div>
-                    <div class="cart_contain_option_ship">
-                        <div class="cart_contain_prod_img"><i class="fa-solid fa-truck-fast"></i></div>
-                        <div class="cart_contain_prod">
-                            <h6>Producto</h6>
-                            <p>Envio a domicilio</p>
-                        </div>
-                        <div class="cart_contain_count">
-                            <h6>Cantidad</h6>
-                            <p>1</p>
-                        </div>
-                        <div class="cart_contain_total">
-                            <h6>Total</h6>
-                            <p>$600</p>
-                        </div>
-                        <div class="cart_contain_cancel"><button class="none"><i
-                                    class="fa-solid fa-square-xmark"></i></button></div>
-                    </div>
-                    <p>Total $:56155</p>
-                    <div class="adress_confirm">
-                        <h2>Direccion de envio</h2>
-                        <form action="#" id="adress">
-                            <div class="adress_top">
-                                <label for="calle">Calle:</label>
-                                <input type="text" name="calle" placeholder="Av. Falsa">
-                                <label for="altura">Altura</label>
-                                <input type="number" name="altura" placeholder="3555">
+                <!-- Codigo reutilizable NAV_BAR.EJS-->
+                <main id="cart">
+                    <%- include("partials/cart") %>
+                        <div class="shipment">
+                            
+                            <form  id="formContain">
+                                <div class="shipContain">
+                                    <div class="cart_contain_title"><i class="fa-solid fa-truck-fast"></i>
+                                        <h3>Metodo de entrega</h3>
+                                    </div>
+                                    <div class="containMethod">
+                                        <div class="ship1"><input type="radio" name="shipping" id="ship1" value="Retiro en Persona"><label
+                                                for="ship1">Retiro en persona</label></div>
+                                        <span class="infoShip">Calle Falsa 123, CABA, Buenos aires. De lunes a viernes
+                                            de 9hs a 18hs</span>
+                                    </div>
+                                    <div class="containMethod">
+                                        <div class="ship2"><input type="radio" name="shipping" id="ship2" value="Envio por correo"><label
+                                                for="ship2">Envio por Correo</label></div>
+                                        <span class="infoShip">Envio mediante Correo Argentino</span>
+                                    </div>
+                                    <div class="containMethod">
+                                        <div class="ship3"><input type="radio" name="shipping" id="ship3" value="Envio por Moto"><label
+                                                for="ship3">Envio por Moto</label></div>
+                                        <span class="infoShip">Envio Express mediante moto, entrega en el dia</span>
+                                    </div>
+                                </div>
+                        <div class="payment">
+                            <div class="paymentContain">
+                                <div class="cart_contain_title"><i class="fa-solid fa-truck-fast"></i>
+                                    <h3>Metodo de pago</h3>
+                                </div>
+                                <div class="containMethod">
+                                    <input type="radio" name="payment" id="payMethod1" value="Pago Online">
+                                    <label for="payMethod1" class="labelPay">Pago Online</label>
+                                </div>
+                                <div class="containMethod">
+                                    <input type="radio" name="payment" id="payMethod2" value="Pago al Retirar">
+                                    <label for="payMethod2"  class="labelPay">Pago al Retirar</label>
+                                </div>
                             </div>
-                            <div class="adress_bot">
-                                <label for="cod-pos">Codigo Postal</label>
-                                <input type="text" name="cod-pos" placeholder="Ej:1407" id="cod">
-                                <label for="piso">Piso,Depto:</label>
-                                <input type="text" name="piso" placeholder="Ej: Piso 2-B">
-                                <label for="horario">Franja Horaria</label>
-                                <input type="text" name="horario" placeholder="Ej: De 9 a 12hs">
+                        </div>
+                            <div class="resumenCart">
+                                <div class="resumenContent">
+                                    <div class="cart_contain_title prod"><i class="fa-solid fa-rectangle-list"></i>
+                                        <h3>Resumen</h3>
+                                    </div>
+                                    <table border CELLPADDING=10 CELLSPACING=0 id="productContent">
+                                        <thead>
+                                            <tr>
+                                                <th class="tableHeader">#</th>
+                                                <th class="tableHeader">Producto</th>
+                                                <th class="tableHeader">Unid.</th>
+                                                <th class="tableHeader">Precio</th>
+                                                <th class="tableHeader">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <!--Contenido de productos en carrito-->
+                                        <tbody id="content">
+
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                                <p id="priceTotal"></p>
+                                <div class="contentUserData">
+                                    <h3 class="userDataFields_title">Verifique sus datos</h3>
+                                    <div class="userDataFields">
+                                        <label for="name">Nombre y apellido</label>
+    
+                                        <input type="text" name="name" value="<%= session && session.name %>" disabled>
+                                        <label for="documento">DNI</label>
+                                        <input type="text" name="documento" value="<%= session && session.dni %>" disabled>
+                                        <label for="telefono">Telefono</label>
+                                        <input type="number" name="telefono" value="<%= session && session.phone %>" disabled>
+                                    </div>
+                                    <h4 class="userDataFields_title">Mi Domicilio</h4>
+                                    <div class="userDataFields">
+                                        <label for="domicilio">Domicilio</label>
+                                        <input type="text" name="domicilio" value="" disabled>
+                                        <label for="altura">Altura</label>
+                                        <input type="number" name="altura" value="" disabled>
+                                        <label for="piso">Piso/Depto</label>
+                                        <input type="text" name="piso" value="" disabled>
+                                        <label for="localidad">Localidad</label>
+                                        <input type="text" name="localidad" value="" disabled>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="ant-next">
+                                <button id="ant"><a href="/product/cart">Anterior</a></button>
+                                    <button type="submit" id="checkout">Finalizar</button>
+                                    <button id="toProfile"><a href="/profile">Cambiar datos</a></button>
+                                </div>
                         </form>
+                </main>
 
-                    </div>
-                    <div class="ant-next">
-                        <button id="ant"><a href="/cart/pay">Anterior</a></button>
-                        <button id="next"><a href="/">Finalizar</a></button>
-                    </div>
-                </div>
-            </main>
-
-            <%- include("partials/footer") %>
-        </body>
-        </html>
+                <%- include("partials/footer") %>
+    </body>
+    <script src="/js/index.js"></script>
+    <script src="/js/addItems.js"></script>
+    <script src="/js/cart.js"></script>
+    </html>

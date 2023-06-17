@@ -22,6 +22,7 @@ const cors = require("cors")
 const publicPath = path.join(__dirname, "/public");
 
 //Middlewares
+app.use(cors())
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -40,9 +41,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/api", userAPI)
 app.use("/api", productAPI)
 app.use("/", home);
-app.use("/", user);
 app.use("/login", login);
 app.use("/register", register);
+app.use("/", user);
 app.use("/product", product);
 app.use("/cart", cart);
 app.use("/servicioTecnico", servicioTecnico);

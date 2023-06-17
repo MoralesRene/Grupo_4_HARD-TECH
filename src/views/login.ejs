@@ -11,7 +11,7 @@
                         <h3>Iniciar Sesión</h3>
                         <form class="login" action="/login" method="POST">
                             <% if (locals && locals.errors?.email) { %>
-                                <label for="email" id="errorId"><%= errors.email.msg %></label>
+                                <label for="email" id="errorId" class="error"><%= errors.email.msg %></label>
                             <% } %>
                             
                             <!-- EMAIL -->
@@ -27,7 +27,7 @@
                             </div>
                             <input class="password inputForm" type="password" name='password' id="password" placeholder="Contraseña">
     
-                            <button type="submit">Ingresar</button>
+                            <button type="submit" id="loginBtn">Ingresar</button>
                         </form>
                         <p><a href="#">Me olvide la contraseña</a></p>
                         <div class="ingreso-con-red face"><i class="fa-brands fa-facebook-f"></i>Ingresar con Facebook</div>

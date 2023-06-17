@@ -8,7 +8,7 @@ window.onload = function () {
         "El nombre debe contener al menos 3 digitos, y solo acepta letras y espacios",
         "Ingrese un email con formato valido",
         "Este campo debe tener un minimo de 8 numeros",
-        "Ingrese el DNI/CUIT sin puntos ni guiones",
+        "Ingrese el DNI sin puntos ni guiones",
         "la contraseña debe tener al menos 8 caracteres",
         "la contraseña debe tener al menos 8 caracteres"]
     const msgPassword=[
@@ -65,5 +65,34 @@ window.onload = function () {
            form.submit()
         }
     })
-   
+    const imgAvatar = document.getElementById("avatar")
+    const btnAddImg = document.getElementById("addImg")
+    btnAddImg.addEventListener("click",()=>{
+     imgAvatar.click()
+    })
+    const previewAvatar = document.getElementById("previewImg")
+       imgAvatar.addEventListener("change",(e)=>{
+        if (e.target.files[0]) {
+            const reader = new FileReader()
+            reader.onload = (e)=>{
+                previewAvatar.src=e.target.result
+            }
+            reader.readAsDataURL(e.target.files[0])   
+            console.log("cambio de imagen"); 
+        } else {
+            previewAvatar.src= "/img/avatars/default.jpg"
+        }
+    })
+    const passwordInput = document.getElementById("inputContraseña")
+    passwordInput.addEventListener("focus",(e)=>{
+        const divErrorContraseña = document.getElementById("error-contrasenia")
+        const validacionesUl = document.createElement("ul")
+         for (let i = 0; i < msgPassword.length; i++) {
+            const li = document.createElement("li")
+            li.innerText=`${msgPassword[i]}`
+            validacionesUl.append(li)
+         }
+         divErrorContraseña.append(validacionesUl)
+         console.log("en foco");
+    })
 }

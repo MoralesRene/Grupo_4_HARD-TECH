@@ -90,6 +90,7 @@ module.exports = (sequelize, DataTypes) => {
       as: "trademark",
       foreignKey: "trademarks_id",
     });
+    Products.hasOne(models.OrderItem)
   };
 
   return Products;
