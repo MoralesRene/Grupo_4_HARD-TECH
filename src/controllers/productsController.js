@@ -1,4 +1,5 @@
 const path = require("path");
+const {validationResult} = require ("express-validator");
 const db = require("../database/models");
 
 let productsController = {
@@ -138,56 +139,87 @@ let productsController = {
   editarProductoForm: async (req, res) => {
     try {
       const product = await db.Products.findByPk(req.params.id,{
-        include:["category","families","trademark","warranties","images"]
+        include:["category","families","trademark","warranties","images","status"]
       });
       const categories = await db.Product_Categories.findAll()
       const trademarks = await db.Trademarks.findAll()
       const families = await db.Families.findAll()
+      const status = await db.Status.findAll()
+      const warranties = await db.Warranties.findAll()
+      const images = await db.Product_Images.findAll({
+        where:{
+          products_id: product.id
+        }
+      })
       //faltan agregar la vista previa y la edicion de imagenes
-      res.render("edicion-producto", { product,categories,trademarks,families });
+      res.render("edicion-producto", { product,categories,trademarks,families,status,warranties,images });
     } catch (error) {
       console.log(error);
     }
   },
   editarProducto: async (req, res) => {
-    const category = await db.Product_Categories.findOne({
-      where: {
-        name: req.body.categoria
-      }
-    })
-    const trademark = await db.Trademarks.findOne({
-      where: {
-        name: req.body.marca
-      }
-    })
-    const family = await db.Families.findOne({
-      where: {
-        name: req.body.families
-      }
-    })
-    const warranty = await db.Warranties.findOne({
-      where: {
-        name: req.body.warranty
-      }
-    })
-    await db.Products.update(
-      {
-        name: req.body.name,
-        description: req.body.description,
-        price: req.body.price,
-        model: req.body.model,
-        product_categories_id: category.id,
-        families_id: family.id,
-        trademarks_id:trademark.id,
-        warranties_id:warranty.id
-      },
-      {
+    console.log(req.body)
+    const resultvalidation = validationResult(req);
+    console.log(resultvalidation)
+    if (resultvalidation.errors.length > 0){
+      const product = await db.Products.findByPk(req.params.id,{
+        include:["category","families","trademark","warranties","images","status"]
+      });
+      const categories = await db.Product_Categories.findAll()
+      const trademarks = await db.Trademarks.findAll()
+      const families = await db.Families.findAll()
+      const status = await db.Status.findAll()
+      return res.render("edicion-producto",{
+        errors: resultvalidation.mapped(),product,categories,trademarks,families,status 
+      });
+    } else{
+
+      const category = await db.Product_Categories.findOne({
         where: {
-          id: req.params.id,
+          name: req.body.categoria
+        }
+      })
+      const trademark = await db.Trademarks.findOne({
+        where: {
+          name: req.body.marca
+        }
+      })
+      const family = await db.Families.findOne({
+        where: {
+          name: req.body.families
+        }
+      })
+      const warranty = await db.Warranties.findOne({
+        where: {
+          name: req.body.warranty
+        }
+      })
+      const status = await db.Status.findOne({
+        where:{
+          name: req.body.status
+        }
+      })
+      await db.Products.update(
+        {
+          name: req.body.name,
+          description: req.body.description,
+          price: req.body.price,
+          model: req.body.model,
+          product_categories_id: category.id,
+          families_id: family.id,
+          trademarks_id:trademark.id,
+          warranties_id:warranty.id,
+          status_id: status.id
         },
-      }
-    );
-    res.redirect("/");
+        {
+          where: {
+            id: req.params.id,
+          },
+        }
+      );
+      res.redirect("/");
+    }
+
   },
   eliminarProducto: (req, res) => {
     try {
