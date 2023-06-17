@@ -386,10 +386,6 @@
                     .ofertas,
                     .destacados,
                     .section__container {
-
-                    .ofertas,
-                    .destacados,
-                    .section__container {
                         width: 100%;
                         height: 350px;
                         overflow-x: scroll;
@@ -571,17 +567,12 @@
 
                     /*pc seccion*/
                     .pc__container {
-                    .pc__container {
                         width: 100%;
                         display: flex;
                         flex-flow: column wrap;
                         row-gap: 10px;
                         align-items: center;
                     }
-
-                    .pc_image1,
-                    .pc_image2,
-                    .pc_image3 {
 
                     .pc_image1,
                     .pc_image2,
@@ -593,28 +584,20 @@
                         overflow: hidden;
                     }
 
-                    .pc_image1::before {
 
                     .pc_image1::before {
                         content: "PC Gama basica";
                     }
 
-                    .pc_image2::before {
 
                     .pc_image2::before {
                         content: "PC Gama Media";
                     }
 
-                    .pc_image3::before {
 
                     .pc_image3::before {
                         content: "PC Gama Alta";
                     }
-
-                    .pc_image1::before,
-                    .pc_image2::before,
-                    .pc_image3::before {
-
                     .pc_image1::before,
                     .pc_image2::before,
                     .pc_image3::before {
@@ -638,18 +621,10 @@
                     .pc_image1 img,
                     .pc_image2 img,
                     .pc_image3 img {
-
-                    .pc_image1 img,
-                    .pc_image2 img,
-                    .pc_image3 img {
                         width: 100%;
                         height: 100%;
                         border-radius: 5px;
                     }
-
-                    .pc_image1:hover::before,
-                    .pc_image2:hover::before,
-                    .pc_image3:hover::before {
 
                     .pc_image1:hover::before,
                     .pc_image2:hover::before,
@@ -816,7 +791,6 @@
                         border: .5px solid gray;
                     }
 
-                    .images>img {
 
                     .images>img {
                         height: 100%;
@@ -895,7 +869,6 @@
                         row-gap: 10px;
                     }
 
-                    #editBtn {
 
                     #editBtn {
                         background-color: #3b5998;
@@ -905,8 +878,7 @@
                         padding: 5px 10px;
                     }
 
-                    #editBtn a {
-
+                    
                     #editBtn a {
                         color: white;
                         font-size: 14px;
