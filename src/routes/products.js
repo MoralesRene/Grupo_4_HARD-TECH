@@ -4,7 +4,7 @@ const router = express.Router();
 const productsController = require("../controllers/productsController");
 const upload = require("../middlewares/multerMiddlewareProduct");
 const Products = require("../database/models/Products");
-
+const path = require("path")
 const validationsproducts = [
 body("name")
 .notEmpty().withMessage("Debes completar el nombre")
@@ -16,15 +16,17 @@ body("descripcion")
 .isLength({min:20}).withMessage("El campo debe contener 20 caracteres como mínimo"),
 body("imagen-producto")
 .custom((value, {req}) =>{
-    let file= req.file;
-    let acceptedExtensions = [".jpg", ".png", "jpeg", ".gif"];
+    let file= req.files;
+    let acceptedExtensions = [".jpg", ".png", ".jpeg", ".gif"];
     if (!file){
         throw new Error ("Tienes que subir una imagen");
     } else{
-        let fileExtension = path.extname(file.originalname);
-        if(!acceptedExtensions.includes(fileExtension)){
+        file.forEach(imagen => {
+            let fileExtension = path.extname(imagen.originalname);     
+            if(!acceptedExtensions.includes(fileExtension)){
             throw new Error (`Las extensiones de archivo permitidas son ${acceptedExtensions.join(",")}`);
-        }
+            }
+        });
     } return true;
 }),
 body("categoria")
@@ -48,8 +50,7 @@ router.post("/create",upload.array("imagen-producto"), productsController.create
 router.get("/list/:category/", productsController.mostrarPorCat);
 router.get("/detail/:id", productsController.detalleID);
 router.get("/edit/:id", productsController.editarProductoForm);
-router.put("/edit/:id", validationsproducts, productsController.editarProducto);
-router.put("/:id",upload.array("imagen-producto"),productsController.editarProducto);
+router.put("/edit/:id",upload.array("imagen-producto"), validationsproducts, productsController.editarProducto);
 router.delete("/:id", productsController.eliminarProducto);
 
 module.exports = router;
