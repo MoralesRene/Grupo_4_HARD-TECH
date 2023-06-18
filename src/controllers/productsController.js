@@ -144,12 +144,12 @@ let productsController = {
         //Not null
         name: req.body.name,
         description: req.body.descripcion,
-        model: req.body.model,
+        model: req.body ? req.body.model : "PC",
         price: req.body.price,
         //Null
         product_categories_id: category.id,
-        trademarks_id: trademark.id,
-        families_id: family.id,
+        trademarks_id: trademark ? trademark.id: null,
+        families_id: family ? family.id: null,
         warranties_id: warranty.id,
         status_id:state.id
       });
@@ -452,10 +452,10 @@ let productsController = {
           name: req.body.name,
           description: req.body.description,
           price: req.body.price,
-          model: req.body.model,
+          model: req.body ? req.body.model : "PC",
           product_categories_id: category.id,
-          families_id: family.id,
-          trademarks_id:trademark.id,
+          families_id: family ? family.id: null,
+          trademarks_id: trademark ? trademark.id: null,
           warranties_id:warranty.id,
           status_id: status.id
         },
@@ -465,24 +465,47 @@ let productsController = {
           },
         }
       );
+      const arrayImg = req.files;
+      const actualizarImagen = await db.Product_Images.bulkCreate(
+        arrayImg.map((img,index) => {
+         return  {
+          url: img.filename,
+          products_id: req.params.id,
+          is_primary: index==0
+         }
+        }),
+        {
+          updateOnDuplicate:["url","is_primary"]
+        }
+      )
       res.redirect("/");
     }
 
   },
-  eliminarProducto: (req, res) => {
+  eliminarProducto: async (req, res) => {
     try {
-      db.Products.destroy({
-        where: {
-          id: req.params.id,
-        },
-      });
-      res.redirect("/");
+      const id = req.params.id
+      Promise.all([
+        db.Products.destroy({
+          where:{
+            id:id
+          }
+        }),
+        db.Product_Images.destroy({
+          where:{
+            products_id:id
+          }
+        })
+      ]).then(result=>{
+        if (result) {
+          res.redirect("/");
+        }else{
+          res.send("no se pudo eliminar")
+        }
+      })
     } catch (error) {
       console.log(error);
     }
-  },
-  checkout: (req,res)=>{
-    
   }
 }
 module.exports = productsController;

@@ -63,7 +63,7 @@
                                 <div class="headerProfile"><span>Monto</span></div>
                                 <div class="headerProfile"><span>Detalle</span></div>
                             </div>
-                            <% if (orders.length==0) { %>
+                            <% if (locals.orders && orders.length==0) { %>
                                 <div class="contentOrder no_content">
                                     <span class="no_content">No tenes pedidos realizados</span>
                                 </div>

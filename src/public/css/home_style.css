@@ -706,6 +706,7 @@
                         position: fixed;
                         bottom: 20px;
                         right: 20px;
+                        z-index: 60;
                     }
 
                     #whats img {
@@ -748,6 +749,8 @@
                         display: flex;
                         flex-direction: column;
                         row-gap: 20px;
+                        position: relative;
+                        align-items: center;
                     }
 
                     #descrip,
@@ -765,38 +768,51 @@
                         display: flex;
                         flex-direction: column;
                         row-gap: 20px;
+                        width: 100%;
                     }
 
                     #img-principal {
-                        width: 90%;
-                        margin: auto;
+                        width: 300px;
+                        height: 300px;
+                        overflow-x: hidden;
+                        position: relative;
                     }
-
-                    #img-principal>img {
-                        width: 100%;
+                    #containImages>img.imgProducts{
+                        width: 300px;
+                        height: 300px;
                     }
-
-                    #more-img {
+                    #containImages{
                         display: flex;
+                        flex-flow:row wrap;
+                        height: 300px;
+                        transition: 300ms linear;
+                    }
+                    #primerContent{
+                        outline: 3px solid black;
                         width: 100%;
-                        flex-wrap: wrap;
-                        height: auto;
-                        justify-content: center;
-                        column-gap: 20px;
-                    }
-
-                    #more-img>.images {
-                        width: 80px;
-                        height: 80px;
-                        border: .5px solid gray;
-                    }
-
-
-                    .images>img {
                         height: 100%;
-                        width: 100%;
                     }
-
+                    #btnImagenes{
+                        position: absolute;
+                        font-size: 25px;
+                        top: 120px;
+                        display: flex;
+                        z-index: 1;
+                        column-gap: 300px;
+                        justify-content: space-between;
+                    }
+                    .btnImages.left, .btnImages.right{
+                        padding: 5px;
+                        border-radius: 100%;
+                        width: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 40px;
+                        color: rgb(43, 235, 9);
+                        background-color: #ebebeb;
+                        border: 1px solid rgb(43, 235, 9);
+                    }
                     p#filtro-marca {
                         align-self: flex-start;
                         font-size: 12px;
@@ -820,7 +836,6 @@
 
                     #info-pago p {
                         display: flex;
-                        font-size: 12px;
                         justify-content: center;
                         column-gap: 10px;
                         align-items: center;
@@ -830,45 +845,17 @@
 
                     #precio-efectivo {
                         color: rgb(43, 235, 9);
-                        text-decoration: underline;
+                        text-decoration: none;
+                        font-size: 26px;
                         text-decoration-color: rgb(43, 235, 9);
                         text-decoration-style: solid;
                     }
-
-                    #counter {
-                        display: flex;
-                        justify-content: center;
-                        column-gap: 10px;
-                    }
-
-                    #counter>button {
-                        height: 20px;
-                    }
-
-                    #counter>i {
-                        font-size: 20px;
-                        color: gray;
-                        background-color: white;
-                    }
-
-                    #counter>input {
-                        border: 1px solid black;
-                        height: 20px;
-                        width: 20px;
-                        background-color: white;
-                        color: black;
-                        font-size: 12px;
-                        outline: none;
-                        text-align: center;
-                    }
-
                     .boton-compra {
                         display: flex;
                         flex-direction: column;
                         width: 100%;
                         row-gap: 10px;
                     }
-
 
                     #editBtn {
                         background-color: #3b5998;
@@ -915,20 +902,46 @@
                         font-size: 14px;
                         text-align: center;
                         font-weight: 300;
+                        line-height: 24px;
+                        padding: 5px;
+                        border-radius: 5px;
+                        background-color: whitesmoke;
                     }
-
-                    #specs {
+                    .Detalles{
+                        display: grid;
+                        grid-template-columns: 130px 1fr;
+                    }
+                    .DetailTable,.contentDetail{
+                        display: grid;
+                        grid-template-rows: repeat(4,1fr);
+                        grid-template-columns: 1fr;
+                        justify-items: center;
+                        align-items: center;
+                        align-content: center;
+                    }
+                    .DetailTable{
+                        border-top-left-radius: 7px;
+                        border-bottom-left-radius: 7px;
+                        background-color: rgb(43, 235, 9);
+                        color: white;
+                        letter-spacing: 1px;
+                        border-top: 1px solid black;
+                        border-left: 1px solid black;
+                        border-bottom: 1px solid black;
+                    }
+                    .contentDetail{
+                        background-color: whitesmoke;
+                        border-top-right-radius: 7px;
+                        border-bottom-right-radius: 7px;
+                        border-top: 1px solid black;
+                        border-right: 1px solid black;
+                        border-bottom: 1px solid black;
+                    }
+                    .DetailProduct{
+                        height: 60px;
                         display: flex;
-                        justify-content: space-around;
-                        width: 100%;
-                        column-gap: 10px;
-                        font-size: 14px;
+                        align-items: center;
                     }
-
-                    #specs>div {
-                        text-align: center;
-                    }
-
                     p#filtro-marca-v2 {
                         display: none;
                     }
@@ -1791,7 +1804,7 @@
                         display: flex;
                         justify-content: center;
                         flex-direction: column;
-                        margin-top: 60px;
+                        margin-top: 120px;
                     }
 
                     .container-edicion-producto input {
@@ -1922,44 +1935,24 @@
 
                         .edit {
                             justify-content: center;
-                        }
-
-                        .edit>form {
-                            width: 100%;
-                            margin: 10px;
-
-                        }
-
-                        .edit>form>button {
-                            height: 30px;
-                            border: none;
-                            border-radius: 5px;
-                            width: 100%;
-                        }
-
-                        .button-borrar button {
+                            padding: 5px;
                             background-color: red;
+                            border-radius: 5px;
+                            width: 100px;
+                            align-self: center;
                         }
-
-                        .button-borrar button:hover {
-                            background-color: #c0392b;
-                            cursor: pointer;
-                        }
-
-                        .button-borrar button:active {
-                            transform: translateY(2px);
-                            box-shadow: none;
-                            background-color: #d35400;
+                        .edit>a:visited{
                             color: white;
                         }
+                        .edit>a{
+                            color: white;
+                        }
+                       
 
                         .button-confirmar a {
                             color: black;
                         }
 
-                    .button-borrar a {
-                        color: black;
-                    }
 
                     /*Estilos para validaciones*/
                     .form__group-correcto .form__label-create .form__group-error .form__validation-state {
@@ -2558,4 +2551,50 @@
                     #opcional{
                         font-size: 12px;
                         line-height: 12px;
+                       }
+                       .opcionesContain{
+                        position: absolute;
+                        top: 70px;
+                        right: 0;
+                        width: 100%;
+                        height: 50px;
+                        display: flex;
+                        flex-flow: row wrap;
+                        justify-content: space-around;
+                        align-items: center;
+                       }
+                       .opcionesCreate{
+                        border: 3px solid black;
+                        padding: 10px;
+                        border-radius: 5px;
+                        color: white;
+                        font-weight: 500;
+                        background-color: black;
+                       }
+                       .seleccionado{
+                        background-color: rgb(43, 235, 9);
+                        color: black;
+                       }
+                       input[type=radio].opcionCheck{
+                        display: none;
+                       }
+                       .opcionesContain  input[type=radio]:checked + label {
+                        background-color: rgb(43, 235, 9);
+                        color: black;
+                       }
+                       .otroContent{
+                        width: 100%;
+                       }
+                       #compra>a{
+                        color: white;
+                       }
+                       #compra>a:visited{
+                        color: white;
+                       }
+                       #cardPrice,#garantia,.titleDescripcion{
+                        font-size: 20px;
+                       }
+                       .titleDescripcion{
+                        text-align: center;
+                        letter-spacing: 1px;
                        }

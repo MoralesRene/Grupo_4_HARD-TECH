@@ -49,7 +49,6 @@ body("price")
 router.get("/list", productsController.list)
 router.get("/cart",authMiddleware, productsController.cart)
 router.get("/:element/", productsController.index);
-router.post("/checkout",productsController.checkout)
 router.post("/create",upload.array("imagen-producto"), productsController.create);
 router.get("/list/:category/", productsController.mostrarPorCat);
 router.get("/list/tipo/:condition", productsController.listByCondition)

@@ -7,6 +7,10 @@
 <main>
     <form action="/product/create" enctype="multipart/form-data" method="POST" id="formCreate">
         <h3 id="titleFormCreate">Crear Nuevo Producto</h3>
+        <div class="opcionesContain">
+           <input type="radio" name="crearElemento" id="crearElemento1" class="opcionCheck" value="PC"> <label for="crearElemento1" class="opcionesCreate" >Crear PC</label>
+            <input type="radio" name="crearElemento" id="crearElemento2" class="opcionCheck" value="Producto"><label for="crearElemento2" class="opcionesCreate" >Crear Producto</label>
+        </div>
         <div class="container-edicion-producto">
             <label for="name" class="labelCreateForm">Nombre</label>
             <input type="text" placeholder="Nombre del producto" name="name">
@@ -22,7 +26,7 @@
                     <option value="<%= category.name %>"><%= category.name %></option>
                 <%}); %>
             </select>
-            <label for="marca" class="labelCreateForm">Seleccione la marca</label>
+            <label for="marca" class="labelCreateForm no-pc">Seleccione la marca</label>
             <select name="marca" id="marca">
                 <option value="">Seleccione uno</option>
                 <% trademarks.forEach(mark => { %>
@@ -37,7 +41,7 @@
                 <option value="Ofertas">Ofertas</option>
                 <option value="Ninguno">Ninguno</option>
             </select>
-            <label for="family" class="labelCreateForm">Seleccione la familia</label>
+            <label for="family" class="labelCreateForm no-pc">Seleccione la familia</label>
             <select name="family" id="families">
                 <option value="">Seleccione Uno</option>
                 <option value="Intel">Intel</option>
@@ -46,7 +50,7 @@
             </select>
             <label for="warranty" class="labelCreateForm">Indique tiempo de Garantia: ej: x Meses</label>
             <input type="text" placeholder="ej: 6 meses" name="warranty">
-            <label for="model" class="labelCreateForm">Indique el modelo</label>
+            <label for="model" class="labelCreateForm no-pc">Indique el modelo</label>
             <input type="text" placeholder="Modelo" name="model">
             <label for="price" class="labelCreateForm">Indique el precio $</label>
             <input type="number" placeholder="Precio" name="price">
@@ -64,5 +68,6 @@
 <%- include("partials/footer") %>
 </body>
 <script src="/js/index.js"></script>
+<script src="/js/createPCform.js"></script>
 <script src="/js/createFormPreviewImage.js"></script>
 </html>
