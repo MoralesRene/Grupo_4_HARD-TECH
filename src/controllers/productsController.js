@@ -114,6 +114,20 @@ let productsController = {
     }
   },
   create: async (req, res) => {
+    const resultvalidation = validationResult(req);
+    console.log(resultvalidation)
+    if (resultvalidation.errors.length > 0){
+      const product = await db.Products.findByPk(req.params.id,{
+        include:["category","families","trademark","warranties","images","status"]
+      });
+      const categories = await db.Product_Categories.findAll()
+      const trademarks = await db.Trademarks.findAll()
+      const families = await db.Families.findAll()
+      const status = await db.Status.findAll()
+      return res.render("crear-producto",{
+        errors: resultvalidation.mapped(),product,categories,trademarks,families,status 
+      });
+    } else{
     try {
       const category = await db.Product_Categories.findOne({
         where: {
@@ -167,6 +181,7 @@ let productsController = {
     } catch (error) {
       console.log(error);
     }
+  }
   },
   mostrarPorCat: async (req, res) => {
     try {
