@@ -13,25 +13,26 @@
         </div>
         <div class="container-edicion-producto">
             <label for="name" class="labelCreateForm"><b>Nombre</b></label>
-            <input type="text" placeholder="Nombre del producto" name="name" value="<%= locals.oldData? oldData.name : null%>">
+            <input class="inputForm" type="text" placeholder="Nombre del producto" name="name" value="<%= locals.oldData? oldData.name : null%>">
+            <div class="error"></div>
             <% if (locals.errors && errors.name){%>
             <div class="error">
                 <%= errors.name.msg %>
             </div> <% } %>
             <label for="descripcion" class="labelCreateForm"><b>Descripción</b></label>
-            <textarea name="descripcion" placeholder="Descripción" id="descripcion" cols="30" rows="10"></textarea>
+            <textarea name="descripcion" placeholder="Descripción" id="descripcion" cols="30" rows="10"><%= locals.oldData? oldData.descripcion : ""%></textarea>
             <% if (locals.errors && errors.descripcion){%>
                 <div class="error">
                     <%= errors.descripcion.msg %>
                 </div> <% } %>
-            <input type="file" name='imagen-producto' accept=".jpg, .jpeg, .png .gif" multiple="multiple" id="images" hidden>
+            <input type="file" name='imagenProducto' accept=".jpg, .jpeg, .png .gif" multiple="multiple" id="images" hidden>
             <label for="imagen-producto" class="labelCreateForm" id="labelBtn">Subir Fotos (Min. 3)</label>
             <div id="preview"></div>
             <label for="categoria" class="labelCreateForm"><b>Seleccione la categoria</b></label>
             <select name="categoria" id="categoria">
                 <option value="">Seleccione uno</option>
                 <% categories.forEach(category => { %>
-                    <option value="<%= category.name %>"><%= category.name %></option>
+                    <option value="<%= category.name %>" <%= locals.oldData&& locals.oldData.categoria ? oldData.categoria==category.name && "selected" : null%>><%= category.name %></option>
                 <%}); %>
             </select>
             <% if (locals.errors && errors.categoria){%>
@@ -42,8 +43,8 @@
             <select name="marca" id="marca">
                 <option value="">Seleccione uno</option>
                 <% trademarks.forEach(mark => { %>
-                    <option value="<%= mark.name %>"><%= mark.name %></option>
-                <%}); %>
+                    <option value="<%= mark.name %>" <%= locals.oldData&& locals.oldData.marca ? oldData.marca==mark.name && "selected" : null%>><%= mark.name %></option>
+                <%}); %>                             
             </select>
             <% if (locals.errors && errors.marca){%>
                 <div class="error">
@@ -53,57 +54,55 @@
                 <!--cambiar de status a condition-->
             <select name="status" id="status">
                 <option value="">Seleccione uno</option>
-                <option value="Destacados">Destacados</option>
-                <option value="Ofertas">Ofertas</option>
-                <option value="Ninguno">Ninguno</option>
+                <option value="Destacados" <%= locals.oldData&& locals.oldData.status ? oldData.status=="Destacados" && "selected" : null%>>Destacados</option>
+                <option value="Ofertas" <%= locals.oldData&& locals.oldData.status ? oldData.status=="Ofertas" && "selected" : null%>>Ofertas</option>
+                <option value="Ninguno" <%= locals.oldData&& locals.oldData.status ? oldData.status=="Ninguno" && "selected" : null%>>Ninguno</option>
             </select>
             <% if (locals.errors && errors.status){%>
                 <div class="error">
                     <%= errors.status.msg %>
                 </div> <% } %>
-            <label for="family" class="labelCreateForm no-pc"><b>Seleccione la familia</b></label>
-            <select name="family" id="families">
+            <label for="families" class="labelCreateForm no-pc"><b>Seleccione la linea</b></label>
+            <select name="families" id="families">
                 <option value="">Seleccione Uno</option>
-                <option value="Intel">Intel</option>
-                <option value="AMD">AMD</option>
-                <option value="Ambos">Ambos</option>
+                <option value="Intel" <%= locals.oldData&& locals.oldData.families ? oldData.families=="Intel" && "selected" : null%>>Intel</option>
+                <option value="AMD" <%= locals.oldData&& locals.oldData.families ? oldData.families=="AMD" && "selected" : null%>>AMD</option>
+                <option value="Ambos" <%= locals.oldData&& locals.oldData.families ? oldData.families=="Ambos" && "selected" : null%>>Ambos</option>
             </select>
-            <% if (locals.errors && errors.family){%>
+            <% if (locals.errors && errors.families){%>
                 <div class="error">
-                    <%= errors.family.msg %>
+                    <%= errors.families.msg %>
                 </div> <% } %>
             <label for="warranty" class="labelCreateForm"><b>Indique tiempo de Garantia: ej: x Meses</b></label>
-            <input type="text" placeholder="ej: 6 meses" name="warranty">
+            <input type="text" placeholder="ej: 6 meses" name="warranty" value="<%= locals.oldData? oldData.warranty : null%>">
             <% if (locals.errors && errors.warranty){%>
                 <div class="error">
                     <%= errors.warranty.msg %>
                 </div> <% } %>
             <label for="model" class="labelCreateForm no-pc"><b>Indique el modelo</b></label>
-            <input type="text" placeholder="Modelo" name="model">
+            <input type="text" placeholder="Modelo" name="model" value="<%= locals.oldData? oldData.model : null%>">
             <% if (locals.errors && errors.model){%>
                 <div class="error">
                     <%= errors.model.msg %>
                 </div> <% } %>
             <label for="price" class="labelCreateForm"><b>Indique el precio $</b></label>
-            <input type="number" placeholder="Precio" name="price">
+            <input type="number" placeholder="Precio" name="price" value="<%= locals.oldData? oldData.price : null%>">
             <% if (locals.errors && errors.price){%>
                 <div class="error">
                     <%= errors.price.msg %>
                 </div> <% } %>
             <div class="botones">
-                <div class="button-confirmar edit">
-                    <button type="submit">Confirmar</button>
-                </div>
+                    <button type="submit" id="confirmCreate">Confirmar</button>
             </div>
         </div>
     </form>
 </main>
 
-<script src="js/product-create.js"></script>
 
 <%- include("partials/footer") %>
 </body>
 <script src="/js/index.js"></script>
+<script src="/js/product-create.js"></script>
 <script src="/js/createPCform.js"></script>
 <script src="/js/createFormPreviewImage.js"></script>
 </html>

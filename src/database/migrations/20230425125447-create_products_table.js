@@ -37,6 +37,14 @@ module.exports = {
       discount:{
         type: Sequelize.INTEGER,
       },
+      created_at:{
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal("NOW()")
+      },
+      updated_at:{
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal("NOW()")
+      },
       product_categories_id: {
         type: Sequelize.INTEGER,
         references: {

@@ -15,7 +15,7 @@ body("descripcion")
 .notEmpty().withMessage("El campo no debe estar vacío")
 .bail()
 .isLength({min:20}).withMessage("El campo debe contener 20 caracteres como mínimo"),
-body("imagen-producto")
+body("imagenProducto")
 .custom((value, {req}) =>{
     let file= req.files;
     let acceptedExtensions = [".jpg", ".png", ".jpeg", ".gif"];
@@ -49,12 +49,12 @@ body("price")
 router.get("/list", productsController.list)
 router.get("/cart",authMiddleware, productsController.cart)
 router.get("/:element/", productsController.index);
-router.post("/create",upload.array("imagen-producto"),validationsproducts, productsController.create);
+router.post("/create",upload.array("imagenProducto"),validationsproducts, productsController.create);
 router.get("/list/:category/", productsController.mostrarPorCat);
 router.get("/list/tipo/:condition", productsController.listByCondition)
 router.get("/detail/:id", productsController.detalleID);
 router.get("/edit/:id", productsController.editarProductoForm);
-router.put("/edit/:id",upload.array("imagen-producto"), validationsproducts, productsController.editarProducto);
+router.put("/edit/:id",upload.array("imagenProducto"), validationsproducts, productsController.editarProducto);
 router.delete("/:id", productsController.eliminarProducto);
 
 module.exports = router;

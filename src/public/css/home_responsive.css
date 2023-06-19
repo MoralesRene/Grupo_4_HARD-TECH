@@ -543,7 +543,16 @@
     text-align: center;
     text-transform: uppercase;
     font-weight: 700;
+    }
+    .botones{
+        width: 250px;
+        align-self: center;
     }  
+    span.stockDetail{
+        top: -426px;
+        transform: none;
+        left: -71px;
+    }
 }
 
 @media(min-width:769px) {
@@ -1047,7 +1056,18 @@
     text-align: center;
     text-transform: uppercase;
     font-weight: 700;
+    }
+    .botones{
+        width: 450px;
+        height: 50px;
+    }
+    #confirmCreate{
+        height: 100%;
+        font-size: 18px;
     }   
+    span.stockDetail{
+        left: -75px;
+    }
 }
 
 /*------------------------*/
@@ -1340,5 +1360,13 @@
     #titleFormCreate{
         top: 75px;
         left:110px;
+    }
+    #confirmCreate:hover{
+       color: rgb(43, 235, 9);
+       background-color: black;
+    } 
+    span.stockDetail{
+        left: -113px;
+        top: -620px;
     }
 }

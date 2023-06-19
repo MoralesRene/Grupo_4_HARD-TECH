@@ -19,9 +19,7 @@
                 </ul>
             </div>
             <main id="mainIndex">
-                <div class="sinInteres">
-                    <img src="/img/sin-interes.png" alt="">
-                </div>
+               
                 <!--Contenido Destacados-->
                 <h2 class="subtitulos principales"><strong class="strong">Productos</strong> Destacados<a href="/product/list/tipo/Destacados" class="verTodo">Ver Todo</a></h2>
                 <section class="destacados">
@@ -30,6 +28,15 @@
                         <% for (let i = 0; i < featuredProd.length; i++) { %>
                             <article class="producto">
                                 <div class="addCarrito" data-id="<%= featuredProd[i].id %>"><i class="fa-solid fa-cart-shopping"></i></div>
+                                <% if (featuredProd[i].stock >= 10) { %>
+                                    <span class="stockCount alto">En Stock</span>
+                               <% }else if(featuredProd[i].stock< 10 && featuredProd[i].stock >= 4 ){ %>
+                                <span class="stockCount medio">Poco Stock</span>
+                                <% }else if(featuredProd[i].stock ==0){ %>
+                                    <span class="stockCount nulo">Sin Stock</span>
+                                <% }else{ %>
+                                    <span class="stockCount bajo">Bajo Stock</span>
+                                    <% } %>
                             <% for (let j = 0; j < images.length; j++) { %>
                                 <% if (featuredProd[i].id== images[j].products_id) { %>
                                     <img src="/img/products/<%= images[j].url %>" alt="">
@@ -56,9 +63,8 @@
                 <!--Contenido ofertas-->
                 <h2 class="subtitulos secundarios" >PCs Armadas</h2>
                 <section class="pc__container">
-                    <div class="pc_image1"><a href="#"><img src="/img/pc1.png" alt=""></a></div>
-                    <div class="pc_image2"><a href="#"><img src="/img/pc2.jpg" alt=""></a></div>
-                    <div class="pc_image3"><a href="#"><img src="/img/pc3.jpg" alt=""></a></div>
+                    <h2>Visita nuestra seccion de PCs</h2>
+                   <div class="pc_image3"><a href="#"><img src="/img/pc3.jpg" alt=""></a></div>
                 </section>
                 <h2 class="subtitulos principales"><strong class="strong">Productos</strong> en oferta <a  href="/product/list/tipo/Ofertas" class="verTodo">Ver Todo</a></h2>
                 <section class="ofertas">
@@ -67,6 +73,15 @@
                         <% for (let i = 0; i < offerProd.length; i++) { %>
                             <article class="producto">
                                 <div class="addCarrito" data-id="<%= offerProd[i].id %>"><i class="fa-solid fa-cart-shopping"></i></div>
+                                <% if (offerProd[i].stock >= 10) { %>
+                                    <span class="stockCount alto">En Stock</span>
+                               <% }else if(offerProd[i].stock< 10 && offerProd[i].stock >= 4 ){ %>
+                                <span class="stockCount medio">Poco Stock</span>
+                                <% }else if(offerProd[i].stock ==0){ %>
+                                    <span class="stockCount nulo">Sin Stock</span>
+                                <% }else{ %>
+                                    <span class="stockCount bajo">Bajo Stock</span>
+                                    <% } %>
                             <% for (let j = 0; j < images.length; j++) { %>
                                 <% if (offerProd[i].id== images[j].products_id) { %>
                                     <img src="/img/products/<%= images[j].url %>" alt="">

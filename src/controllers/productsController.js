@@ -55,6 +55,10 @@ let productsController = {
           products.sort((a,b)=>b.price-a.price)
         }else if(req.query.or && req.query.or ==4){
           products.sort((a,b)=>a.name-b.name)
+        }else if(req.query.or && req.query.or== 2){
+          products.sort((a,b)=>b.stock - a.stock)
+        }else if(req.query.or && req.query.or== 3){
+          products.sort((a,b)=>b.created_at - a.created_at)
         }
       const trademarks = await db.Trademarks.findAll()
       //Si no existen filtros
@@ -117,15 +121,12 @@ let productsController = {
     const resultvalidation = validationResult(req);
     console.log(resultvalidation)
     if (resultvalidation.errors.length > 0){
-      const product = await db.Products.findByPk(req.params.id,{
-        include:["category","families","trademark","warranties","images","status"]
-      });
       const categories = await db.Product_Categories.findAll()
       const trademarks = await db.Trademarks.findAll()
       const families = await db.Families.findAll()
       const status = await db.Status.findAll()
       return res.render("crear-producto",{
-        errors: resultvalidation.mapped(),product,categories,trademarks,families,status 
+        errors: resultvalidation.mapped(),oldData:req.body,categories,trademarks,families,status 
       });
     } else{
     try {
@@ -141,7 +142,7 @@ let productsController = {
       })
       const family = await db.Families.findOne({
         where: {
-          name: req.body.family
+          name: req.body.families
         }
       })
       const warranty = await db.Warranties.findOne({
@@ -158,14 +159,14 @@ let productsController = {
         //Not null
         name: req.body.name,
         description: req.body.descripcion,
-        model: req.body ? req.body.model : "PC",
+        model: req.body.model,
         price: req.body.price,
         stock: req.body.stock,
         //Null
         discount: req.body.discount,
         product_categories_id: category.id,
-        trademarks_id: trademark ? trademark.id: null,
-        families_id: family ? family.id: null,
+        trademarks_id:trademark.id,
+        families_id:family.id,
         warranties_id: warranty.id,
         status_id:state.id
       });

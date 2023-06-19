@@ -832,6 +832,7 @@
                         row-gap: 10px;
                         width: 70%;
                         align-self: center;
+                        position: relative;
                     }
 
                     #info-pago p {
@@ -2414,7 +2415,7 @@
                         background-color: rgb(43, 235, 9);
                         color: white;
                         font-size: 16px;
-                        font-weight: 700;
+                        font-weight: 600;
                         outline: none;
                         border: none;
                         border-radius: 5px;
@@ -2609,4 +2610,42 @@
                         border-radius: 12px;
                         object-fit:cover;
 
+                       }
+                       span.stockCount{
+                        position: absolute;
+                        top: 2px;
+                        left: 2px;
+                        height: 30px;
+                        width: 37px;
+                        font-size: 12px;
+                        color: rgb(255, 255, 255);
+                        padding: 2px;
+                        font-weight: 600;
+                        font-family: sans-serif, Helvetica, sans-serif;
+                        border-radius: 3px;
+                       }
+                       span.stockCount.alto,span.stockDetail.alto{
+                        background-color: rgba(0, 128, 0, 0.749);
+                       }
+                       span.stockCount.medio,span.stockDetail.medio{
+                        background-color: rgba(255, 166, 0, 0.711);
+                       }
+                       span.stockCount.bajo,span.stockDetail.bajo{
+                        background-color: rgba(255, 0, 0, 0.662);
+                       }
+                       span.stockCount.sinStock,span.stockDetail.sinStock{
+                        background-color: gray;
+                       }
+                       span.stockDetail{
+                        font-size: 20px;
+                        position: absolute;
+                        top: -50px;
+                        left: 50%;
+                        color: white;
+                        width: 100px;
+                        height: 36px;
+                        padding: 7px;
+                        font-weight: 600;
+                        font-family: sans-serif, Helvetica, sans-serif;
+                        transform: translate(-50%);
                        }
