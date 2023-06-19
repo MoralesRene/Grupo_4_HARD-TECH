@@ -17,7 +17,10 @@ let userController = {
                 name:req.body.name,
                 dni:req.body.documento,
                 phone:req.body.telefono,
-                avatar: req.file ? req.file.filename : req.session.userLogged.avatar
+                avatar: req.file ? req.file.filename : req.session.userLogged.avatar,
+                locality:req,body,localidad,
+                adress:req.body.domicilio,
+                number:req.body.altura
                }
            await db.Users.update(userUpdate,{
                 where:{

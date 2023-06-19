@@ -146,7 +146,9 @@ let productsController = {
         description: req.body.descripcion,
         model: req.body ? req.body.model : "PC",
         price: req.body.price,
+        stock: req.body.stock,
         //Null
+        discount: req.body.discount,
         product_categories_id: category.id,
         trademarks_id: trademark ? trademark.id: null,
         families_id: family ? family.id: null,
@@ -452,6 +454,8 @@ let productsController = {
           name: req.body.name,
           description: req.body.description,
           price: req.body.price,
+          stock: req.body.stock,
+          discount: req.body.discount,
           model: req.body ? req.body.model : "PC",
           product_categories_id: category.id,
           families_id: family ? family.id: null,
@@ -471,11 +475,11 @@ let productsController = {
          return  {
           url: img.filename,
           products_id: req.params.id,
-          is_primary: index==0
+          is_primary: false
          }
         }),
         {
-          updateOnDuplicate:["url","is_primary"]
+          updateOnDuplicate:["url"]
         }
       )
       res.redirect("/");

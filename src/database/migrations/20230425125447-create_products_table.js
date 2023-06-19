@@ -31,6 +31,12 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
+      stock:{
+        type: Sequelize.INTEGER,
+      },
+      discount:{
+        type: Sequelize.INTEGER,
+      },
       product_categories_id: {
         type: Sequelize.INTEGER,
         references: {

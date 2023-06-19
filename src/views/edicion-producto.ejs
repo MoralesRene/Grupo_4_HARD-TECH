@@ -82,7 +82,7 @@
                             <select class="form__group-input" name="marca" id="marca">
                                 <option value="general">Seleccione uno</option>
                                 <% trademarks.forEach(mark => { %>
-                                    <option value="<%= mark.name %>" <%=product.trademark ? product.trademark.name:""==mark.name && 'selected' %>><%= mark.name %></option>
+                                    <option value="<%= mark.name %>" <%=product.trademark ? product.trademark.name==mark.name && 'selected' ? 'selected' : "":""%>><%= mark.name %></option>
                                 <%}); %>
                                 
                             </select>
@@ -114,11 +114,11 @@
 
                             <select class="form__group-input" name="families" id="families">
                                 <option value="">Seleccione Uno</option>
-                                <option value="Intel" <%=product.families? product.families.name:""=="Intel" && 'selected' ? 'selected' : "" %>
+                                <option value="Intel" <%=product.families? product.families.name=="Intel" && 'selected' ? 'selected' : "": "" %>
                                     >Intel</option>
-                                <option value="AMD" <%=product.families? product.families.name:""=="AMD" && 'selected' ? 'selected' : "" %>>AMD
+                                <option value="AMD" <%=product.families? product.families.name=="AMD" && 'selected' ? 'selected' : "": "" %>>AMD
                                 </option>
-                                <option value="Ambos" <%=product.families? product.families.name:""=="Ambos" && 'selected' ? 'selected' : "" %>>Ambos</option>
+                                <option value="Ambos" <%=product.families? product.families.name=="Ambos" && 'selected' ? 'selected' : "": "" %>>Ambos</option>
                             </select>
                             <% if (locals.errors && errors.families) {%>
                                 <div class="error">
@@ -150,7 +150,7 @@
 
                                 <!--Boton confirmar edit-->
 
-                                <div class="button-confirmar edit">
+                                <div >
                                     <button type="submit" class="form__group-input">Confirmar</button>
                                 </div>
                                 <p class="form__mensaje-exito" id="form__mensaje-exito">Formulario enviado exitosamente!

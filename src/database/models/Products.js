@@ -22,6 +22,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    stock:{
+      type: DataTypes.INTEGER,
+    },
+    discount:{
+      type: DataTypes.INTEGER,
+    },
     product_categories_id: {
       type: DataTypes.INTEGER,
       references: {

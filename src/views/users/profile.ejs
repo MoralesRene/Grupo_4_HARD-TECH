@@ -26,13 +26,11 @@
                                 <div class="info_domicilio">
                                     <h4 class="titleProfile">Mi Domicilio</h4>
                                     <label for="domicilio">Domicilio</label>
-                                    <input type="text" class="inputProfile" name="domicilio" value="">
+                                    <input type="text" class="inputProfile" name="domicilio" value="<%= session && session.adress ? session.adress: ''  %>">
                                     <label for="altura">Altura</label>
-                                    <input type="number" class="inputProfile" name="altura" value="">
-                                    <label for="piso">Piso/Depto</label>
-                                    <input type="text" class="inputProfile" name="piso" value="">
+                                    <input type="number" class="inputProfile" name="altura" value="<%= session && session.number ? session.number: ''  %>">
                                     <label for="localidad">Localidad</label>
-                                    <input type="text" class="inputProfile" name="localidad" value="">
+                                    <input type="text" class="inputProfile" name="localidad" value="<%= session && session.locality ? session.locality: ''  %>">
                                 </div>
 
                                 <div class="other">
@@ -84,7 +82,6 @@
                 <%- include("../partials/footer") %>
     </body>
     <script src="/js/index.js"></script>
-    <script src="/js/cart.js"></script>
     <script src="/js/addItems.js"></script>
     <script src="/js/profile.js"></script>
 

@@ -23,6 +23,7 @@ module.exports = {
         trademarks_id: 6,
         families_id: 2,
         warranties_id: 5,
+        stock:10
       },
       {
         name: 'MOTHERBOARD GIGABYTE GA-H310M-H S1151',
@@ -34,6 +35,7 @@ module.exports = {
         trademarks_id: 4,
         families_id: 1,
         warranties_id: 4,
+        stock:4
       },
       {
         name: 'Motherboard AM4 - Gigabyte GA-B550 AORUS ELITE V2',
@@ -45,6 +47,7 @@ module.exports = {
         trademarks_id: 4,
         families_id: 2,
         warranties_id: 5,
+        stock:7
       },
       {
         name: 'Procesador Amd Ryzen 3 3200G 3.8 Ghz + Vega8 - AM4',
@@ -56,6 +59,7 @@ module.exports = {
         trademarks_id: 1,
         families_id: 2,
         warranties_id: 5,
+        stock:3
       },
     ], {});
   },

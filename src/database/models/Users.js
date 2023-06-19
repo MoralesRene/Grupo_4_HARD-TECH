@@ -32,9 +32,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    confirmPassword: {
+    locality: {
       type: DataTypes.TEXT,
-      allowNull: false,
+    },
+    adress: {
+      type: DataTypes.TEXT,
+    },
+    number: {
+      type: DataTypes.INTEGER,
     },
     roles_id: {
       type: DataTypes.INTEGER,
