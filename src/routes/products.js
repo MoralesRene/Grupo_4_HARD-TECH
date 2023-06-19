@@ -49,7 +49,7 @@ body("price")
 router.get("/list", productsController.list)
 router.get("/cart",authMiddleware, productsController.cart)
 router.get("/:element/", productsController.index);
-router.post("/create",upload.array("imagen-producto"), productsController.create);
+router.post("/create",upload.array("imagen-producto"),validationsproducts, productsController.create);
 router.get("/list/:category/", productsController.mostrarPorCat);
 router.get("/list/tipo/:condition", productsController.listByCondition)
 router.get("/detail/:id", productsController.detalleID);
