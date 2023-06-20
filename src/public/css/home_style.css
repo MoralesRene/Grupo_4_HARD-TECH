@@ -1941,6 +1941,7 @@
                             margin: 10px;
                             height: 30px;
                             border-radius: 5px;
+                        }
                       
                     .container-edicion-producto textarea {
                         margin: 10px;
@@ -2646,4 +2647,4 @@
                     .li-validation {
                         color: red;
                         margin-bottom: 20px;
-               }
+                    }
