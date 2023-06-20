@@ -21,8 +21,6 @@ window.addEventListener("load", function () {
     let errorsEmail = [];
     let errorsPassword = [];
     
-    
-    
     let emailPrueba = false;
     let passwordPrueba = false;
     

@@ -1,4 +1,25 @@
 <div class="container_nav">
+
+  <nav class="hidden">
+    <ul>
+      <!-- Condicionar para que solo lo vea el admin-->
+      <% if (locals && locals.role == "Administrador") { %>
+        <li id="fullProd"><a href="/product/list">Todos los productos</a></li>
+      <% } %>
+      <!--Fin del contenedor-->
+      <li>
+        <input type="checkbox" id="check_v2" /><label for="check_v2"
+          >Categorias</label
+        >
+        <ul class="subcategory">
+          <li><a href="/product/list/Motherboard">MotherBoards</a></li>
+          <li><a href="/product/list/Procesadores">Procesadores</a></li>
+          <li><a href="/product/list/Memorias">Memorias RAM</a></li>
+          <li><a href="/product/list/Fuentes">Fuentes</a></li>
+          <li><a href="/product/list/Gabinetes">Gabinetes</a></li>
+          <li><a href="/product/list/Almacenamiento">Almacenamiento</a></li>
+          <li><a href="/product/list/GPUs">Placas de video</a></li>
+
     <nav class="hidden">
         <ul>
             <!-- Condicionar para que solo lo vea el admin-->
@@ -38,6 +59,45 @@
                     <li id="last_li"><a href="quieroComunicarme">Quiero Comunicarme</a></li>
                 </ul>
             </li>
+
         </ul>
-    </nav>
+      </li>
+      <li>
+        <input type="checkbox" id="check_v3" /><label for="check_v3"
+          >Perifericos</label
+        >
+        <ul class="subcategory">
+          <li><a href="/product/list/Perifericos">Monitores</a></li>
+          <li><a href="/product/list/Perifericos">Teclados</a></li>
+          <li><a href="/product/list/Perifericos">Mouses</a></li>
+          <li><a href="/product/list/Perifericos">UPS</a></li>
+          <li><a href="/product/list/Perifericos">Sillas Gamer</a></li>
+        </ul>
+      </li>
+      <li>
+        <input type="checkbox" id="check_v4" /><label for="check_v4"
+          >PCs Armadas</label
+        >
+        <ul class="subcategory">
+          <li><a href="/product/list/PCs">PC Basica</a></li>
+          <li><a href="/product/list/PCs">PC Gama Media</a></li>
+          <li><a href="/product/list/PCs">PC Gama alta</a></li>
+        </ul>
+      </li>
+      <li>
+        <input type="checkbox" id="check_v5" /><label for="check_v5"
+          >Ofertas</label
+        >
+      </li>
+      <li>
+        <input type="checkbox" id="check_v6" /><label for="check_v6"
+          >Ayuda</label
+        >
+        <ul class="subcategory servicesList">
+          <li><a href="#">Servicio Tecnico</a></li>
+          <li id="last_li"><a href="#">Quiero Comunicarme</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 </div>

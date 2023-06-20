@@ -11,6 +11,26 @@
                         <h3>Iniciar Sesión</h3>
                         <form class="login" action="/login" method="POST">
                             <% if (locals && locals.errors?.email) { %>
+
+                                <label for="email" id="errorId"><%= errors.email.msg %></label>
+                            <% } %>
+                            
+                            <!-- EMAIL -->
+                            <div class="error" id="valdiationEmail">
+                                <ul></ul>
+                            </div>
+                            <input class="email inputForm" type="email" name='email' id="email" placeholder="Email">
+
+                            
+                            <!-- PASSWORD -->
+                            <div class="error" id="valdiationPassword">
+                                <ul></ul>
+                            </div>
+                            <input class="password inputForm" type="password" name='password' id="password" placeholder="Contraseña">
+    
+                            <button type="submit">Ingresar</button>
+                            <p><input type="checkbox" name="recordar" id="recordar"> Recordame</p>
+
                                 <label for="email" id="errorId" class="error">
                                     <%= errors.email.msg %>
                                 </label>
@@ -32,6 +52,7 @@
                                         placeholder="Contraseña">
 
                                     <button type="submit" id="loginBtn">Ingresar</button>
+
                         </form>
                         <div class="recordar-usuario-container">
                             <label for="recordarUsuario" class="recordar-usuario-label">Recordar Usuario</label>

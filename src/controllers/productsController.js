@@ -17,11 +17,19 @@ let productsController = {
       const categories = await db.Product_Categories.findAll()
       const trademarks = await db.Trademarks.findAll()
       switch (req.params.element) {
+
+        case "list":
+          res.render("product-list", { productos: products,  images,trademarks, res });
+          break;
+        case "cart":
+          res.render("product-cart", { productos: products, res });
+
         case "resumen":
           res.render("cart-resume",{ session: req.session.userLogged });
+
           break;
         case "create":
-          res.render("crear-producto", { categories, trademarks });
+          res.render("crear-producto", { categories, trademarks, res });
           break;
       }
     } catch (error) {
@@ -293,6 +301,9 @@ let productsController = {
           products.sort((a,b)=>a.name-b.name)
         }
       const trademarks = await db.Trademarks.findAll()
+
+      res.render("product-list", { productos: products, images ,trademarks, res });
+
       //Si no existen filtros
       if (!req.query.filter && !req.query.min && !req.query.max) {
         res.render("product-list", { productos: products, images ,trademarks });
@@ -364,6 +375,7 @@ let productsController = {
         // res.json(productFilterByMark)
         res.render("product-list", { productos: productFilterByMark, images ,trademarks,category });
       }
+
     } catch (error) {
       console.log(error);
     }
@@ -393,7 +405,7 @@ let productsController = {
           is_primary:true
         }
       })
-      res.render("product-detail", { product,imagenes,similarProducts,images });
+      res.render("product-detail", { product,imagenes,similarProducts,images, res });
 
     } catch (error) {
       console.log(error);
@@ -415,7 +427,11 @@ let productsController = {
         }
       })
       //faltan agregar la vista previa y la edicion de imagenes
+
+      res.render("edicion-producto", { product,categories,trademarks,families});
+
       res.render("edicion-producto", { product,categories,trademarks,families,status,warranties,images });
+
     } catch (error) {
       console.log(error);
     }

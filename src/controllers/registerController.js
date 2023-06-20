@@ -13,7 +13,7 @@ let registerController = {
       if (validaciones.errors.length > 0) {
         return res.render("register", {
           errors: validaciones.mapped(),
-          old: req.body,
+          old: req.body
         });
       }
       const validEmail = await db.Users.findOne({
