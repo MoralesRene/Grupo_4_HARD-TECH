@@ -26,7 +26,7 @@ let loginController = {
           req.body.password,
           userToLogin.password
         );
-        if (correctPassword !=true) {
+        if (correctPassword != true) {
           res.render("login", {
             errors: {
               email: {
@@ -34,7 +34,7 @@ let loginController = {
               }
             },
           });
-        }else{
+        } else {
           userToLogin.password;
           req.session.userLogged = userToLogin;
           return res.redirect("/profile");

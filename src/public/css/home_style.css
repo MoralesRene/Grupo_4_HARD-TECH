@@ -598,6 +598,7 @@
                     .pc_image3::before {
                         content: "PC Gama Alta";
                     }
+
                     .pc_image1::before,
                     .pc_image2::before,
                     .pc_image3::before {
@@ -712,6 +713,29 @@
                     #whats img {
                         width: 50px;
                         height: 50px;
+                    }
+
+                    .dashboard {
+                        display: inline-block;
+                        padding: 12px 24px;
+                        font-size: 16px;
+                        font-weight: bold;
+                        text-align: center;
+                        text-decoration: none;
+                        color: #fff;
+                        background-color: #2c3e50;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease;
+                    }
+
+                    .dashboard:hover {
+                        background-color: #34495e;
+                    }
+
+                    .dashboard:active {
+                        background-color: #2c3e50;
                     }
 
                     /*----------------------------------------------------------------------------------*/
@@ -866,7 +890,7 @@
                         padding: 5px 10px;
                     }
 
-                    
+
                     #editBtn a {
                         color: white;
                         font-size: 14px;
@@ -962,7 +986,7 @@
 
                     }
 
-                    
+
                     #tableHeader {
                         background-color: rgb(43, 235, 9);
                     }
@@ -1083,6 +1107,23 @@
 
                     #ventana>form>a:visited {
                         color: black;
+                    }
+
+                    .recordar-usuario-container {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    .recordar-usuario-label {
+                        color: #333;
+                        font-size: 14px;
+                    }
+
+                    .recordar-usuario-checkbox {
+                        transform: scale(0.8);
+                        margin-left: 3px;
+                        height: 14px;
+                        width: 14px;
                     }
 
                     /*----------------------------------------------------------------------------------*/
@@ -1812,7 +1853,6 @@
                         margin: 10px;
                         padding: 5px;
                         height: 30px;
-                        border: none;
                         border-radius: 5px;
                     }
 
@@ -1823,12 +1863,12 @@
                         color: black;
                     }
 
-                        .form__group-error {
-                            display: flex;
-                            width: 100%;
-                        }
+                    .form__group-error {
+                        display: flex;
+                        width: 100%;
+                    }
 
-                        .form__group-input {
+                        /* .form__group-input {
                             cursor: pointer;
                             position: relative;
                             font-size: 12px;
@@ -1838,98 +1878,114 @@
                             border: 3px solid chartreuse;
                             outline: none;
                             box-shadow: 3px 0px 30px chartreuse;
-                        }
+                        } */
 
-                        .form__input-error {
-                            margin: 10px;
-                            padding: 5px 0;
-                            color: red;
-                            font-size: 12px;
-                            padding-bottom: 20px;
-                            display: none;
-                        }
+                    .form__group-input {
+                        cursor: pointer;
+                        position: relative;
+                        font-size: 12px;
+                    }
 
-                        .form__input-error-activo {
-                            display: block;
-                        }
+                    .form__group-input:focus {
+                        border: 3px solid chartreuse;
+                        outline: none;
+                        box-shadow: 3px 0px 30px chartreuse;
+}
+                    
 
-                        .form__validation-state {
-                            position: absolute;
-                            right: 10px;
-                            bottom: 15px;
-                            z-index: 100;
-                            font-size: 16px;
-                            opacity: 0;
+                    .form__input-error {
+                        margin: 10px;
+                        padding: 5px 0;
+                        color: red;
+                        font-size: 12px;
+                        padding-bottom: 20px;
+                        display: none;
+                    }
 
-                        }
+                    .form__input-error-activo {
+                        display: block;
+                    }
 
-                        .form__btn-error {
-                            margin: 10px;
-                            padding: 5px;
-                            color: red;
-                            display: none;
-                        }
+                    .form__validation-state {
+                        position: absolute;
+                        right: 10px;
+                        bottom: 15px;
+                        z-index: 100;
+                        font-size: 16px;
+                        opacity: 0;
 
-                        .form__btn-error-activo {
-                            display: block;
-                        }
+                    }
 
-                        .fa-exclamation-triangle {
-                            padding-right: 10px;
-                        }
+                    .form__btn-error {
+                        margin: 10px;
+                        padding: 5px;
+                        color: red;
+                        display: none;
+                    }
 
-                        .form__mensaje-exito {
-                            display: flex;
-                            justify-content: center;
-                            padding: 5px;
-                            color: rgb(43, 235, 9);
-                            margin: 10px;
-                            display: none;
-                        }
+                    .form__btn-error-activo {
+                        display: block;
+                    }
 
-                        .form__mensaje-exito-activo {
-                            display: block;
-                        }
+                    .fa-exclamation-triangle {
+                        padding-right: 10px;
+                    }
+
+                    .form__mensaje-exito {
+                        display: flex;
+                        justify-content: center;
+                        padding: 5px;
+                        color: rgb(43, 235, 9);
+                        margin: 10px;
+                        display: none;
+                    }
+
+                    .form__mensaje-exito-activo {
+                        display: block;
+                    }
+
 
                         .container-edicion-producto textarea {
                             margin: 10px;
                             padding: 5px;
-                            border: none;
                             border-radius: 5px;
                         }
 
                         .container-edicion-producto select {
                             margin: 10px;
                             height: 30px;
-                            border: none;
                             border-radius: 5px;
                         }
+                      
+                    .container-edicion-producto textarea {
+                        margin: 10px;
+                        padding: 5px;
+                        border: none;
+                        border-radius: 5px;
+                    }
 
-                        .container-edicion-producto button {
-                            margin: 10px;
-                            height: 30px;
-                            border: none;
-                            border-radius: 5px;
-                            background-color: rgb(43, 235, 9);
-                            width: 100%;
-                        }
+                    .container-edicion-producto select {
+                        margin: 10px;
+                        height: 30px;
+                        border: none;
+                        border-radius: 5px;
+                    }
 
-                        .botones {
-                            width: 100%;
-                            padding: 10px;
-                        }
 
-                        .button-borrar {
-                            display: flex;
-                            width: 100%;
-                            padding: 10px;
-                        }
+                    .container-edicion-producto button {
+                        margin: 10px;
+                        height: 30px;
+                        border: none;
+                        border-radius: 5px;
+                        background-color: rgb(43, 235, 9);
+                        width: 100%;
+                    }
 
-                        .button-confirmar {
-                            display: flex;
-                            width: 100%;
-                            padding: 10px;
-                        }
+                    .botones {
+                        width: 100%;
+                        padding: 10px;
+                    }
+
 
                         .edit {
                             justify-content: center;
@@ -1946,10 +2002,52 @@
                             color: white;
                         }
                        
+                    .button-borrar {
+                        display: flex;
+                        width: 100%;
+                        padding: 10px;
+                    }
 
-                        .button-confirmar a {
-                            color: black;
-                        }
+                    .button-confirmar {
+                        display: flex;
+                        width: 100%;
+                        padding: 10px;
+                    }
+
+                    
+
+                    .edit>form {
+                        width: 100%;
+                        margin: 10px;
+
+                    }
+
+                    .edit>form>button {
+                        height: 30px;
+                        border: none;
+                        border-radius: 5px;
+                        width: 100%;
+                    }
+
+                    .button-borrar button {
+                        background-color: red;
+                    }
+
+                    .button-borrar button:hover {
+                        background-color: #c0392b;
+                        cursor: pointer;
+                    }
+
+                    .button-borrar button:active {
+                        transform: translateY(2px);
+                        box-shadow: none;
+                        background-color: #d35400;
+                        color: white;
+                    }
+
+                    .button-confirmar a {
+                        color: black;
+                    }
 
 
                     /*Estilos para validaciones*/
@@ -1972,15 +2070,15 @@
                     }
 
 
-                        /*-------------------------------------------------------------------------------------------------*/
-                        /*product-list*/
-                        main#list {
-                            width: 90%;
-                            display: flex;
-                            flex-flow: column wrap;
-                            row-gap: 20px;
-                            margin-top: 50px;
-                        }
+                    /*-------------------------------------------------------------------------------------------------*/
+                    /*product-list*/
+                    main#list {
+                        width: 90%;
+                        display: flex;
+                        flex-flow: column wrap;
+                        row-gap: 20px;
+                        margin-top: 50px;
+                    }
 
                     .list__category {
                         display: grid;
@@ -2089,7 +2187,7 @@
                         position: relative;
                     }
 
-                 
+
                     #titleFormCreate {
                         position: absolute;
                         top: 30px;
@@ -2102,21 +2200,24 @@
                         color: #666;
                         text-align: center;
                     }
+                    .errores {
+                        color: red;
+                    }
 
                     /*------------------------------ERROR 404 ---------------------------------------*/
 
-                        .Error-404 {
-                            background-color: rgb(43, 235, 9);
-                        }
+                    .Error-404 {
+                        background-color: rgb(43, 235, 9);
+                    }
 
-                        .type-error {
-                            text-align: center;
-                            padding: 20px;
-                        }
+                    .type-error {
+                        text-align: center;
+                        padding: 20px;
+                    }
 
-                        .error-404 {
-                            padding: 15px;
-                        }
+                    .error-404 {
+                        padding: 15px;
+                    }
 
                     .button-error {
                         margin: 15px;
@@ -2124,32 +2225,34 @@
                         background-color: rgb(43, 235, 9);
                         padding: 5px;
                     }
-                    .button-error>a{
+
+                    .button-error>a {
                         color: white;
                     }
-                    .button-error>a:visited{
+
+                    .button-error>a:visited {
                         color: white;
                     }
 
-                        /*------------------------------ERROR REGISTRO ---------------------------------------*/
+                    /*------------------------------ERROR REGISTRO ---------------------------------------*/
 
-                        .error {
-                            font-size: 12px;
-                            color: red;
-                            margin-bottom: -7.5px;
-                            margin: 10px
-                        }
+                    .error {
+                        font-size: 12px;
+                        color: red;
+                        margin-bottom: -7.5px;
+                        margin: 10px
+                    }
 
-                        /*------------------------------------------------------------------*/
-                        /*Profile*/
-                        main#profile_main {
-                            background-image: url(../img/fondo-login.jpg);
-                            background-size: cover;
-                            margin: 0px 0px;
-                            max-width: 100%;
-                            width: 100%;
-                            background-position: center;
-                        }
+                    /*------------------------------------------------------------------*/
+                    /*Profile*/
+                    main#profile_main {
+                        background-image: url(../img/fondo-login.jpg);
+                        background-size: cover;
+                        margin: 0px 0px;
+                        max-width: 100%;
+                        width: 100%;
+                        background-position: center;
+                    }
 
                     .contain__profile {
                         background-color: whitesmoke;
@@ -2163,12 +2266,14 @@
                         border-radius: 5px;
 
                     }
-                    .pedidos{
+
+                    .pedidos {
                         display: flex;
                         flex-flow: column wrap;
                         row-gap: 10px;
                     }
-                    #btnDetailOrder{
+
+                    #btnDetailOrder {
                         background-color: #51a351;
                         padding: 3px;
                         color: white;
@@ -2176,9 +2281,10 @@
                         outline: none;
                         border-radius: 3px;
                     }
-                    .headersTable{
+
+                    .headersTable {
                         display: grid;
-                        grid-template-columns: repeat(5,1fr);
+                        grid-template-columns: repeat(5, 1fr);
                         grid-template-rows: 50px;
                         text-align: center;
                         background-color: rgb(43, 235, 9);
@@ -2187,21 +2293,23 @@
                         font-size: 14px;
                         align-items: center;
                     }
-                    .contentOrder{
+
+                    .contentOrder {
                         display: grid;
-                        grid-template-columns: repeat(5,1fr);
+                        grid-template-columns: repeat(5, 1fr);
                         grid-template-rows: 50px;
                         text-align: center;
                         font-size: 14px;
                         align-items: center;
                         background-color: white;
-                        
+
                     }
-                    .no_content{
+
+                    .no_content {
                         grid-template-columns: 1fr;
                         font-weight: 700;
                     }
-                   
+
 
                     .inputProfile {
                         border-top: none;
@@ -2216,16 +2324,16 @@
                         font-size: 20px;
                     }
 
-                        .contain__profile>h3 {
-                            text-align: start;
-                            font-size: 22px;
-                        }
+                    .contain__profile>h3 {
+                        text-align: start;
+                        font-size: 22px;
+                    }
 
-                        .contain_profile_data h4 {
-                            font-size: 20px;
-                            margin-top: 5px;
-                            margin-bottom: 5px;
-                        }
+                    .contain_profile_data h4 {
+                        font-size: 20px;
+                        margin-top: 5px;
+                        margin-bottom: 5px;
+                    }
 
                     .contain_profile_data>form {
                         display: grid;
@@ -2235,13 +2343,13 @@
                         grid-template-columns: 70%;
                     }
 
-                        .contain_profile_data>form>.info_personal,
-                        .info_domicilio,
-                        .other {
-                            display: flex;
-                            flex-flow: column wrap;
-                            row-gap: 10px;
-                        }
+                    .contain_profile_data>form>.info_personal,
+                    .info_domicilio,
+                    .other {
+                        display: flex;
+                        flex-flow: column wrap;
+                        row-gap: 10px;
+                    }
 
                     .contain_profile_data>form>.other {
                         grid-row: 1/2;
@@ -2279,9 +2387,9 @@
                         border: none;
                     }
 
-                        .contain_profile_data>form>.log-out>a {
-                            color: white;
-                        }
+                    .contain_profile_data>form>.log-out>a {
+                        color: white;
+                    }
 
                     .contain_profile_data>form>.log-out>a:visited {
                         color: white;
@@ -2428,9 +2536,9 @@
                         border-color: red;
                     }
 
-                        .validationCorrecto {
-                            border-color: green;
-                        }
+                    .validationCorrecto {
+                        border-color: green;
+                    }
 
                     .images_container {
                         width: 100%;
@@ -2476,7 +2584,8 @@
                         border-radius: 10px;
                         transition: 400ms linear;
                     }
-                    .successfulPurchase{
+
+                    .successfulPurchase {
                         width: 300px;
                         height: 150px;
                         font-size: 20px;
@@ -2494,6 +2603,7 @@
                         border-radius: 10px;
                         transition: 400ms linear;
                     }
+
                     .success {
                         background: #51a351;
                         color: white;
@@ -2505,7 +2615,7 @@
                         opacity: 1;
                     }
 
-                        /*Menu Ayuda*/
+                    /*Menu Ayuda*/
 
                     .ayuda {
                         text-align: center;
@@ -2517,7 +2627,8 @@
                         padding: 20px;
                         margin: 10px;
                     }
-                    #loginBtn{
+
+                    #loginBtn {
                         background-color: rgb(43, 235, 9);
                         color: white;
                         border-radius: 4px;
@@ -2527,7 +2638,8 @@
                         width: 100px;
                         align-self: center;
                     }
-                    #addImg{
+
+                    #addImg {
                         background-color: #3b5998;
                         font-size: 16px;
                         line-height: 26px;
@@ -2537,18 +2649,21 @@
                         color: white;
                         padding: 5px;
                     }
-                    #previewAvatar{
+
+                    #previewAvatar {
                         width: 150px;
                         height: 150px;
                         margin: auto;
                         order: -1;
                     }
-                    #previewAvatar> #previewImg{
+
+                    #previewAvatar>#previewImg {
                         width: 100%;
                         height: 100%;
                         border-radius: 50%;
                     }
-                    #opcional{
+
+                    #opcional {
                         font-size: 12px;
                         line-height: 12px;
                        }
@@ -2649,3 +2764,11 @@
                         font-family: sans-serif, Helvetica, sans-serif;
                         transform: translate(-50%);
                        }
+
+                        
+                    /* front crearProducto */
+                    .li-validation {
+                        color: red;
+                        margin-bottom: 20px;
+                    }
+
