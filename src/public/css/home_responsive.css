@@ -499,7 +499,7 @@
     .contain_profile_data>form>#updateProfile{
         position: absolute;
         left: 48px;
-        bottom: 250px;
+        bottom: 185px;
         width: 150px;
     }
     .info_domicilio,.info_personal{
@@ -519,7 +519,7 @@
     .contain_profile_data>form>.log-out{
         position: absolute;
         left: 60px;
-        bottom: 175px;
+        bottom: 130px;
         width: 125px;
     }
     .edit>form{
@@ -552,6 +552,24 @@
         top: -426px;
         transform: none;
         left: -71px;
+    }
+    .cards{
+        width: 60%;
+    }
+    .WP{
+        right: 90px;
+    }
+    .Linea{
+        right: 150px;
+    }
+    #contentNewsInput{
+        width: 80%;
+    }
+    #fondoPerifericos,#fondoPc{
+        height: 330px;
+    }
+    #perifericosImg,#pcImagen{
+        height: 100%;
     }
 }
 
@@ -1068,6 +1086,31 @@
     span.stockDetail{
         left: -75px;
     }
+    #miniSections{
+        flex-flow: row ;
+        column-gap: 20px;
+        align-self: center;
+    }
+    .cardsContent{
+        flex-flow: row;
+        column-gap: 20px;
+        justify-content: center;
+        width: 90%;
+        margin: 0 auto 20px;
+
+    }
+    #newsletter{
+        margin: auto;
+        width: 700px;
+        padding: 0;
+        border-radius: 15px;
+    }
+    #fondoPerifericos::before:hover #imgPerifericos{
+        object-fit: cover;
+    }
+    .textoNews{
+        font-size: 18px;
+    }
 }
 
 /*------------------------*/
@@ -1368,5 +1411,11 @@
     span.stockDetail{
         left: -113px;
         top: -620px;
+    }
+    #miniSections,#newsletter,.cardsContent{
+        max-width: 1200px;
+    }
+    .cards{
+        width:38%;
     }
 }
