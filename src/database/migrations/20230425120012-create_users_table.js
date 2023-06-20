@@ -41,9 +41,14 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false
       },
-      confirmPassword: {
+      locality: {
         type: Sequelize.TEXT,
-        allowNull: false
+      },
+      adress: {
+        type: Sequelize.TEXT,
+      },
+      number: {
+        type: Sequelize.INTEGER,
       },
       roles_id:{
         type: Sequelize.INTEGER,
@@ -51,6 +56,14 @@ module.exports = {
           model: "roles",
           key: "id"
         }
+      },
+      created_at:{
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal("NOW()")
+      },
+      updated_at:{
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal("NOW()")
       }
 
     });

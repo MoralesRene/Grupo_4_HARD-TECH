@@ -11,6 +11,8 @@
                         <h3>Iniciar Sesión</h3>
                         <form class="login" action="/login" method="POST">
                             <% if (locals && locals.errors?.email) { %>
+
+
                                 <label for="email" id="errorId" class="error">
                                     <%= errors.email.msg %>
                                 </label>
@@ -32,6 +34,7 @@
                                         placeholder="Contraseña">
 
                                     <button type="submit" id="loginBtn">Ingresar</button>
+
                         </form>
                         <div class="recordar-usuario-container">
                             <label for="recordarUsuario" class="recordar-usuario-label">Recordar Usuario</label>
