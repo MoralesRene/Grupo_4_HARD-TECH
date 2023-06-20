@@ -141,7 +141,7 @@ let productsController = {
       })
       const family = await db.Families.findOne({
         where: {
-          name: req.body.family
+          name: req.body.families
         }
       })
       const warranty = await db.Warranties.findOne({
