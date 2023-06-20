@@ -31,9 +31,9 @@ window.addEventListener("load", function(){
             validationNombre = true;
         }
 
-        let campoDescripcion = document.querySelector("textarea.descripcion");
+        let campoDescripcion = document.getElementById("descripcion");
         let divErroresDescripcion = document.querySelector("div.divDescripcion ul");
-        let inputDescripcion = document.querySelector("textarea.descripcion");
+        let inputDescripcion = document.getElementById("descripcion");
         let errorsDescripcion = [];
         let validationDescripcion = false;
 
@@ -73,9 +73,9 @@ window.addEventListener("load", function(){
             
         }
 
-        let campoCategoria = document.querySelector("select.categoria");
+        let campoCategoria = document.getElementById("categoria");
         let divErroresCategoria = document.querySelector("div.divCategoria ul");
-        let selectCategoria = document.querySelector("select.categoria");
+        let selectCategoria = document.getElementById("categoria");
         let errorsCategoria = [];
         let validationCategoria = false;
     
@@ -92,9 +92,9 @@ window.addEventListener("load", function(){
             validationCategoria = true;
         }
 
-        let campoMarca = document.querySelector("select.marca");
+        let campoMarca = document.getElementById("marca");
         let divErroresMarca = document.querySelector("div.divMarca ul");
-        let selectMarca = document.querySelector("select.marca");
+        let selectMarca = document.getElementById("marca");
         let errorsMarca = [];
         let validationMarca = false;
     
@@ -111,9 +111,9 @@ window.addEventListener("load", function(){
             validationMarca = true;
         }
 
-        let campoStatus = document.querySelector("select.status");
+        let campoStatus = document.getElementById("status");
         let divErroresStatus = document.querySelector("div.divStatus ul");
-        let selectStatus = document.querySelector("select.status");
+        let selectStatus = document.getElementById("status");
         let errorsStatus = [];
         let validationStatus = false;
     
@@ -130,9 +130,9 @@ window.addEventListener("load", function(){
             validationStatus = true;
         }
 
-        let campoFamiles = document.querySelector("select.families");
+        let campoFamiles = document.getElementById("families");
         let divErroresFamilies = document.querySelector("div.divFamilies ul");
-        let selectFamilies = document.querySelector("select.families");
+        let selectFamilies = document.getElementById("families");
         let errorsFamilies = [];
         let validationfamilies = false;
     
@@ -149,9 +149,9 @@ window.addEventListener("load", function(){
             validationfamilies = true;
         }
 
-        let campoWarranty = document.querySelector("input.warranty");
+        let campoWarranty = document.getElementById("warranty");
         let divErroresWarranty = document.querySelector("div.divWarranty ul");
-        let inputWarranty = document.querySelector("input.warranty");
+        let inputWarranty = document.getElementById("warranty");
         let errorsWarranty = [];
         let validationWarranty = false;
     

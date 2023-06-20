@@ -1411,6 +1411,7 @@
     span.stockDetail{
         left: -113px;
         top: -620px;
+        font-size: 15px;
     }
     #miniSections,#newsletter,.cardsContent{
         max-width: 1200px;
