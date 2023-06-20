@@ -23,6 +23,7 @@ let loginController = {
       if (correctPassword) {
         userToLogin.password;
         req.session.userLogged = userToLogin;
+        req.body.recordar == "on" && res.cookie('recordar', userToLogin) 
         return res.redirect("/profile");
       }
     } else {

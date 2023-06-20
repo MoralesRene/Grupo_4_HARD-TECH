@@ -12,10 +12,13 @@ const cart = require("../src/routes/cart");
 const user = require("./routes/users")
 const exp = require("constants");
 const multer = require("multer");
+const cookieParser = require("cookie-parser")
 const app = express();
 const session = require('express-session')
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 const adminMiddleware = require("./middlewares/adminMiddleware");
+const { cookie } = require("express-validator");
+const recordarMiddleware = require("./middlewares/recordarMiddleware");
 
 const publicPath = path.join(__dirname, "/public");
 
@@ -31,10 +34,12 @@ app.use(session({
 ));
 app.use(adminMiddleware)
 app.use(userLoggedMiddleware)
+app.use(recordarMiddleware)
 
 //Utilización de rutas
 app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser())
 app.use("/api", userAPI)
 app.use("/api", productAPI)
 app.use("/", home);
