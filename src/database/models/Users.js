@@ -32,9 +32,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    confirmPassword: {
+    locality: {
       type: DataTypes.TEXT,
-      allowNull: false,
+    },
+    adress: {
+      type: DataTypes.TEXT,
+    },
+    number: {
+      type: DataTypes.INTEGER,
     },
     roles_id: {
       type: DataTypes.INTEGER,
@@ -46,7 +51,9 @@ module.exports = (sequelize, DataTypes) => {
   };
   let config = {
     tablename: "users",
-    timestamps: false,
+    timestamps: true,
+    createdAt:"created_at",
+    updatedAt:"updated_at"
   };
 
   const Users = sequelize.define(alias, columns, config);

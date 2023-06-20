@@ -20,7 +20,7 @@
                            <label for="order_1">Precio mas bajo</label><input type="radio" name="order" id="order_1" class="order">
                            <label for="order_2">Precio mas alto</label><input type="radio" name="order" id="order_2" class="order">
                            <label for="order_3">Mayor Stock</label><input type="radio" name="order" id="order_3" class="order">
-                           <label for="order_4">Menor Stock</label><input type="radio" name="order" id="order_4" class="order">
+                           <label for="order_4">Recien Agregados</label><input type="radio" name="order" id="order_4" class="order">
                            <label for="order_5">Nombre: A-Z</label><input type="radio" name="order" id="order_5" class="order">
                         </div>
                         <div class="filterByPrice">
@@ -42,14 +42,25 @@
                 <% for (let i = 0; i < productos.length; i++) { %>
                     <article class="producto">
                         <div class="addCarrito" data-id="<%=productos[i].id%>"><i class="fa-solid fa-cart-shopping"></i></div>
+                        <% if (productos[i].stock >= 10) { %>
+                            <span class="stockCount alto">En Stock</span>
+                       <% }else if(productos[i].stock< 10 && productos[i].stock >= 4 ){ %>
+                        <span class="stockCount medio">Poco Stock</span>
+                        <% }else if(productos[i].stock ==0){ %>
+                            <span class="stockCount nulo">Sin Stock</span>
+                        <% }else{ %>
+                            <span class="stockCount bajo">Bajo Stock</span>
+                            <% } %>
                     <% for (let j = 0; j < images.length; j++) { %>
                         <% if (productos[i].id== images[j].products_id) { %>
                             <img src="/img/products/<%= images[j].url %>" alt="">
                     <% } %>
                         <% } %>
                     <div class="info-prod">
+                        <div class="info-prod-descripcion">
                         <h4><%= productos[i].name %></h4>
                         <p class="precio">$ <%= productos[i].price %></p>
+                    </div>
                         <button class="btnComprar ver-mas" ><a href="/product/detail/<%= productos[i].id %>">Ver mas</a></button>
                     </a>
                     </div>

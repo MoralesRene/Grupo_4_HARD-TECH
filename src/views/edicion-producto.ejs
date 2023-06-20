@@ -16,15 +16,15 @@
                             <div>
                                 <input 
                                 type="text" 
-                                class="form form__group-error <%= locals.errors && errors.name ? "group__input-error" : null %> form__group-input" 
-                                    name="name" 
-                                    id="name" value="<%= product.name %>">
-                             
+                                class="name form form__group-error <%= locals.errors && errors.name ? "group__input-error" : null %> form__group-input" name="name" id="name" value="<%= product.name %>">
                                     <% if (locals.errors && errors.name){%>
                                     <div class="error">
                                         <%= errors.name.msg%> 
                                     </div>
                                    <% } %> 
+                            </div>
+                            <div class="divNombre">
+                                <ul></ul>
                             </div>
                                     
                                     <i class="form__validation-state fas fa-times-circle" id="name-icon"></i>
@@ -46,6 +46,10 @@
                                 <p class="form__input-error" id="p-error-descripcion">La descripción deberá tener al
                                     menos 20 caracteres</p>
                             </div>
+                            <div class="divDescripcion">
+                                <ul></ul>
+                            </div>
+                                    
 
                             <!--Grupo Imagen del Producto-->
                             <label for="imagen-producto" class="form__label-create"><b>Imagen del Producto</b></label>
@@ -56,11 +60,15 @@
                                 id="imagen-producto" 
                                 multiple="multiple" 
                                 accept=".jpg, .jpeg, .png, .gif"
-                                class="form__group-error form__group-input ">
+                                class="form__group-error form__group-input">
                                    
                                 <i class="form__validation-state fas fa-times-circle"></i>
                                 <p class="form__input-error">Deberá ser un archivo válido (JPG,JPEG,PNG,GIF)</p>
                             </div>
+                            <div class="divImagenProducto">
+                                <ul></ul>
+                            </div>
+                                    
                             <!--Grupo Categoría-->
                             <label class="form__label-create"><b>Categoría</b></label>
                             <select
@@ -75,14 +83,18 @@
                             <% if (locals.errors && errors.categoria) {%>
                                 <div class="error">
                                     <%= errors.categoria.msg%>
-                                </div> <% } %>   
+                                </div> <% } %>
+                                <div class="divCategoria">
+                                    <ul></ul>
+                                </div>
+                                        
 
                             <label class="form__label-create"><b>Marca</b></label>
 
                             <select class="form__group-input" name="marca" id="marca">
-                                <option value="general">Seleccione uno</option>
+                                <option value="">Seleccione uno</option>
                                 <% trademarks.forEach(mark => { %>
-                                    <option value="<%= mark.name %>" <%=product.trademark.name==mark.name && 'selected' %>><%= mark.name %></option>
+                                    <option value="<%= mark.name %>" <%=product.trademark ? product.trademark.name==mark.name && 'selected' ? 'selected' : "":""%>><%= mark.name %></option>
                                 <%}); %>
                                 
                             </select>
@@ -90,6 +102,10 @@
                                 <div class="error">
                                     <%= errors.marca.msg%>
                                 </div> <% } %>   
+                                <div class="divMarca">
+                                    <ul></ul>
+                                </div>
+                                        
                             <label class="form__label-create"><b>Modelo</b></label>
 
                             <input class="form__group-input" type="text" name="model" id="model"
@@ -98,6 +114,10 @@
                                     <div class="error">
                                         <%= errors.model.msg%>
                                     </div> <% } %>   
+                                    <div class="divModel">
+                                        <ul></ul>
+                                    </div>
+                                            
                             <label class="form__label-create"><b>Status</b></label>
 
                             <select class="form__group-input" name="status" id="status">
@@ -109,29 +129,41 @@
                             <% if (locals.errors && errors.status) {%>
                                 <div class="error">
                                     <%= errors.status.msg%>
-                                </div> <% } %>   
+                                </div> <% } %>  
+                                <div class="divStatus">
+                                    <ul></ul>
+                                </div>
+                                         
                             <label class="form__label-create"><b>Familia</b></label>
 
                             <select class="form__group-input" name="families" id="families">
                                 <option value="">Seleccione Uno</option>
-                                <option value="Intel" <%=product.families.name=="Intel" && 'selected' ? 'selected' : "" %>
+                                <option value="Intel" <%=product.families? product.families.name=="Intel" && 'selected' ? 'selected' : "": "" %>
                                     >Intel</option>
-                                <option value="AMD" <%=product.families.name=="AMD" && 'selected' ? 'selected' : "" %>>AMD
+                                <option value="AMD" <%=product.families? product.families.name=="AMD" && 'selected' ? 'selected' : "": "" %>>AMD
                                 </option>
-                                <option value="Ambos" <%=product.families.name=="Ambos" && 'selected' ? 'selected' : "" %>>Ambos</option>
+                                <option value="Ambos" <%=product.families? product.families.name=="Ambos" && 'selected' ? 'selected' : "": "" %>>Ambos</option>
                             </select>
                             <% if (locals.errors && errors.families) {%>
                                 <div class="error">
                                     <%= errors.families.msg%>
                                 </div> <% } %>   
+                                <div class="divFamilies">
+                                    <ul></ul>
+                                </div>
+                                        
                             <label class="form__label-create"><b>Garantía</b></label>
 
-                            <input class="form__group-input" type="text" placeholder="Garantia" name="warranty"
+                            <input class="form__group-input" type="text" placeholder="Garantia" name="warranty" id="warranty"
                                 value="<%=product.warranties.name %>">
                                 <% if (locals.errors && errors.warranty) {%>
                                     <div class="error">
                                         <%= errors.warranty.msg%>
                                     </div> <% } %>   
+                                    <div class="divWarranty">
+                                        <ul></ul>
+                                    </div>
+                                            
                             <label class="form__label-create"><b>Precio</b></label>
 
                             <input class="form__group-input" type="number" name="price" id="price"
@@ -140,6 +172,10 @@
                                     <div class="error">
                                         <%= errors.price.msg%>
                                     </div> <% } %>
+                                    <div class="divPrice">
+                                        <ul></ul>
+                                    </div>
+                                            
                             <div class="form__mensaje" id="form__mensaje">
                                 <p class="form__btn-error"><i class="fas fa-exclamation-triangle"></i><b>Error:</b>
                                     Por favor completar el formulario correctamente</p>
@@ -150,7 +186,7 @@
 
                                 <!--Boton confirmar edit-->
 
-                                <div class="button-confirmar edit">
+                                <div >
                                     <button type="submit" class="form__group-input">Confirmar</button>
                                 </div>
                                 <p class="form__mensaje-exito" id="form__mensaje-exito">Formulario enviado exitosamente!
@@ -158,16 +194,6 @@
                            </div>
                            </div>
                             </form>
-                            <div class="botones">
-                                <!--Boton borrar edit-->
-
-                                <div class="button-borrar edit">
-                                    <form class="form__group-input" action="/product/<%= product.id %>?_method=DELETE"
-                                        method="POST">
-                                        <button class="form__group-input" type="submit">Borrar producto</button>
-                                    </form>
-                                </div>
-                            </div>
                 </main>
 
                 <script src="/js/product-edit.js"></script>

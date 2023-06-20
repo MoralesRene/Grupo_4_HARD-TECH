@@ -14,13 +14,9 @@ const servicioTecnico = require("./routes/ayuda");
 const quieroComunicarme = require("./routes/quieroComunicarme");
 const exp = require("constants");
 const multer = require("multer");
-const cookieParser = require("cookie-parser")
 const app = express();
 const session = require('express-session')
-const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
-const adminMiddleware = require("./middlewares/adminMiddleware");
-const { cookie } = require("express-validator");
-const recordarMiddleware = require("./middlewares/recordarMiddleware");
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 const cors = require("cors")
 const cookies = require("cookie-parser")
 
@@ -37,17 +33,13 @@ app.use(session({
   saveUninitialized: false,
 }
 ));
-app.use(adminMiddleware)
 app.use(userLoggedMiddleware)
-app.use(recordarMiddleware)
 app.use(cors())
 app.use(cookies())
-
 
 //Utilización de rutas
 app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser())
 app.use("/api", userAPI)
 app.use("/api", productAPI)
 app.use("/", home);
@@ -68,7 +60,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 //Definicion de puertos y apertura de servidor
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3030;
 app.listen(port, () => {
   console.log("Server Started on http://localhost:" + port);
 });

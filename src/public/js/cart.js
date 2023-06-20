@@ -92,7 +92,7 @@ formCheckout.addEventListener("submit",(e)=>{
             success.classList.add("successfulPurchase")
             success.classList.add("success")
             success.style.display="flex"
-            success.innerHTML=`Compra Exitosa, numero de pedido: ${data.order.id},monto total: $${data.order.total}<br>Gracias por su compra!`
+            success.innerHTML=`Compra Exitosa!, numero de pedido: ${data.order.id}<br>Total: $${data.order.total}<br>Gracias por su compra!`
             body.append(success)
             setTimeout(()=>{
                 const mensaje = document.querySelector(".successfulPurchase")

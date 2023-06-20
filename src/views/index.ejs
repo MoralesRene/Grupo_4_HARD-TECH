@@ -19,12 +19,7 @@
                 </ul>
             </div>
             <main id="mainIndex">
-                <h2 class="subtitulos secundarios">Formas de Pago</h2>
-                <section class="formas-pago">
-                    <div><i class="fa-sharp fa-solid fa-building-columns"></i><b>Transferencia o Deposito</b></div>
-                    <div><i class="fa-solid fa-credit-card"></i><b>Tarjeta de Debito</b></div>
-                    <div><i class="fa-regular fa-credit-card"></i><b>Cuotas sin interes</b></div>
-                </section>
+               
                 <!--Contenido Destacados-->
                 <h2 class="subtitulos principales"><strong class="strong">Productos</strong> Destacados<a href="/product/list/tipo/Destacados" class="verTodo">Ver Todo</a></h2>
                 <section class="destacados">
@@ -33,14 +28,25 @@
                         <% for (let i = 0; i < featuredProd.length; i++) { %>
                             <article class="producto">
                                 <div class="addCarrito" data-id="<%= featuredProd[i].id %>"><i class="fa-solid fa-cart-shopping"></i></div>
+                                <% if (featuredProd[i].stock >= 10) { %>
+                                    <span class="stockCount alto">En Stock</span>
+                               <% }else if(featuredProd[i].stock< 10 && featuredProd[i].stock >= 4 ){ %>
+                                <span class="stockCount medio">Poco Stock</span>
+                                <% }else if(featuredProd[i].stock ==0){ %>
+                                    <span class="stockCount nulo">Sin Stock</span>
+                                <% }else{ %>
+                                    <span class="stockCount bajo">Bajo Stock</span>
+                                    <% } %>
                             <% for (let j = 0; j < images.length; j++) { %>
                                 <% if (featuredProd[i].id== images[j].products_id) { %>
                                     <img src="/img/products/<%= images[j].url %>" alt="">
                             <% } %>
                                 <% } %>
                             <div class="info-prod">
+                                <div class="info-prod-descripcion">
                                 <h4><%= featuredProd[i].name %></h4>
                                 <p class="precio">$ <%= featuredProd[i].price %></p>
+                                </div>
                                 <button  class="btnComprar ver-mas" ><a href="/product/detail/<%= featuredProd[i].id %>">Ver mas</a></button>
                             </div>
                         </article>
@@ -56,28 +62,44 @@
                       <%  }) %>
                     </ul>
                 </section>
-                <!--Contenido ofertas-->
-                <h2 class="subtitulos secundarios" >PCs Armadas</h2>
-                <section class="pc__container">
-                    <div class="pc_image1"><a href="#"><img src="/img/pc1.png" alt=""></a></div>
-                    <div class="pc_image2"><a href="#"><img src="/img/pc2.jpg" alt=""></a></div>
-                    <div class="pc_image3"><a href="#"><img src="/img/pc3.jpg" alt=""></a></div>
+                <section id="miniSections">
+                    <!--Contenido Perifericos-->
+                <div id="fondoPerifericos">
+                    <div id="perifericosImg"><img src="/img/perifericos.png" alt="PC" id="imgPerifericos"></div>
+                    <span class="textoPerifericos"><strong class="titlePCcontent">Todo para tu PC</strong><br>Los mejores perifericos HyperX para mejorar nivel</span>
+                </div>
+                <!--Contenido PCs-->
+                <div id="fondoPc">
+                   <div id="pcImagen"><img src="/img/pcImagen.png" alt="PC" id="imgPC"></div>
+                    <span class="textoPC"><strong class="titlePCcontent">PC's gamer</strong><br>Para jugar con la mejor experiencia</span>
+               </div>
                 </section>
                 <h2 class="subtitulos principales"><strong class="strong">Productos</strong> en oferta <a  href="/product/list/tipo/Ofertas" class="verTodo">Ver Todo</a></h2>
+                <!--Contenido ofertas-->
                 <section class="ofertas">
                     <div class="contenedor-ofer">
-                        <!--Arreglar articulos css-->
                         <% for (let i = 0; i < offerProd.length; i++) { %>
                             <article class="producto">
                                 <div class="addCarrito" data-id="<%= offerProd[i].id %>"><i class="fa-solid fa-cart-shopping"></i></div>
+                                <% if (offerProd[i].stock >= 10) { %>
+                                    <span class="stockCount alto">En Stock</span>
+                               <% }else if(offerProd[i].stock< 10 && offerProd[i].stock >= 4 ){ %>
+                                <span class="stockCount medio">Poco Stock</span>
+                                <% }else if(offerProd[i].stock ==0){ %>
+                                    <span class="stockCount nulo">Sin Stock</span>
+                                <% }else{ %>
+                                    <span class="stockCount bajo">Bajo Stock</span>
+                                    <% } %>
                             <% for (let j = 0; j < images.length; j++) { %>
                                 <% if (offerProd[i].id== images[j].products_id) { %>
                                     <img src="/img/products/<%= images[j].url %>" alt="">
                             <% } %>
                                 <% } %>
                             <div class="info-prod">
+                                <div class="info-prod-descripcion">
                                 <h4><%= offerProd[i].name %></h4>
                                 <p class="precio">$ <%= offerProd[i].price %></p>
+                                </div>
                                 <button class="btnComprar ver-mas" ><a href="/product/detail/<%= offerProd[i].id %>">Ver mas</a></button>
                             </a>
                             </div>
@@ -85,8 +107,18 @@
                   <%  } %>
                     </div>
                 </section>
-
             </main>
+            <div class="cardsContent">
+                <div class="cards"><h2>Atencion Telefonica</h2><span>1122334455 (solo Mensajes)<div class="iconContact WP"><i class="fa-brands fa-whatsapp"></i></div></span><span>4455-7732<div class="iconContact Linea"><i class="fa-solid fa-phone"></i></div></span></div>
+                <div class="cards"><h2>Horarios de atencion</h2><span>Lunes a viernes de 10 a 18hs</span><br>Sabados de 10hs a 15hs</div>
+            </div>
+            <div id="contentNewsletter">
+            <div id="newsletter">
+                <h3 id="titleNewsletter">newsletter</h3>
+                <span class="textoNews">Recibi todas nuestras ofertas especiales y promociones<br>Suscribite para estar al dia</span>
+                <div id="contentNewsInput"><input type="email" id="NewsInput" placeholder="Email"><button id="suscripcion"><i class="fa-solid fa-arrow-right"></i></button></div>
+            </div>
+            </div>
             <!--footer inicio!-->
             <%- include("partials/footer") %>
         </body>

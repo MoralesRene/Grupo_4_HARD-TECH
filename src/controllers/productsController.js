@@ -17,19 +17,11 @@ let productsController = {
       const categories = await db.Product_Categories.findAll()
       const trademarks = await db.Trademarks.findAll()
       switch (req.params.element) {
-
-        case "list":
-          res.render("product-list", { productos: products,  images,trademarks, res });
-          break;
-        case "cart":
-          res.render("product-cart", { productos: products, res });
-
         case "resumen":
           res.render("cart-resume",{ session: req.session.userLogged });
-
           break;
         case "create":
-          res.render("crear-producto", { categories, trademarks, res });
+          res.render("crear-producto", { categories, trademarks });
           break;
       }
     } catch (error) {
@@ -63,6 +55,10 @@ let productsController = {
           products.sort((a,b)=>b.price-a.price)
         }else if(req.query.or && req.query.or ==4){
           products.sort((a,b)=>a.name-b.name)
+        }else if(req.query.or && req.query.or== 2){
+          products.sort((a,b)=>b.stock - a.stock)
+        }else if(req.query.or && req.query.or== 3){
+          products.sort((a,b)=>b.created_at - a.created_at)
         }
       const trademarks = await db.Trademarks.findAll()
       //Si no existen filtros
@@ -125,15 +121,12 @@ let productsController = {
     const resultvalidation = validationResult(req);
     console.log(resultvalidation)
     if (resultvalidation.errors.length > 0){
-      const product = await db.Products.findByPk(req.params.id,{
-        include:["category","families","trademark","warranties","images","status"]
-      });
       const categories = await db.Product_Categories.findAll()
       const trademarks = await db.Trademarks.findAll()
       const families = await db.Families.findAll()
       const status = await db.Status.findAll()
       return res.render("crear-producto",{
-        errors: resultvalidation.mapped(),product,categories,trademarks,families,status 
+        errors: resultvalidation.mapped(),oldData:req.body,categories,trademarks,families,status 
       });
     } else{
     try {
@@ -149,7 +142,7 @@ let productsController = {
       })
       const family = await db.Families.findOne({
         where: {
-          name: req.body.family
+          name: req.body.families
         }
       })
       const warranty = await db.Warranties.findOne({
@@ -168,10 +161,12 @@ let productsController = {
         description: req.body.descripcion,
         model: req.body.model,
         price: req.body.price,
+        stock: req.body.stock,
         //Null
+        discount: req.body.discount,
         product_categories_id: category.id,
-        trademarks_id: trademark.id,
-        families_id: family.id,
+        trademarks_id:trademark.id,
+        families_id:family.id,
         warranties_id: warranty.id,
         status_id:state.id
       });
@@ -301,9 +296,6 @@ let productsController = {
           products.sort((a,b)=>a.name-b.name)
         }
       const trademarks = await db.Trademarks.findAll()
-
-      res.render("product-list", { productos: products, images ,trademarks, res });
-
       //Si no existen filtros
       if (!req.query.filter && !req.query.min && !req.query.max) {
         res.render("product-list", { productos: products, images ,trademarks });
@@ -375,7 +367,6 @@ let productsController = {
         // res.json(productFilterByMark)
         res.render("product-list", { productos: productFilterByMark, images ,trademarks,category });
       }
-
     } catch (error) {
       console.log(error);
     }
@@ -405,7 +396,7 @@ let productsController = {
           is_primary:true
         }
       })
-      res.render("product-detail", { product,imagenes,similarProducts,images, res });
+      res.render("product-detail", { product,imagenes,similarProducts,images });
 
     } catch (error) {
       console.log(error);
@@ -427,11 +418,7 @@ let productsController = {
         }
       })
       //faltan agregar la vista previa y la edicion de imagenes
-
-      res.render("edicion-producto", { product,categories,trademarks,families});
-
       res.render("edicion-producto", { product,categories,trademarks,families,status,warranties,images });
-
     } catch (error) {
       console.log(error);
     }
@@ -483,10 +470,12 @@ let productsController = {
           name: req.body.name,
           description: req.body.description,
           price: req.body.price,
-          model: req.body.model,
+          stock: req.body.stock,
+          discount: req.body.discount,
+          model: req.body ? req.body.model : "PC",
           product_categories_id: category.id,
-          families_id: family.id,
-          trademarks_id:trademark.id,
+          families_id: family ? family.id: null,
+          trademarks_id: trademark ? trademark.id: null,
           warranties_id:warranty.id,
           status_id: status.id
         },
@@ -496,24 +485,47 @@ let productsController = {
           },
         }
       );
+      const arrayImg = req.files;
+      const actualizarImagen = await db.Product_Images.bulkCreate(
+        arrayImg.map((img,index) => {
+         return  {
+          url: img.filename,
+          products_id: req.params.id,
+          is_primary: false
+         }
+        }),
+        {
+          updateOnDuplicate:["url"]
+        }
+      )
       res.redirect("/");
     }
 
   },
-  eliminarProducto: (req, res) => {
+  eliminarProducto: async (req, res) => {
     try {
-      db.Products.destroy({
-        where: {
-          id: req.params.id,
-        },
-      });
-      res.redirect("/");
+      const id = req.params.id
+      Promise.all([
+        db.Products.destroy({
+          where:{
+            id:id
+          }
+        }),
+        db.Product_Images.destroy({
+          where:{
+            products_id:id
+          }
+        })
+      ]).then(result=>{
+        if (result) {
+          res.redirect("/");
+        }else{
+          res.send("no se pudo eliminar")
+        }
+      })
     } catch (error) {
       console.log(error);
     }
-  },
-  checkout: (req,res)=>{
-    
   }
 }
 module.exports = productsController;

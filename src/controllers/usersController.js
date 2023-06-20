@@ -8,9 +8,6 @@ let userController = {
             }
         })
         res.render("users/profile",
-
-            { session: req.session.userLogged})
-
             { session: req.session.userLogged,orders })
     },
     updateUser: async (req,res)=>{
@@ -20,8 +17,15 @@ let userController = {
                 name:req.body.name,
                 dni:req.body.documento,
                 phone:req.body.telefono,
-                avatar: req.file ? req.file.filename : req.session.userLogged.avatar
+                avatar: req.file ? req.file.filename : req.session.userLogged.avatar,
+                locality:req.body.localidad,
+                adress:req.body.domicilio,
+                number:req.body.altura
                }
+               const orders= await db.Order.findAll({
+                where:{
+                    users_id:req.session.userLogged.id
+        }})
            await db.Users.update(userUpdate,{
                 where:{
                     id:user.id
@@ -32,12 +36,12 @@ let userController = {
                     id: user.id
                 }
             })
-            res.render("users/profile",{session:userUpdated})
+            
+            res.render("users/profile",{session:userUpdated,orders})
             
         } catch (error) {
             console.log(error);
         }
-
     }
 }
 module.exports = userController

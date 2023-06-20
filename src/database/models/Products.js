@@ -22,6 +22,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    stock:{
+      type: DataTypes.INTEGER,
+    },
+    discount:{
+      type: DataTypes.INTEGER,
+    },
     product_categories_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -60,7 +66,9 @@ module.exports = (sequelize, DataTypes) => {
   };
   let config = {
     tablename: "products",
-    timestamps: false,
+    timestamps: true,
+    createdAt:"created_at",
+    updatedAt:"updated_at"
   };
 
   const Products = sequelize.define(alias, columns, config);

@@ -13,7 +13,7 @@ let registerController = {
       if (validaciones.errors.length > 0) {
         return res.render("register", {
           errors: validaciones.mapped(),
-          old: req.body
+          old: req.body,
         });
       }
       const validEmail = await db.Users.findOne({
@@ -38,7 +38,6 @@ let registerController = {
           dni: req.body.documento,
           birthday: req.body.nacimiento,
           password: bcryptjs.hashSync(req.body.contrasenia, 10),
-          confirmPassword: bcryptjs.hashSync(req.body.contrasenia2, 10),
           avatar: req.file ? req.file.filename : "default.jpg",
           roles_id: 2
         })
