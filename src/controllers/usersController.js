@@ -8,9 +8,6 @@ let userController = {
             }
         })
         res.render("users/profile",
-
-            { session: req.session.userLogged})
-
             { session: req.session.userLogged,orders })
     },
     updateUser: async (req,res)=>{
@@ -37,7 +34,6 @@ let userController = {
         } catch (error) {
             console.log(error);
         }
-
     }
 }
 module.exports = userController
