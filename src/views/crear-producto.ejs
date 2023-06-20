@@ -14,7 +14,7 @@
         </div>
         <div class="container-edicion-producto">
             <label for="name" class="labelCreateForm"><b>Nombre del Producto</b></label>
-            <input class="inputForm" type="text" placeholder="Nombre del producto" name="name" value="<%= locals.oldData? oldData.name : null%>">
+            <input class="inputForm name" type="text" placeholder="Nombre del producto" name="name" value="<%= locals.oldData? oldData.name : null%>">
             <div class="error"></div>
 
             <% if (locals.errors && errors.name){%>
@@ -115,7 +115,7 @@
 
             <label for="warranty" class="labelCreateForm"><b>Indique tiempo de Garantia: ej: x Meses</b></label>
 
-            <input type="text" class="warranty" placeholder="ej: 6 meses" name="warranty" value="<%= locals.oldData? oldData.warranty : null%>">
+            <input type="text" class="warranty" placeholder="ej: 6 meses" name="warranty" id="warranty" value="<%= locals.oldData? oldData.warranty : null%>">
 
             <% if (locals.errors && errors.warranty){%>
                 <div class="error">

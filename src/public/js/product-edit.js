@@ -34,6 +34,7 @@ window.addEventListener("load", function () {
         }
 
         let campoDescripcion = document.getElementById("descripcion");
+        console.log(campoDescripcion);
         let divErroresDescripcion = document.querySelector("div.divDescripcion ul");
         let inputDescripcion = document.getElementById("descripcion");
         let errorsDescripcion = [];
