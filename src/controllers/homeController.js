@@ -7,12 +7,17 @@ let homeController = {
     index: async (req, res) => {
         const productsFeatured = await db.Products.findAll({
             limit:5,
+                include:["trademark"]
+              ,
             where: {
                 status_id: 1
             }
         })
-        const productsOffers = await db.Products.findAll({
+        const productsOffers = await db.Products.findAll(
+            
+          {
             limit:5,
+            include:["trademark"],
             where: {
                 status_id: 2
             }
@@ -36,6 +41,8 @@ let homeController = {
     },
     search: async (req, res) => {
         const products = await db.Products.findAll({
+            include:["trademark"]
+          },{
             where: {
                 name: {
                     [Op.like]: `%${req.query.search}%`

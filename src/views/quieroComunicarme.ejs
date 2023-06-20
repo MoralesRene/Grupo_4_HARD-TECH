@@ -1,0 +1,27 @@
+<%- include("partials/head") %>
+
+    <body>
+        <%- include("partials/header") %>
+            <!--Header reutilizable-->
+
+            <%- include("partials/navbar") %>
+                <!-- Codigo reutilizable NAV_BAR.EJS-->
+                <main id="ventana-login">
+                    <div id="ventana">
+                        <h3>Nuestros Contactos</h3>
+                        <h2 class="ayuda">Al pie de página encontraras nuestra dirección, el horario de atención y
+                            nuestro número telefónico. También te dejamos nuestras redes sociales para que puedas
+                            contactarnos </h2>
+                        <form action="/quieroComunicarme" method="POST">
+
+                            <button class="button-error" type="submit"><a href="/"> Volver al Inicio</a> </button>
+                        </form>
+
+                </main>
+
+                <%- include("partials/footer") %>
+    </body>
+
+    <script src="/js/index.js"></script>
+
+    </html>

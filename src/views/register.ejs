@@ -44,8 +44,8 @@
                       <% } %>
                       <span class="icon"></span>
                     </label>              
-                    <label for="documento" class="label-container">D.N.I / C.U.I.T.:
-                          <input type="text" name="documento" placeholder="ej: 12345678" class="formInput"
+                    <label for="documento" class="label-container">D.N.I:
+                          <input type="text" name="documento" placeholder="ej: 12345678" class="formInput" maxlength="8"
                           value="<%= locals.old && old.documento ? (old.documento) : null %>" />
                             
                           <div class="message" id="error-documento"></div>
@@ -61,11 +61,13 @@
                           </label>
                                 <div class="register-img">
                                   <label for="avatar">Imagen de Perfil:</label>
-                                  <input class="register-img1" type="file" name="avatar" accept=".jpg .jpeg .png" 
-                                  id="avatar">
+                                  <input type="file" name="avatar" hidden accept=".JPG .JPEG .PNG" 
+                                  id="avatar" >
+                                  <button id="addImg">Subir Foto<br><span id="opcional">(Opcional)</span></button>
+                                  <div id="previewAvatar"><img src="/img/avatars/default.jpg" alt="" id="previewImg"></div>
                                 </div>
                                 <label for="contrasenia" class="label-container">Contraseña:
-                                <input type="password" name="contrasenia"  class="formInput"/>
+                                <input type="password" name="contrasenia"  class="formInput" id="inputContraseña"/>
                                 <% if (locals.errors && errors.contrasenia) { %>
                                   <div class="error message">
                                     <%= errors.contrasenia.msg %>
@@ -75,7 +77,7 @@
                                   <span class="icon"></span>
                                 </label>
                                     <label for="contrasenia2" class="label-container">Confirmar contraseña:
-                                    <input type="password" name="contrasenia2" class="formInput"/>
+                                    <input type="password" name="contrasenia2" class="formInput" />
                                     <div class="message" id="error-contrasenia2"></div>
                                     <span class="icon"></span>
                                 </label>

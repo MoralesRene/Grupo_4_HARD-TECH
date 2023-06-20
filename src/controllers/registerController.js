@@ -2,7 +2,6 @@ const path = require("path");
 const { validationResult } = require("express-validator");
 const db = require("../database/models")
 const bcryptjs = require('bcryptjs');
-const { Association } = require("sequelize");
 
 let registerController = {
   index: (req, res) => {

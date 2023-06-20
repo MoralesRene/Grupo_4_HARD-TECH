@@ -8,51 +8,84 @@
                 <!-- Codigo reutilizable NAV_BAR.EJS-->
                 <main id="profile_main">
                     <div class="contain__profile">
-                        <h3>Mi cuenta</h3>
                         <div class="contain_profile_data">
-                            <form action="" method="post">
+                            <form action="/users?_method=PUT" method="post" enctype="multipart/form-data"
+                                id="formProfile">
                                 <div class="info_personal">
-                                    <h4>Datos Personales</h4>
+                                    <h4 class="titleProfile">Datos Personales</h4>
                                     <label for="name">Nombre y apellido</label>
-
-                                    <input type="text" name="name" value="<%= session && session.nombre %>">
+                                    <input type="text" class="inputProfile" name="name"
+                                        value="<%= session && session.name %>">
                                     <label for="documento">DNI</label>
-                                    <input type="text" name="documento" value="<%= session && session.documento %>">
+                                    <input type="text" class="inputProfile" name="documento"
+                                        value="<%= session && session.dni %>">
                                     <label for="telefono">Telefono</label>
-                                    <input type="number" name="telefono" value="<%= session && session.telefono %>">
+                                    <input type="number" class="inputProfile" name="telefono"
+                                        value="<%= session && session.phone %>">
                                 </div>
                                 <div class="info_domicilio">
-                                    <h4>Mi Domicilio</h4>
+                                    <h4 class="titleProfile">Mi Domicilio</h4>
                                     <label for="domicilio">Domicilio</label>
-                                    <input type="text" name="domicilio" value="">
+                                    <input type="text" class="inputProfile" name="domicilio" value="">
                                     <label for="altura">Altura</label>
-                                    <input type="number" name="altura" value="">
+                                    <input type="number" class="inputProfile" name="altura" value="">
                                     <label for="piso">Piso/Depto</label>
-                                    <input type="text" name="piso" value="">
+                                    <input type="text" class="inputProfile" name="piso" value="">
                                     <label for="localidad">Localidad</label>
-                                    <input type="text" name="localidad" value="">
+                                    <input type="text" class="inputProfile" name="localidad" value="">
                                 </div>
 
                                 <div class="other">
-                                    <h4>Otros Datos</h4>
+                                    <h4 class="titleProfile">Mi perfil</h4>
                                     <label for="email">Email</label>
-                                    <input type="email" name="email" value="<%= session && session.email %>">
-                                    <h4>Imagen perfil</h4>
+                                    <input type="email" class="inputProfile" name="email"
+                                        value="<%= session && session.email %>" disabled>
+                                    <br>
                                     <div class="avatars">
-                                        <img src="/img/avatars/<%= session.avatar %>" alt="">
-                                        <input type="file" name="avatars" id="">
+                                        <img src="/img/avatars/<%= session.avatar %>" alt="" id="imgAvatar">
+                                        <input type="file" name="avatar" id="avatar" hidden>
+                                        <span class="imgChange">Cambiar Foto de Perfil</span>
                                     </div>
                                 </div>
 
-                                <button type="submit">Actualizar Datos</button>
+                                <button type="submit" id="updateProfile">Actualizar Datos</button>
                                 <button class="log-out"><a href="/logout">Cerrar Sesión</a></button>
                             </form>
-
                         </div>
-
+                        <div>
+                            <h4 class="titleProfile">Mis Pedidos</h4>
+                        </div>
+                        <div class="pedidos">
+                            <div class="headersTable">
+                                <div class="headerProfile"><span># de Pedido</span></div>
+                                <div class="headerProfile"><span>Metodo de entrega</span></div>
+                                <div class="headerProfile"><span>Metodo de pago</span></div>
+                                <div class="headerProfile"><span>Monto</span></div>
+                                <div class="headerProfile"><span>Detalle</span></div>
+                            </div>
+                            <% if (orders.length==0) { %>
+                                <div class="contentOrder no_content">
+                                    <span class="no_content">No tenes pedidos realizados</span>
+                                </div>
+                           <% } else { %>
+                            <% orders.forEach(order=>{ %>
+                                <div class="contentOrder">
+                                    <div><span><%=order.id%></span></div>
+                                    <div><span><%=order.shippingMethod%></span></div>
+                                    <div><span><%=order.paymentMethod%></span></div>
+                                    <div><span><%=order.total%></span></div>
+                                    <div><span><button id="btnDetailOrder"><i class="fa-solid fa-list"></i></button></span></div>
+                                </div>
+                          <%})%>
+                       <% } %>
+                        </div>
                 </main>
 
                 <%- include("../partials/footer") %>
     </body>
     <script src="/js/index.js"></script>
+    <script src="/js/cart.js"></script>
+    <script src="/js/addItems.js"></script>
+    <script src="/js/profile.js"></script>
+
     </html>

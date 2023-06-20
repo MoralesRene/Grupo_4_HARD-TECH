@@ -1,10 +1,14 @@
 const path = require("path");
+const {validationResult} = require ("express-validator");
 const db = require("../database/models");
+const { Op, and } = require("sequelize")
 
 let productsController = {
   index: async function (req, res) {
     try {
-      const products = await db.Products.findAll();
+      const products = await db.Products.findAll({
+        include:["trademark"]
+      });
       const images = await db.Product_Images.findAll({
         where:{
           is_primary: true
@@ -13,11 +17,16 @@ let productsController = {
       const categories = await db.Product_Categories.findAll()
       const trademarks = await db.Trademarks.findAll()
       switch (req.params.element) {
+
         case "list":
           res.render("product-list", { productos: products,  images,trademarks, res });
           break;
         case "cart":
           res.render("product-cart", { productos: products, res });
+
+        case "resumen":
+          res.render("cart-resume",{ session: req.session.userLogged });
+
           break;
         case "create":
           res.render("crear-producto", { categories, trademarks, res });
@@ -27,7 +36,106 @@ let productsController = {
       console.log(error);
     }
   },
+  cart: (req,res)=>{
+      res.render("product-cart");
+  },
+  list: async (req,res)=>{
+    try {
+      const products = await db.Products.findAll({
+        include:["trademark"]
+      });
+      const categories = await db.Product_Categories.findAll()
+      const images = await db.Product_Images.findAll({
+        where:{
+          is_primary: true
+        }
+      })
+        // const products = await db.Products.findAll({
+        //   include:["trademark"],
+        //   where:{
+        //     product_categories_id: category.id
+        //   }
+        // });
+        //sin filtros
+        if (req.query.or && req.query.or ==0) {
+          products.sort((a,b)=>a.price-b.price)
+        }else if(req.query.or && req.query.or ==1){
+          products.sort((a,b)=>b.price-a.price)
+        }else if(req.query.or && req.query.or ==4){
+          products.sort((a,b)=>a.name-b.name)
+        }
+      const trademarks = await db.Trademarks.findAll()
+      //Si no existen filtros
+      if (!req.query.filter && !req.query.min && !req.query.max ) {
+        res.render("product-list", { productos: products, images ,trademarks });
+        //Si existe solo filter
+      }else if(req.query.filter && !req.query.min || !req.query.max){
+        const productFilterByMark = products.filter( product =>  product.trademark.name == req.query.filter)
+        res.render("product-list", { productos: productFilterByMark, images ,trademarks });
+        //Si existe min o max pero no filter
+      }else if(req.query.min && req.query.max && !req.query.filter){
+        const trademarks = await db.Trademarks.findAll()
+        const productFilterPrice = await db.Products.findAll({
+          include:["trademark"],
+          where:{
+            price: {
+              [Op.gt]: req.query.min,
+              [Op.lt] : req.query.max
+            }
+          }
+        })
+        if (req.query.or && req.query.or ==0) {
+          productFilterPrice.sort((a,b)=>a.price-b.price)
+        }else if(req.query.or && req.query.or ==1){
+          productFilterPrice.sort((a,b)=>b.price-a.price)
+        }else if(req.query.or && req.query.or ==4){
+          productFilterPrice.sort((a,b)=>a.name-b.name)
+        }
+        res.render("product-list", { productos: productFilterPrice, images ,trademarks });
+        //Si existen los filter,min y max
+      }else if(req.query.min && req.query.max && req.query.filter){
+        const trademarks = await db.Trademarks.findAll()
+        const productFilterPrice = await db.Products.findAll({
+          include:["trademark"],
+          where:{
+            price: {
+              [Op.gt]: req.query.min,
+              [Op.lt] : req.query.max
+            },
+          }
+        })
+        const productFilterByMark = productFilterPrice.filter( product => product.trademark.name == req.query.filter)
+        if (req.query.or && req.query.or ==0) {
+          productFilterByMark.sort((a,b)=>a.price-b.price)
+        }else if(req.query.or && req.query.or ==1){
+          productFilterByMark.sort((a,b)=>b.price-a.price)
+        }else if(req.query.or && req.query.or ==4){
+          productFilterByMark.sort((a,b)=>a.name-b.name)
+        }
+        // res.json(productFilterByMark)
+        res.render("product-list", { productos: productFilterByMark, images ,trademarks });
+      }
+
+      res.render("product-list", { productos: products,  images,trademarks });
+    } catch (error) {
+      console.log(error);
+    }
+  },
   create: async (req, res) => {
+    const resultvalidation = validationResult(req);
+    console.log(resultvalidation)
+    if (resultvalidation.errors.length > 0){
+      const product = await db.Products.findByPk(req.params.id,{
+        include:["category","families","trademark","warranties","images","status"]
+      });
+      const categories = await db.Product_Categories.findAll()
+      const trademarks = await db.Trademarks.findAll()
+      const families = await db.Families.findAll()
+      const status = await db.Status.findAll()
+      return res.render("crear-producto",{
+        errors: resultvalidation.mapped(),product,categories,trademarks,families,status 
+      });
+    } else{
     try {
       const category = await db.Product_Categories.findOne({
         where: {
@@ -81,12 +189,96 @@ let productsController = {
     } catch (error) {
       console.log(error);
     }
+  }
   },
   mostrarPorCat: async (req, res) => {
     try {
-      const category = await db.Product_Categories.findOne({
-        where: {
-          name: req.params.category
+        const category = await db.Product_Categories.findOne({
+          where: {
+            name: req.params.category
+          }
+        })
+        const images = await db.Product_Images.findAll({
+          where:{
+            is_primary: true
+          }
+        })
+          const products = await db.Products.findAll({
+            include:["trademark"],
+            where:{
+              product_categories_id: category.id
+            }
+          });
+          //sin filtros
+          if (req.query.or && req.query.or ==0) {
+            products.sort((a,b)=>a.price-b.price)
+          }else if(req.query.or && req.query.or ==1){
+            products.sort((a,b)=>b.price-a.price)
+          }else if(req.query.or && req.query.or ==4){
+            products.sort((a,b)=>a.name-b.name)
+          }
+        const trademarks = await db.Trademarks.findAll()
+        //Si no existen filtros
+        if (!req.query.filter && !req.query.min && !req.query.max ) {
+          res.render("product-list", { productos: products, images ,trademarks });
+          //Si existe solo filter
+        }else if(req.query.filter && !req.query.min || !req.query.max){
+          const productFilterByMark = products.filter( product =>  product.trademark.name == req.query.filter)
+          res.render("product-list", { productos: productFilterByMark, images ,trademarks });
+          //Si existe min o max pero no filter
+        }else if(req.query.min && req.query.max && !req.query.filter){
+          const trademarks = await db.Trademarks.findAll()
+          const productFilterPrice = await db.Products.findAll({
+            include:["trademark"],
+            where:{
+              price: {
+                [Op.gt]: req.query.min,
+                [Op.lt] : req.query.max
+              }
+            }
+          })
+          if (req.query.or && req.query.or ==0) {
+            productFilterPrice.sort((a,b)=>a.price-b.price)
+          }else if(req.query.or && req.query.or ==1){
+            productFilterPrice.sort((a,b)=>b.price-a.price)
+          }else if(req.query.or && req.query.or ==4){
+            productFilterPrice.sort((a,b)=>a.name-b.name)
+          }
+          res.render("product-list", { productos: productFilterPrice, images ,trademarks });
+          //Si existen los filter,min y max
+        }else if(req.query.min && req.query.max && req.query.filter){
+          const trademarks = await db.Trademarks.findAll()
+          const productFilterPrice = await db.Products.findAll({
+            include:["trademark"],
+            where:{
+              price: {
+                [Op.gt]: req.query.min,
+                [Op.lt] : req.query.max
+              },
+              product_categories_id: category.id
+            }
+          })
+          const productFilterByMark = productFilterPrice.filter( product => product.trademark.name == req.query.filter)
+          if (req.query.or && req.query.or ==0) {
+            productFilterByMark.sort((a,b)=>a.price-b.price)
+          }else if(req.query.or && req.query.or ==1){
+            productFilterByMark.sort((a,b)=>b.price-a.price)
+          }else if(req.query.or && req.query.or ==4){
+            productFilterByMark.sort((a,b)=>a.name-b.name)
+          }
+          // res.json(productFilterByMark)
+          res.render("product-list", { productos: productFilterByMark, images ,trademarks });
+        }
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  listByCondition: async (req,res)=>{
+    try {
+      
+      const state = await db.Status.findOne({
+        where:{
+          name: req.params.condition
         }
       })
       const images = await db.Product_Images.findAll({
@@ -94,20 +286,103 @@ let productsController = {
           is_primary: true
         }
       })
-      const products = await db.Products.findAll({
-        where:{
-          product_categories_id: category.id
+        const products = await db.Products.findAll({
+          include:["trademark"],
+          where:{
+            status_id: state.id
+          }
+        });
+        //sin filtros //faltan agregar 2 formas de orden segun stock
+        if (req.query.or && req.query.or ==0) {
+          products.sort((a,b)=>a.price-b.price)
+        }else if(req.query.or && req.query.or ==1){
+          products.sort((a,b)=>b.price-a.price)
+        }else if(req.query.or && req.query.or ==4){
+          products.sort((a,b)=>a.name-b.name)
         }
-      });
       const trademarks = await db.Trademarks.findAll()
+
       res.render("product-list", { productos: products, images ,trademarks, res });
+
+      //Si no existen filtros
+      if (!req.query.filter && !req.query.min && !req.query.max) {
+        res.render("product-list", { productos: products, images ,trademarks });
+        //Si existe solo filter
+      }else if(req.query.filter &&!req.query.min || !req.query.max){
+        const productFilterByMark = products.filter( product =>  product.trademark.name == req.query.filter)
+        res.render("product-list", { productos: productFilterByMark, images ,trademarks });
+        //Si existe min o max pero no filter
+      }else if(req.query.min && req.query.max && !req.query.filter){
+        const trademarks = await db.Trademarks.findAll()
+        const productFilterPrice = await db.Products.findAll({
+          include:["trademark"],
+          where:{
+            price: {
+              [Op.gt]: req.query.min,
+              [Op.lt] : req.query.max
+            }
+          }
+        })
+        if (req.query.or && req.query.or ==0) {
+          productFilterPrice.sort((a,b)=>a.price-b.price)
+        }else if(req.query.or && req.query.or ==1){
+          productFilterPrice.sort((a,b)=>b.price-a.price)
+        }else if(req.query.or && req.query.or ==4){
+          productFilterPrice.sort((a,b)=>a.name-b.name)
+        }
+        res.render("product-list", { productos: productFilterPrice, images ,trademarks });
+        //Si existen los filter,min y max
+      }else if(req.query.min && req.query.max && req.query.filter){
+        const trademarks = await db.Trademarks.findAll()
+        const productFilterPrice = await db.Products.findAll({
+          include:["trademark"],
+          where:{
+            price: {
+              [Op.gt]: req.query.min,
+              [Op.lt] : req.query.max
+            },
+          }
+        })
+        const productFilterByMark = productFilterPrice.filter( product => product.trademark.name == req.query.filter)
+        if (req.query.or && req.query.or ==0) {
+          productFilterByMark.sort((a,b)=>a.price-b.price)
+        }else if(req.query.or && req.query.or ==1){
+          productFilterByMark.sort((a,b)=>b.price-a.price)
+        }else if(req.query.or && req.query.or ==4){
+          productFilterByMark.sort((a,b)=>a.name-b.name)
+        }
+        // res.json(productFilterByMark)
+        res.render("product-list", { productos: productFilterByMark, images ,trademarks });
+      }else if(req.query.min && req.query.max && req.query.filter){
+        const trademarks = await db.Trademarks.findAll()
+        const productFilterPrice = await db.Products.findAll({
+          include:["trademark","category"],
+          where:{
+            price: {
+              [Op.gt]: req.query.min,
+              [Op.lt] : req.query.max
+            },
+          }
+        })
+        const productFilterByMark = productFilterPrice.filter( product => product.trademark.name == req.query.filter)
+        if (req.query.or && req.query.or ==0) {
+          productFilterByMark.sort((a,b)=>a.price-b.price)
+        }else if(req.query.or && req.query.or ==1){
+          productFilterByMark.sort((a,b)=>b.price-a.price)
+        }else if(req.query.or && req.query.or ==4){
+          productFilterByMark.sort((a,b)=>a.name-b.name)
+        }
+        // res.json(productFilterByMark)
+        res.render("product-list", { productos: productFilterByMark, images ,trademarks,category });
+      }
+
     } catch (error) {
       console.log(error);
     }
   },
   detalleID: async (req, res) => {
     try {
-      const { id } = req.params 
+      const { id } = req.params
       const product = await db.Products.findByPk(id,{
         include:["category","warranties","families","trademark","images"]
       });
@@ -117,10 +392,11 @@ let productsController = {
         }
       })
       const allProducts = await db.Products.findAll({
+        limit:5,
         where:{
           product_categories_id: product.product_categories_id
         }
-        , include:["images"]
+        , include:["images","trademark"]
       })
       //saco el producto mostrado actualmente de similares
       const similarProducts = allProducts.filter(producto => producto.id != req.params.id)
@@ -138,56 +414,91 @@ let productsController = {
   editarProductoForm: async (req, res) => {
     try {
       const product = await db.Products.findByPk(req.params.id,{
-        include:["category","families","trademark","warranties","images"]
+        include:["category","families","trademark","warranties","images","status"]
       });
       const categories = await db.Product_Categories.findAll()
       const trademarks = await db.Trademarks.findAll()
       const families = await db.Families.findAll()
+      const status = await db.Status.findAll()
+      const warranties = await db.Warranties.findAll()
+      const images = await db.Product_Images.findAll({
+        where:{
+          products_id: product.id
+        }
+      })
       //faltan agregar la vista previa y la edicion de imagenes
+
       res.render("edicion-producto", { product,categories,trademarks,families});
+
+      res.render("edicion-producto", { product,categories,trademarks,families,status,warranties,images });
+
     } catch (error) {
       console.log(error);
     }
   },
   editarProducto: async (req, res) => {
-    const category = await db.Product_Categories.findOne({
-      where: {
-        name: req.body.categoria
-      }
-    })
-    const trademark = await db.Trademarks.findOne({
-      where: {
-        name: req.body.marca
-      }
-    })
-    const family = await db.Families.findOne({
-      where: {
-        name: req.body.families
-      }
-    })
-    const warranty = await db.Warranties.findOne({
-      where: {
-        name: req.body.warranty
-      }
-    })
-    await db.Products.update(
-      {
-        name: req.body.name,
-        description: req.body.description,
-        price: req.body.price,
-        model: req.body.model,
-        product_categories_id: category.id,
-        families_id: family.id,
-        trademarks_id:trademark.id,
-        warranties_id:warranty.id
-      },
-      {
+    console.log(req.body)
+    const resultvalidation = validationResult(req);
+    console.log(resultvalidation)
+    if (resultvalidation.errors.length > 0){
+      const product = await db.Products.findByPk(req.params.id,{
+        include:["category","families","trademark","warranties","images","status"]
+      });
+      const categories = await db.Product_Categories.findAll()
+      const trademarks = await db.Trademarks.findAll()
+      const families = await db.Families.findAll()
+      const status = await db.Status.findAll()
+      return res.render("edicion-producto",{
+        errors: resultvalidation.mapped(),product,categories,trademarks,families,status 
+      });
+    } else{
+
+      const category = await db.Product_Categories.findOne({
         where: {
-          id: req.params.id,
+          name: req.body.categoria
+        }
+      })
+      const trademark = await db.Trademarks.findOne({
+        where: {
+          name: req.body.marca
+        }
+      })
+      const family = await db.Families.findOne({
+        where: {
+          name: req.body.families
+        }
+      })
+      const warranty = await db.Warranties.findOne({
+        where: {
+          name: req.body.warranty
+        }
+      })
+      const status = await db.Status.findOne({
+        where:{
+          name: req.body.status
+        }
+      })
+      await db.Products.update(
+        {
+          name: req.body.name,
+          description: req.body.description,
+          price: req.body.price,
+          model: req.body.model,
+          product_categories_id: category.id,
+          families_id: family.id,
+          trademarks_id:trademark.id,
+          warranties_id:warranty.id,
+          status_id: status.id
         },
-      }
-    );
-    res.redirect("/");
+        {
+          where: {
+            id: req.params.id,
+          },
+        }
+      );
+      res.redirect("/");
+    }
+
   },
   eliminarProducto: (req, res) => {
     try {
@@ -200,6 +511,11 @@ let productsController = {
     } catch (error) {
       console.log(error);
     }
+  },
+  checkout: (req,res)=>{
+    
   }
 }
 module.exports = productsController;
+
+

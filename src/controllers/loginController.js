@@ -6,7 +6,7 @@ const db = require("../database/models");
 const { log } = require("console");
 
 let loginController = {
-  index: async (req, res) => {
+  index: (req, res) => {
     res.render("login");
   },
 
@@ -43,9 +43,43 @@ let loginController = {
     });
   },
 
+    try {
+      let userToLogin = await db.Users.findOne({ where: { email: req.body.email } });
+
+      if (!userToLogin) {
+        res.render("login", {
+          errors: {
+            email: {
+              msg: "El email o la contraseña no coinciden",
+            }
+          },
+        });
+      } else {
+        let correctPassword = bcryptjs.compareSync(
+          req.body.password,
+          userToLogin.password
+        );
+        if (correctPassword != true) {
+          res.render("login", {
+            errors: {
+              email: {
+                msg: "El email o la contraseña no coinciden",
+              }
+            },
+          });
+        } else {
+          userToLogin.password;
+          req.session.userLogged = userToLogin;
+          return res.redirect("/profile");
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  },
   logout: (req, res) => {
     req.session.destroy();
-    return res.redirect("login");
+    res.redirect("/");
   },
 };
 
