@@ -18,6 +18,7 @@ const app = express();
 const session = require('express-session')
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 const cors = require("cors")
+const cookies = require("cookie-parser")
 
 const publicPath = path.join(__dirname, "/public");
 
@@ -34,6 +35,7 @@ app.use(session({
 ));
 app.use(userLoggedMiddleware)
 app.use(cors())
+app.use(cookies())
 
 //Utilización de rutas
 app.use(express.static(publicPath));
