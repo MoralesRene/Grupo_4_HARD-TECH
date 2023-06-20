@@ -65,7 +65,7 @@
                 </div>
             
 
-            <label for="marca" class="labelCreateForm no-pc"><b>Seleccione la marca</b></label>>
+            <label for="marca" class="labelCreateForm no-pc"><b>Seleccione la marca</b></label>
             <select class="marca" name="marca" id="marca">
 
                 <option value="">Seleccione uno</option>
@@ -148,6 +148,10 @@
                 <div class="divPrice">
                     <ul></ul>
                 </div>
+                <label for="stock"><b>Indique el stock</b></label>
+            <input class="stock" type="number" placeholder="Stock" name="stock" value="<%= locals.oldData? oldData.stock : null%>">
+                <label for="discount"><b>Indique el descuento</b></label>
+            <input class="discount" type="number" placeholder="Descuento" name="discount" value="<%= locals.oldData? oldData.discount : null%>">
             <div class="botones">
                     <button type="submit" id="confirmCreate">Confirmar</button>
             </div>

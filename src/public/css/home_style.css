@@ -2852,4 +2852,8 @@
                         color: red;
                         margin-bottom: 20px;
                     }
-
+                    .button-borrar.edit>button{
+                        border: none;
+                        outline: none;
+                    }
+                  

@@ -49,9 +49,9 @@
                                 <!-- Condicionar para que solo lo vea el admin-->
                                 <div id="editBtn"><a href="/product/edit/<%= product.id %>">Editar Producto</a></div>
                                 <!--Boton borrar edit-->
-                                <div class="button-borrar edit">
-                                    <a href="/product/<%= product.id %>">Borrar producto</a>
-                                </div>
+                                    <form action="/product/<%= product.id %>?_method=Delete" method="post" class="button-borrar edit">
+                                    <button type="submit">Borrar producto</button>
+                                    </form>
                                 <!--Fin del contenedor-->
                             </div>
                         </div>

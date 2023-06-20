@@ -175,7 +175,10 @@
                                     <div class="divPrice">
                                         <ul></ul>
                                     </div>
-                                            
+                                <label for="stock">Indique el stock</label>  
+                                <input type="number" id="stock" value="<%= product.stock ? product.stock :"" %>">          
+                                <label for="stock">Indique el discount</label>  
+                                <input type="number" id="discount" value="<%= product.discount ? product.stock :"" %>">          
                             <div class="form__mensaje" id="form__mensaje">
                                 <p class="form__btn-error"><i class="fas fa-exclamation-triangle"></i><b>Error:</b>
                                     Por favor completar el formulario correctamente</p>
