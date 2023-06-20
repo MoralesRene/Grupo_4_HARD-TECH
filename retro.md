@@ -80,3 +80,19 @@ Hacer menos:
 
 Dejar de hacer:
 -
+
+RETROSPECTIVA SPRINT 8:
+Comenzar hacer:
+Terminando los detalles y realizar la presentación para la expo
+
+Hacer mas:
+Reuniones para finalizar el proyecto y diagramar la presentación de cada integrante
+
+Continuar haciendo:
+aportes individuales y aportes extras a los pedidos de los sprints
+
+Hacer menos:
+-
+
+Dejar de hacer:
+-
