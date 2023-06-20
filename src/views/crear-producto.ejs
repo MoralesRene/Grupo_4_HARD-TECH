@@ -6,7 +6,7 @@
 <body>
 <main>
     <form action="/product/create" enctype="multipart/form-data" method="POST" id="formCreate">
-        <h3 id="titleFormCreate">Crear Nuevo Producto</h3>
+            <h3 id="titleFormCreate">Crear Nuevo Producto</h3>
         <div class="container-edicion-producto">
         
         <div class="errores">
@@ -19,9 +19,9 @@
             <div class="error">
                 <%= errors.name.msg %>
             </div> <% } %>
-            <div class="errores">
-                <ul id="error-nombre"></ul>
-                </div>
+            <div class="divNombre">
+                <ul></ul>
+            </div>
 
             
             <label for="descripcion" class="labelCreateForm"><b>Descripción</b></label>
@@ -30,11 +30,17 @@
                 <div class="error">
                     <%= errors.descripcion.msg %>
                 </div> <% } %>
+                <div class="divDescripcion">
+                    <ul></ul>
+                </div>
             
 
             <input class="imagen-producto" type="file" name='imagen-producto' accept=".jpg, .jpeg, .png .gif" multiple="multiple" id="images" hidden>
             <label for="imagen-producto" class="labelCreateForm" id="labelBtn">Subir Fotos (Min. 3)</label>
             <div id="preview"></div>
+            <div class="divImagenProducto">
+                <ul></ul>
+            </div>
             
 
             <label for="categoria" class="labelCreateForm"><b>Seleccione la categoria</b></label>
@@ -48,6 +54,9 @@
                 <div class="error">
                     <%= errors.categoria.msg %>
                 </div> <% } %>
+                <div class="divCategoria">
+                    <ul></ul>
+                </div>
             
 
             <label for="marca" class="labelCreateForm"><b>Seleccione la marca</b></label>
@@ -61,6 +70,10 @@
                 <div class="error">
                     <%= errors.marca.msg %>
                 </div> <% } %>
+                <div class="divMarca">
+                    <ul></ul>
+                </div>
+
             <label for="status" class="labelCreateForm"><b>Seleccione la condicion del producto</b></label>
                 <!--cambiar de status a condition-->
             <select class="status" name="status" id="status">
@@ -73,6 +86,9 @@
                 <div class="error">
                     <%= errors.status.msg %>
                 </div> <% } %>
+                <div class="divStatus">
+                    <ul></ul>
+                </div>
             <label for="family" class="labelCreateForm"><b>Seleccione la familia</b></label>
             <select class="families" name="families" id="families">
                 <option value="">Seleccione Uno</option>
@@ -84,24 +100,39 @@
                 <div class="error">
                     <%= errors.family.msg %>
                 </div> <% } %>
+                <div class="divFamilies">
+                    <ul></ul>
+                </div>
+
             <label for="warranty" class="labelCreateForm"><b>Indique tiempo de Garantia: ej: x Meses</b></label>
             <input class="warranty" type="text" placeholder="ej: 6 meses" name="warranty">
             <% if (locals.errors && errors.warranty){%>
                 <div class="error">
                     <%= errors.warranty.msg %>
                 </div> <% } %>
+                <div class="divWarranty">
+                    <ul></ul>
+                </div>
+
             <label for="model" class="labelCreateForm"><b>Indique el modelo</b></label>
             <input class="model" type="text" placeholder="Modelo" name="model">
             <% if (locals.errors && errors.model){%>
                 <div class="error">
                     <%= errors.model.msg %>
                 </div> <% } %>
+                <div class="divModel">
+                    <ul></ul>
+                </div>
+
             <label for="price" class="labelCreateForm"><b>Indique el precio $</b></label>
             <input class="price" type="number" placeholder="Precio" name="price">
             <% if (locals.errors && errors.price){%>
                 <div class="error">
                     <%= errors.price.msg %>
                 </div> <% } %>
+                <div class="divPrice">
+                    <ul></ul>
+                </div>
             <div class="botones">
                 <div class="button-confirmar edit">
                     <button type="submit">Confirmar</button>
