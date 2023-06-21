@@ -68,11 +68,16 @@
                     <li><a href="#" class="Redes"><i class="fa-brands fa-whatsapp"></i>Whatsapp</a></li>
                 </ul>
             </nav>
-            <div class="Dashboard-div">
-                <br>
-                <br>
-                <a href="http://localhost:5173/" target="_blank"><button class="dashboard">Dashboard</button></a>
-            </div>
+            <!-- Condicionar para que solo lo vea el admin-->
+      <% if (locals && locals.role == "Administrador") { %>
+        <!--Fin del contenedor-->
+              <div class="Dashboard-div">
+                  <br>
+                  <br>
+                  <a href="http://localhost:5173/" target="_blank"><button class="dashboard">Dashboard</button></a>
+              </div>
+        
+      <% } %>
         </div>
     </footer>
 </div>

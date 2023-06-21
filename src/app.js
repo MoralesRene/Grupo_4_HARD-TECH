@@ -12,6 +12,8 @@ const cart = require("../src/routes/cart");
 const user = require("./routes/users");
 const servicioTecnico = require("./routes/ayuda");
 const quieroComunicarme = require("./routes/quieroComunicarme");
+const middlewareAdmin = require("./middlewares/adminMiddleware")
+const cookieMiddleware = require("./middlewares/recordarMiddleware")
 const exp = require("constants");
 const multer = require("multer");
 const app = express();
@@ -33,6 +35,8 @@ app.use(session({
   saveUninitialized: false,
 }
 ));
+app.use(middlewareAdmin)
+app.use(cookieMiddleware)
 app.use(userLoggedMiddleware)
 app.use(cors())
 app.use(cookies())

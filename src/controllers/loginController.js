@@ -10,40 +10,32 @@ let loginController = {
   },
 
   loginProcess: async (req, res) => {
-    try {
-      let userToLogin = await db.Users.findOne({ where: { email: req.body.email } });
+    let userToLogin = await db.Users.findOne({
+      where: { email: req.body.email }, include: [{model:db.Roles,as:"roles"}]
+    });
 
-      if (!userToLogin) {
-        res.render("login", {
-          errors: {
-            email: {
-              msg: "El email o la contraseña no coinciden",
-            }
-          },
-        });
-      } else {
-        let correctPassword = bcryptjs.compareSync(
-          req.body.password,
-          userToLogin.password
-        );
-        if (correctPassword != true) {
-          res.render("login", {
-            errors: {
-              email: {
-                msg: "El email o la contraseña no coinciden",
-              }
-            },
-          });
-        } else {
-          userToLogin.password;
-          req.session.userLogged = userToLogin;
-          return res.redirect("/profile");
-        }
+    if (userToLogin) {
+      let correctPassword = bcryptjs.compareSync(
+        req.body.password,
+        userToLogin.password
+      );
+      if (correctPassword) {
+        userToLogin.password;
+        req.session.userLogged = userToLogin;
+        req.body.recordar == "on" && res.cookie('recordar', userToLogin) 
+        return res.redirect("/profile");
       }
-    } catch (error) {
-      console.log(error);
+    } else {
+      res.render("login", {
+        errors: {
+          email: {
+            msg: "El email o la contraseña no coinciden",
+          },
+        }
+      });
     }
   },
+
   logout: (req, res) => {
     req.session.destroy();
     res.redirect("/");
